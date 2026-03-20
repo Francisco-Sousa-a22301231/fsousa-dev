@@ -16,8 +16,8 @@ interface Props {
 const { gradientFrom, gradientTo, iconSvg, appName, tag, title, problem, solution, result, link, linkText } = Astro.props;
 ---
 
-<div class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col min-w-[85vw] sm:min-w-0 snap-start">
-  <div class="h-56 flex items-center justify-center p-6 overflow-hidden" style={`background: linear-gradient(to bottom right, ${gradientFrom}, ${gradientTo})`}>
+<div class="group bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col min-w-[85vw] sm:min-w-0 snap-start">
+  <div class="h-56 flex items-center justify-center p-6 overflow-hidden relative" style={`background: linear-gradient(to bottom right, ${gradientFrom}, ${gradientTo})`}>
     <!-- Phone mockup -->
     <div class="relative w-[120px] h-[210px] bg-[#1a1a2e] rounded-[20px] border-2 border-white/20 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
       <div class="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-3 bg-[#1a1a2e] rounded-b-lg z-10"></div>
@@ -33,19 +33,24 @@ const { gradientFrom, gradientTo, iconSvg, appName, tag, title, problem, solutio
         </div>
       </div>
     </div>
+    <!-- Performance badge -->
+    <div class="absolute top-3 right-3 bg-[#0f172a]/80 backdrop-blur-sm text-[#25d366] text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
+      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      100/100
+    </div>
   </div>
   <div class="p-6 flex flex-col flex-1">
     <span class="text-[#f97316] text-xs font-bold uppercase tracking-wider mb-2">{tag}</span>
-    <h3 class="font-bold text-[#0f172a] text-lg mb-3">{title}</h3>
-    <div class="space-y-2 text-sm text-slate-500 flex-1">
+    <h3 class="font-bold text-[#0f172a] text-lg mb-3" style="font-family:'Sora',sans-serif;">{title}</h3>
+    <div class="space-y-2.5 text-sm text-slate-500 flex-1">
       <p><span class="font-semibold text-slate-700">Problema:</span> {problem}</p>
       <p><span class="font-semibold text-slate-700">Solução:</span> {solution}</p>
-      <p><span class="font-semibold text-slate-700">Resultado:</span> {result}</p>
+      <p class="text-[#0f172a]"><span class="font-semibold">Resultado:</span> <span class="text-[#25d366] font-semibold">{result}</span></p>
     </div>
     {link && (
-      <a href={link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[#f97316] text-sm font-semibold mt-4 hover:underline">
+      <a href={link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[#f97316] text-sm font-semibold mt-4 hover:underline group/link">
         {linkText || "Ver projeto"}
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
       </a>
     )}
   </div>

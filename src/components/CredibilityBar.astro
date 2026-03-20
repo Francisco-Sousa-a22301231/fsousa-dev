@@ -1,23 +1,42 @@
 ---
 ---
 
-<section class="bg-[#0f172a] border-y border-white/10 py-10">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div>
-        <p class="text-3xl sm:text-4xl font-extrabold text-[#f97316] mb-1" style="font-family:'Sora',sans-serif;" data-count="6" data-suffix="+">0</p>
+<section class="relative bg-[#0f172a] border-y border-white/[0.06] py-12 sm:py-14">
+  <!-- Subtle top highlight line -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-[#f97316]/30 to-transparent"></div>
+
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0">
+      <!-- Stat 1 -->
+      <div class="text-center md:border-r md:border-white/[0.06]" data-animate>
+        <div class="w-10 h-10 mx-auto mb-3 rounded-xl bg-[#f97316]/10 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+        </div>
+        <p class="text-3xl sm:text-4xl font-extrabold text-white mb-1" style="font-family:'Sora',sans-serif;" data-count="6" data-suffix="+">0</p>
         <p class="text-white/50 text-sm font-medium">Projetos entregues</p>
       </div>
-      <div>
-        <p class="text-3xl sm:text-4xl font-extrabold text-[#f97316] mb-1" style="font-family:'Sora',sans-serif;" data-count="100" data-suffix="/100">0</p>
+      <!-- Stat 2 -->
+      <div class="text-center md:border-r md:border-white/[0.06]" data-animate data-delay="1">
+        <div class="w-10 h-10 mx-auto mb-3 rounded-xl bg-[#25d366]/10 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <p class="text-3xl sm:text-4xl font-extrabold text-white mb-1" style="font-family:'Sora',sans-serif;" data-count="100" data-suffix="/100">0</p>
         <p class="text-white/50 text-sm font-medium">PageSpeed Score</p>
       </div>
-      <div>
-        <p class="text-3xl sm:text-4xl font-extrabold text-[#f97316] mb-1" style="font-family:'Sora',sans-serif;" data-count="2" data-prefix="<" data-suffix="h">0</p>
+      <!-- Stat 3 -->
+      <div class="text-center md:border-r md:border-white/[0.06]" data-animate data-delay="2">
+        <div class="w-10 h-10 mx-auto mb-3 rounded-xl bg-[#3b82f6]/10 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <p class="text-3xl sm:text-4xl font-extrabold text-white mb-1" style="font-family:'Sora',sans-serif;" data-count="2" data-prefix="<" data-suffix="h">0</p>
         <p class="text-white/50 text-sm font-medium">Tempo de resposta</p>
       </div>
-      <div>
-        <p class="text-3xl sm:text-4xl font-extrabold text-[#f97316] mb-1" style="font-family:'Sora',sans-serif;" data-count="0" data-suffix="€">0</p>
+      <!-- Stat 4 -->
+      <div class="text-center" data-animate data-delay="3">
+        <div class="w-10 h-10 mx-auto mb-3 rounded-xl bg-[#a855f7]/10 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <p class="text-3xl sm:text-4xl font-extrabold text-white mb-1" style="font-family:'Sora',sans-serif;" data-count="0" data-suffix="€">0</p>
         <p class="text-white/50 text-sm font-medium">Mensalidades</p>
       </div>
     </div>

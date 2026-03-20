@@ -18,6 +18,47 @@
   }
 }
 
+/* Hero entrance animations */
+.hero-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: hero-enter 0.7s ease-out forwards;
+}
+.hero-fade-1 { animation-delay: 0.1s; }
+.hero-fade-2 { animation-delay: 0.2s; }
+.hero-fade-3 { animation-delay: 0.35s; }
+.hero-fade-4 { animation-delay: 0.5s; }
+.hero-fade-5 { animation-delay: 0.65s; }
+.hero-fade-6 { animation-delay: 0.8s; }
+
+@keyframes hero-enter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero gradient accent text */
+.hero-gradient-text {
+  background: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Floating animation for mockup badges */
+.hero-float {
+  animation: hero-float 3s ease-in-out infinite;
+}
+.hero-float-delayed {
+  animation: hero-float 3s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
 /* Scroll-triggered fade-in animations with staggered delays */
 [data-animate] {
   opacity: 0;

@@ -9,13 +9,19 @@ interface Props {
 const { quote, name, business, initial } = Astro.props;
 ---
 
-<div class="flex flex-col bg-white border-l-4 border-[#f97316] rounded-r-2xl p-7 shadow-sm hover:shadow-md transition-shadow relative">
-  <!-- Decorative quote mark -->
-  <svg class="absolute top-4 right-4 opacity-10" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#f97316"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+<div class="flex flex-col bg-white rounded-2xl p-7 shadow-sm hover:shadow-lg transition-all duration-300 relative border border-slate-100">
+  <!-- Stars -->
+  <div class="flex gap-0.5 mb-4">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#f97316"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#f97316"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#f97316"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#f97316"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#f97316"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+  </div>
 
-  <p class="text-slate-600 leading-relaxed mb-6 flex-1 italic text-lg">"{quote}"</p>
-  <div class="flex items-center gap-3">
-    <div class="w-10 h-10 bg-[#f97316]/10 rounded-full flex items-center justify-center text-[#f97316] font-bold text-sm">{initial}</div>
+  <p class="text-slate-600 leading-relaxed mb-6 flex-1 text-base">"{quote}"</p>
+  <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+    <div class="w-10 h-10 bg-[#0f172a] rounded-full flex items-center justify-center text-[#f97316] font-bold text-sm" style="font-family:'Sora',sans-serif;">{initial}</div>
     <div>
       <p class="font-semibold text-[#0f172a] text-sm">{name}</p>
       <p class="text-slate-400 text-xs">{business}</p>
