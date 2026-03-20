@@ -13,65 +13,161 @@ const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20
     <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#f97316] opacity-5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/4 pointer-events-none"></div>
 
     <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-28 w-full">
-      <div class="max-w-3xl">
-        <!-- Badge -->
-        <div class="inline-flex items-center gap-2 bg-[#f97316]/10 border border-[#f97316]/20 text-[#f97316] text-sm font-medium px-4 py-1.5 rounded-full mb-8">
-          <span class="w-2 h-2 bg-[#f97316] rounded-full animate-pulse"></span>
-          Disponível para novos projetos · Cascais
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2 bg-[#f97316]/10 border border-[#f97316]/20 text-[#f97316] text-sm font-medium px-4 py-1.5 rounded-full mb-8">
+            <span class="w-2 h-2 bg-[#f97316] rounded-full animate-pulse"></span>
+            Disponível para novos projetos · Cascais
+          </div>
+
+          <!-- Headline -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6" style="font-family:'Sora',sans-serif;">
+            Websites que trazem<br/>
+            <span class="text-[#f97316]">clientes.</span> Não apenas visitas.
+          </h1>
+
+          <!-- Sub-headline -->
+          <p class="text-xl sm:text-2xl text-white/70 font-medium mb-10 leading-relaxed max-w-2xl">
+            Crio websites rápidos e modernos para negócios.<br class="hidden sm:block"/>
+            <span class="text-white/90">Pronto em 5 dias.</span>
+          </p>
+
+          <!-- Trust proof row -->
+          <div class="flex flex-wrap items-center gap-6 text-sm text-white/50 mb-10">
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Funciona no telemóvel
+            </div>
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Aparece no Google
+            </div>
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Entrega em 5 dias
+            </div>
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Suporte incluído
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href={WA_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-3 bg-[#25d366] hover:bg-[#1fbe5a] active:scale-95 text-white font-bold text-lg px-8 py-4 rounded-xl transition-all shadow-lg shadow-[#25d366]/25"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Pedir orçamento grátis
+            </a>
+            <a
+              href="#servicos"
+              class="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-white/40 text-white/80 hover:text-white font-semibold text-lg px-8 py-4 rounded-xl transition-all"
+            >
+              Ver serviços
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </a>
+          </div>
         </div>
 
-        <!-- Headline -->
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6" style="font-family:'Sora',sans-serif;">
-          Websites que trazem<br/>
-          <span class="text-[#f97316]">clientes.</span> Não apenas visitas.
-        </h1>
+        <!-- Hero visual: browser + phone mockup (desktop only) -->
+        <div class="hidden lg:flex items-center justify-center relative">
+          <!-- Browser window mockup -->
+          <div class="relative w-[380px] bg-[#1e293b] rounded-xl border border-white/10 shadow-2xl overflow-hidden">
+            <!-- Browser chrome -->
+            <div class="flex items-center gap-2 px-4 py-3 bg-[#0f172a] border-b border-white/10">
+              <div class="flex gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-red-500/70"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-500/70"></span>
+                <span class="w-3 h-3 rounded-full bg-green-500/70"></span>
+              </div>
+              <div class="flex-1 bg-white/5 rounded-md px-3 py-1 text-white/40 text-xs font-mono ml-2">o-seu-negocio.pt</div>
+            </div>
+            <!-- Browser content -->
+            <div class="p-5 space-y-4">
+              <!-- Nav bar -->
+              <div class="flex items-center justify-between">
+                <div class="h-3 bg-white/20 rounded w-20"></div>
+                <div class="flex gap-3">
+                  <div class="h-2 bg-white/10 rounded w-10"></div>
+                  <div class="h-2 bg-white/10 rounded w-10"></div>
+                  <div class="h-2 bg-white/10 rounded w-10"></div>
+                </div>
+              </div>
+              <!-- Hero area -->
+              <div class="bg-gradient-to-br from-[#f97316]/20 to-[#f97316]/5 rounded-lg p-5 space-y-3">
+                <div class="h-4 bg-white/25 rounded w-3/4"></div>
+                <div class="h-3 bg-white/15 rounded w-full"></div>
+                <div class="h-3 bg-white/15 rounded w-2/3"></div>
+                <div class="flex gap-2 mt-3">
+                  <div class="h-8 bg-[#f97316]/60 rounded-md w-24"></div>
+                  <div class="h-8 bg-white/10 rounded-md w-20 border border-white/20"></div>
+                </div>
+              </div>
+              <!-- Content blocks -->
+              <div class="grid grid-cols-3 gap-2">
+                <div class="bg-white/5 rounded-md p-3 space-y-2">
+                  <div class="w-6 h-6 bg-[#f97316]/20 rounded-md mx-auto"></div>
+                  <div class="h-2 bg-white/10 rounded w-full"></div>
+                  <div class="h-2 bg-white/10 rounded w-3/4 mx-auto"></div>
+                </div>
+                <div class="bg-white/5 rounded-md p-3 space-y-2">
+                  <div class="w-6 h-6 bg-[#25d366]/20 rounded-md mx-auto"></div>
+                  <div class="h-2 bg-white/10 rounded w-full"></div>
+                  <div class="h-2 bg-white/10 rounded w-3/4 mx-auto"></div>
+                </div>
+                <div class="bg-white/5 rounded-md p-3 space-y-2">
+                  <div class="w-6 h-6 bg-blue-500/20 rounded-md mx-auto"></div>
+                  <div class="h-2 bg-white/10 rounded w-full"></div>
+                  <div class="h-2 bg-white/10 rounded w-3/4 mx-auto"></div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <!-- Sub-headline -->
-        <p class="text-xl sm:text-2xl text-white/70 font-medium mb-10 leading-relaxed max-w-2xl">
-          Crio websites rápidos e modernos para negócios.<br class="hidden sm:block"/>
-          <span class="text-white/90">Pronto em 5 dias.</span>
-        </p>
+          <!-- Phone mockup overlapping bottom-right -->
+          <div class="absolute -bottom-6 -right-2 w-[140px] bg-[#1e293b] rounded-[24px] border-2 border-white/15 shadow-2xl overflow-hidden">
+            <!-- Phone notch -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-14 h-4 bg-[#1e293b] rounded-b-xl z-10"></div>
+            <!-- Phone screen -->
+            <div class="p-3 pt-5 space-y-2">
+              <div class="h-2.5 bg-white/20 rounded w-3/4"></div>
+              <div class="h-2 bg-white/10 rounded w-full"></div>
+              <div class="h-2 bg-white/10 rounded w-2/3"></div>
+              <div class="bg-[#f97316]/20 rounded-md p-2 mt-2 space-y-1.5">
+                <div class="h-2 bg-white/20 rounded w-full"></div>
+                <div class="h-2 bg-white/15 rounded w-4/5"></div>
+              </div>
+              <div class="flex gap-1 mt-2">
+                <div class="h-5 bg-[#25d366]/40 rounded w-1/2"></div>
+                <div class="h-5 bg-white/10 rounded w-1/2 border border-white/15"></div>
+              </div>
+              <div class="space-y-1.5 mt-2">
+                <div class="h-1.5 bg-white/8 rounded w-full"></div>
+                <div class="h-1.5 bg-white/8 rounded w-5/6"></div>
+                <div class="h-1.5 bg-white/8 rounded w-full"></div>
+              </div>
+            </div>
+          </div>
 
-        <!-- Trust proof row -->
-        <div class="flex flex-wrap items-center gap-6 text-sm text-white/50 mb-10">
-          <div class="flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Funciona no telemóvel
+          <!-- Performance badge floating top-right -->
+          <div class="absolute -top-4 right-4 bg-[#0f172a] border border-[#25d366]/40 rounded-xl px-4 py-3 shadow-lg">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full border-2 border-[#25d366] flex items-center justify-center">
+                <span class="text-[#25d366] font-bold text-sm" style="font-family:'Sora',sans-serif;">100</span>
+              </div>
+              <div>
+                <p class="text-white text-xs font-semibold">Performance</p>
+                <p class="text-[#25d366] text-[10px]">Google PageSpeed</p>
+              </div>
+            </div>
           </div>
-          <div class="flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Aparece no Google
-          </div>
-          <div class="flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Entrega em 5 dias
-          </div>
-          <div class="flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Suporte incluído
-          </div>
-        </div>
-
-        <!-- CTAs -->
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a
-            href={WA_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-3 bg-[#25d366] hover:bg-[#1fbe5a] active:scale-95 text-white font-bold text-lg px-8 py-4 rounded-xl transition-all shadow-lg shadow-[#25d366]/25"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            Pedir orçamento grátis
-          </a>
-          <a
-            href="#servicos"
-            class="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-white/40 text-white/80 hover:text-white font-semibold text-lg px-8 py-4 rounded-xl transition-all"
-          >
-            Ver serviços
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-          </a>
         </div>
       </div>
     </div>
@@ -305,6 +401,10 @@ const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20
               <p><span class="font-semibold text-slate-700">Solução:</span> App para iPhone e Android com gestão de aulas, pagamentos e perfil de alunos.</p>
               <p><span class="font-semibold text-slate-700">Resultado:</span> Disponível na App Store, utilizada por professores em Portugal.</p>
             </div>
+            <a href="https://apps.apple.com/pt/app/my-lessons-gerir-explicacoes/id6743955907" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[#f97316] text-sm font-semibold mt-4 hover:underline">
+              Ver na App Store
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
           </div>
         </div>
 
@@ -410,7 +510,7 @@ const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-500 font-bold text-sm">J</div>
             <div>
-              <p class="font-semibold text-[#0f172a] text-sm">Joao</p>
+              <p class="font-semibold text-[#0f172a] text-sm">João</p>
               <p class="text-slate-400 text-xs">Clínica, Estoril</p>
             </div>
           </div>
@@ -434,7 +534,6 @@ const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20
         </div>
 
       </div>
-      <p class="text-center text-slate-400 text-sm mt-8">* Testemunhos representativos — serão substituídos por feedback de clientes reais em breve.</p>
     </div>
   </section>
 
@@ -605,7 +704,7 @@ const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
           <h3 class="text-[#0f172a] text-2xl font-bold mb-2">Obrigado!</h3>
-          <p class="text-slate-500 mb-6">Respondo dentro de 24 horas.</p>
+          <p class="text-slate-500 mb-6">Respondo em menos de 2 horas.</p>
           <a
             href={WA_LINK}
             target="_blank"
