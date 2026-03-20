@@ -7,9 +7,12 @@ interface Props {
 }
 
 const {
-  title = 'Francisco Sousa — Websites para Negócios em Cascais',
-  description = 'Crio websites rápidos e modernos para negócios em Cascais. Pronto em 5 dias. Peça orçamento grátis.',
+  title = 'Criação de Websites em Cascais | Francisco Sousa',
+  description = 'Websites rápidos e modernos para negócios em Cascais. Páginas web a partir de €300. Entrega em 5 dias. Peça orçamento grátis.',
 } = Astro.props;
+
+const canonicalUrl = 'https://fsousa-dev.pages.dev';
+const ogImage = `${canonicalUrl}/og-image.png`;
 ---
 
 <!doctype html>
@@ -18,8 +21,52 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="pt_PT" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- LocalBusiness structured data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Francisco Sousa — Web Developer",
+      "description": "Criação de websites rápidos e modernos para negócios em Cascais e arredores.",
+      "url": "https://fsousa-dev.pages.dev",
+      "telephone": "+351939021876",
+      "email": "franciscobarrososousa@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cascais",
+        "addressRegion": "Lisboa",
+        "addressCountry": "PT"
+      },
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 38.6966,
+          "longitude": -9.4215
+        },
+        "geoRadius": "30000"
+      },
+      "priceRange": "€€",
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "sameAs": []
+    })} />
   </head>
   <body class="bg-white text-[#0f172a]">
 
