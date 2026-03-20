@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Orange accent circle -->
+  <circle cx="1050" cy="100" r="300" fill="#f97316" opacity="0.06"/>
+  <!-- Bottom accent line -->
+  <rect x="0" y="610" width="1200" height="20" fill="#f97316"/>
+  <!-- FS logo -->
+  <text x="80" y="120" font-family="Arial,Helvetica,sans-serif" font-size="48" font-weight="bold" fill="#f97316">FS</text>
+  <!-- Main headline -->
+  <text x="80" y="280" font-family="Arial,Helvetica,sans-serif" font-size="64" font-weight="bold" fill="white">Websites que trazem</text>
+  <text x="80" y="360" font-family="Arial,Helvetica,sans-serif" font-size="64" font-weight="bold" fill="#f97316">clientes.</text>
+  <!-- Subheadline -->
+  <text x="80" y="440" font-family="Arial,Helvetica,sans-serif" font-size="28" fill="white" opacity="0.7">Websites rápidos e modernos para negócios em Cascais</text>
+  <!-- Info badges -->
+  <text x="80" y="530" font-family="Arial,Helvetica,sans-serif" font-size="22" fill="white" opacity="0.5">A partir de €300  ·  Pronto em 5 dias  ·  Francisco Sousa</text>
+</svg>
