@@ -83,7 +83,7 @@ const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20
   </section>
 
   <!-- ===== SOCIAL PROOF STRIP ===== -->
-  <section class="bg-[#f8fafc] border-y border-slate-100 py-8">
+  <section data-animate class="bg-[#f8fafc] border-y border-slate-100 py-8">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-16 text-sm text-slate-500">
         <div class="flex items-center gap-2 font-medium">
@@ -107,7 +107,7 @@ const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20
   </section>
 
   <!-- ===== PROOF CARDS ===== -->
-  <section class="py-20 bg-white">
+  <section data-animate class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-12">
         <p class="text-[#f97316] font-semibold text-sm uppercase tracking-widest mb-3">Porquê escolher-me</p>
@@ -149,7 +149,7 @@ const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20
   </section>
 
   <!-- ===== SERVICES ===== -->
-  <section id="servicos" class="py-20 sm:py-28 bg-white">
+  <section id="servicos" data-animate class="py-20 sm:py-28 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-14">
         <p class="text-[#f97316] font-semibold text-sm uppercase tracking-widest mb-3">Serviços &amp; Preços</p>
@@ -269,7 +269,7 @@ const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20
   </section>
 
   <!-- ===== PORTFOLIO ===== -->
-  <section id="portfolio" class="py-20 bg-[#f8fafc]">
+  <section id="portfolio" data-animate class="py-20 bg-[#f8fafc]">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
       <p class="text-[#f97316] font-semibold text-sm uppercase tracking-widest mb-3">Portfolio</p>
       <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] mb-4" style="font-family:'Sora',sans-serif;">
@@ -279,13 +279,22 @@ const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
 
         <!-- Case 1: My Lessons -->
-        <div class="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-shadow flex flex-col">
-          <div class="h-48 bg-gradient-to-br from-[#0f172a] to-[#1e3a5f] flex items-center justify-center">
-            <div class="text-center">
-              <div class="w-16 h-16 bg-[#f97316]/20 rounded-2xl flex items-center justify-center mx-auto mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+        <div class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
+          <div class="h-56 bg-gradient-to-br from-[#0f172a] to-[#1e3a5f] flex items-center justify-center p-6">
+            <!-- Phone mockup -->
+            <div class="relative w-[120px] h-[210px] bg-[#1a1a2e] rounded-[20px] border-2 border-white/20 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
+              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-3 bg-[#1a1a2e] rounded-b-lg z-10"></div>
+              <div class="w-full h-full bg-gradient-to-b from-[#f97316]/20 to-[#0f172a] flex flex-col items-center justify-center gap-2 p-3">
+                <div class="w-10 h-10 bg-[#f97316]/30 rounded-xl flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+                </div>
+                <span class="text-white/80 text-[9px] font-semibold">My Lessons</span>
+                <div class="w-full space-y-1">
+                  <div class="h-1.5 bg-white/10 rounded-full w-full"></div>
+                  <div class="h-1.5 bg-white/10 rounded-full w-3/4"></div>
+                  <div class="h-1.5 bg-[#f97316]/20 rounded-full w-1/2"></div>
+                </div>
               </div>
-              <span class="text-white/60 text-xs font-medium">App Móvel</span>
             </div>
           </div>
           <div class="p-6 flex flex-col flex-1">
@@ -300,13 +309,22 @@ const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20
         </div>
 
         <!-- Case 2: Restaurant Website -->
-        <div class="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-shadow flex flex-col">
-          <div class="h-48 bg-gradient-to-br from-[#7c2d12] to-[#c2410c] flex items-center justify-center">
-            <div class="text-center">
-              <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+        <div class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
+          <div class="h-56 bg-gradient-to-br from-[#7c2d12] to-[#c2410c] flex items-center justify-center p-6">
+            <!-- Phone mockup -->
+            <div class="relative w-[120px] h-[210px] bg-[#1a1a2e] rounded-[20px] border-2 border-white/20 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
+              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-3 bg-[#1a1a2e] rounded-b-lg z-10"></div>
+              <div class="w-full h-full bg-gradient-to-b from-[#c2410c]/30 to-[#7c2d12] flex flex-col items-center justify-center gap-2 p-3">
+                <div class="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+                </div>
+                <span class="text-white/80 text-[9px] font-semibold">Restaurante</span>
+                <div class="w-full space-y-1">
+                  <div class="h-1.5 bg-white/10 rounded-full w-full"></div>
+                  <div class="h-1.5 bg-white/10 rounded-full w-2/3"></div>
+                  <div class="h-1.5 bg-white/15 rounded-full w-4/5"></div>
+                </div>
               </div>
-              <span class="text-white/60 text-xs font-medium">Website</span>
             </div>
           </div>
           <div class="p-6 flex flex-col flex-1">
@@ -321,13 +339,22 @@ const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20
         </div>
 
         <!-- Case 3: This Site -->
-        <div class="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-shadow flex flex-col">
-          <div class="h-48 bg-gradient-to-br from-[#064e3b] to-[#065f46] flex items-center justify-center">
-            <div class="text-center">
-              <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <div class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
+          <div class="h-56 bg-gradient-to-br from-[#064e3b] to-[#065f46] flex items-center justify-center p-6">
+            <!-- Phone mockup -->
+            <div class="relative w-[120px] h-[210px] bg-[#1a1a2e] rounded-[20px] border-2 border-white/20 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
+              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-3 bg-[#1a1a2e] rounded-b-lg z-10"></div>
+              <div class="w-full h-full bg-gradient-to-b from-[#065f46]/30 to-[#064e3b] flex flex-col items-center justify-center gap-2 p-3">
+                <div class="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <span class="text-white/80 text-[9px] font-semibold">fsousa-dev</span>
+                <div class="w-full space-y-1">
+                  <div class="h-1.5 bg-white/10 rounded-full w-full"></div>
+                  <div class="h-1.5 bg-white/10 rounded-full w-3/5"></div>
+                  <div class="h-1.5 bg-[#25d366]/20 rounded-full w-2/3"></div>
+                </div>
               </div>
-              <span class="text-white/60 text-xs font-medium">Website de Vendas</span>
             </div>
           </div>
           <div class="p-6 flex flex-col flex-1">
@@ -346,7 +373,7 @@ const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20
   </section>
 
   <!-- ===== TESTIMONIALS ===== -->
-  <section class="py-20 bg-white">
+  <section data-animate class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-12">
         <p class="text-[#f97316] font-semibold text-sm uppercase tracking-widest mb-3">Testemunhos</p>
@@ -413,7 +440,7 @@ const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20
   </section>
 
   <!-- ===== FAQ ===== -->
-  <section class="py-20 bg-[#f8fafc]">
+  <section data-animate class="py-20 bg-[#f8fafc]">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-12">
         <p class="text-[#f97316] font-semibold text-sm uppercase tracking-widest mb-3">FAQ</p>
@@ -460,7 +487,7 @@ const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20
   </section>
 
   <!-- ===== CONTACT SECTION ===== -->
-  <section id="contacto-form" class="py-20 bg-[#0f172a] text-white">
+  <section id="contacto-form" data-animate class="py-20 bg-[#0f172a] text-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-12">
         <p class="text-[#f97316] font-semibold text-sm uppercase tracking-widest mb-3">Contacto</p>
