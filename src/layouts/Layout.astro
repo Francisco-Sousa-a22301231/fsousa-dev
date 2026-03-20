@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = 'Criação de Websites em Cascais | Francisco Sousa',
-  description = 'Websites rápidos e modernos para negócios em Cascais. Páginas web a partir de €300. Entrega em 5 dias. Peça orçamento grátis.',
+  title = 'Criação de Websites | Francisco Sousa',
+  description = 'Websites rápidos e modernos para negócios. Páginas web a partir de €300. Entrega em 5 dias. Peça orçamento grátis.',
 } = Astro.props;
 
 const canonicalUrl = 'https://fsousa-dev.pages.dev';
@@ -17,11 +17,11 @@ const ogImage = `${canonicalUrl}/og-image.png`;
 const faqData = [
   { question: "Quanto custa por mês depois?", answer: "Zero. O alojamento do primeiro ano está incluído. Depois disso, o custo de alojamento é menos de €10/mês — e eu ajudo a configurar tudo. Não há mensalidades pelo meu trabalho, nunca." },
   { question: "Quanto tempo demora?", answer: "Uma página simples fica pronta em 3–5 dias úteis. Um website completo em 1–2 semanas." },
-  { question: "Já tenho Instagram, para quê um site?", answer: "O Instagram não aparece no Google. Quando alguém pesquisa \"clínica em Cascais\" ou \"restaurante perto de mim\", encontra quem tem site — não quem tem Instagram." },
+  { question: "Já tenho Instagram, para quê um site?", answer: "O Instagram não aparece no Google. Quando alguém pesquisa o seu tipo de negócio, encontra quem tem site — não quem tem Instagram." },
   { question: "Preciso de domínio e alojamento?", answer: "Eu trato de tudo. O custo de alojamento está incluído no primeiro ano." },
   { question: "Posso alterar o conteúdo sozinho?", answer: "Sim. Incluo um sistema simples para editar textos e imagens sem precisar de programar." },
   { question: "Posso ver exemplos antes de começar?", answer: "Sim. Antes de começar a construir, mostro-lhe um esboço do design para aprovação. Só avanço quando estiver satisfeito." },
-  { question: "Trabalha só em Cascais?", answer: "Trabalho remotamente para qualquer zona de Portugal. Reuniões por WhatsApp ou videochamada — funciona perfeitamente." },
+  { question: "Trabalha remotamente?", answer: "Sim. Trabalho remotamente para qualquer parte do mundo. Reuniões por WhatsApp ou videochamada — funciona perfeitamente." },
   { question: "E se não gostar do resultado?", answer: "Mostro-lhe o progresso a cada etapa. Só paga o segundo pagamento quando estiver 100% satisfeito. Sem risco." },
 ];
 ---
@@ -55,27 +55,12 @@ const faqData = [
     <!-- LocalBusiness structured data -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": "ProfessionalService",
       "name": "Francisco Sousa — Web Developer",
-      "description": "Criação de websites rápidos e modernos para negócios em Cascais e arredores.",
+      "description": "Criação de websites rápidos e modernos para negócios.",
       "url": "https://fsousa-dev.pages.dev",
       "telephone": "+351939021876",
       "email": "franciscobarrososousa@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Cascais",
-        "addressRegion": "Lisboa",
-        "addressCountry": "PT"
-      },
-      "areaServed": {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": 38.6966,
-          "longitude": -9.4215
-        },
-        "geoRadius": "30000"
-      },
       "priceRange": "€€",
       "openingHours": "Mo-Fr 09:00-18:00",
       "sameAs": ["https://github.com/Francisco-Sousa-a22301231"]
@@ -214,7 +199,7 @@ const faqData = [
               <span class="text-[#f97316] font-bold text-2xl" style="font-family:'Sora',sans-serif;">FS</span>
               <span class="font-semibold text-lg" style="font-family:'Sora',sans-serif;">Francisco Sousa</span>
             </div>
-            <p class="text-white/60 text-sm leading-relaxed">Websites rápidos e modernos para negócios locais. Baseado em Cascais, Portugal.</p>
+            <p class="text-white/60 text-sm leading-relaxed">Websites rápidos e modernos para negócios. Trabalho remotamente para todo o mundo.</p>
           </div>
           <!-- Links -->
           <div>
@@ -260,17 +245,16 @@ const faqData = [
               </li>
               <li class="flex items-center gap-2 text-white/60">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                  <circle cx="12" cy="10" r="3"/>
+                  <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
                 </svg>
-                Cascais, Portugal
+                100% Remoto
               </li>
             </ul>
           </div>
         </div>
         <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-white/40">
           <p>&copy; {new Date().getFullYear()} Francisco Sousa. Todos os direitos reservados.</p>
-          <p>Feito em Cascais com Astro e Tailwind CSS</p>
+          <p>Feito com Astro e Tailwind CSS</p>
         </div>
       </div>
     </footer>
