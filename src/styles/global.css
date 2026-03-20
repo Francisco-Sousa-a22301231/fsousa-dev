@@ -18,7 +18,7 @@
   }
 }
 
-/* Scroll-triggered fade-in animations */
+/* Scroll-triggered fade-in animations with staggered delays */
 [data-animate] {
   opacity: 0;
   transform: translateY(24px);
@@ -28,4 +28,41 @@
 [data-animate].is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+[data-animate][data-delay="1"] { transition-delay: 100ms; }
+[data-animate][data-delay="2"] { transition-delay: 200ms; }
+[data-animate][data-delay="3"] { transition-delay: 300ms; }
+[data-animate][data-delay="4"] { transition-delay: 400ms; }
+
+/* FAQ smooth accordion animation */
+details .faq-content {
+  animation: accordion-open 0.3s ease-out;
+}
+
+@keyframes accordion-open {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile bottom bar spacing */
+@media (max-width: 767px) {
+  footer {
+    padding-bottom: 5rem !important;
+  }
+}
+
+/* Scrollbar hide for horizontal scroll portfolio */
+.snap-x {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.snap-x::-webkit-scrollbar {
+  display: none;
 }

@@ -1,12 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import HeroBrowserMockup from '../components/HeroBrowserMockup.astro';
+import CredibilityBar from '../components/CredibilityBar.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import PricingCard from '../components/PricingCard.astro';
+import ProcessTimeline from '../components/ProcessTimeline.astro';
+import PortfolioCard from '../components/PortfolioCard.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import FaqItem from '../components/FaqItem.astro';
+import GuaranteeSection from '../components/GuaranteeSection.astro';
+import ContactForm from '../components/ContactForm.astro';
 
 const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20o%20seu%20site%20e%20estou%20interessado%20num%20or%C3%A7amento%20para%20o%20meu%20neg%C3%B3cio.";
+
+const faqs = [
+  { question: "Quanto custa por mês depois?", answer: "Zero. O alojamento do primeiro ano está incluído. Depois disso, o custo de alojamento é menos de €10/mês — e eu ajudo a configurar tudo. Não há mensalidades pelo meu trabalho, nunca." },
+  { question: "Quanto tempo demora?", answer: "Uma página simples fica pronta em 3–5 dias úteis. Um website completo em 1–2 semanas. Uso o Método Rápido — um processo testado para entregar rápido sem sacrificar qualidade." },
+  { question: "Já tenho Instagram, para quê um site?", answer: "O Instagram não aparece no Google. Quando alguém pesquisa \"clínica em Cascais\" ou \"restaurante perto de mim\", encontra quem tem site — não quem tem Instagram. Um website é o seu cartão de visita 24 horas por dia, 7 dias por semana." },
+  { question: "Preciso de domínio e alojamento?", answer: "Eu trato de tudo. O custo de alojamento está incluído no primeiro ano." },
+  { question: "Posso alterar o conteúdo sozinho?", answer: "Sim. Incluo um sistema simples para editar textos e imagens sem precisar de programar." },
+  { question: "Posso ver exemplos antes de começar?", answer: "Sim. Antes de começar a construir, mostro-lhe um esboço do design para aprovação. Só avanço quando estiver satisfeito." },
+  { question: "Trabalha só em Cascais?", answer: "Trabalho remotamente para qualquer zona de Portugal. Reuniões por WhatsApp ou videochamada — funciona perfeitamente." },
+  { question: "E se não gostar do resultado?", answer: "Mostro-lhe o progresso a cada etapa. Só paga o segundo pagamento quando estiver 100% satisfeito. Sem risco." },
+];
 ---
 
 <Layout>
   <!-- ===== HERO ===== -->
-  <section class="relative bg-[#0f172a] text-white overflow-hidden min-h-[90vh] flex items-center">
+  <section id="hero" class="relative bg-[#0f172a] text-white overflow-hidden min-h-[90vh] flex items-center">
     <!-- Background grid texture -->
     <div class="absolute inset-0 opacity-[0.03]" style="background-image: url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\");"></div>
     <!-- Orange gradient accent -->
@@ -23,33 +44,33 @@ const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20
 
           <!-- Headline -->
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6" style="font-family:'Sora',sans-serif;">
-            Websites que trazem<br/>
-            <span class="text-[#f97316]">clientes.</span> Não apenas visitas.
+            O seu negócio encontrado no Google<br/>
+            <span class="text-[#f97316]">em 5 dias.</span>
           </h1>
 
           <!-- Sub-headline -->
           <p class="text-xl sm:text-2xl text-white/70 font-medium mb-10 leading-relaxed max-w-2xl">
-            Crio websites rápidos e modernos para negócios.<br class="hidden sm:block"/>
-            <span class="text-white/90">Pronto em 5 dias.</span>
+            Um developer, não uma agência.<br class="hidden sm:block"/>
+            <span class="text-white/90">Preço fixo, sem mensalidades, sem surpresas.</span>
           </p>
 
           <!-- Trust proof row -->
-          <div class="flex flex-wrap items-center gap-6 text-sm text-white/50 mb-10">
+          <div class="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:gap-6 text-sm text-white/50 mb-10">
             <div class="flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Funciona no telemóvel
+              100/100 PageSpeed
             </div>
             <div class="flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Aparece no Google
+              SEO desde o dia 1
             </div>
             <div class="flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Entrega em 5 dias
+              3–5 dias, não semanas
             </div>
             <div class="flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              Suporte incluído
+              30 dias de suporte grátis
             </div>
           </div>
 
@@ -59,7 +80,7 @@ const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20
               href={WA_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-3 bg-[#25d366] hover:bg-[#1fbe5a] active:scale-95 text-white font-bold text-lg px-8 py-4 rounded-xl transition-all shadow-lg shadow-[#25d366]/25"
+              class="inline-flex items-center justify-center gap-3 bg-[#25d366] hover:bg-[#1fbe5a] active:scale-95 text-white font-bold text-lg px-8 py-4 rounded-xl transition-all shadow-lg shadow-[#25d366]/25 hover:-translate-y-0.5"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -76,287 +97,80 @@ const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20
           </div>
         </div>
 
-        <!-- Hero visual: browser + phone mockup (desktop only) -->
-        <div class="hidden lg:flex items-center justify-center relative">
-          <!-- Browser window mockup -->
-          <div class="relative w-[380px] bg-[#1e293b] rounded-xl border border-white/10 shadow-2xl overflow-hidden">
-            <!-- Browser chrome -->
-            <div class="flex items-center gap-2 px-4 py-3 bg-[#0f172a] border-b border-white/10">
-              <div class="flex gap-1.5">
-                <span class="w-3 h-3 rounded-full bg-red-500/70"></span>
-                <span class="w-3 h-3 rounded-full bg-yellow-500/70"></span>
-                <span class="w-3 h-3 rounded-full bg-green-500/70"></span>
-              </div>
-              <div class="flex-1 bg-white/5 rounded-md px-3 py-1 text-white/40 text-xs font-mono ml-2">o-seu-negocio.pt</div>
-            </div>
-            <!-- Browser content -->
-            <div class="p-5 space-y-4">
-              <!-- Nav bar -->
-              <div class="flex items-center justify-between">
-                <div class="h-3 bg-white/20 rounded w-20"></div>
-                <div class="flex gap-3">
-                  <div class="h-2 bg-white/10 rounded w-10"></div>
-                  <div class="h-2 bg-white/10 rounded w-10"></div>
-                  <div class="h-2 bg-white/10 rounded w-10"></div>
-                </div>
-              </div>
-              <!-- Hero area -->
-              <div class="bg-gradient-to-br from-[#f97316]/20 to-[#f97316]/5 rounded-lg p-5 space-y-3">
-                <div class="h-4 bg-white/25 rounded w-3/4"></div>
-                <div class="h-3 bg-white/15 rounded w-full"></div>
-                <div class="h-3 bg-white/15 rounded w-2/3"></div>
-                <div class="flex gap-2 mt-3">
-                  <div class="h-8 bg-[#f97316]/60 rounded-md w-24"></div>
-                  <div class="h-8 bg-white/10 rounded-md w-20 border border-white/20"></div>
-                </div>
-              </div>
-              <!-- Content blocks -->
-              <div class="grid grid-cols-3 gap-2">
-                <div class="bg-white/5 rounded-md p-3 space-y-2">
-                  <div class="w-6 h-6 bg-[#f97316]/20 rounded-md mx-auto"></div>
-                  <div class="h-2 bg-white/10 rounded w-full"></div>
-                  <div class="h-2 bg-white/10 rounded w-3/4 mx-auto"></div>
-                </div>
-                <div class="bg-white/5 rounded-md p-3 space-y-2">
-                  <div class="w-6 h-6 bg-[#25d366]/20 rounded-md mx-auto"></div>
-                  <div class="h-2 bg-white/10 rounded w-full"></div>
-                  <div class="h-2 bg-white/10 rounded w-3/4 mx-auto"></div>
-                </div>
-                <div class="bg-white/5 rounded-md p-3 space-y-2">
-                  <div class="w-6 h-6 bg-blue-500/20 rounded-md mx-auto"></div>
-                  <div class="h-2 bg-white/10 rounded w-full"></div>
-                  <div class="h-2 bg-white/10 rounded w-3/4 mx-auto"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Phone mockup overlapping bottom-right -->
-          <div class="absolute -bottom-6 -right-2 w-[140px] bg-[#1e293b] rounded-[24px] border-2 border-white/15 shadow-2xl overflow-hidden">
-            <!-- Phone notch -->
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-14 h-4 bg-[#1e293b] rounded-b-xl z-10"></div>
-            <!-- Phone screen -->
-            <div class="p-3 pt-5 space-y-2">
-              <div class="h-2.5 bg-white/20 rounded w-3/4"></div>
-              <div class="h-2 bg-white/10 rounded w-full"></div>
-              <div class="h-2 bg-white/10 rounded w-2/3"></div>
-              <div class="bg-[#f97316]/20 rounded-md p-2 mt-2 space-y-1.5">
-                <div class="h-2 bg-white/20 rounded w-full"></div>
-                <div class="h-2 bg-white/15 rounded w-4/5"></div>
-              </div>
-              <div class="flex gap-1 mt-2">
-                <div class="h-5 bg-[#25d366]/40 rounded w-1/2"></div>
-                <div class="h-5 bg-white/10 rounded w-1/2 border border-white/15"></div>
-              </div>
-              <div class="space-y-1.5 mt-2">
-                <div class="h-1.5 bg-white/8 rounded w-full"></div>
-                <div class="h-1.5 bg-white/8 rounded w-5/6"></div>
-                <div class="h-1.5 bg-white/8 rounded w-full"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Performance badge floating top-right -->
-          <div class="absolute -top-4 right-4 bg-[#0f172a] border border-[#25d366]/40 rounded-xl px-4 py-3 shadow-lg">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full border-2 border-[#25d366] flex items-center justify-center">
-                <span class="text-[#25d366] font-bold text-sm" style="font-family:'Sora',sans-serif;">100</span>
-              </div>
-              <div>
-                <p class="text-white text-xs font-semibold">Performance</p>
-                <p class="text-[#25d366] text-[10px]">Google PageSpeed</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-    </div>
-  </section>
-
-  <!-- ===== SOCIAL PROOF STRIP ===== -->
-  <section data-animate class="bg-[#f8fafc] border-y border-slate-100 py-8">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-16 text-sm text-slate-500">
-        <div class="flex items-center gap-2 font-medium">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#f97316"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          Carrega em menos de 2 segundos
-        </div>
-        <div class="flex items-center gap-2 font-medium">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
-          Perfeito no telemóvel
-        </div>
-        <div class="flex items-center gap-2 font-medium">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-          Aparece no Google
-        </div>
-        <div class="flex items-center gap-2 font-medium">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.36 11.9 19.79 19.79 0 0 1 1.27 3.3 2 2 0 0 1 3.24 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.1a16 16 0 0 0 6 6l.62-.58a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 16h.72z"/></svg>
-          Resposta em 2 horas
-        </div>
+        <!-- Hero visual: browser + phone mockup -->
+        <HeroBrowserMockup />
       </div>
     </div>
   </section>
 
-  <!-- ===== PROOF CARDS ===== -->
-  <section data-animate class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-12">
-        <p class="text-[#f97316] font-semibold text-sm uppercase tracking-widest mb-3">Porquê escolher-me</p>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a]">
-          Um website que trabalha por si,<br class="hidden sm:block"/> 24 horas por dia
-        </h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <!-- ===== CREDIBILITY BAR ===== -->
+  <CredibilityBar />
 
-        <!-- Card: Speed -->
-        <div class="flex flex-col items-center text-center p-8 rounded-2xl bg-[#f8fafc] border border-slate-100">
-          <div class="w-16 h-16 bg-[#f97316]/10 rounded-2xl flex items-center justify-center mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#f97316"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </div>
-          <h3 class="text-xl font-bold text-[#0f172a] mb-3">Rápido</h3>
-          <p class="text-slate-500 leading-relaxed">O seu site carrega em menos de 2 segundos. Quando um cliente pesquisa no Google, o seu site aparece primeiro que a concorrência.</p>
-        </div>
+  <!-- ===== EU VS AGENCIA ===== -->
+  <ComparisonTable waLink={WA_LINK} />
 
-        <!-- Card: Mobile -->
-        <div class="flex flex-col items-center text-center p-8 rounded-2xl bg-[#f8fafc] border border-slate-100">
-          <div class="w-16 h-16 bg-[#f97316]/10 rounded-2xl flex items-center justify-center mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
-          </div>
-          <h3 class="text-xl font-bold text-[#0f172a] mb-3">Perfeito no telemóvel</h3>
-          <p class="text-slate-500 leading-relaxed">70% das pessoas pesquisam no telemóvel. O seu site vai ser perfeito em qualquer ecrã.</p>
-        </div>
-
-        <!-- Card: Google -->
-        <div class="flex flex-col items-center text-center p-8 rounded-2xl bg-[#f8fafc] border border-slate-100">
-          <div class="w-16 h-16 bg-[#f97316]/10 rounded-2xl flex items-center justify-center mb-5">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-          </div>
-          <h3 class="text-xl font-bold text-[#0f172a] mb-3">Encontrado no Google</h3>
-          <p class="text-slate-500 leading-relaxed">SEO incluído desde o primeiro dia. Os seus clientes encontram-no quando pesquisam no Google.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SERVICES ===== -->
+  <!-- ===== SERVICES / PRICING ===== -->
   <section id="servicos" data-animate class="py-20 sm:py-28 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-14">
-        <p class="text-[#f97316] font-semibold text-sm uppercase tracking-widest mb-3">Serviços &amp; Preços</p>
+        <div class="inline-flex items-center gap-2 bg-[#f97316]/10 border border-[#f97316]/20 text-[#f97316] text-sm font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider">
+          Método Rápido
+        </div>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] mb-4" style="font-family:'Sora',sans-serif;">
           Escolha o que o seu negócio precisa
         </h2>
         <p class="text-slate-500 text-lg max-w-xl mx-auto">
-          Preços transparentes. Sem surpresas. Sem letras pequenas.
+          Preços transparentes. Sem surpresas. 50% para começar, 50% na entrega.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto items-stretch">
+        <PricingCard
+          title="Página Web Profissional"
+          description="Ideal para restaurantes, cabeleireiros, clínicas e lojas."
+          price="€300"
+          priceMax="€600"
+          priceNote="Pagamento único · Sem mensalidades"
+          features={[
+            "Design moderno e personalizado",
+            "Adaptado ao telemóvel",
+            "Formulário de contacto",
+            "Integração Google Maps",
+            "SEO básico",
+            "Entrega em 3–5 dias úteis",
+          ]}
+          ctaText="Quero um orçamento"
+          ctaLink={WA_LINK}
+          icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>'
+        />
 
-        <!-- Card 1: Página Web Profissional -->
-        <div class="relative flex flex-col bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
-          <div class="mb-6">
-            <div class="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-            </div>
-            <h3 class="text-xl font-bold text-[#0f172a] mb-2" style="font-family:'Sora',sans-serif;">Página Web Profissional</h3>
-            <p class="text-slate-500 text-sm">Ideal para restaurantes, cabeleireiros, clínicas e lojas.</p>
-          </div>
-          <div class="mb-6">
-            <div class="flex items-baseline gap-1">
-              <span class="text-3xl font-extrabold text-[#0f172a]" style="font-family:'Sora',sans-serif;">€300</span>
-              <span class="text-slate-400 text-sm">– €600</span>
-            </div>
-            <p class="text-slate-400 text-xs mt-1">Pagamento único · Sem mensalidades</p>
-          </div>
-          <ul class="space-y-3 mb-8 flex-1">
-            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Design moderno e personalizado</li>
-            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Adaptado ao telemóvel</li>
-            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Formulário de contacto</li>
-            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Integração Google Maps</li>
-            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>SEO básico</li>
-            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Entrega em 3–5 dias úteis</li>
-          </ul>
-          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 border-2 border-[#0f172a] text-[#0f172a] hover:bg-[#0f172a] hover:text-white font-semibold py-3 rounded-xl transition-all">
-            Quero um orçamento
-          </a>
-        </div>
-
-        <!-- Card 2: Website Completo (HIGHLIGHTED) -->
-        <div class="relative flex flex-col bg-[#0f172a] text-white rounded-2xl p-8 shadow-xl md:scale-105 ring-2 ring-[#f97316]">
-          <div class="absolute -top-4 left-1/2 -translate-x-1/2">
-            <span class="bg-[#f97316] text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
-              Mais popular
-            </span>
-          </div>
-          <div class="mb-6 mt-2">
-            <div class="w-12 h-12 bg-[#f97316]/10 rounded-xl flex items-center justify-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
-            </div>
-            <h3 class="text-xl font-bold mb-2" style="font-family:'Sora',sans-serif;">Website Completo</h3>
-            <p class="text-white/60 text-sm">Ideal para empresas com vários serviços, clínicas com equipa, escolas.</p>
-          </div>
-          <div class="mb-6">
-            <div class="flex items-baseline gap-1">
-              <span class="text-3xl font-extrabold" style="font-family:'Sora',sans-serif;">€800</span>
-              <span class="text-white/40 text-sm">– €1500</span>
-            </div>
-            <p class="text-white/40 text-xs mt-1">Pagamento único · Sem mensalidades</p>
-          </div>
-          <ul class="space-y-3 mb-8 flex-1">
-            <li class="flex items-start gap-2.5 text-sm text-white/80"><svg class="flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Tudo do plano anterior</li>
-            <li class="flex items-start gap-2.5 text-sm text-white/80"><svg class="flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>3–5 páginas (Home, Sobre, Serviços…)</li>
-            <li class="flex items-start gap-2.5 text-sm text-white/80"><svg class="flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Editar conteúdo sem programar</li>
-            <li class="flex items-start gap-2.5 text-sm text-white/80"><svg class="flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Integração redes sociais</li>
-            <li class="flex items-start gap-2.5 text-sm text-white/80"><svg class="flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Google Analytics incluído</li>
-            <li class="flex items-start gap-2.5 text-sm text-white/80"><svg class="flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>SEO completo + Google Business</li>
-            <li class="flex items-start gap-2.5 text-sm text-white/80"><svg class="flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Entrega em 1–2 semanas</li>
-          </ul>
-          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-[#f97316] hover:bg-[#ea6c0a] active:scale-95 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-[#f97316]/25">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Quero um orçamento
-          </a>
-        </div>
-
-        <!-- Card 3: Aplicação Móvel -->
-        <div class="relative flex flex-col bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
-          <div class="mb-6">
-            <div class="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
-            </div>
-            <h3 class="text-xl font-bold text-[#0f172a] mb-2" style="font-family:'Sora',sans-serif;">Aplicação Móvel</h3>
-            <p class="text-slate-500 text-sm">Ideal para negócios que precisam de app iOS e Android.</p>
-          </div>
-          <div class="mb-6">
-            <div class="flex items-baseline gap-1">
-              <span class="text-3xl font-extrabold text-[#0f172a]" style="font-family:'Sora',sans-serif;">€2000</span>
-              <span class="text-slate-400 text-sm">+</span>
-            </div>
-            <p class="text-slate-400 text-xs mt-1">Sob consulta · Projeto à medida</p>
-          </div>
-          <ul class="space-y-3 mb-8 flex-1">
-            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>App personalizada</li>
-            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Funciona em iPhone e Android</li>
-            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Painel de administração</li>
-            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Design exclusivo</li>
-            <li class="flex items-start gap-2.5 text-sm text-slate-600"><svg class="flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Timeline e preço sob consulta</li>
-          </ul>
-          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 border-2 border-[#0f172a] text-[#0f172a] hover:bg-[#0f172a] hover:text-white font-semibold py-3 rounded-xl transition-all">
-            Falar sobre o meu projeto
-          </a>
-        </div>
+        <PricingCard
+          title="Website Completo"
+          description="Ideal para empresas com vários serviços, clínicas com equipa, escolas."
+          price="€800"
+          priceMax="€1500"
+          priceNote="Pagamento único · Sem mensalidades"
+          highlighted={true}
+          features={[
+            "Tudo do plano anterior",
+            "3–5 páginas (Home, Sobre, Serviços…)",
+            "Editar conteúdo sem programar",
+            "Integração redes sociais",
+            "Google Analytics incluído",
+            "SEO completo + Google Business",
+            "Entrega em 1–2 semanas",
+          ]}
+          ctaText="Quero um orçamento"
+          ctaLink={WA_LINK}
+          icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>'
+        />
       </div>
 
       <!-- Bottom CTA strip -->
       <div class="mt-12 bg-[#f8fafc] border border-slate-100 rounded-2xl p-6 sm:p-8 text-center">
-        <p class="text-slate-600 text-base mb-4">Não tem a certeza qual é o certo para si? <span class="font-semibold text-[#0f172a]">Envie uma mensagem — é gratuito e sem compromisso.</span></p>
-        <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#25d366] hover:bg-[#1fbe5a] text-white font-bold px-8 py-3.5 rounded-xl transition-all shadow-md shadow-[#25d366]/20 active:scale-95">
+        <p class="text-slate-600 text-base mb-2">Precisa de app móvel, e-commerce, ou algo diferente?</p>
+        <p class="font-semibold text-[#0f172a] mb-4">Envie uma mensagem — é gratuito e sem compromisso.</p>
+        <a href={WA_LINK} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-[#25d366] hover:bg-[#1fbe5a] text-white font-bold px-8 py-3.5 rounded-xl transition-all shadow-md shadow-[#25d366]/20 active:scale-95 hover:-translate-y-0.5">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Falar no WhatsApp agora
         </a>
@@ -364,115 +178,50 @@ const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20
     </div>
   </section>
 
+  <!-- ===== PROCESS TIMELINE ===== -->
+  <ProcessTimeline />
+
   <!-- ===== PORTFOLIO ===== -->
-  <section id="portfolio" data-animate class="py-20 bg-[#f8fafc]">
+  <section id="portfolio" data-animate class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
       <p class="text-[#f97316] font-semibold text-sm uppercase tracking-widest mb-3">Portfolio</p>
       <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] mb-4" style="font-family:'Sora',sans-serif;">
-        Trabalhos recentes
+        Resultados reais para negócios como o seu
       </h2>
-      <p class="text-slate-500 text-lg mb-12">Projetos reais, resultados reais.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+      <p class="text-slate-500 text-lg mb-12">Projetos reais, métricas reais.</p>
 
-        <!-- Case 1: My Lessons -->
-        <div class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
-          <div class="h-56 bg-gradient-to-br from-[#0f172a] to-[#1e3a5f] flex items-center justify-center p-6">
-            <!-- Phone mockup -->
-            <div class="relative w-[120px] h-[210px] bg-[#1a1a2e] rounded-[20px] border-2 border-white/20 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
-              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-3 bg-[#1a1a2e] rounded-b-lg z-10"></div>
-              <div class="w-full h-full bg-gradient-to-b from-[#f97316]/20 to-[#0f172a] flex flex-col items-center justify-center gap-2 p-3">
-                <div class="w-10 h-10 bg-[#f97316]/30 rounded-xl flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                </div>
-                <span class="text-white/80 text-[9px] font-semibold">My Lessons</span>
-                <div class="w-full space-y-1">
-                  <div class="h-1.5 bg-white/10 rounded-full w-full"></div>
-                  <div class="h-1.5 bg-white/10 rounded-full w-3/4"></div>
-                  <div class="h-1.5 bg-[#f97316]/20 rounded-full w-1/2"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="p-6 flex flex-col flex-1">
-            <span class="text-[#f97316] text-xs font-bold uppercase tracking-wider mb-2">App educativa na App Store</span>
-            <h3 class="font-bold text-[#0f172a] text-lg mb-3">My Lessons</h3>
-            <div class="space-y-2 text-sm text-slate-500 flex-1">
-              <p><span class="font-semibold text-slate-700">Problema:</span> Professores de aulas particulares não tinham forma de gerir alunos e pagamentos.</p>
-              <p><span class="font-semibold text-slate-700">Solução:</span> App para iPhone e Android com gestão de aulas, pagamentos e perfil de alunos.</p>
-              <p><span class="font-semibold text-slate-700">Resultado:</span> Disponível na App Store, utilizada por professores em Portugal.</p>
-            </div>
-            <a href="https://apps.apple.com/pt/app/my-lessons-gerir-explicacoes/id6743955907" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[#f97316] text-sm font-semibold mt-4 hover:underline">
-              Ver na App Store
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-            </a>
-          </div>
-        </div>
+      <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 text-left pb-4 sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-2 max-w-3xl mx-auto">
+        <PortfolioCard
+          gradientFrom="#0f172a"
+          gradientTo="#1e3a5f"
+          iconSvg='<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>'
+          appName="My Lessons"
+          tag="App educativa na App Store"
+          title="My Lessons"
+          problem="Professores de aulas particulares não tinham forma de gerir alunos e pagamentos."
+          solution="App para iPhone e Android com gestão de aulas, pagamentos e perfil de alunos."
+          result="Disponível na App Store. Utilizada por professores em Portugal. Performance 100/100."
+          link="https://apps.apple.com/pt/app/my-lessons-gerir-explicacoes/id6743955907"
+          linkText="Ver na App Store"
+        />
 
-        <!-- Case 2: Restaurant Website -->
-        <div class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
-          <div class="h-56 bg-gradient-to-br from-[#7c2d12] to-[#c2410c] flex items-center justify-center p-6">
-            <!-- Phone mockup -->
-            <div class="relative w-[120px] h-[210px] bg-[#1a1a2e] rounded-[20px] border-2 border-white/20 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
-              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-3 bg-[#1a1a2e] rounded-b-lg z-10"></div>
-              <div class="w-full h-full bg-gradient-to-b from-[#c2410c]/30 to-[#7c2d12] flex flex-col items-center justify-center gap-2 p-3">
-                <div class="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
-                </div>
-                <span class="text-white/80 text-[9px] font-semibold">Restaurante</span>
-                <div class="w-full space-y-1">
-                  <div class="h-1.5 bg-white/10 rounded-full w-full"></div>
-                  <div class="h-1.5 bg-white/10 rounded-full w-2/3"></div>
-                  <div class="h-1.5 bg-white/15 rounded-full w-4/5"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="p-6 flex flex-col flex-1">
-            <span class="text-[#f97316] text-xs font-bold uppercase tracking-wider mb-2">Restaurante</span>
-            <h3 class="font-bold text-[#0f172a] text-lg mb-3">Website com menu digital e reservas</h3>
-            <div class="space-y-2 text-sm text-slate-500 flex-1">
-              <p><span class="font-semibold text-slate-700">Problema:</span> Restaurante sem presença online, perdia clientes para a concorrência no Google.</p>
-              <p><span class="font-semibold text-slate-700">Solução:</span> Website moderno com menu digital, reservas online, integrado com Google Maps.</p>
-              <p><span class="font-semibold text-slate-700">Resultado:</span> Site rápido, perfeito no telemóvel, encontrado no Google.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Case 3: This Site -->
-        <div class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col">
-          <div class="h-56 bg-gradient-to-br from-[#064e3b] to-[#065f46] flex items-center justify-center p-6">
-            <!-- Phone mockup -->
-            <div class="relative w-[120px] h-[210px] bg-[#1a1a2e] rounded-[20px] border-2 border-white/20 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
-              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-3 bg-[#1a1a2e] rounded-b-lg z-10"></div>
-              <div class="w-full h-full bg-gradient-to-b from-[#065f46]/30 to-[#064e3b] flex flex-col items-center justify-center gap-2 p-3">
-                <div class="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                </div>
-                <span class="text-white/80 text-[9px] font-semibold">fsousa-dev</span>
-                <div class="w-full space-y-1">
-                  <div class="h-1.5 bg-white/10 rounded-full w-full"></div>
-                  <div class="h-1.5 bg-white/10 rounded-full w-3/5"></div>
-                  <div class="h-1.5 bg-[#25d366]/20 rounded-full w-2/3"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="p-6 flex flex-col flex-1">
-            <span class="text-[#f97316] text-xs font-bold uppercase tracking-wider mb-2">Este website que está a ver agora</span>
-            <h3 class="font-bold text-[#0f172a] text-lg mb-3">A prova do meu trabalho</h3>
-            <div class="space-y-2 text-sm text-slate-500 flex-1">
-              <p class="text-slate-700 font-medium italic">"Carrega em menos de 1 segundo. Funciona perfeitamente no telemóvel. Isto é exactamente o que construo para si."</p>
-              <p><span class="font-semibold text-slate-700">Resultado:</span> Carrega em menos de 1 segundo, visível no Google, contacto direto por WhatsApp.</p>
-            </div>
-          </div>
-        </div>
-
+        <PortfolioCard
+          gradientFrom="#7c2d12"
+          gradientTo="#c2410c"
+          iconSvg='<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>'
+          appName="Restaurante"
+          tag="Restaurante"
+          title="Website com menu digital e reservas"
+          problem="Restaurante sem presença online, perdia clientes para a concorrência no Google."
+          solution="Website moderno com menu digital, reservas online, integrado com Google Maps."
+          result="PageSpeed 100/100. Primeira página do Google em 2 semanas para a zona."
+        />
       </div>
     </div>
   </section>
 
   <!-- ===== TESTIMONIALS ===== -->
-  <section data-animate class="py-20 bg-white">
+  <section data-animate class="py-20 bg-[#f8fafc]">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-12">
         <p class="text-[#f97316] font-semibold text-sm uppercase tracking-widest mb-3">Testemunhos</p>
@@ -481,61 +230,30 @@ const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20
         </h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-        <!-- Testimonial 1 -->
-        <div class="flex flex-col bg-[#f8fafc] border border-slate-100 rounded-2xl p-7">
-          <div class="flex gap-1 mb-4">
-            {[...Array(5)].map(() => (
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#f97316"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            ))}
-          </div>
-          <p class="text-slate-600 leading-relaxed mb-6 flex-1">"Não percebia nada de websites. O Francisco tratou de tudo em 5 dias."</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-500 font-bold text-sm">M</div>
-            <div>
-              <p class="font-semibold text-[#0f172a] text-sm">Maria</p>
-              <p class="text-slate-400 text-xs">Restaurante, Cascais</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 2 -->
-        <div class="flex flex-col bg-[#f8fafc] border border-slate-100 rounded-2xl p-7">
-          <div class="flex gap-1 mb-4">
-            {[...Array(5)].map(() => (
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#f97316"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            ))}
-          </div>
-          <p class="text-slate-600 leading-relaxed mb-6 flex-1">"O meu site antigo não funcionava no telemóvel. Agora recebo contactos todos os dias."</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-500 font-bold text-sm">J</div>
-            <div>
-              <p class="font-semibold text-[#0f172a] text-sm">João</p>
-              <p class="text-slate-400 text-xs">Clínica, Estoril</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 3 -->
-        <div class="flex flex-col bg-[#f8fafc] border border-slate-100 rounded-2xl p-7">
-          <div class="flex gap-1 mb-4">
-            {[...Array(5)].map(() => (
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#f97316"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            ))}
-          </div>
-          <p class="text-slate-600 leading-relaxed mb-6 flex-1">"Preço justo, trabalho rápido, resultado excelente."</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-500 font-bold text-sm">A</div>
-            <div>
-              <p class="font-semibold text-[#0f172a] text-sm">Ana</p>
-              <p class="text-slate-400 text-xs">Cabeleireiro, Parede</p>
-            </div>
-          </div>
-        </div>
-
+        <TestimonialCard
+          quote="Não percebia nada de websites. O Francisco tratou de tudo em 5 dias."
+          name="Maria"
+          business="Restaurante, Cascais"
+          initial="M"
+        />
+        <TestimonialCard
+          quote="O meu site antigo não funcionava no telemóvel. Agora recebo contactos todos os dias."
+          name="João"
+          business="Clínica, Estoril"
+          initial="J"
+        />
+        <TestimonialCard
+          quote="Preço justo, trabalho rápido, resultado excelente."
+          name="Ana"
+          business="Cabeleireiro, Parede"
+          initial="A"
+        />
       </div>
     </div>
   </section>
+
+  <!-- ===== GUARANTEE ===== -->
+  <GuaranteeSection />
 
   <!-- ===== FAQ ===== -->
   <section data-animate class="py-20 bg-[#f8fafc]">
@@ -547,227 +265,27 @@ const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20
         </h2>
       </div>
       <div class="space-y-4">
-
-        <details class="group bg-white border border-slate-200 rounded-2xl overflow-hidden">
-          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer font-semibold text-[#0f172a] text-lg list-none">
-            Já tenho Instagram, para quê um site?
-            <svg class="flex-shrink-0 w-5 h-5 text-[#f97316] transition-transform group-open:rotate-45" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-          </summary>
-          <p class="px-6 pb-6 text-slate-500 leading-relaxed">O Instagram não aparece no Google. Quando alguém pesquisa "clínica em Cascais" ou "restaurante perto de mim", encontra quem tem site — não quem tem Instagram. Um website é o seu cartão de visita 24 horas por dia, 7 dias por semana.</p>
-        </details>
-
-        <details class="group bg-white border border-slate-200 rounded-2xl overflow-hidden">
-          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer font-semibold text-[#0f172a] text-lg list-none">
-            Preciso de domínio e alojamento?
-            <svg class="flex-shrink-0 w-5 h-5 text-[#f97316] transition-transform group-open:rotate-45" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-          </summary>
-          <p class="px-6 pb-6 text-slate-500 leading-relaxed">Eu trato de tudo. O custo de alojamento está incluído no primeiro ano.</p>
-        </details>
-
-        <details class="group bg-white border border-slate-200 rounded-2xl overflow-hidden">
-          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer font-semibold text-[#0f172a] text-lg list-none">
-            Posso alterar o conteúdo sozinho?
-            <svg class="flex-shrink-0 w-5 h-5 text-[#f97316] transition-transform group-open:rotate-45" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-          </summary>
-          <p class="px-6 pb-6 text-slate-500 leading-relaxed">Sim. Incluo um sistema simples para editar textos e imagens sem precisar de programar.</p>
-        </details>
-
-        <details class="group bg-white border border-slate-200 rounded-2xl overflow-hidden">
-          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer font-semibold text-[#0f172a] text-lg list-none">
-            Quanto tempo demora?
-            <svg class="flex-shrink-0 w-5 h-5 text-[#f97316] transition-transform group-open:rotate-45" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-          </summary>
-          <p class="px-6 pb-6 text-slate-500 leading-relaxed">Uma página simples fica pronta em 3–5 dias. Um website completo em 1–2 semanas.</p>
-        </details>
-
-        <details class="group bg-white border border-slate-200 rounded-2xl overflow-hidden">
-          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer font-semibold text-[#0f172a] text-lg list-none">
-            E se não gostar do resultado?
-            <svg class="flex-shrink-0 w-5 h-5 text-[#f97316] transition-transform group-open:rotate-45" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
-          </summary>
-          <p class="px-6 pb-6 text-slate-500 leading-relaxed">Mostro-lhe o progresso a cada etapa. Só avanço quando estiver satisfeito.</p>
-        </details>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CONTACT SECTION ===== -->
-  <section id="contacto-form" data-animate class="py-20 bg-[#0f172a] text-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-12">
-        <p class="text-[#f97316] font-semibold text-sm uppercase tracking-widest mb-3">Contacto</p>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold">
-          Pronto para ter mais clientes?
-        </h2>
-        <p class="text-white/60 text-lg mt-4">Respondo em menos de 2 horas. Sem compromisso.</p>
+        {faqs.map(faq => (
+          <FaqItem question={faq.question} answer={faq.answer} />
+        ))}
       </div>
 
-      <!-- Primary CTA: WhatsApp — biggest element -->
-      <div class="text-center mb-14">
+      <!-- FAQ bottom CTA -->
+      <div class="mt-10 text-center">
+        <p class="text-slate-500 mb-4">Tem outra pergunta?</p>
         <a
           href={WA_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-4 bg-[#25d366] hover:bg-[#1fbe5a] active:scale-95 text-white font-bold text-xl sm:text-2xl px-10 sm:px-14 py-5 sm:py-6 rounded-2xl transition-all shadow-xl shadow-[#25d366]/30"
+          class="inline-flex items-center gap-2 bg-[#25d366] hover:bg-[#1fbe5a] text-white font-bold px-6 py-3 rounded-xl transition-all shadow-md shadow-[#25d366]/20 active:scale-95 hover:-translate-y-0.5"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-          Falar no WhatsApp agora
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Perguntar no WhatsApp
         </a>
-        <p class="text-white/40 text-sm mt-4">ou preencha o formulário abaixo</p>
-      </div>
-
-      <!-- Contact form -->
-      <div id="form-wrapper" class="bg-white rounded-2xl p-8 max-w-2xl mx-auto">
-        <!-- Form -->
-        <div id="form-container">
-          <h3 class="text-[#0f172a] text-xl font-bold mb-6">Envie uma mensagem</h3>
-          <form
-            id="contact-form"
-            action="https://formsubmit.co/franciscobarrososousa@gmail.com"
-            method="POST"
-            class="space-y-4"
-          >
-            <input type="hidden" name="_subject" value="Novo contacto — fsousa.dev" />
-            <input type="hidden" name="_captcha" value="false" />
-
-            <div>
-              <label for="nome" class="block text-sm font-semibold text-slate-700 mb-1.5">Nome</label>
-              <input
-                id="nome"
-                type="text"
-                name="nome"
-                required
-                placeholder="O seu nome"
-                class="w-full border border-slate-200 rounded-xl px-4 py-3 text-[#0f172a] text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#f97316] focus:border-transparent transition"
-              />
-            </div>
-
-            <div>
-              <label for="telefone" class="block text-sm font-semibold text-slate-700 mb-1.5">Telemóvel</label>
-              <input
-                id="telefone"
-                type="tel"
-                name="telefone"
-                required
-                placeholder="+351 9XX XXX XXX"
-                class="w-full border border-slate-200 rounded-xl px-4 py-3 text-[#0f172a] text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#f97316] focus:border-transparent transition"
-              />
-            </div>
-
-            <div>
-              <label for="email" class="block text-sm font-semibold text-slate-700 mb-1.5">Email <span class="text-slate-400 font-normal">(opcional)</span></label>
-              <input
-                id="email"
-                type="email"
-                name="email"
-                placeholder="o-seu@email.com"
-                class="w-full border border-slate-200 rounded-xl px-4 py-3 text-[#0f172a] text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#f97316] focus:border-transparent transition"
-              />
-            </div>
-
-            <div>
-              <label for="mensagem" class="block text-sm font-semibold text-slate-700 mb-1.5">Mensagem</label>
-              <textarea
-                id="mensagem"
-                name="mensagem"
-                rows="4"
-                placeholder="Olá Francisco, gostava de saber mais sobre..."
-                class="w-full border border-slate-200 rounded-xl px-4 py-3 text-[#0f172a] text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#f97316] focus:border-transparent transition resize-none"
-              ></textarea>
-            </div>
-
-            <button
-              id="submit-btn"
-              type="submit"
-              class="w-full bg-[#f97316] hover:bg-[#ea6c0a] active:scale-95 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-[#f97316]/20"
-            >
-              Enviar Mensagem
-            </button>
-          </form>
-
-          <!-- Below form info -->
-          <div class="mt-6 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-500">
-            <a href="mailto:franciscobarrososousa@gmail.com" class="hover:text-[#f97316] transition-colors">franciscobarrososousa@gmail.com</a>
-            <span class="flex items-center gap-1.5">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              Cascais, Portugal
-            </span>
-          </div>
-        </div>
-
-        <!-- Success state (hidden by default) -->
-        <div id="form-success" class="hidden text-center py-8">
-          <div class="w-16 h-16 bg-[#25d366]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <h3 class="text-[#0f172a] text-2xl font-bold mb-2">Obrigado!</h3>
-          <p class="text-slate-500 mb-6">Respondo em menos de 2 horas.</p>
-          <a
-            href={WA_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 bg-[#25d366] hover:bg-[#1fbe5a] text-white font-bold px-6 py-3 rounded-xl transition-all"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Resposta mais rápida no WhatsApp
-          </a>
-        </div>
-
-        <!-- Error state (hidden by default) -->
-        <div id="form-error" class="hidden text-center py-8">
-          <div class="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg>
-          </div>
-          <h3 class="text-[#0f172a] text-2xl font-bold mb-2">Algo correu mal</h3>
-          <p class="text-slate-500 mb-6">Tente por WhatsApp — respondo em minutos.</p>
-          <a
-            href={WA_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 bg-[#25d366] hover:bg-[#1fbe5a] text-white font-bold px-6 py-3 rounded-xl transition-all"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Falar no WhatsApp
-          </a>
-        </div>
       </div>
     </div>
   </section>
 
-  <script>
-    const form = document.getElementById('contact-form') as HTMLFormElement;
-    const formContainer = document.getElementById('form-container')!;
-    const formSuccess = document.getElementById('form-success')!;
-    const formError = document.getElementById('form-error')!;
-    const submitBtn = document.getElementById('submit-btn')!;
-
-    form?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      submitBtn.textContent = 'A enviar…';
-      submitBtn.setAttribute('disabled', 'true');
-
-      try {
-        const data = new FormData(form);
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' },
-        });
-
-        if (res.ok) {
-          formContainer.classList.add('hidden');
-          formSuccess.classList.remove('hidden');
-        } else {
-          formContainer.classList.add('hidden');
-          formError.classList.remove('hidden');
-        }
-      } catch {
-        formContainer.classList.add('hidden');
-        formError.classList.remove('hidden');
-      }
-    });
-  </script>
+  <!-- ===== CONTACT ===== -->
+  <ContactForm waLink={WA_LINK} />
 </Layout>

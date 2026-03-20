@@ -1,0 +1,52 @@
+---
+interface Props {
+  gradientFrom: string;
+  gradientTo: string;
+  iconSvg: string;
+  appName: string;
+  tag: string;
+  title: string;
+  problem: string;
+  solution: string;
+  result: string;
+  link?: string;
+  linkText?: string;
+}
+
+const { gradientFrom, gradientTo, iconSvg, appName, tag, title, problem, solution, result, link, linkText } = Astro.props;
+---
+
+<div class="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col min-w-[85vw] sm:min-w-0 snap-start">
+  <div class="h-56 flex items-center justify-center p-6 overflow-hidden" style={`background: linear-gradient(to bottom right, ${gradientFrom}, ${gradientTo})`}>
+    <!-- Phone mockup -->
+    <div class="relative w-[120px] h-[210px] bg-[#1a1a2e] rounded-[20px] border-2 border-white/20 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-3 bg-[#1a1a2e] rounded-b-lg z-10"></div>
+      <div class="w-full h-full flex flex-col items-center justify-center gap-2 p-3 transition-transform duration-700 group-hover:-translate-y-2" style={`background: linear-gradient(to bottom, ${gradientTo}40, ${gradientFrom})`}>
+        <div class="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center">
+          <Fragment set:html={iconSvg} />
+        </div>
+        <span class="text-white/80 text-[9px] font-semibold">{appName}</span>
+        <div class="w-full space-y-1">
+          <div class="h-1.5 bg-white/10 rounded-full w-full"></div>
+          <div class="h-1.5 bg-white/10 rounded-full w-3/4"></div>
+          <div class="h-1.5 bg-white/15 rounded-full w-1/2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p-6 flex flex-col flex-1">
+    <span class="text-[#f97316] text-xs font-bold uppercase tracking-wider mb-2">{tag}</span>
+    <h3 class="font-bold text-[#0f172a] text-lg mb-3">{title}</h3>
+    <div class="space-y-2 text-sm text-slate-500 flex-1">
+      <p><span class="font-semibold text-slate-700">Problema:</span> {problem}</p>
+      <p><span class="font-semibold text-slate-700">Solução:</span> {solution}</p>
+      <p><span class="font-semibold text-slate-700">Resultado:</span> {result}</p>
+    </div>
+    {link && (
+      <a href={link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[#f97316] text-sm font-semibold mt-4 hover:underline">
+        {linkText || "Ver projeto"}
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+    )}
+  </div>
+</div>
