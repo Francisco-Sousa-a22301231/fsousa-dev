@@ -16,14 +16,14 @@ const { title, description, price, priceMax, priceNote, features, highlighted = 
 ---
 
 <div class:list={[
-  "relative flex flex-col rounded-2xl p-8 transition-all duration-300",
+  "pricing-card relative flex flex-col rounded-2xl p-8 transition-all duration-300",
   highlighted
     ? "bg-[#0f172a] text-white shadow-2xl shadow-[#0f172a]/30 ring-2 ring-[#f97316]/60 md:scale-105 hover:scale-[1.07] order-first md:order-none"
     : "bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-slate-300 hover:scale-[1.02]"
 ]}>
   {highlighted && (
     <div class="absolute -top-4 left-1/2 -translate-x-1/2">
-      <span class="bg-gradient-to-r from-[#f97316] to-[#f59e0b] text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg shadow-[#f97316]/25">
+      <span class="badge-shimmer bg-gradient-to-r from-[#f97316] to-[#f59e0b] text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg shadow-[#f97316]/25">
         Mais popular
       </span>
     </div>
@@ -83,3 +83,29 @@ const { title, description, price, priceMax, priceNote, features, highlighted = 
     </p>
   )}
 </div>
+
+<style>
+  .badge-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  .badge-shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 3s ease-in-out infinite;
+    animation-delay: 1.5s;
+  }
+  @keyframes shimmer {
+    0% { left: -100%; }
+    40% { left: 100%; }
+    100% { left: 100%; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .badge-shimmer::after { animation: none !important; }
+  }
+</style>

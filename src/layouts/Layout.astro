@@ -31,8 +31,7 @@ const faqData = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Fonts self-hosted via @fontsource — no external preconnects needed -->
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -61,6 +60,11 @@ const faqData = [
       "url": "https://fsousa-dev.pages.dev",
       "telephone": "+351939021876",
       "email": "franciscobarrososousa@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cascais",
+        "addressCountry": "PT"
+      },
       "priceRange": "€€",
       "openingHours": "Mo-Fr 09:00-18:00",
       "sameAs": ["https://github.com/Francisco-Sousa-a22301231"]
@@ -80,10 +84,10 @@ const faqData = [
       }))
     })} />
   </head>
-  <body class="bg-white text-[#0f172a]">
+  <body class="bg-[#0f172a] text-[#0f172a]">
 
     <!-- NAVBAR -->
-    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-[#0f172a]/95 backdrop-blur-sm border-b border-white/10 transition-shadow duration-300">
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-transparent border-b border-transparent transition-all duration-500">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         <!-- Logo -->
         <a href="/" class="flex items-center gap-2 group">
@@ -93,10 +97,10 @@ const faqData = [
 
         <!-- Desktop nav -->
         <nav class="hidden md:flex items-center gap-6">
-          <a href="#servicos" class="text-white/80 hover:text-[#f97316] text-sm font-medium transition-colors">Serviços</a>
-          <a href="#processo" class="text-white/80 hover:text-[#f97316] text-sm font-medium transition-colors">Processo</a>
-          <a href="#portfolio" class="text-white/80 hover:text-[#f97316] text-sm font-medium transition-colors">Portfolio</a>
-          <a href="#contacto-form" class="text-white/80 hover:text-[#f97316] text-sm font-medium transition-colors">Contacto</a>
+          <a href="#servicos" class="nav-link text-white/80 hover:text-[#f97316] text-sm font-medium transition-colors" data-section="servicos">Serviços</a>
+          <a href="#processo" class="nav-link text-white/80 hover:text-[#f97316] text-sm font-medium transition-colors" data-section="processo">Processo</a>
+          <a href="#portfolio" class="nav-link text-white/80 hover:text-[#f97316] text-sm font-medium transition-colors" data-section="portfolio">Portfolio</a>
+          <a href="#contacto-form" class="nav-link text-white/80 hover:text-[#f97316] text-sm font-medium transition-colors" data-section="contacto-form">Contacto</a>
 
           <!-- Phone number -->
           <a href="tel:+351939021876" class="flex items-center gap-1.5 text-white/60 hover:text-white text-sm font-medium transition-colors">
@@ -298,7 +302,32 @@ const faqData = [
     </style>
 
     <script>
-      // Mobile menu toggle
+      import { gsap } from 'gsap';
+      import { ScrollTrigger } from 'gsap/ScrollTrigger';
+      import Lenis from 'lenis';
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      // ===== REDUCED MOTION CHECK =====
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // ===== LENIS SMOOTH SCROLL =====
+      if (!prefersReducedMotion) {
+        const lenis = new Lenis({
+          duration: 1.2,
+          easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          touchMultiplier: 2,
+        });
+
+        // Sync Lenis with GSAP ticker
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time: number) => {
+          lenis.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
+      }
+
+      // ===== MOBILE MENU =====
       const btn = document.getElementById('menu-btn');
       const menu = document.getElementById('mobile-menu');
       const iconOpen = document.getElementById('icon-open');
@@ -328,35 +357,159 @@ const faqData = [
         });
       });
 
-      // Navbar scroll shadow
+      // ===== NAV: TRANSPARENT → GLASS ON SCROLL =====
       const header = document.getElementById('main-header');
       const heroSection = document.getElementById('hero');
       if (header && heroSection) {
         const headerObserver = new IntersectionObserver(
           ([entry]) => {
-            header.classList.toggle('shadow-lg', !entry.isIntersecting);
-            header.classList.toggle('shadow-black/20', !entry.isIntersecting);
+            if (!entry.isIntersecting) {
+              header.classList.add('nav-glass');
+            } else {
+              header.classList.remove('nav-glass');
+            }
           },
-          { threshold: 0 }
+          { threshold: 0, rootMargin: '-64px 0px 0px 0px' }
         );
         headerObserver.observe(heroSection);
       }
 
-      // Scroll-triggered fade-in animations with staggered delays
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
+      // ===== NAV: ACTIVE SECTION INDICATOR =====
+      const navLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-link[data-section]');
+      const sections = document.querySelectorAll<HTMLElement>('section[id]');
+
+      if (sections.length > 0 && navLinks.length > 0) {
+        const sectionObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const id = entry.target.id;
+                navLinks.forEach((link) => {
+                  link.classList.toggle('active', link.dataset.section === id);
+                });
+              }
+            });
+          },
+          { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' }
+        );
+        sections.forEach((section) => sectionObserver.observe(section));
+      }
+
+      // ===== GSAP SCROLL ANIMATIONS =====
+      if (!prefersReducedMotion) {
+        // Batch scroll reveal for [data-animate] elements
+        gsap.utils.toArray<HTMLElement>('[data-animate]').forEach((el) => {
+          const delay = parseFloat(el.dataset.delay || '0') * 0.1;
+          gsap.fromTo(el,
+            { opacity: 0, y: 24 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.7,
+              delay,
+              ease: 'power2.out',
+              scrollTrigger: {
+                trigger: el,
+                start: 'top 85%',
+                once: true,
+              },
+            }
+          );
         });
-      }, { threshold: 0.1 });
 
-      document.querySelectorAll('[data-animate]').forEach((el) => {
-        observer.observe(el);
-      });
+        // Comparison table: slide columns from opposite sides
+        gsap.utils.toArray<HTMLElement>('[data-animate-left]').forEach((el) => {
+          gsap.fromTo(el,
+            { opacity: 0, x: -30 },
+            {
+              opacity: 1,
+              x: 0,
+              duration: 0.7,
+              ease: 'power2.out',
+              scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+            }
+          );
+        });
 
-      // Counter animation for credibility bar
+        gsap.utils.toArray<HTMLElement>('[data-animate-right]').forEach((el) => {
+          gsap.fromTo(el,
+            { opacity: 0, x: 30 },
+            {
+              opacity: 1,
+              x: 0,
+              duration: 0.7,
+              ease: 'power2.out',
+              scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+            }
+          );
+        });
+
+        // Process timeline: line draws on scroll
+        const timelineLine = document.querySelector<HTMLElement>('.timeline-progress');
+        const timelineContainer = document.getElementById('processo');
+        if (timelineLine && timelineContainer) {
+          gsap.fromTo(timelineLine,
+            { width: '0%' },
+            {
+              width: '100%',
+              ease: 'none',
+              scrollTrigger: {
+                trigger: timelineContainer,
+                start: 'top 60%',
+                end: 'bottom 40%',
+                scrub: 1,
+              },
+            }
+          );
+        }
+
+        // Pricing cards stagger
+        const pricingCards = document.querySelectorAll('.pricing-card');
+        if (pricingCards.length > 0) {
+          gsap.fromTo(pricingCards,
+            { opacity: 0, y: 40 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.7,
+              stagger: 0.15,
+              ease: 'power2.out',
+              scrollTrigger: {
+                trigger: pricingCards[0],
+                start: 'top 85%',
+                once: true,
+              },
+            }
+          );
+        }
+      } else {
+        // Reduced motion: show everything immediately
+        document.querySelectorAll('[data-animate], [data-animate-left], [data-animate-right]').forEach((el) => {
+          (el as HTMLElement).style.opacity = '1';
+          (el as HTMLElement).style.transform = 'none';
+        });
+      }
+
+      // ===== MAGNETIC BUTTON EFFECT (desktop only) =====
+      if (!prefersReducedMotion && window.matchMedia('(pointer: fine)').matches) {
+        document.querySelectorAll('.magnetic-btn').forEach((btn) => {
+          const el = btn as HTMLElement;
+          const strength = 0.3;
+
+          el.addEventListener('mousemove', (e: MouseEvent) => {
+            const rect = el.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            el.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
+          });
+
+          el.addEventListener('mouseleave', () => {
+            el.style.transform = 'translate(0, 0)';
+          });
+        });
+      }
+
+      // ===== COUNTER ANIMATION (keep existing, works well) =====
       const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -364,8 +517,14 @@ const faqData = [
             const target = parseInt(el.dataset.count || '0', 10);
             const prefix = el.dataset.prefix || '';
             const suffix = el.dataset.suffix || '';
-            const duration = 1500;
+            const duration = prefersReducedMotion ? 0 : 1500;
             const start = performance.now();
+
+            if (prefersReducedMotion) {
+              el.textContent = prefix + target + suffix;
+              counterObserver.unobserve(el);
+              return;
+            }
 
             function animate(now: number) {
               const elapsed = now - start;
