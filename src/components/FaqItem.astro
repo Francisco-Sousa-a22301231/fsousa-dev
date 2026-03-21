@@ -9,17 +9,17 @@ const { question, answer, number } = Astro.props;
 const displayNumber = number ? String(number).padStart(2, '0') : undefined;
 ---
 
-<details class="group bg-white border border-slate-200 rounded-2xl overflow-hidden hover:border-slate-300 transition-colors">
-  <summary class="flex items-center gap-4 p-6 cursor-pointer font-semibold text-[#0f172a] text-lg list-none hover:text-[#f97316] transition-colors">
+<details class="group border-t border-[var(--color-border)]" data-animate>
+  <summary class="flex items-center gap-4 py-6 cursor-pointer list-none transition-colors">
     {displayNumber && (
-      <span class="text-[#f97316]/40 text-sm font-bold tabular-nums flex-shrink-0" style="font-family:'Sora',sans-serif;">{displayNumber}</span>
+      <span class="text-[var(--text-xs)] text-[var(--color-text-subtle)] font-light tabular-nums flex-shrink-0">{displayNumber}</span>
     )}
-    <span class="flex-1">{question}</span>
-    <svg class="flex-shrink-0 w-5 h-5 text-[#f97316] transition-transform duration-300 group-open:rotate-45" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+    <span class="flex-1 text-lg font-light tracking-tight text-[var(--color-text)] group-hover:text-[var(--color-accent)] transition-colors">{question}</span>
+    <svg class="flex-shrink-0 w-4 h-4 text-[var(--color-text-subtle)] transition-transform duration-300 group-open:rotate-45" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
   </summary>
   <div class="faq-content">
     <div>
-      <p class="px-6 pb-6 text-slate-500 leading-relaxed" style:list={[displayNumber && "pl-16"]}>{answer}</p>
+      <p class="pb-6 text-[var(--color-text-muted)] font-light leading-relaxed" style:list={[displayNumber && "pl-10"]}>{answer}</p>
     </div>
   </div>
 </details>

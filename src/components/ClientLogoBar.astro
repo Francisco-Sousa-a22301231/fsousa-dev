@@ -1,0 +1,20 @@
+---
+const categories = ['Restaurantes', 'Clínicas', 'Educação', 'Cabeleireiros', 'Lojas', 'Fitness', 'Imobiliário', 'Escritórios'];
+// Duplicate for seamless loop
+const items = [...categories, ...categories];
+---
+
+<section class="relative overflow-hidden">
+  <div class="section-divider"></div>
+  <div class="py-6 sm:py-8">
+    <div class="marquee-track">
+      {items.map((cat) => (
+        <div class="marquee-item">
+          <span class="text-sm sm:text-base font-light text-[var(--color-text-muted)] tracking-wide uppercase">{cat}</span>
+          <span class="marquee-separator"></span>
+        </div>
+      ))}
+    </div>
+  </div>
+  <div class="section-divider"></div>
+</section>
