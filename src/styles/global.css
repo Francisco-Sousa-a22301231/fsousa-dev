@@ -245,9 +245,8 @@
   border-radius: 9999px;
   font-size: var(--text-small);
   font-weight: 500;
-  color: var(--color-text);
   overflow: hidden;
-  transition: border-color 0.3s ease, background-color 0.3s ease;
+  transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 .link-pill:hover {
   border-color: var(--color-text);
