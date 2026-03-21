@@ -42,9 +42,9 @@ const faqs = [
 
     <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-28 w-full">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <div>
+        <div class="text-center lg:text-left">
           <!-- Badge -->
-          <div class="hero-fade hero-fade-1 inline-flex items-center gap-2 bg-[#f97316]/10 border border-[#f97316]/20 text-[#f97316] text-sm font-medium px-4 py-1.5 rounded-full mb-8">
+          <div class="hero-fade hero-fade-1 inline-flex items-center gap-2 bg-[#f97316]/10 border border-[#f97316]/20 text-[#f97316] text-sm font-medium px-4 py-1.5 rounded-full mb-8 mx-auto lg:mx-0">
             <span class="w-2 h-2 bg-[#f97316] rounded-full animate-pulse"></span>
             Disponível para novos projetos
           </div>
@@ -56,13 +56,13 @@ const faqs = [
           </h1>
 
           <!-- Sub-headline -->
-          <p class="hero-fade hero-fade-3 text-lg sm:text-xl text-white/60 font-medium mb-8 sm:mb-10 leading-relaxed max-w-xl">
+          <p class="hero-fade hero-fade-3 text-lg sm:text-xl text-white/60 font-medium mb-8 sm:mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
             Um developer, não uma agência.
             <span class="text-white/90 font-semibold">Preço fixo, sem mensalidades, sem surpresas.</span>
           </p>
 
           <!-- CTAs — above fold on mobile, before trust badges -->
-          <div class="hero-fade hero-fade-5 flex flex-col sm:flex-row gap-4 mb-6 sm:hidden">
+          <div class="hero-fade hero-fade-5 flex flex-col items-center sm:flex-row gap-4 mb-6 sm:hidden">
             <a
               href={WA_LINK}
               target="_blank"
@@ -82,13 +82,13 @@ const faqs = [
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
             </a>
           </div>
-          <p class="hero-fade hero-fade-6 mt-0 mb-6 text-sm text-white/40 flex items-center gap-2 sm:hidden">
+          <p class="hero-fade hero-fade-6 mt-0 mb-6 text-sm text-white/40 flex items-center justify-center gap-2 sm:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             Sem compromisso · Resposta em menos de 2h
           </p>
 
           <!-- Trust proof row -->
-          <div class="hero-fade hero-fade-4 grid grid-cols-2 gap-x-4 gap-y-3 sm:flex sm:flex-wrap sm:gap-x-6 sm:gap-y-3 text-sm text-white/70 mb-10">
+          <div class="hero-fade hero-fade-4 grid grid-cols-2 gap-x-4 gap-y-3 sm:flex sm:flex-wrap sm:gap-x-6 sm:gap-y-3 text-sm text-white/70 mb-10 justify-items-center lg:justify-items-start">
             <div class="flex items-center gap-2">
               <div class="w-5 h-5 rounded-full bg-[#f97316]/15 flex items-center justify-center flex-shrink-0">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
