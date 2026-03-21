@@ -4,7 +4,7 @@ import HeroBrowserMockup from '../components/HeroBrowserMockup.astro';
 import CredibilityBar from '../components/CredibilityBar.astro';
 import PricingCard from '../components/PricingCard.astro';
 import ProcessTimeline from '../components/ProcessTimeline.astro';
-import PortfolioCard from '../components/PortfolioCard.astro';
+import PortfolioSection from '../components/PortfolioSection.astro';
 import TestimonialCard from '../components/TestimonialCard.astro';
 import FaqItem from '../components/FaqItem.astro';
 import GuaranteeSection from '../components/GuaranteeSection.astro';
@@ -249,77 +249,7 @@ const faqs = [
   <ProcessTimeline />
 
   <!-- ===== PORTFOLIO ===== -->
-  <section id="portfolio" class="py-20 sm:py-28 bg-[#f8fafc] relative overflow-hidden">
-    <!-- Background accent -->
-    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#f97316] opacity-[0.03] rounded-full blur-[120px] translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <!-- Header -->
-      <div class="text-center mb-16" data-animate>
-        <p class="text-[#f97316] font-semibold text-sm uppercase tracking-widest mb-3">Portfolio</p>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] mb-4" style="font-family:'Sora',sans-serif;">
-          Projetos reais. Resultados reais.
-        </h2>
-        <p class="text-slate-500 text-lg max-w-lg mx-auto">Cada projeto é construído com atenção a cada detalhe — do design à performance.</p>
-      </div>
-
-      <!-- Portfolio grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto" data-animate>
-        <PortfolioCard
-          gradientFrom="#0f172a"
-          gradientTo="#1e3a5f"
-          accentColor="#f97316"
-          appName="My Lessons"
-          tag="Aplicação móvel · App Store"
-          title="My Lessons — Gestão de aulas"
-          description="App para professores particulares gerirem alunos, aulas e pagamentos. Disponível na App Store para iPhone e Android."
-          metrics={[
-            { label: "Performance", value: "100/100" },
-            { label: "Plataformas", value: "iOS + Android" },
-            { label: "Lançamento", value: "2024" },
-          ]}
-          tech={["Flutter", "Dart", "Firebase", "App Store"]}
-          screens={[
-            { label: "Dashboard", color: "#1e3a5f" },
-            { label: "Alunos", color: "#0f172a" },
-          ]}
-          link="https://apps.apple.com/pt/app/my-lessons-gerir-explicacoes/id6743955907"
-          linkText="Ver na App Store"
-        />
-
-        <PortfolioCard
-          gradientFrom="#7c2d12"
-          gradientTo="#c2410c"
-          accentColor="#fb923c"
-          appName="Restaurante"
-          tag="Website · Restaurante"
-          title="Website com menu digital"
-          description="Presença digital completa para restaurante — menu online, reservas, integração com Google Maps e SEO otimizado."
-          metrics={[
-            { label: "PageSpeed", value: "100/100" },
-            { label: "Google em", value: "2 semanas" },
-            { label: "Conversão", value: "+180%" },
-          ]}
-          tech={["Astro", "Tailwind", "SEO", "Google Business"]}
-          screens={[
-            { label: "Menu", color: "#c2410c" },
-            { label: "Reservas", color: "#7c2d12" },
-          ]}
-        />
-      </div>
-
-      <!-- Bottom CTA -->
-      <div class="text-center mt-14" data-animate>
-        <p class="text-slate-500 text-base mb-6">O seu projeto pode ser o próximo.</p>
-        <a
-          href="#contacto-form"
-          class="inline-flex items-center gap-2 bg-[#0f172a] hover:bg-[#1e293b] text-white font-bold px-8 py-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-[#0f172a]/20"
-        >
-          Falar sobre o meu projeto
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
+  <PortfolioSection />
 
   <!-- ===== TESTIMONIALS ===== -->
   <section class="py-20 sm:py-28 bg-[#0f172a] relative overflow-hidden">

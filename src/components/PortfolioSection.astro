@@ -1,0 +1,79 @@
+---
+import PortfolioCard from './PortfolioCard.astro';
+---
+
+<section id="portfolio" class="py-20 sm:py-28 bg-[#f8fafc] relative overflow-hidden">
+  <!-- Background accents -->
+  <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#f97316] opacity-[0.035] rounded-full blur-[120px] translate-x-1/2 -translate-y-1/3 pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#3b82f6] opacity-[0.03] rounded-full blur-[100px] -translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+    <!-- Section header -->
+    <div class="text-center mb-16" data-animate>
+      <div class="inline-flex items-center gap-2 bg-[#f97316]/10 border border-[#f97316]/20 text-[#f97316] text-xs font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider">
+        Portfolio
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] mb-4" style="font-family:'Sora Variable','Sora',sans-serif;">
+        Projetos reais. Resultados reais.
+      </h2>
+      <p class="text-slate-500 text-lg max-w-lg mx-auto leading-relaxed">
+        Cada projeto é construído com atenção a cada detalhe — do design à performance.
+      </p>
+    </div>
+
+    <!-- Cards grid — 2 col desktop, 1 col mobile -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto" data-animate data-delay="1">
+
+      <PortfolioCard
+        gradientFrom="#0f172a"
+        gradientTo="#1e3a5f"
+        accentColor="#f97316"
+        appName="My Lessons"
+        tag="App móvel · App Store"
+        title="My Lessons — Gestão de aulas"
+        description="App para professores particulares gerirem alunos, aulas e pagamentos. Disponível na App Store para iPhone e Android."
+        metrics={[
+          { label: "Performance",  value: "100/100"    },
+          { label: "Plataformas",  value: "iOS + Android" },
+          { label: "Duração",      value: "8 semanas"  },
+          { label: "Status",       value: "Live ✓"     },
+        ]}
+        tech={["Flutter", "Dart", "Firebase", "App Store", "Google Play"]}
+        link="https://apps.apple.com/pt/app/my-lessons-gerir-explicacoes/id6743955907"
+        linkText="Ver na App Store"
+      />
+
+      <PortfolioCard
+        gradientFrom="#7c2d12"
+        gradientTo="#c2410c"
+        accentColor="#fb923c"
+        appName="Restaurante"
+        tag="Website · Restaurante"
+        title="Website com menu digital"
+        description="Presença digital completa para restaurante — menu online, reservas, integração com Google Maps e SEO otimizado."
+        metrics={[
+          { label: "PageSpeed",    value: "100/100"    },
+          { label: "Conversão",    value: "+180%"      },
+          { label: "Google em",    value: "2 semanas"  },
+          { label: "Status",       value: "Live ✓"     },
+        ]}
+        tech={["Astro", "Tailwind", "SEO", "Google Business"]}
+      />
+
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="text-center mt-14" data-animate data-delay="2">
+      <p class="text-slate-500 text-base mb-6">O seu projeto pode ser o próximo.</p>
+      <a
+        href="#contacto-form"
+        class="inline-flex items-center gap-2 bg-[#0f172a] hover:bg-[#1e293b] text-white font-bold px-8 py-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-[#0f172a]/20"
+      >
+        Falar sobre o meu projeto
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
