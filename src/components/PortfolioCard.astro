@@ -35,7 +35,7 @@ if (link && link !== '#') {
 ---
 
 <div
-  class="portfolio-card group relative bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-shadow duration-500"
+  class="portfolio-card group relative bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-shadow duration-500 card-reveal"
   style="transform-style: preserve-3d; perspective: 1000px;"
 >
   <!-- ── PREVIEW ZONE ── -->
@@ -183,8 +183,45 @@ if (link && link !== '#') {
   </div>
 </div>
 
+<style>
+  /* Scroll-in reveal — cards start invisible, slide up when intersecting */
+  .card-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  .card-reveal.is-visible {
+    animation: cardSlideUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes cardSlideUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .card-reveal { opacity: 1; transform: none; }
+    .card-reveal.is-visible { animation: none; }
+  }
+</style>
+
 <script>
-  // 3D tilt effect — desktop / pointer:fine only
+  // ── Scroll-in animation (IntersectionObserver, staggered 120ms per card) ──
+  const revealCards = document.querySelectorAll<HTMLElement>('.card-reveal');
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, _i) => {
+        if (entry.isIntersecting) {
+          const card = entry.target as HTMLElement;
+          // Stagger based on position in NodeList
+          const idx = Array.from(revealCards).indexOf(card);
+          card.style.animationDelay = `${idx * 120}ms`;
+          card.classList.add('is-visible');
+          revealObserver.unobserve(card);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+  revealCards.forEach(card => revealObserver.observe(card));
+
+  // ── 3D tilt effect — desktop / pointer:fine only ──────────────────────────
   if (
     !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
     window.matchMedia('(pointer: fine)').matches
@@ -198,8 +235,8 @@ if (link && link !== '#') {
         const r = card.getBoundingClientRect();
         const x = e.clientX - r.left;
         const y = e.clientY - r.top;
-        const rx = ((y - r.height / 2) / (r.height / 2)) * -4;
-        const ry = ((x - r.width  / 2) / (r.width  / 2)) *  4;
+        const rx = ((y - r.height / 2) / (r.height / 2)) * -8;
+        const ry = ((x - r.width  / 2) / (r.width  / 2)) *  8;
         card.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px) scale(1.01)`;
       });
 
