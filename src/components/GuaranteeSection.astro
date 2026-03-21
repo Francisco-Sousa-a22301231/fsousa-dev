@@ -7,9 +7,11 @@
 
   <div class="relative max-w-3xl mx-auto px-4 sm:px-6 text-center">
     <div class="w-16 h-16 bg-[#f97316]/10 rounded-2xl flex items-center justify-center mx-auto mb-8">
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <svg class="guarantee-shield" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
     </div>
-    <h2 class="text-3xl sm:text-4xl font-extrabold mb-6" style="font-family:'Sora',sans-serif;">
+    <h2 class="font-extrabold mb-6" style="font-family:'Sora',sans-serif; font-size: var(--text-h1);">
       Sem risco para si
     </h2>
     <p class="text-white/60 text-lg leading-relaxed max-w-xl mx-auto mb-4">
@@ -19,24 +21,88 @@
       Só paga o segundo pagamento quando estiver <span class="hero-gradient-text">100% satisfeito</span>.
     </p>
     <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-8 mt-10 text-sm text-white/60">
-      <div class="flex items-center gap-2">
+      <div class="guarantee-item flex items-center gap-2">
         <div class="w-5 h-5 rounded-full bg-[#25d366]/15 flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          <svg class="guarantee-check" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
         Sem contratos longos
       </div>
-      <div class="flex items-center gap-2">
+      <div class="guarantee-item flex items-center gap-2">
         <div class="w-5 h-5 rounded-full bg-[#25d366]/15 flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          <svg class="guarantee-check" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
         Sem mensalidades
       </div>
-      <div class="flex items-center gap-2">
+      <div class="guarantee-item flex items-center gap-2">
         <div class="w-5 h-5 rounded-full bg-[#25d366]/15 flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          <svg class="guarantee-check" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
         30 dias de suporte grátis
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  /* Shield SVG stroke draw animation */
+  .guarantee-shield path {
+    stroke-dasharray: 80;
+    stroke-dashoffset: 80;
+    animation: draw-shield 1s ease-out forwards;
+    animation-play-state: paused;
+  }
+
+  [data-animate].is-visible .guarantee-shield path,
+  .guarantee-shield.is-drawn path {
+    animation-play-state: running;
+  }
+
+  @keyframes draw-shield {
+    to { stroke-dashoffset: 0; }
+  }
+
+  /* Check SVG stroke draw */
+  .guarantee-check polyline {
+    stroke-dasharray: 30;
+    stroke-dashoffset: 30;
+    animation: draw-check 0.4s ease-out forwards;
+    animation-play-state: paused;
+  }
+
+  .guarantee-item:nth-child(1) .guarantee-check polyline { animation-delay: 0.8s; }
+  .guarantee-item:nth-child(2) .guarantee-check polyline { animation-delay: 1.0s; }
+  .guarantee-item:nth-child(3) .guarantee-check polyline { animation-delay: 1.2s; }
+
+  [data-animate].is-visible .guarantee-check polyline,
+  .guarantee-check.is-drawn polyline {
+    animation-play-state: running;
+  }
+
+  @keyframes draw-check {
+    to { stroke-dashoffset: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .guarantee-shield path,
+    .guarantee-check polyline {
+      stroke-dashoffset: 0 !important;
+      animation: none !important;
+    }
+  }
+</style>
+
+<script>
+  // Trigger shield draw when section enters viewport
+  const guaranteeSection = document.querySelector('.guarantee-shield')?.closest('section');
+  if (guaranteeSection) {
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        guaranteeSection.querySelectorAll('.guarantee-shield, .guarantee-check').forEach(el => {
+          el.classList.add('is-drawn');
+        });
+        obs.unobserve(entry.target);
+      }
+    }, { threshold: 0.3 });
+    obs.observe(guaranteeSection);
+  }
+</script>

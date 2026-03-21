@@ -1,12 +1,12 @@
 ---
 ---
 
-<div class="flex items-center justify-center relative">
+<div class="flex items-center justify-center relative mockup-container">
   <!-- Glow behind mockup -->
   <div class="absolute inset-0 bg-[#f97316]/[0.06] blur-[60px] rounded-full scale-75 pointer-events-none hidden lg:block"></div>
 
   <!-- Browser window mockup -->
-  <div class="relative w-full max-w-[340px] sm:max-w-[380px] bg-[#1e293b] rounded-xl border border-white/10 shadow-2xl overflow-hidden">
+  <div class="relative w-full max-w-[340px] sm:max-w-[380px] bg-[#1e293b] rounded-xl border border-white/10 shadow-2xl overflow-hidden mockup-browser">
     <!-- Browser chrome -->
     <div class="flex items-center gap-2 px-4 py-2.5 sm:py-3 bg-[#0f172a] border-b border-white/10">
       <div class="flex gap-1.5">
@@ -14,14 +14,14 @@
         <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500/70"></span>
         <span class="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-green-500/70"></span>
       </div>
-      <div class="flex-1 bg-white/5 rounded-md px-3 py-1 text-white/40 text-xs font-mono ml-2">
-        <span class="typing-url">o-seu-negocio.pt</span>
+      <div class="flex-1 bg-white/5 rounded-md px-3 py-1 text-white/40 text-xs font-mono ml-2 overflow-hidden">
+        <span class="typing-url" aria-label="o-seu-negocio.pt"></span>
       </div>
     </div>
     <!-- Browser content -->
     <div class="p-4 sm:p-5 space-y-3 sm:space-y-4">
       <!-- Nav bar -->
-      <div class="flex items-center justify-between">
+      <div class="flex items-center justify-between mockup-block" style="--block-delay: 1.4s;">
         <div class="h-3 bg-white/20 rounded w-20"></div>
         <div class="flex gap-3">
           <div class="h-2 bg-white/10 rounded w-10"></div>
@@ -30,7 +30,7 @@
         </div>
       </div>
       <!-- Hero area -->
-      <div class="bg-gradient-to-br from-[#f97316]/20 to-[#f97316]/5 rounded-lg p-4 sm:p-5 space-y-3">
+      <div class="bg-gradient-to-br from-[#f97316]/20 to-[#f97316]/5 rounded-lg p-4 sm:p-5 space-y-3 mockup-block" style="--block-delay: 1.6s;">
         <div class="h-4 bg-white/25 rounded w-3/4"></div>
         <div class="h-3 bg-white/15 rounded w-full"></div>
         <div class="h-3 bg-white/15 rounded w-2/3"></div>
@@ -41,17 +41,17 @@
       </div>
       <!-- Content blocks -->
       <div class="grid grid-cols-3 gap-2">
-        <div class="bg-white/5 rounded-md p-2.5 sm:p-3 space-y-2">
+        <div class="bg-white/5 rounded-md p-2.5 sm:p-3 space-y-2 mockup-block" style="--block-delay: 1.8s;">
           <div class="w-5 h-5 sm:w-6 sm:h-6 bg-[#f97316]/20 rounded-md mx-auto"></div>
           <div class="h-2 bg-white/10 rounded w-full"></div>
           <div class="h-2 bg-white/10 rounded w-3/4 mx-auto"></div>
         </div>
-        <div class="bg-white/5 rounded-md p-2.5 sm:p-3 space-y-2">
+        <div class="bg-white/5 rounded-md p-2.5 sm:p-3 space-y-2 mockup-block" style="--block-delay: 1.95s;">
           <div class="w-5 h-5 sm:w-6 sm:h-6 bg-[#25d366]/20 rounded-md mx-auto"></div>
           <div class="h-2 bg-white/10 rounded w-full"></div>
           <div class="h-2 bg-white/10 rounded w-3/4 mx-auto"></div>
         </div>
-        <div class="bg-white/5 rounded-md p-2.5 sm:p-3 space-y-2">
+        <div class="bg-white/5 rounded-md p-2.5 sm:p-3 space-y-2 mockup-block" style="--block-delay: 2.1s;">
           <div class="w-5 h-5 sm:w-6 sm:h-6 bg-blue-500/20 rounded-md mx-auto"></div>
           <div class="h-2 bg-white/10 rounded w-full"></div>
           <div class="h-2 bg-white/10 rounded w-3/4 mx-auto"></div>
@@ -61,7 +61,7 @@
   </div>
 
   <!-- Phone mockup overlapping bottom-right (desktop only) -->
-  <div class="absolute -bottom-6 -right-2 w-[140px] bg-[#1e293b] rounded-[24px] border-2 border-white/15 shadow-2xl overflow-hidden hidden lg:block">
+  <div class="absolute -bottom-6 -right-2 w-[140px] bg-[#1e293b] rounded-[24px] border-2 border-white/15 shadow-2xl overflow-hidden hidden lg:block mockup-phone">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-14 h-4 bg-[#1e293b] rounded-b-xl z-10"></div>
     <div class="p-3 pt-5 space-y-2">
       <div class="h-2.5 bg-white/20 rounded w-3/4"></div>
@@ -112,11 +112,90 @@
 </div>
 
 <style>
+  /* Typing animation — types out the URL character by character */
   .typing-url {
+    display: inline-block;
     border-right: 2px solid #f97316;
     animation: blink-cursor 1s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .typing-url::after {
+    content: 'o-seu-negocio.pt';
+    animation: type-url 1.2s steps(17) 0.5s forwards;
+    display: inline-block;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  @keyframes type-url {
+    to { width: 100%; }
   }
   @keyframes blink-cursor {
     50% { border-color: transparent; }
+  }
+
+  /* Browser mockup entrance */
+  .mockup-browser {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+    animation: mockup-enter 0.8s var(--ease-spring, cubic-bezier(0.16, 1, 0.3, 1)) forwards;
+    animation-delay: 0.4s;
+  }
+
+  @keyframes mockup-enter {
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Phone mockup slides in from bottom */
+  .mockup-phone {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    animation: phone-enter 0.7s var(--ease-spring, cubic-bezier(0.16, 1, 0.3, 1)) forwards;
+    animation-delay: 1.1s;
+  }
+
+  @keyframes phone-enter {
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Staggered content block reveals */
+  .mockup-block {
+    opacity: 0;
+    transform: translateY(8px);
+    animation: block-reveal 0.5s var(--ease-spring, cubic-bezier(0.16, 1, 0.3, 1)) forwards;
+    animation-delay: var(--block-delay, 1.4s);
+  }
+
+  @keyframes block-reveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .typing-url::after {
+      width: 100% !important;
+      animation: none !important;
+    }
+    .typing-url {
+      animation: none !important;
+      border-right-color: transparent !important;
+    }
+    .mockup-browser,
+    .mockup-phone,
+    .mockup-block {
+      opacity: 1 !important;
+      transform: none !important;
+      animation: none !important;
+    }
   }
 </style>

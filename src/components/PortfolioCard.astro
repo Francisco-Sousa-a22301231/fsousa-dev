@@ -16,7 +16,7 @@ interface Props {
 const { gradientFrom, gradientTo, iconSvg, appName, tag, title, problem, solution, result, link, linkText } = Astro.props;
 ---
 
-<div class="group bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col min-w-[85vw] sm:min-w-0 snap-start">
+<div class="portfolio-card group bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col min-w-[85vw] sm:min-w-0 snap-start" style="transform-style: preserve-3d; perspective: 800px;">
   <div class="h-56 flex items-center justify-center p-6 overflow-hidden relative" style={`background: linear-gradient(to bottom right, ${gradientFrom}, ${gradientTo})`}>
     <!-- Phone mockup -->
     <div class="relative w-[120px] h-[210px] bg-[#1a1a2e] rounded-[20px] border-2 border-white/20 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
@@ -41,7 +41,7 @@ const { gradientFrom, gradientTo, iconSvg, appName, tag, title, problem, solutio
   </div>
   <div class="p-6 flex flex-col flex-1">
     <span class="text-[#f97316] text-xs font-bold uppercase tracking-wider mb-2">{tag}</span>
-    <h3 class="font-bold text-[#0f172a] text-lg mb-3" style="font-family:'Sora',sans-serif;">{title}</h3>
+    <h3 class="font-bold text-[#0f172a] text-lg mb-3" style="font-family:'Sora Variable','Sora',sans-serif;">{title}</h3>
     <div class="space-y-2.5 text-sm text-slate-500 flex-1">
       <p><span class="font-semibold text-slate-700">Problema:</span> {problem}</p>
       <p><span class="font-semibold text-slate-700">Solução:</span> {solution}</p>
@@ -55,3 +55,34 @@ const { gradientFrom, gradientTo, iconSvg, appName, tag, title, problem, solutio
     )}
   </div>
 </div>
+
+<script>
+  // 3D tilt effect on portfolio cards (desktop only)
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.portfolio-card').forEach((card) => {
+      const el = card as HTMLElement;
+
+      el.addEventListener('mousemove', (e: MouseEvent) => {
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -4;
+        const rotateY = ((x - centerX) / centerX) * 4;
+
+        el.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+      });
+
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = 'rotateX(0) rotateY(0) translateY(0)';
+        el.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+        setTimeout(() => { el.style.transition = ''; }, 400);
+      });
+
+      el.addEventListener('mouseenter', () => {
+        el.style.transition = 'none';
+      });
+    });
+  }
+</script>

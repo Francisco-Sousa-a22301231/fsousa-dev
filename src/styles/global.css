@@ -1,35 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap');
+/* Self-hosted variable fonts — no Google Fonts dependency */
+@import "@fontsource-variable/sora";
+@import "@fontsource-variable/inter";
 
 @import "tailwindcss";
 
+/* ===== DESIGN SYSTEM TOKENS ===== */
 @layer base {
+  :root {
+    /* Typography — fluid scale */
+    --text-hero: clamp(2.5rem, 7vw, 5.5rem);
+    --text-h1: clamp(1.875rem, 4vw, 2.5rem);
+    --text-h2: clamp(1.5rem, 3vw, 2.25rem);
+    --text-h3: clamp(1.125rem, 2vw, 1.5rem);
+    --text-lg: clamp(1rem, 1.5vw, 1.25rem);
+
+    /* Easing */
+    --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+
+    /* Glows */
+    --glow-orange: 0 0 30px rgba(249, 115, 22, 0.15);
+    --glow-green: 0 0 30px rgba(37, 211, 102, 0.15);
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
+  /* Lenis overrides native smooth scroll */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+
   body {
-    font-family: 'Inter', sans-serif;
-    background-color: #ffffff;
+    font-family: 'Inter Variable', 'Inter', sans-serif;
+    background-color: #0f172a;
     color: #0f172a;
   }
 
   h1, h2, h3, h4 {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Sora Variable', 'Sora', sans-serif;
   }
 }
 
-/* Hero entrance animations */
+/* ===== HERO ENTRANCE ANIMATIONS ===== */
+
+/* Orchestrated hero entrance — spring-like easing */
 .hero-fade {
   opacity: 0;
-  transform: translateY(20px);
-  animation: hero-enter 0.7s ease-out forwards;
+  transform: translateY(24px);
+  animation: hero-enter 0.8s var(--ease-spring) forwards;
 }
 .hero-fade-1 { animation-delay: 0.1s; }
 .hero-fade-2 { animation-delay: 0.2s; }
-.hero-fade-3 { animation-delay: 0.35s; }
-.hero-fade-4 { animation-delay: 0.5s; }
-.hero-fade-5 { animation-delay: 0.65s; }
-.hero-fade-6 { animation-delay: 0.8s; }
+.hero-fade-3 { animation-delay: 0.4s; }
+.hero-fade-4 { animation-delay: 0.55s; }
+.hero-fade-5 { animation-delay: 0.7s; }
+.hero-fade-6 { animation-delay: 0.85s; }
 
 @keyframes hero-enter {
   to {
@@ -38,59 +68,186 @@
   }
 }
 
-/* Hero gradient accent text */
-.hero-gradient-text {
-  background: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #f59e0b 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Hero clip-reveal for headline words */
+.hero-clip-reveal {
+  display: inline-block;
+  overflow: hidden;
 }
-
-/* Floating animation for mockup badges */
-.hero-float {
-  animation: hero-float 3s ease-in-out infinite;
-}
-.hero-float-delayed {
-  animation: hero-float 3s ease-in-out infinite;
-  animation-delay: 1.5s;
-}
-@keyframes hero-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-/* Scroll-triggered fade-in animations with staggered delays */
-[data-animate] {
+.hero-clip-reveal > span {
+  display: inline-block;
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(100%);
+  animation: clip-reveal-up 0.7s var(--ease-spring) forwards;
 }
 
-[data-animate].is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-[data-animate][data-delay="1"] { transition-delay: 100ms; }
-[data-animate][data-delay="2"] { transition-delay: 200ms; }
-[data-animate][data-delay="3"] { transition-delay: 300ms; }
-[data-animate][data-delay="4"] { transition-delay: 400ms; }
-
-/* FAQ smooth accordion animation */
-details .faq-content {
-  animation: accordion-open 0.3s ease-out;
-}
-
-@keyframes accordion-open {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
+@keyframes clip-reveal-up {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
+/* Hero gradient accent text — animated shimmer */
+.hero-gradient-text {
+  background: linear-gradient(135deg, #f97316 0%, #fb923c 30%, #f59e0b 60%, #f97316 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shimmer 4s ease-in-out infinite;
+}
+
+@keyframes gradient-shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Floating animation for mockup badges — enhanced with spring */
+.hero-float {
+  opacity: 0;
+  transform: translateY(10px) scale(0.9);
+  animation: hero-badge-enter 0.6s var(--ease-spring) forwards, hero-float-cycle 3s ease-in-out 1.5s infinite;
+  animation-delay: 1.3s, 1.9s;
+}
+.hero-float-delayed {
+  opacity: 0;
+  transform: translateY(10px) scale(0.9);
+  animation: hero-badge-enter 0.6s var(--ease-spring) forwards, hero-float-cycle 3s ease-in-out 1.5s infinite;
+  animation-delay: 1.5s, 2.1s;
+}
+
+@keyframes hero-badge-enter {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes hero-float-cycle {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-6px) scale(1); }
+}
+
+/* Drifting background orbs */
+.hero-orb {
+  animation: orb-drift 20s ease-in-out infinite;
+}
+.hero-orb-2 {
+  animation: orb-drift-2 25s ease-in-out infinite;
+}
+.hero-orb-3 {
+  animation: orb-drift-3 18s ease-in-out infinite;
+}
+
+@keyframes orb-drift {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(30px, -20px); }
+  66% { transform: translate(-20px, 15px); }
+}
+@keyframes orb-drift-2 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(-25px, 25px); }
+  66% { transform: translate(20px, -15px); }
+}
+@keyframes orb-drift-3 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(15px, -10px); }
+}
+
+/* ===== SCROLL-TRIGGERED ANIMATIONS ===== */
+
+/* Base state for GSAP-driven scroll reveals */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+/* Fallback for no-JS: show content immediately */
+@supports not (animation-timeline: scroll()) {
+  .no-js [data-animate] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Slide-in variants for comparison table */
+[data-animate-left] {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+[data-animate-right] {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+/* ===== FAQ ACCORDION ===== */
+
+details .faq-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s var(--ease-out);
+  overflow: hidden;
+}
+
+details[open] .faq-content {
+  grid-template-rows: 1fr;
+}
+
+details .faq-content > div {
+  overflow: hidden;
+}
+
+/* Fallback for browsers without grid-template-rows transition */
+@supports not (transition: grid-template-rows 0.3s) {
+  details .faq-content {
+    animation: accordion-open 0.3s ease-out;
+  }
+  @keyframes accordion-open {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* ===== NAVIGATION ===== */
+
+/* Nav transparent → glass transition */
+.nav-glass {
+  background-color: rgba(15, 23, 42, 0.85) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Active nav link indicator */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #f97316;
+  border-radius: 1px;
+  transition: width 0.3s var(--ease-out);
+}
+.nav-link.active::after {
+  width: 100%;
+}
+.nav-link.active {
+  color: #f97316;
+}
+
+/* ===== MOBILE ===== */
 
 /* Mobile bottom bar spacing */
 @media (max-width: 767px) {
@@ -106,4 +263,56 @@ details .faq-content {
 }
 .snap-x::-webkit-scrollbar {
   display: none;
+}
+
+/* ===== PROCESS TIMELINE — scroll-driven line ===== */
+
+.timeline-line {
+  transition: width 0.1s linear;
+}
+
+/* ===== MAGNETIC BUTTON EFFECT ===== */
+
+.magnetic-btn {
+  transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+/* ===== ACCESSIBILITY ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-fade,
+  .hero-float,
+  .hero-float-delayed {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero-clip-reveal > span {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  [data-animate],
+  [data-animate-left],
+  [data-animate-right] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero-gradient-text {
+    animation: none !important;
+  }
+
+  .hero-orb,
+  .hero-orb-2,
+  .hero-orb-3 {
+    animation: none !important;
+  }
 }
