@@ -1,173 +1,268 @@
 ---
+const steps = [
+  {
+    number: "01",
+    emoji: "🎯",
+    title: "Descoberta",
+    description: "Primeiro, ouvimos. Uma conversa de 15 minutos para perceber o teu negócio, os teus objetivos e o que precisas mesmo.",
+  },
+  {
+    number: "02",
+    emoji: "📋",
+    title: "Proposta",
+    description: "Em 24 horas tens uma proposta clara: o que vamos construir, quanto custa, e quando está pronto.",
+  },
+  {
+    number: "03",
+    emoji: "⚡",
+    title: "Construção",
+    description: "Desenvolvemos o teu projeto com atualizações regulares. Tu vês o progresso, nós fazemos o trabalho.",
+  },
+  {
+    number: "04",
+    emoji: "🚀",
+    title: "Lançamento",
+    description: "Entrega, testes, e online. Ficamos disponíveis para suporte após o lançamento.",
+  },
+];
+
+const stats = [
+  { value: "15 min", label: "Primeira conversa" },
+  { value: "24h",    label: "Proposta enviada" },
+  { value: "3–5 dias", label: "Primeiros resultados" },
+];
 ---
 
-<section id="processo" class="py-20 sm:py-28 bg-[#0f172a] text-white relative overflow-hidden">
-  <!-- Background elements -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#f97316] opacity-[0.03] rounded-full blur-[120px] pointer-events-none"></div>
-  <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#3b82f6] opacity-[0.04] rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
-
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+<section id="processo" class="process-section">
+  <div class="process-inner">
     <!-- Header -->
-    <div class="text-center mb-16" data-animate>
-      <p class="text-[#f97316] font-semibold text-sm uppercase tracking-widest mb-3">Como funciona</p>
-      <h2 class="text-3xl sm:text-4xl font-extrabold" style="font-family:'Sora',sans-serif;">
-        Do zero ao online em 4 passos simples
-      </h2>
-      <p class="text-white/50 text-lg mt-4 max-w-lg mx-auto">Sem jargão, sem burocracia. Assim é trabalhar comigo.</p>
+    <div class="process-header">
+      <p class="process-label">Processo</p>
+      <h2 class="process-title">Do zero ao online<br/>em 4 passos</h2>
+      <p class="process-subtitle">Sem complicações. Sem jargão técnico.</p>
     </div>
 
-    <!-- Steps grid — desktop -->
-    <div class="hidden md:grid grid-cols-4 gap-8 relative">
-      <!-- Connecting line track -->
-      <div class="absolute top-[52px] left-[12.5%] right-[12.5%] h-px bg-white/10 z-0"></div>
-      <!-- Animated progress line -->
-      <div class="timeline-progress absolute top-[52px] left-[12.5%] h-px bg-gradient-to-r from-[#f97316] via-[#fb923c] to-[#25d366] z-0" style="width: 0%; max-width: calc(100% - 25%);"></div>
-
-      <!-- Step 1 -->
-      <div class="process-step flex flex-col items-center text-center relative z-10" data-animate data-delay="1">
-        <div class="process-icon-wrap w-[104px] h-[104px] rounded-2xl bg-white/5 border border-white/10 flex flex-col items-center justify-center mb-6 relative group-hover:border-[#f97316]/40 transition-all duration-300 hover:bg-white/10 hover:border-[#f97316]/30">
-          <div class="w-10 h-10 rounded-xl bg-[#f97316]/10 flex items-center justify-center mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.8">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-            </svg>
-          </div>
-          <span class="text-[#f97316]/60 text-xs font-bold">01</span>
+    <!-- Steps row -->
+    <div class="process-steps">
+      {steps.map((step, i) => (
+        <div class="process-card" data-index={i}>
+          <span class="process-step-number">{step.number}</span>
+          <span class="process-emoji" aria-hidden="true">{step.emoji}</span>
+          <h3 class="process-step-title">{step.title}</h3>
+          <p class="process-step-desc">{step.description}</p>
         </div>
-        <h3 class="font-bold text-lg mb-2" style="font-family:'Sora',sans-serif;">Conversa</h3>
-        <p class="text-white/50 text-sm leading-relaxed">Fala comigo no WhatsApp. Em 15 minutos percebo exactamente o que precisa.</p>
-      </div>
-
-      <!-- Step 2 -->
-      <div class="process-step flex flex-col items-center text-center relative z-10" data-animate data-delay="2">
-        <div class="process-icon-wrap w-[104px] h-[104px] rounded-2xl bg-white/5 border border-white/10 flex flex-col items-center justify-center mb-6 transition-all duration-300 hover:bg-white/10 hover:border-[#f97316]/30">
-          <div class="w-10 h-10 rounded-xl bg-[#f97316]/10 flex items-center justify-center mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.8">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-              <polyline points="10 9 9 9 8 9"/>
-            </svg>
-          </div>
-          <span class="text-[#f97316]/60 text-xs font-bold">02</span>
-        </div>
-        <h3 class="font-bold text-lg mb-2" style="font-family:'Sora',sans-serif;">Proposta</h3>
-        <p class="text-white/50 text-sm leading-relaxed">Recebe uma proposta clara com preço fixo em menos de 24 horas.</p>
-      </div>
-
-      <!-- Step 3 -->
-      <div class="process-step flex flex-col items-center text-center relative z-10" data-animate data-delay="3">
-        <div class="process-icon-wrap w-[104px] h-[104px] rounded-2xl bg-white/5 border border-white/10 flex flex-col items-center justify-center mb-6 transition-all duration-300 hover:bg-white/10 hover:border-[#f97316]/30">
-          <div class="w-10 h-10 rounded-xl bg-[#f97316]/10 flex items-center justify-center mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.8">
-              <polyline points="16 18 22 12 16 6"/>
-              <polyline points="8 6 2 12 8 18"/>
-            </svg>
-          </div>
-          <span class="text-[#f97316]/60 text-xs font-bold">03</span>
-        </div>
-        <h3 class="font-bold text-lg mb-2" style="font-family:'Sora',sans-serif;">Construção</h3>
-        <p class="text-white/50 text-sm leading-relaxed">Construo o seu projeto. Vê o progresso em tempo real, a cada etapa.</p>
-      </div>
-
-      <!-- Step 4 -->
-      <div class="process-step flex flex-col items-center text-center relative z-10" data-animate data-delay="4">
-        <div class="process-icon-wrap w-[104px] h-[104px] rounded-2xl bg-[#25d366]/10 border border-[#25d366]/30 flex flex-col items-center justify-center mb-6 transition-all duration-300 hover:bg-[#25d366]/20">
-          <div class="w-10 h-10 rounded-xl bg-[#25d366]/15 flex items-center justify-center mb-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="1.8">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
-            </svg>
-          </div>
-          <span class="text-[#25d366]/60 text-xs font-bold">04</span>
-        </div>
-        <h3 class="font-bold text-lg mb-2" style="font-family:'Sora',sans-serif;">Lançamento</h3>
-        <p class="text-white/50 text-sm leading-relaxed">Site online, domínio configurado, Google a indexar o seu negócio.</p>
-      </div>
+      ))}
     </div>
 
-    <!-- Steps — mobile: vertical stacked cards -->
-    <div class="md:hidden space-y-4" data-animate>
-      <!-- Step 1 -->
-      <div class="flex gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/10">
-        <div class="w-12 h-12 rounded-xl bg-[#f97316]/10 border border-[#f97316]/20 flex items-center justify-center flex-shrink-0">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.8">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-          </svg>
+    <!-- Stats row -->
+    <div class="process-stats">
+      {stats.map((stat) => (
+        <div class="process-stat">
+          <span class="process-stat-value">{stat.value}</span>
+          <span class="process-stat-label">{stat.label}</span>
         </div>
-        <div>
-          <div class="flex items-center gap-2 mb-1">
-            <span class="text-[#f97316] text-xs font-bold">01</span>
-            <h3 class="font-bold text-white" style="font-family:'Sora',sans-serif;">Conversa</h3>
-          </div>
-          <p class="text-white/50 text-sm">Fala comigo no WhatsApp. Em 15 minutos percebo o que precisa.</p>
-        </div>
-      </div>
-      <!-- Step 2 -->
-      <div class="flex gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/10">
-        <div class="w-12 h-12 rounded-xl bg-[#f97316]/10 border border-[#f97316]/20 flex items-center justify-center flex-shrink-0">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.8">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-            <polyline points="14 2 14 8 20 8"/>
-            <line x1="16" y1="13" x2="8" y2="13"/>
-          </svg>
-        </div>
-        <div>
-          <div class="flex items-center gap-2 mb-1">
-            <span class="text-[#f97316] text-xs font-bold">02</span>
-            <h3 class="font-bold text-white" style="font-family:'Sora',sans-serif;">Proposta</h3>
-          </div>
-          <p class="text-white/50 text-sm">Recebe uma proposta clara com preço fixo em menos de 24 horas.</p>
-        </div>
-      </div>
-      <!-- Step 3 -->
-      <div class="flex gap-4 p-4 rounded-2xl bg-white/[0.03] border border-white/10">
-        <div class="w-12 h-12 rounded-xl bg-[#f97316]/10 border border-[#f97316]/20 flex items-center justify-center flex-shrink-0">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="1.8">
-            <polyline points="16 18 22 12 16 6"/>
-            <polyline points="8 6 2 12 8 18"/>
-          </svg>
-        </div>
-        <div>
-          <div class="flex items-center gap-2 mb-1">
-            <span class="text-[#f97316] text-xs font-bold">03</span>
-            <h3 class="font-bold text-white" style="font-family:'Sora',sans-serif;">Construção</h3>
-          </div>
-          <p class="text-white/50 text-sm">Construo o seu projeto. Vê o progresso a cada etapa.</p>
-        </div>
-      </div>
-      <!-- Step 4 -->
-      <div class="flex gap-4 p-4 rounded-2xl bg-[#25d366]/5 border border-[#25d366]/20">
-        <div class="w-12 h-12 rounded-xl bg-[#25d366]/10 border border-[#25d366]/20 flex items-center justify-center flex-shrink-0">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="1.8">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-            <polyline points="22 4 12 14.01 9 11.01"/>
-          </svg>
-        </div>
-        <div>
-          <div class="flex items-center gap-2 mb-1">
-            <span class="text-[#25d366] text-xs font-bold">04</span>
-            <h3 class="font-bold text-white" style="font-family:'Sora',sans-serif;">Lançamento</h3>
-          </div>
-          <p class="text-white/50 text-sm">Site online, domínio configurado, Google a indexar o seu negócio.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bottom stats row -->
-    <div class="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto" data-animate>
-      <div class="text-center p-4 rounded-xl bg-white/[0.03] border border-white/10">
-        <p class="text-2xl font-extrabold text-[#f97316]" style="font-family:'Sora',sans-serif;">15 min</p>
-        <p class="text-white/50 text-xs mt-1">para perceber o seu projeto</p>
-      </div>
-      <div class="text-center p-4 rounded-xl bg-white/[0.03] border border-white/10">
-        <p class="text-2xl font-extrabold text-[#f97316]" style="font-family:'Sora',sans-serif;">24 h</p>
-        <p class="text-white/50 text-xs mt-1">proposta na sua caixa</p>
-      </div>
-      <div class="text-center p-4 rounded-xl bg-[#25d366]/5 border border-[#25d366]/20">
-        <p class="text-2xl font-extrabold text-[#25d366]" style="font-family:'Sora',sans-serif;">3–5 dias</p>
-        <p class="text-white/50 text-xs mt-1">do zero ao online</p>
-      </div>
+      ))}
     </div>
   </div>
 </section>
+
+<style>
+  .process-section {
+    background: #0f0f0f;
+    padding: 6rem 1.5rem;
+  }
+
+  .process-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .process-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .process-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #f97316;
+    margin-bottom: 1rem;
+  }
+
+  .process-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    margin-bottom: 1rem;
+  }
+
+  .process-subtitle {
+    color: #888;
+    font-size: 1.125rem;
+    font-weight: 300;
+  }
+
+  /* Steps */
+  .process-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    position: relative;
+    margin-bottom: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    .process-steps {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    /* Connector line */
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 2.75rem;
+      left: calc(12.5% + 1.5rem);
+      right: calc(12.5% + 1.5rem);
+      height: 2px;
+      background: linear-gradient(90deg, #f97316 0%, #ea580c 100%);
+      z-index: 0;
+    }
+  }
+
+  .process-card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 1rem;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    position: relative;
+    z-index: 1;
+
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  @media (min-width: 768px) {
+    .process-card {
+      border-radius: 0;
+      border-right: none;
+      align-items: center;
+      text-align: center;
+    }
+
+    .process-card:first-child {
+      border-radius: 1rem 0 0 1rem;
+    }
+
+    .process-card:last-child {
+      border-radius: 0 1rem 1rem 0;
+      border-right: 1px solid #2a2a2a;
+    }
+  }
+
+  .process-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .process-card {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  .process-step-number {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: #f97316;
+  }
+
+  .process-emoji {
+    font-size: 2rem;
+    line-height: 1;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+
+  .process-step-title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  .process-step-desc {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #888;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Stats */
+  .process-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-top: 1px solid #2a2a2a;
+    padding-top: 3rem;
+    align-items: center;
+  }
+
+  @media (min-width: 640px) {
+    .process-stats {
+      flex-direction: row;
+      justify-content: center;
+      gap: 4rem;
+    }
+  }
+
+  .process-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    text-align: center;
+  }
+
+  .process-stat-value {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 300;
+    color: #f97316;
+    letter-spacing: -0.02em;
+  }
+
+  .process-stat-label {
+    font-size: 0.8rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.process-card').forEach((card, i) => {
+    (card as HTMLElement).style.transitionDelay = `${i * 100}ms`;
+    observer.observe(card);
+  });
+</script>
