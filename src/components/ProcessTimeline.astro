@@ -24,7 +24,7 @@ const steps = [
       </div>
 
       <!-- Steps grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-[var(--color-border)]" data-stagger-parent>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-[var(--color-border)] rounded-2xl overflow-hidden" data-stagger-parent>
         {steps.map((step, i) => (
           <div class="process-step stagger-popup bg-[var(--color-bg)] p-8 sm:p-10 group cursor-default">
             <span class="process-number text-5xl sm:text-6xl font-light tracking-tight leading-none mb-6 block transition-colors duration-500" style="color: rgba(0,0,0,0.08);">{step.number}</span>
