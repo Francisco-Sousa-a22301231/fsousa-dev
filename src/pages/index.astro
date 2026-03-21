@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import HeroBrowserMockup from '../components/HeroBrowserMockup.astro';
 import ClientLogoBar from '../components/ClientLogoBar.astro';
 import ComparisonTable from '../components/ComparisonTable.astro';
 import PricingCard from '../components/PricingCard.astro';
@@ -32,291 +31,218 @@ const faqs = [
 
 <Layout>
   <!-- ===== HERO ===== -->
-  <section id="hero" class="relative bg-[#0f172a] text-white overflow-hidden min-h-0 sm:min-h-[90vh] flex items-center">
-    <!-- Background grid texture -->
-    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\");"></div>
-    <!-- Gradient orbs for depth (animated drift) -->
-    <div class="hero-orb absolute top-0 right-0 w-[700px] h-[700px] bg-[#f97316] opacity-[0.07] rounded-full blur-[120px] translate-x-1/3 -translate-y-1/4 pointer-events-none"></div>
-    <div class="hero-orb-2 absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#3b82f6] opacity-[0.04] rounded-full blur-[100px] -translate-x-1/3 translate-y-1/4 pointer-events-none"></div>
-    <div class="hero-orb-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#f97316] opacity-[0.03] rounded-full blur-[100px] pointer-events-none"></div>
+  <section id="hero" class="relative min-h-[100vh] flex items-end pb-16 sm:pb-24 pt-32 sm:pt-40">
+    <div class="max-w-[1400px] mx-auto px-6 sm:px-8 w-full">
+      <!-- Small label -->
+      <p class="hero-fade text-[var(--text-label)] font-medium uppercase tracking-[0.15em] text-[var(--color-text-subtle)] mb-8">
+        Freelance Web Developer
+      </p>
 
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-28 w-full">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <div>
-          <!-- Badge -->
-          <div class="hero-fade hero-fade-1 inline-flex items-center gap-2 bg-[#f97316]/10 border border-[#f97316]/20 text-[#f97316] text-sm font-medium px-4 py-1.5 rounded-full mb-8">
-            <span class="w-2 h-2 bg-[#f97316] rounded-full animate-pulse"></span>
-            Disponível para novos projetos
-          </div>
+      <!-- Massive headline — LIGHT weight -->
+      <h1 class="hero-fade font-light tracking-tight leading-[0.95] mb-10" style="font-size: var(--text-hero);">
+        Ajudo negócios<br/>
+        a crescer com<br/>
+        <span class="text-[var(--color-accent)]">websites que convertem</span>
+      </h1>
 
-          <!-- Headline — outcome-focused -->
-          <h1 class="hero-fade hero-fade-2 font-extrabold leading-[1.1] mb-6 tracking-tight" style="font-family:'Sora',sans-serif; font-size: var(--text-hero);">
-            Mais clientes para o seu negócio.<br/>
-            <span class="hero-gradient-text">Em 5 dias.</span>
-          </h1>
+      <!-- Description + CTA row -->
+      <div class="hero-fade flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-16">
+        <!-- Body paragraph -->
+        <p class="text-[var(--color-text-muted)] text-lg md:text-xl font-light leading-relaxed max-w-lg">
+          Websites profissionais a preço fixo para restaurantes, clínicas, lojas e escolas. Sem agência, sem mensalidades. Entrega em 5 dias.
+        </p>
 
-          <!-- Sub-headline — value proposition -->
-          <p class="hero-fade hero-fade-3 text-lg sm:text-xl text-white/60 font-medium mb-8 sm:mb-10 leading-relaxed max-w-xl">
-            Websites profissionais a preço fixo.
-            <span class="text-white/90 font-semibold">Sem agência, sem mensalidades, sem surpresas.</span>
-          </p>
-
-          <!-- CTAs — above fold on mobile, before trust badges -->
-          <div class="hero-fade hero-fade-5 flex flex-col sm:flex-row gap-4 mb-6 sm:hidden">
-            <a
-              href={WA_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="magnetic-btn group inline-flex items-center justify-center gap-3 bg-[#25d366] hover:bg-[#1fbe5a] active:scale-[0.97] text-white font-bold text-lg px-8 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-[#25d366]/25"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-              </svg>
-              Pedir orçamento grátis
-            </a>
-            <a
-              href="#servicos"
-              class="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-white/40 hover:bg-white/5 text-white/80 hover:text-white font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-200"
-            >
-              Ver serviços
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-            </a>
-          </div>
-          <p class="hero-fade hero-fade-6 mt-0 mb-6 text-sm text-white/40 flex items-center gap-2 sm:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Sem compromisso · Resposta em menos de 2h
-          </p>
-
-          <!-- Trust proof row -->
-          <div class="hero-fade hero-fade-4 grid grid-cols-2 gap-x-4 gap-y-3 sm:flex sm:flex-wrap sm:gap-x-6 sm:gap-y-3 text-sm text-white/70 mb-10">
-            <div class="flex items-center gap-2">
-              <div class="w-5 h-5 rounded-full bg-[#f97316]/15 flex items-center justify-center flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              100/100 PageSpeed
-            </div>
-            <div class="flex items-center gap-2">
-              <div class="w-5 h-5 rounded-full bg-[#f97316]/15 flex items-center justify-center flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              SEO desde o dia 1
-            </div>
-            <div class="flex items-center gap-2">
-              <div class="w-5 h-5 rounded-full bg-[#f97316]/15 flex items-center justify-center flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              3–5 dias, não semanas
-            </div>
-            <div class="flex items-center gap-2">
-              <div class="w-5 h-5 rounded-full bg-[#f97316]/15 flex items-center justify-center flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              30 dias de suporte grátis
-            </div>
-          </div>
-
-          <!-- CTAs (desktop only — mobile version is above trust badges) -->
-          <div class="hero-fade hero-fade-5 hidden sm:flex sm:flex-row gap-4">
-            <a
-              href={WA_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="magnetic-btn group inline-flex items-center justify-center gap-3 bg-[#25d366] hover:bg-[#1fbe5a] active:scale-[0.97] text-white font-bold text-lg px-8 py-4 rounded-xl transition-all duration-200 shadow-lg shadow-[#25d366]/25 hover:shadow-xl hover:shadow-[#25d366]/30 hover:-translate-y-0.5"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" class="transition-transform duration-200 group-hover:scale-110">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-              </svg>
-              Pedir orçamento grátis
-            </a>
-            <a
-              href="#servicos"
-              class="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-white/40 hover:bg-white/5 text-white/80 hover:text-white font-semibold text-lg px-8 py-4 rounded-xl transition-all duration-200"
-            >
-              Ver serviços
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
-            </a>
-          </div>
-
-          <!-- Risk reversal micro-copy (desktop only — mobile version above) -->
-          <p class="hero-fade hero-fade-6 mt-4 text-sm text-white/40 hidden sm:flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Sem compromisso · Resposta em menos de 2h
-          </p>
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row items-start gap-4 flex-shrink-0">
+          <a
+            href="#portfolio"
+            class="link-pill magnetic-btn group"
+            data-cursor="expand"
+          >
+            Ver projetos
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="transition-transform group-hover:translate-y-0.5"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+          <a
+            href="#contacto-form"
+            class="link-pill magnetic-btn group"
+            data-cursor="expand"
+          >
+            Contactar
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="transition-transform group-hover:translate-x-0.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
+      </div>
 
-        <!-- Hero visual: browser + phone mockup (hidden on mobile for compact hero) -->
-        <div class="hero-fade hero-fade-3 hidden lg:block">
-          <HeroBrowserMockup />
-        </div>
+      <!-- Location tag -->
+      <div class="hero-fade mt-12 pt-8 border-t border-[var(--color-border)]">
+        <p class="text-[var(--text-xs)] text-[var(--color-text-subtle)] uppercase tracking-[0.15em]">
+          100% Remoto · Portugal
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- ===== CLIENT LOGO BAR ===== -->
+  <!-- ===== CLIENT CATEGORIES ===== -->
   <ClientLogoBar />
 
-  <!-- ===== ABOUT (identity first, then positioning) ===== -->
+  <!-- ===== ABOUT ===== -->
   <AboutSection />
 
   <!-- ===== SERVICES / PRICING ===== -->
-  <section id="servicos" data-animate class="py-20 sm:py-28 bg-[#f8fafc] relative overflow-hidden">
-    <!-- Subtle background accent -->
-    <div class="absolute top-1/2 right-0 w-[500px] h-[500px] bg-[#f97316] opacity-[0.03] rounded-full blur-[100px] translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-    <div class="relative max-w-5xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-14">
-        <div class="inline-flex items-center gap-2 bg-[#f97316]/10 border border-[#f97316]/20 text-[#f97316] text-sm font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider">
-          Preços transparentes
+  <section id="servicos" class="relative">
+    <div class="section-divider"></div>
+    <div class="py-[var(--section-py)] px-6 sm:px-8">
+      <div class="max-w-[1400px] mx-auto">
+        <!-- Section header -->
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 md:mb-24">
+          <div>
+            <p class="text-[var(--text-label)] font-medium uppercase tracking-[0.15em] text-[var(--color-text-subtle)] mb-4" data-animate>Serviços</p>
+            <h2 class="font-light tracking-tight leading-[0.95]" style="font-size: var(--text-h1);" data-animate>
+              Escolha o que o seu<br/>negócio precisa
+            </h2>
+          </div>
+          <p class="text-[var(--color-text-muted)] text-lg font-light max-w-md" data-animate>
+            Preço fixo. Sem surpresas. 50% para começar, 50% na entrega.
+          </p>
         </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] mb-4" style="font-family:'Sora',sans-serif;">
-          Escolha o que o seu negócio precisa
-        </h2>
-        <p class="text-slate-500 text-lg max-w-xl mx-auto">
-          Preço fixo. Sem surpresas. 50% para começar, 50% na entrega.
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-[var(--color-border)] max-w-[1200px] mx-auto">
+          <PricingCard
+            title="Página Web"
+            description="Ideal para restaurantes, cabeleireiros, clínicas e lojas."
+            price="€300"
+            priceMax="€600"
+            priceNote="Pagamento único · Sem mensalidades"
+            features={[
+              "Design moderno e personalizado",
+              "Adaptado ao telemóvel",
+              "Formulário de contacto",
+              "Integração Google Maps",
+              "SEO básico",
+              "Entrega em 3–5 dias úteis",
+            ]}
+            ctaText="Pedir orçamento"
+            ctaLink={WA_LINK_PAGINA}
+          />
+
+          <PricingCard
+            title="Website Completo"
+            description="Ideal para empresas com vários serviços, clínicas com equipa, escolas."
+            price="€800"
+            priceMax="€1500"
+            priceNote="Pagamento único · Sem mensalidades"
+            highlighted={true}
+            features={[
+              "Tudo do plano anterior",
+              "3–5 páginas (Home, Sobre, Serviços…)",
+              "Editar conteúdo sem programar",
+              "Integração redes sociais",
+              "Google Analytics incluído",
+              "SEO completo + Google Business",
+              "Entrega em 1–2 semanas",
+            ]}
+            ctaText="Pedir orçamento"
+            ctaLink={WA_LINK_SITE}
+          />
+
+          <PricingCard
+            title="Aplicação Móvel"
+            description="Ideal para negócios que precisam de app iOS e Android."
+            price="€2000"
+            priceNote="Sob consulta · Projeto à medida"
+            features={[
+              "App personalizada",
+              "Funciona em iPhone e Android",
+              "Painel de administração",
+              "Design exclusivo",
+              "Publicação nas lojas",
+              "Timeline e preço sob consulta",
+            ]}
+            ctaText="Falar sobre o projeto"
+            ctaLink={WA_LINK_APP}
+          />
+        </div>
+
+        <p class="text-[var(--color-text-subtle)] text-[var(--text-small)] text-center mt-12" data-animate>
+          Precisa de e-commerce ou algo diferente? <a href="#contacto-form" class="link-underline text-[var(--color-text)]">Envie uma mensagem</a> — é gratuito e sem compromisso.
         </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-stretch">
-        <PricingCard
-          title="Página Web Profissional"
-          description="Ideal para restaurantes, cabeleireiros, clínicas e lojas."
-          price="€300"
-          priceMax="€600"
-          priceNote="Pagamento único · Sem mensalidades"
-          features={[
-            "Design moderno e personalizado",
-            "Adaptado ao telemóvel",
-            "Formulário de contacto",
-            "Integração Google Maps",
-            "SEO básico",
-            "Entrega em 3–5 dias úteis",
-          ]}
-          ctaText="Quero um orçamento"
-          ctaLink={WA_LINK_PAGINA}
-          icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>'
-        />
-
-        <PricingCard
-          title="Website Completo"
-          description="Ideal para empresas com vários serviços, clínicas com equipa, escolas."
-          price="€800"
-          priceMax="€1500"
-          priceNote="Pagamento único · Sem mensalidades"
-          highlighted={true}
-          features={[
-            "Tudo do plano anterior",
-            "3–5 páginas (Home, Sobre, Serviços…)",
-            "Editar conteúdo sem programar",
-            "Integração redes sociais",
-            "Google Analytics incluído",
-            "SEO completo + Google Business",
-            "Entrega em 1–2 semanas",
-          ]}
-          ctaText="Quero um orçamento"
-          ctaLink={WA_LINK_SITE}
-          icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>'
-        />
-
-        <PricingCard
-          title="Aplicação Móvel"
-          description="Ideal para negócios que precisam de app iOS e Android."
-          price="€2000"
-          priceNote="Sob consulta · Projeto à medida"
-          features={[
-            "App personalizada",
-            "Funciona em iPhone e Android",
-            "Painel de administração",
-            "Design exclusivo",
-            "Publicação nas lojas",
-            "Timeline e preço sob consulta",
-          ]}
-          ctaText="Falar sobre o meu projeto"
-          ctaLink={WA_LINK_APP}
-          icon='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>'
-        />
-      </div>
-
-      <!-- Bottom note -->
-      <div class="mt-12 text-center">
-        <p class="text-slate-500 text-base">Precisa de e-commerce ou algo diferente? <strong class="text-[#0f172a] font-semibold">Envie uma mensagem</strong> — é gratuito e sem compromisso.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== PROCESS TIMELINE ===== -->
+  <!-- ===== PROCESS ===== -->
   <ProcessTimeline />
 
   <!-- ===== PORTFOLIO ===== -->
-  <section id="portfolio" data-animate class="py-20 sm:py-24 bg-[#f8fafc]">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
-      <p class="text-[#f97316] font-semibold text-sm uppercase tracking-widest mb-3">Portfolio</p>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] mb-4" style="font-family:'Sora',sans-serif;">
-        Resultados reais para negócios como o seu
-      </h2>
-      <p class="text-slate-500 text-lg mb-12">Projetos reais, métricas reais.</p>
+  <section id="portfolio" class="relative">
+    <div class="section-divider"></div>
+    <div class="py-[var(--section-py)] px-6 sm:px-8">
+      <div class="max-w-[1400px] mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 md:mb-24">
+          <div>
+            <p class="text-[var(--text-label)] font-medium uppercase tracking-[0.15em] text-[var(--color-text-subtle)] mb-4" data-animate>Portfolio</p>
+            <h2 class="font-light tracking-tight leading-[0.95]" style="font-size: var(--text-h1);" data-animate>
+              Resultados reais para<br/>negócios como o seu
+            </h2>
+          </div>
+          <p class="text-[var(--color-text-muted)] text-lg font-light" data-animate>
+            Projetos reais, métricas reais.
+          </p>
+        </div>
 
-      <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 text-left pb-4 sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-2 max-w-3xl mx-auto">
-        <PortfolioCard
-          gradientFrom="#0f172a"
-          gradientTo="#1e3a5f"
-          iconSvg='<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>'
-          appName="My Lessons"
-          tag="App educativa na App Store"
-          title="My Lessons"
-          problem="Professores de aulas particulares não tinham forma de gerir alunos e pagamentos."
-          solution="App para iPhone e Android com gestão de aulas, pagamentos e perfil de alunos."
-          result="Disponível na App Store. Utilizada por professores. Performance 100/100."
-          link="https://apps.apple.com/pt/app/my-lessons-gerir-explicacoes/id6743955907"
-          linkText="Ver na App Store"
-        />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-[1100px]">
+          <PortfolioCard
+            tag="App educativa · App Store"
+            title="My Lessons"
+            description="App para iPhone e Android com gestão de aulas, pagamentos e perfil de alunos."
+            result="Disponível na App Store. Performance 100/100."
+            link="https://apps.apple.com/pt/app/my-lessons-gerir-explicacoes/id6743955907"
+            linkText="Ver na App Store"
+          />
 
-        <PortfolioCard
-          gradientFrom="#7c2d12"
-          gradientTo="#c2410c"
-          iconSvg='<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>'
-          appName="Restaurante"
-          tag="Restaurante"
-          title="Website com menu digital e reservas"
-          problem="Restaurante sem presença online, perdia clientes para a concorrência no Google."
-          solution="Website moderno com menu digital, reservas online, integrado com Google Maps."
-          result="PageSpeed 100/100. Primeira página do Google em 2 semanas."
-        />
+          <PortfolioCard
+            tag="Restaurante"
+            title="Website com menu digital e reservas"
+            description="Website moderno com menu digital, reservas online, integrado com Google Maps."
+            result="PageSpeed 100/100. Primeira página do Google em 2 semanas."
+          />
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== EU VS AGENCIA (after portfolio — visitors see proof before comparison) ===== -->
+  <!-- ===== COMPARISON ===== -->
   <ComparisonTable />
 
   <!-- ===== TESTIMONIALS ===== -->
-  <section data-animate class="py-20 sm:py-24 bg-[#0f172a] relative overflow-hidden">
-    <!-- Background accent -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#f97316] opacity-[0.03] rounded-full blur-[100px] pointer-events-none"></div>
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-12">
-        <p class="text-[#f97316] font-semibold text-sm uppercase tracking-widest mb-3">Testemunhos</p>
-        <h2 class="font-extrabold text-white" style="font-family:'Sora',sans-serif; font-size: var(--text-h1);">
-          O que dizem os clientes
-        </h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <TestimonialCard
-          quote="Não percebia nada de websites. O Francisco tratou de tudo em 5 dias."
-          name="Maria"
-          business="Restaurante"
-          initial="M"
-        />
-        <TestimonialCard
-          quote="O meu site antigo não funcionava no telemóvel. Agora recebo contactos todos os dias."
-          name="João"
-          business="Clínica"
-          initial="J"
-        />
-        <TestimonialCard
-          quote="Preço justo, trabalho rápido, resultado excelente."
-          name="Ana"
-          business="Cabeleireiro"
-          initial="A"
-        />
+  <section class="relative">
+    <div class="section-divider"></div>
+    <div class="py-[var(--section-py)] px-6 sm:px-8">
+      <div class="max-w-[1400px] mx-auto">
+        <div class="mb-16 md:mb-24">
+          <p class="text-[var(--text-label)] font-medium uppercase tracking-[0.15em] text-[var(--color-text-subtle)] mb-4" data-animate>Testemunhos</p>
+          <h2 class="font-light tracking-tight leading-[0.95]" style="font-size: var(--text-h1);" data-animate>
+            O que dizem<br/>os clientes
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+          <TestimonialCard
+            quote="Não percebia nada de websites. O Francisco tratou de tudo em 5 dias."
+            name="Maria"
+            business="Restaurante"
+          />
+          <TestimonialCard
+            quote="O meu site antigo não funcionava no telemóvel. Agora recebo contactos todos os dias."
+            name="João"
+            business="Clínica"
+          />
+          <TestimonialCard
+            quote="Preço justo, trabalho rápido, resultado excelente."
+            name="Ana"
+            business="Cabeleireiro"
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -325,20 +251,27 @@ const faqs = [
   <GuaranteeSection />
 
   <!-- ===== FAQ ===== -->
-  <section data-animate class="py-20 sm:py-24 bg-[#f8fafc]">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-12">
-        <p class="text-[#f97316] font-semibold text-sm uppercase tracking-widest mb-3">FAQ</p>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a]">
-          Perguntas frequentes
-        </h2>
-      </div>
-      <div class="space-y-4">
-        {faqs.map((faq, i) => (
-          <FaqItem question={faq.question} answer={faq.answer} number={i + 1} />
-        ))}
-      </div>
+  <section class="relative">
+    <div class="section-divider"></div>
+    <div class="py-[var(--section-py)] px-6 sm:px-8">
+      <div class="max-w-[1400px] mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+          <!-- Left: heading -->
+          <div>
+            <p class="text-[var(--text-label)] font-medium uppercase tracking-[0.15em] text-[var(--color-text-subtle)] mb-4" data-animate>FAQ</p>
+            <h2 class="font-light tracking-tight leading-[0.95]" style="font-size: var(--text-h1);" data-animate>
+              Perguntas<br/>frequentes
+            </h2>
+          </div>
 
+          <!-- Right: accordion -->
+          <div class="space-y-0">
+            {faqs.map((faq, i) => (
+              <FaqItem question={faq.question} answer={faq.answer} number={i + 1} />
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 

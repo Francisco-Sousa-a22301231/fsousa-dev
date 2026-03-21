@@ -7,7 +7,7 @@ interface Props {
 }
 
 const {
-  title = 'Criação de Websites | Francisco Sousa',
+  title = 'Francisco Sousa — Criação de Websites',
   description = 'Websites rápidos e modernos para negócios. Páginas web a partir de €300. Entrega em 5 dias. Peça orçamento grátis.',
 } = Astro.props;
 
@@ -31,7 +31,6 @@ const faqData = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Fonts self-hosted via @fontsource — no external preconnects needed -->
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -84,164 +83,121 @@ const faqData = [
       }))
     })} />
   </head>
-  <body class="bg-[#0f172a] text-[#0f172a]">
+  <body>
 
-    <!-- SCROLL PROGRESS BAR -->
-    <div id="scroll-progress" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-[#f97316] to-[#fb923c] z-[60] w-0 transition-none" aria-hidden="true"></div>
+    <!-- CUSTOM CURSOR (desktop only) -->
+    <div class="cursor-dot" id="custom-cursor" aria-hidden="true">
+      <span class="cursor-dot-text">Ver</span>
+    </div>
 
     <!-- NAVBAR -->
     <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-transparent border-b border-transparent transition-all duration-500">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+      <div class="max-w-[1400px] mx-auto px-6 sm:px-8 flex items-center justify-between h-20">
         <!-- Logo -->
-        <a href="/" class="flex items-center gap-2 group">
-          <span class="text-[#f97316] font-bold text-xl" style="font-family:'Sora',sans-serif;">FS</span>
-          <span class="text-white font-semibold text-sm hidden sm:block" style="font-family:'Sora',sans-serif;">Francisco Sousa</span>
+        <a href="/" class="link-underline text-[var(--color-text)] font-light text-lg tracking-tight">
+          Francisco Sousa
         </a>
 
         <!-- Desktop nav -->
-        <nav class="hidden md:flex items-center gap-6">
-          <a href="#servicos" class="nav-link text-white/80 hover:text-[#f97316] text-sm font-medium transition-colors" data-section="servicos">Serviços</a>
-          <a href="#processo" class="nav-link text-white/80 hover:text-[#f97316] text-sm font-medium transition-colors" data-section="processo">Processo</a>
-          <a href="#portfolio" class="nav-link text-white/80 hover:text-[#f97316] text-sm font-medium transition-colors" data-section="portfolio">Portfolio</a>
-          <a href="#contacto-form" class="nav-link text-white/80 hover:text-[#f97316] text-sm font-medium transition-colors" data-section="contacto-form">Contacto</a>
-
-          <!-- Phone number -->
-          <a href="tel:+351939021876" class="flex items-center gap-1.5 text-white/60 hover:text-white text-sm font-medium transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.36 11.9 19.79 19.79 0 0 1 1.27 3.3 2 2 0 0 1 3.24 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.1a16 16 0 0 0 6 6l.62-.58a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 16h.72z"/></svg>
-            939 021 876
-          </a>
-
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="#servicos" class="nav-link" data-section="servicos">Serviços</a>
+          <a href="#processo" class="nav-link" data-section="processo">Processo</a>
+          <a href="#portfolio" class="nav-link" data-section="portfolio">Portfolio</a>
+          <a href="#contacto-form" class="nav-link" data-section="contacto-form">Contacto</a>
         </nav>
 
         <!-- Mobile hamburger -->
         <button
           id="menu-btn"
-          class="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-colors"
+          class="md:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center gap-1.5"
           aria-label="Abrir menu"
           aria-expanded="false"
         >
-          <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="6" x2="21" y2="6"/>
-            <line x1="3" y1="12" x2="21" y2="12"/>
-            <line x1="3" y1="18" x2="21" y2="18"/>
-          </svg>
-          <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="hidden">
-            <line x1="18" y1="6" x2="6" y2="18"/>
-            <line x1="6" y1="6" x2="18" y2="18"/>
-          </svg>
+          <span class="menu-line w-6 h-px bg-[var(--color-text)] transition-all duration-300 origin-center"></span>
+          <span class="menu-line w-6 h-px bg-[var(--color-text)] transition-all duration-300 origin-center"></span>
         </button>
-      </div>
-
-      <!-- Mobile menu slide-in -->
-      <div
-        id="mobile-menu"
-        class="md:hidden overflow-hidden max-h-0 transition-all duration-300 ease-in-out bg-[#0f172a] border-t border-white/10"
-      >
-        <nav class="flex flex-col px-4 py-4 gap-1">
-          <a href="#servicos" class="mobile-link text-white/80 hover:text-[#f97316] text-base font-medium py-3 px-2 rounded-lg hover:bg-white/5 transition-colors">Serviços</a>
-          <a href="#processo" class="mobile-link text-white/80 hover:text-[#f97316] text-base font-medium py-3 px-2 rounded-lg hover:bg-white/5 transition-colors">Processo</a>
-          <a href="#portfolio" class="mobile-link text-white/80 hover:text-[#f97316] text-base font-medium py-3 px-2 rounded-lg hover:bg-white/5 transition-colors">Portfolio</a>
-          <a href="#contacto-form" class="mobile-link text-white/80 hover:text-[#f97316] text-base font-medium py-3 px-2 rounded-lg hover:bg-white/5 transition-colors">Contacto</a>
-
-          <!-- Phone number (mobile) -->
-          <a href="tel:+351939021876" class="flex items-center gap-2 text-white/70 text-base font-medium py-3 px-2 rounded-lg hover:bg-white/5 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.36 11.9 19.79 19.79 0 0 1 1.27 3.3 2 2 0 0 1 3.24 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.1a16 16 0 0 0 6 6l.62-.58a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 16h.72z"/></svg>
-            939 021 876
-          </a>
-
-        </nav>
       </div>
     </header>
 
+    <!-- MOBILE MENU OVERLAY -->
+    <div id="mobile-menu" class="mobile-menu-overlay">
+      <nav class="flex flex-col gap-2 w-full">
+        <a href="#servicos" class="mobile-nav-link">Serviços</a>
+        <a href="#processo" class="mobile-nav-link">Processo</a>
+        <a href="#portfolio" class="mobile-nav-link">Portfolio</a>
+        <a href="#contacto-form" class="mobile-nav-link">Contacto</a>
+      </nav>
+      <div class="mt-12 space-y-3">
+        <a href="tel:+351939021876" class="mobile-nav-link text-[var(--color-text-muted)]" style="font-size: 1rem; font-weight: 400;">939 021 876</a>
+        <a href="mailto:franciscobarrososousa@gmail.com" class="mobile-nav-link text-[var(--color-text-muted)]" style="font-size: 1rem; font-weight: 400;">franciscobarrososousa@gmail.com</a>
+      </div>
+    </div>
+
     <!-- PAGE CONTENT -->
-    <main class="pt-16">
+    <main>
       <slot />
     </main>
 
     <!-- FOOTER -->
-    <footer id="contacto" class="bg-[#0f172a] text-white pt-0 pb-6">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-10">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-white/10">
-          <!-- Brand -->
-          <div>
-            <div class="flex items-center gap-2 mb-3">
-              <span class="text-[#f97316] font-bold text-2xl" style="font-family:'Sora',sans-serif;">FS</span>
-              <span class="font-semibold text-lg" style="font-family:'Sora',sans-serif;">Francisco Sousa</span>
-            </div>
-            <p class="text-white/60 text-sm leading-relaxed">Websites rápidos e modernos para negócios. Trabalho remotamente para todo o mundo.</p>
-          </div>
-          <!-- Links -->
-          <div>
-            <h4 class="font-semibold text-sm uppercase tracking-wider text-white/40 mb-4">Navegação</h4>
-            <ul class="space-y-2 text-sm text-white/70">
-              <li><a href="#servicos" class="hover:text-[#f97316] transition-colors">Serviços</a></li>
-              <li><a href="#processo" class="hover:text-[#f97316] transition-colors">Processo</a></li>
-              <li><a href="#portfolio" class="hover:text-[#f97316] transition-colors">Portfolio</a></li>
-              <li><a href="#contacto-form" class="hover:text-[#f97316] transition-colors">Contacto</a></li>
-            </ul>
-          </div>
-          <!-- Contact -->
-          <div>
-            <h4 class="font-semibold text-sm uppercase tracking-wider text-white/40 mb-4">Contacto</h4>
-            <ul class="space-y-1 text-sm">
-              <li>
-                <a href="tel:+351939021876" class="flex items-center gap-2 py-2 text-white/70 hover:text-[#f97316] transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.36 11.9 19.79 19.79 0 0 1 1.27 3.3 2 2 0 0 1 3.24 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.1a16 16 0 0 0 6 6l.62-.58a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.28 16h.72z"/></svg>
-                  939 021 876
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20o%20seu%20site%20e%20estou%20interessado%20num%20or%C3%A7amento%20para%20o%20meu%20neg%C3%B3cio."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex items-center gap-2 py-2 text-[#25d366] hover:text-[#1fbe5a] font-semibold transition-colors"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                  </svg>
-                  WhatsApp
-                </a>
-              </li>
-              <li>
-                <a href="mailto:franciscobarrososousa@gmail.com" class="flex items-center gap-2 py-2 text-white/70 hover:text-[#f97316] transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="2" y="4" width="20" height="16" rx="2"/>
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-                  </svg>
-                  franciscobarrososousa@gmail.com
-                </a>
-              </li>
-              <li class="flex items-center gap-2 text-white/60">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                </svg>
-                100% Remoto
-              </li>
-            </ul>
+    <footer class="relative">
+      <!-- Top divider -->
+      <div class="section-divider"></div>
+
+      <!-- Large CTA -->
+      <div class="py-[var(--section-py)] px-6 sm:px-8">
+        <div class="max-w-[1400px] mx-auto">
+          <p class="text-[var(--text-label)] font-medium uppercase tracking-[0.15em] text-[var(--color-text-subtle)] mb-6" data-animate>Tem um projeto em mente?</p>
+          <h2 class="font-light tracking-tight leading-[0.95] mb-12" style="font-size: var(--text-hero);" data-animate>
+            Vamos trabalhar<br/>juntos
+          </h2>
+
+          <!-- Contact links -->
+          <div class="flex flex-col sm:flex-row gap-6 sm:gap-12" data-animate>
+            <a
+              href="https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20o%20seu%20site%20e%20estou%20interessado%20num%20or%C3%A7amento%20para%20o%20meu%20neg%C3%B3cio."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="link-underline text-lg font-light text-[var(--color-text)]"
+              data-cursor="expand"
+            >
+              WhatsApp
+            </a>
+            <a href="mailto:franciscobarrososousa@gmail.com" class="link-underline text-lg font-light text-[var(--color-text)]" data-cursor="expand">
+              franciscobarrososousa@gmail.com
+            </a>
+            <a href="tel:+351939021876" class="link-underline text-lg font-light text-[var(--color-text)]" data-cursor="expand">
+              939 021 876
+            </a>
           </div>
         </div>
-        <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-white/40">
-          <p>&copy; {new Date().getFullYear()} Francisco Sousa. Todos os direitos reservados.</p>
-          <p>Feito com Astro e Tailwind CSS</p>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="section-divider"></div>
+      <div class="max-w-[1400px] mx-auto px-6 sm:px-8 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <p class="text-[var(--text-xs)] text-[var(--color-text-subtle)]">
+          &copy; {new Date().getFullYear()} Francisco Sousa
+        </p>
+        <div class="flex items-center gap-6 text-[var(--text-xs)] text-[var(--color-text-subtle)]">
+          <span>100% Remoto · Portugal</span>
+          <span id="local-time"></span>
         </div>
       </div>
     </footer>
 
-    <!-- Floating WhatsApp Button (all devices, hidden initially on mobile until scroll past hero) -->
+    <!-- Floating WhatsApp Button -->
     <a
       id="wa-float"
       href="https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20o%20seu%20site%20e%20estou%20interessado%20num%20or%C3%A7amento%20para%20o%20meu%20neg%C3%B3cio."
       target="_blank"
       rel="noopener noreferrer"
-      class="fixed bottom-6 right-6 z-50 bg-[#25d366] hover:bg-[#1fbe5a] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 opacity-0 translate-y-4 pointer-events-none"
+      class="wa-float-glow fixed bottom-6 right-6 z-50 bg-[#25d366] hover:bg-[#1fbe5a] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 opacity-0 translate-y-4 pointer-events-none"
       aria-label="Contactar via WhatsApp"
     >
       <svg class="relative z-10" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
       </svg>
     </a>
-
 
     <script>
       import { gsap } from 'gsap';
@@ -250,7 +206,6 @@ const faqData = [
 
       gsap.registerPlugin(ScrollTrigger);
 
-      // ===== REDUCED MOTION CHECK =====
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       // ===== LENIS SMOOTH SCROLL =====
@@ -261,7 +216,6 @@ const faqData = [
           touchMultiplier: 2,
         });
 
-        // Sync Lenis with GSAP ticker
         lenis.on('scroll', ScrollTrigger.update);
         gsap.ticker.add((time: number) => {
           lenis.raf(time * 1000);
@@ -269,54 +223,108 @@ const faqData = [
         gsap.ticker.lagSmoothing(0);
       }
 
-      // ===== MOBILE MENU =====
-      const btn = document.getElementById('menu-btn');
-      const menu = document.getElementById('mobile-menu');
-      const iconOpen = document.getElementById('icon-open');
-      const iconClose = document.getElementById('icon-close');
+      // ===== CUSTOM CURSOR =====
+      if (!prefersReducedMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        const cursor = document.getElementById('custom-cursor');
+        if (cursor) {
+          document.body.classList.add('has-custom-cursor');
 
-      btn?.addEventListener('click', () => {
-        const isOpen = menu!.style.maxHeight && menu!.style.maxHeight !== '0px';
+          let mouseX = 0;
+          let mouseY = 0;
+          let cursorX = 0;
+          let cursorY = 0;
+
+          document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+          });
+
+          // Smooth follow with lerp
+          gsap.ticker.add(() => {
+            const lerp = 0.15;
+            cursorX += (mouseX - cursorX) * lerp;
+            cursorY += (mouseY - cursorY) * lerp;
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+          });
+
+          // Hover expansion on interactive elements
+          const interactiveElements = document.querySelectorAll('a, button, [role="button"], [data-cursor="expand"]');
+          interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('is-hovering'));
+            el.addEventListener('mouseleave', () => {
+              cursor.classList.remove('is-hovering');
+              cursor.classList.remove('is-project');
+            });
+          });
+
+          // Project card hover — show "Ver" text
+          const projectCards = document.querySelectorAll('[data-cursor="project"]');
+          projectCards.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+              cursor.classList.add('is-project');
+              cursor.classList.add('is-hovering');
+            });
+            el.addEventListener('mouseleave', () => {
+              cursor.classList.remove('is-project');
+              cursor.classList.remove('is-hovering');
+            });
+          });
+        }
+      }
+
+      // ===== MOBILE MENU =====
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuLines = menuBtn?.querySelectorAll('.menu-line');
+
+      menuBtn?.addEventListener('click', () => {
+        const isOpen = mobileMenu?.classList.contains('is-open');
         if (isOpen) {
-          menu!.style.maxHeight = '0px';
-          iconOpen!.classList.remove('hidden');
-          iconClose!.classList.add('hidden');
-          btn!.setAttribute('aria-expanded', 'false');
+          mobileMenu?.classList.remove('is-open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          // Animate lines back
+          if (menuLines && menuLines.length >= 2) {
+            (menuLines[0] as HTMLElement).style.transform = '';
+            (menuLines[1] as HTMLElement).style.transform = '';
+          }
         } else {
-          menu!.style.maxHeight = menu!.scrollHeight + 'px';
-          iconOpen!.classList.add('hidden');
-          iconClose!.classList.remove('hidden');
-          btn!.setAttribute('aria-expanded', 'true');
+          mobileMenu?.classList.add('is-open');
+          menuBtn.setAttribute('aria-expanded', 'true');
+          // Animate to X
+          if (menuLines && menuLines.length >= 2) {
+            (menuLines[0] as HTMLElement).style.transform = 'rotate(45deg) translateY(4px)';
+            (menuLines[1] as HTMLElement).style.transform = 'rotate(-45deg) translateY(-4px)';
+          }
         }
       });
 
-      document.querySelectorAll('.mobile-link').forEach(link => {
+      // Close mobile menu on link click
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
         link.addEventListener('click', () => {
-          menu!.style.maxHeight = '0px';
-          iconOpen!.classList.remove('hidden');
-          iconClose!.classList.add('hidden');
-          btn!.setAttribute('aria-expanded', 'false');
+          mobileMenu?.classList.remove('is-open');
+          menuBtn?.setAttribute('aria-expanded', 'false');
+          if (menuLines && menuLines.length >= 2) {
+            (menuLines[0] as HTMLElement).style.transform = '';
+            (menuLines[1] as HTMLElement).style.transform = '';
+          }
         });
       });
 
-      // ===== NAV: TRANSPARENT → GLASS ON SCROLL =====
+      // ===== NAV: GLASS ON SCROLL =====
       const header = document.getElementById('main-header');
       const heroSection = document.getElementById('hero');
       if (header && heroSection) {
         const headerObserver = new IntersectionObserver(
           ([entry]) => {
-            if (!entry.isIntersecting) {
-              header.classList.add('nav-glass');
-            } else {
-              header.classList.remove('nav-glass');
-            }
+            header.classList.toggle('nav-glass', !entry.isIntersecting);
           },
-          { threshold: 0, rootMargin: '-64px 0px 0px 0px' }
+          { threshold: 0, rootMargin: '-80px 0px 0px 0px' }
         );
         headerObserver.observe(heroSection);
       }
 
-      // ===== NAV: ACTIVE SECTION INDICATOR =====
+      // ===== NAV: ACTIVE SECTION =====
       const navLinks = document.querySelectorAll<HTMLAnchorElement>('.nav-link[data-section]');
       const sections = document.querySelectorAll<HTMLElement>('section[id]');
 
@@ -339,17 +347,51 @@ const faqData = [
 
       // ===== GSAP SCROLL ANIMATIONS =====
       if (!prefersReducedMotion) {
-        // Batch scroll reveal for [data-animate] elements
-        gsap.utils.toArray<HTMLElement>('[data-animate]').forEach((el) => {
-          const delay = parseFloat(el.dataset.delay || '0') * 0.1;
-          gsap.fromTo(el,
-            { opacity: 0, y: 24 },
+        // Hero entrance
+        const heroFadeEls = document.querySelectorAll('.hero-fade');
+        if (heroFadeEls.length > 0) {
+          gsap.fromTo(heroFadeEls,
+            { opacity: 0, y: 40 },
             {
               opacity: 1,
               y: 0,
-              duration: 0.7,
+              duration: 1.2,
+              stagger: 0.12,
+              ease: 'expo.out',
+              delay: 0.2,
+            }
+          );
+        }
+
+        // Text split reveal (line-inner elements)
+        gsap.utils.toArray<HTMLElement>('.line-inner').forEach((el) => {
+          const trigger = el.closest('[data-animate]') || el.closest('section') || el;
+          gsap.fromTo(el,
+            { y: '110%' },
+            {
+              y: '0%',
+              duration: 1,
+              ease: 'expo.out',
+              scrollTrigger: {
+                trigger: trigger,
+                start: 'top 80%',
+                once: true,
+              },
+            }
+          );
+        });
+
+        // Batch scroll reveal for [data-animate]
+        gsap.utils.toArray<HTMLElement>('[data-animate]').forEach((el) => {
+          const delay = parseFloat(el.dataset.delay || '0') * 0.1;
+          gsap.fromTo(el,
+            { opacity: 0, y: 40 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 1,
               delay,
-              ease: 'power2.out',
+              ease: 'expo.out',
               scrollTrigger: {
                 trigger: el,
                 start: 'top 85%',
@@ -359,15 +401,12 @@ const faqData = [
           );
         });
 
-        // Comparison table: slide columns from opposite sides
+        // Slide variants
         gsap.utils.toArray<HTMLElement>('[data-animate-left]').forEach((el) => {
           gsap.fromTo(el,
-            { opacity: 0, x: -30 },
+            { opacity: 0, x: -40 },
             {
-              opacity: 1,
-              x: 0,
-              duration: 0.7,
-              ease: 'power2.out',
+              opacity: 1, x: 0, duration: 1, ease: 'expo.out',
               scrollTrigger: { trigger: el, start: 'top 85%', once: true },
             }
           );
@@ -375,35 +414,27 @@ const faqData = [
 
         gsap.utils.toArray<HTMLElement>('[data-animate-right]').forEach((el) => {
           gsap.fromTo(el,
-            { opacity: 0, x: 30 },
+            { opacity: 0, x: 40 },
             {
-              opacity: 1,
-              x: 0,
-              duration: 0.7,
-              ease: 'power2.out',
+              opacity: 1, x: 0, duration: 1, ease: 'expo.out',
               scrollTrigger: { trigger: el, start: 'top 85%', once: true },
             }
           );
         });
 
-        // Process timeline: line draws on scroll
-        const timelineLine = document.querySelector<HTMLElement>('.timeline-progress');
-        const timelineContainer = document.getElementById('processo');
-        if (timelineLine && timelineContainer) {
-          gsap.fromTo(timelineLine,
-            { width: '0%' },
-            {
-              width: '100%',
-              ease: 'none',
-              scrollTrigger: {
-                trigger: timelineContainer,
-                start: 'top 60%',
-                end: 'bottom 40%',
-                scrub: 1,
-              },
-            }
-          );
-        }
+        // Parallax images
+        gsap.utils.toArray<HTMLElement>('.parallax-img').forEach((el) => {
+          gsap.to(el, {
+            y: '-15%',
+            ease: 'none',
+            scrollTrigger: {
+              trigger: el,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 1,
+            },
+          });
+        });
 
         // Pricing cards stagger
         const pricingCards = document.querySelectorAll('.pricing-card');
@@ -411,28 +442,23 @@ const faqData = [
           gsap.fromTo(pricingCards,
             { opacity: 0, y: 40 },
             {
-              opacity: 1,
-              y: 0,
-              duration: 0.7,
-              stagger: 0.15,
-              ease: 'power2.out',
-              scrollTrigger: {
-                trigger: pricingCards[0],
-                start: 'top 85%',
-                once: true,
-              },
+              opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: 'expo.out',
+              scrollTrigger: { trigger: pricingCards[0], start: 'top 85%', once: true },
             }
           );
         }
       } else {
-        // Reduced motion: show everything immediately
-        document.querySelectorAll('[data-animate], [data-animate-left], [data-animate-right]').forEach((el) => {
+        // Reduced motion: show everything
+        document.querySelectorAll('[data-animate], [data-animate-left], [data-animate-right], .hero-fade').forEach((el) => {
           (el as HTMLElement).style.opacity = '1';
+          (el as HTMLElement).style.transform = 'none';
+        });
+        document.querySelectorAll('.line-inner').forEach((el) => {
           (el as HTMLElement).style.transform = 'none';
         });
       }
 
-      // ===== MAGNETIC BUTTON EFFECT (desktop only) =====
+      // ===== MAGNETIC BUTTON EFFECT =====
       if (!prefersReducedMotion && window.matchMedia('(pointer: fine)').matches) {
         document.querySelectorAll('.magnetic-btn').forEach((btn) => {
           const el = btn as HTMLElement;
@@ -451,7 +477,42 @@ const faqData = [
         });
       }
 
-      // ===== COUNTER ANIMATION (keep existing, works well) =====
+      // ===== FLOATING WHATSAPP (show after hero) =====
+      const waFloat = document.getElementById('wa-float');
+      const heroEl = document.getElementById('hero');
+      if (waFloat && heroEl) {
+        const waObserver = new IntersectionObserver(
+          ([entry]) => {
+            if (!entry.isIntersecting) {
+              waFloat.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+              waFloat.classList.add('opacity-100', 'translate-y-0');
+            } else {
+              waFloat.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+              waFloat.classList.remove('opacity-100', 'translate-y-0');
+            }
+          },
+          { threshold: 0 }
+        );
+        waObserver.observe(heroEl);
+      }
+
+      // ===== LOCAL TIME (footer) =====
+      const timeEl = document.getElementById('local-time');
+      if (timeEl) {
+        const updateTime = () => {
+          const now = new Date();
+          const timeStr = now.toLocaleTimeString('pt-PT', {
+            hour: '2-digit',
+            minute: '2-digit',
+            timeZone: 'Europe/Lisbon',
+          });
+          timeEl.textContent = timeStr + ' WET';
+        };
+        updateTime();
+        setInterval(updateTime, 60000);
+      }
+
+      // ===== COUNTER ANIMATION =====
       const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -486,38 +547,6 @@ const faqData = [
       document.querySelectorAll('[data-count]').forEach((el) => {
         counterObserver.observe(el);
       });
-
-      // ===== SCROLL PROGRESS BAR =====
-      const scrollProgressBar = document.getElementById('scroll-progress');
-      if (scrollProgressBar) {
-        const updateProgress = () => {
-          const scrollTop = window.scrollY;
-          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-          const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-          scrollProgressBar.style.width = progress + '%';
-        };
-        window.addEventListener('scroll', updateProgress, { passive: true });
-        updateProgress();
-      }
-
-      // ===== FLOATING WHATSAPP BUTTON (show after scrolling past hero) =====
-      const waFloat = document.getElementById('wa-float');
-      const heroEl = document.getElementById('hero');
-      if (waFloat && heroEl) {
-        const waObserver = new IntersectionObserver(
-          ([entry]) => {
-            if (!entry.isIntersecting) {
-              waFloat.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
-              waFloat.classList.add('opacity-100', 'translate-y-0');
-            } else {
-              waFloat.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
-              waFloat.classList.remove('opacity-100', 'translate-y-0');
-            }
-          },
-          { threshold: 0 }
-        );
-        waObserver.observe(heroEl);
-      }
     </script>
   </body>
 </html>

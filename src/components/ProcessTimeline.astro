@@ -1,117 +1,43 @@
 ---
+const steps = [
+  { number: "01", title: "Conversa", description: "Fale comigo no WhatsApp. Percebo o que precisa em 15 minutos." },
+  { number: "02", title: "Proposta", description: "Recebe uma proposta clara com preço fixo em 24 horas." },
+  { number: "03", title: "Construção", description: "Construo o seu site. Vê o progresso a cada etapa." },
+  { number: "04", title: "Lançamento", description: "Site online, domínio configurado, Google indexado." },
+];
 ---
 
-<section id="processo" data-animate class="py-20 sm:py-28 bg-white">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6">
-    <div class="text-center mb-14">
-      <div class="inline-flex items-center gap-2 bg-[#f97316]/10 border border-[#f97316]/20 text-[#f97316] text-sm font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider">
-        Método Rápido
+<section id="processo" class="relative">
+  <div class="section-divider"></div>
+  <div class="py-[var(--section-py)] px-6 sm:px-8">
+    <div class="max-w-[1400px] mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 md:mb-24">
+        <div>
+          <p class="text-[var(--text-label)] font-medium uppercase tracking-[0.15em] text-[var(--color-text-subtle)] mb-4" data-animate>Processo</p>
+          <h2 class="font-light tracking-tight leading-[0.95]" style="font-size: var(--text-h1);" data-animate>
+            Do zero ao online<br/>em 4 passos
+          </h2>
+        </div>
+        <p class="text-[var(--color-text-muted)] text-lg font-light" data-animate>
+          Sem complicações. Sem jargão técnico.
+        </p>
       </div>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a]" style="font-family:'Sora',sans-serif;">
-        Do zero ao online em 4 passos
-      </h2>
-      <p class="text-slate-500 text-lg mt-4">Sem complicações. Sem jargão técnico.</p>
-    </div>
 
-    <!-- Desktop: horizontal timeline -->
-    <div class="hidden md:block relative">
-      <!-- Connecting line (background track) -->
-      <div class="absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-white/10"></div>
-      <!-- Connecting line (animated progress) -->
-      <div class="timeline-progress absolute top-8 left-[12.5%] h-0.5 bg-gradient-to-r from-[#f97316] via-[#f97316]/60 to-[#25d366]" style="width: 0%; right: auto; max-width: calc(100% - 25%);"></div>
-
-      <div class="grid grid-cols-4 gap-6 relative">
-        <!-- Step 1 -->
-        <div class="flex flex-col items-center text-center" data-animate data-delay="1">
-          <div class="w-16 h-16 rounded-2xl bg-[#0f172a] flex items-center justify-center mb-5 shadow-lg shadow-[#0f172a]/15 relative z-10">
-            <span class="text-[#f97316] font-bold text-xl" style="font-family:'Sora',sans-serif;">1</span>
+      <!-- Steps grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-[var(--color-border)]">
+        {steps.map((step, i) => (
+          <div class="bg-[var(--color-bg)] p-8 sm:p-10" data-animate data-delay={String(i + 1)}>
+            <span class="text-5xl sm:text-6xl font-light tracking-tight text-[var(--color-border)] leading-none mb-6 block" style="color: rgba(0,0,0,0.08);">{step.number}</span>
+            <h3 class="text-lg font-light tracking-tight text-[var(--color-text)] mb-3">{step.title}</h3>
+            <p class="text-[var(--text-small)] text-[var(--color-text-muted)] font-light leading-relaxed">{step.description}</p>
           </div>
-          <h3 class="font-bold text-[#0f172a] text-lg mb-2" style="font-family:'Sora',sans-serif;">Conversa</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Fale comigo no WhatsApp. Percebo o que precisa em <strong class="text-slate-700">15 minutos</strong>.</p>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="flex flex-col items-center text-center" data-animate data-delay="2">
-          <div class="w-16 h-16 rounded-2xl bg-[#0f172a] flex items-center justify-center mb-5 shadow-lg shadow-[#0f172a]/15 relative z-10">
-            <span class="text-[#f97316] font-bold text-xl" style="font-family:'Sora',sans-serif;">2</span>
-          </div>
-          <h3 class="font-bold text-[#0f172a] text-lg mb-2" style="font-family:'Sora',sans-serif;">Proposta</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Recebe uma proposta clara com <strong class="text-slate-700">preço fixo em 24 horas</strong>.</p>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="flex flex-col items-center text-center" data-animate data-delay="3">
-          <div class="w-16 h-16 rounded-2xl bg-[#0f172a] flex items-center justify-center mb-5 shadow-lg shadow-[#0f172a]/15 relative z-10">
-            <span class="text-[#f97316] font-bold text-xl" style="font-family:'Sora',sans-serif;">3</span>
-          </div>
-          <h3 class="font-bold text-[#0f172a] text-lg mb-2" style="font-family:'Sora',sans-serif;">Construção</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Construo o seu site. Vê o <strong class="text-slate-700">progresso a cada etapa</strong>.</p>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="flex flex-col items-center text-center" data-animate data-delay="4">
-          <div class="w-16 h-16 rounded-2xl bg-[#25d366] flex items-center justify-center mb-5 shadow-lg shadow-[#25d366]/20 relative z-10">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <h3 class="font-bold text-[#0f172a] text-lg mb-2" style="font-family:'Sora',sans-serif;">Lançamento</h3>
-          <p class="text-slate-500 text-sm leading-relaxed">Site online, domínio configurado, <strong class="text-slate-700">Google indexado</strong>.</p>
-        </div>
+        ))}
       </div>
-    </div>
 
-    <!-- Mobile: vertical timeline -->
-    <div class="md:hidden relative pl-14">
-      <!-- Vertical line -->
-      <div class="absolute left-[18px] top-2 bottom-2 w-px bg-gradient-to-b from-[#f97316]/40 via-[#f97316]/20 to-[#25d366]/40"></div>
-
-      <div class="space-y-8">
-        <div class="relative" data-animate>
-          <div class="absolute -left-14 top-0 w-9 h-9 rounded-xl bg-[#0f172a] flex items-center justify-center shadow-md z-10">
-            <span class="text-[#f97316] font-bold text-sm" style="font-family:'Sora',sans-serif;">1</span>
-          </div>
-          <div class="bg-[#f8fafc] rounded-xl p-4">
-            <h3 class="font-bold text-[#0f172a] text-base mb-1" style="font-family:'Sora',sans-serif;">Conversa</h3>
-            <p class="text-slate-500 text-sm">Fale comigo no WhatsApp. Percebo o que precisa em <strong class="text-slate-700">15 minutos</strong>.</p>
-          </div>
-        </div>
-
-        <div class="relative" data-animate>
-          <div class="absolute -left-14 top-0 w-9 h-9 rounded-xl bg-[#0f172a] flex items-center justify-center shadow-md z-10">
-            <span class="text-[#f97316] font-bold text-sm" style="font-family:'Sora',sans-serif;">2</span>
-          </div>
-          <div class="bg-[#f8fafc] rounded-xl p-4">
-            <h3 class="font-bold text-[#0f172a] text-base mb-1" style="font-family:'Sora',sans-serif;">Proposta</h3>
-            <p class="text-slate-500 text-sm">Recebe uma proposta clara com <strong class="text-slate-700">preço fixo em 24 horas</strong>.</p>
-          </div>
-        </div>
-
-        <div class="relative" data-animate>
-          <div class="absolute -left-14 top-0 w-9 h-9 rounded-xl bg-[#0f172a] flex items-center justify-center shadow-md z-10">
-            <span class="text-[#f97316] font-bold text-sm" style="font-family:'Sora',sans-serif;">3</span>
-          </div>
-          <div class="bg-[#f8fafc] rounded-xl p-4">
-            <h3 class="font-bold text-[#0f172a] text-base mb-1" style="font-family:'Sora',sans-serif;">Construção</h3>
-            <p class="text-slate-500 text-sm">Construo o seu site. Vê o <strong class="text-slate-700">progresso a cada etapa</strong>.</p>
-          </div>
-        </div>
-
-        <div class="relative" data-animate>
-          <div class="absolute -left-14 top-0 w-9 h-9 rounded-xl bg-[#25d366] flex items-center justify-center shadow-md z-10">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
-          <div class="bg-[#f8fafc] rounded-xl p-4">
-            <h3 class="font-bold text-[#0f172a] text-base mb-1" style="font-family:'Sora',sans-serif;">Lançamento</h3>
-            <p class="text-slate-500 text-sm">Site online, domínio configurado, <strong class="text-slate-700">Google indexado</strong>.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bottom time badge + CTA -->
-    <div class="flex flex-col items-center mt-10 gap-5">
-      <div class="inline-flex items-center gap-2 bg-[#0f172a] text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-md">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        Tempo total: 3–5 dias úteis
+      <!-- Time badge -->
+      <div class="mt-12 flex items-center gap-3" data-animate>
+        <span class="w-2 h-2 bg-[var(--color-accent)] rounded-full"></span>
+        <span class="text-[var(--text-small)] text-[var(--color-text-muted)]">Tempo total: 3–5 dias úteis</span>
       </div>
     </div>
   </div>

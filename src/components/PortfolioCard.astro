@@ -1,88 +1,48 @@
 ---
 interface Props {
-  gradientFrom: string;
-  gradientTo: string;
-  iconSvg: string;
-  appName: string;
   tag: string;
   title: string;
-  problem: string;
-  solution: string;
+  description: string;
   result: string;
   link?: string;
   linkText?: string;
 }
 
-const { gradientFrom, gradientTo, iconSvg, appName, tag, title, problem, solution, result, link, linkText } = Astro.props;
+const { tag, title, description, result, link, linkText } = Astro.props;
 ---
 
-<div class="portfolio-card group bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col min-w-[85vw] sm:min-w-0 snap-start" style="transform-style: preserve-3d; perspective: 800px;">
-  <div class="h-56 flex items-center justify-center p-6 overflow-hidden relative" style={`background: linear-gradient(to bottom right, ${gradientFrom}, ${gradientTo})`}>
-    <!-- Phone mockup -->
-    <div class="relative w-[120px] h-[210px] bg-[#1a1a2e] rounded-[20px] border-2 border-white/20 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-3 bg-[#1a1a2e] rounded-b-lg z-10"></div>
-      <div class="w-full h-full flex flex-col items-center justify-center gap-2 p-3 transition-transform duration-700 group-hover:-translate-y-2" style={`background: linear-gradient(to bottom, ${gradientTo}40, ${gradientFrom})`}>
-        <div class="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center">
-          <Fragment set:html={iconSvg} />
-        </div>
-        <span class="text-white/80 text-[9px] font-semibold">{appName}</span>
-        <div class="w-full space-y-1">
-          <div class="h-1.5 bg-white/10 rounded-full w-full"></div>
-          <div class="h-1.5 bg-white/10 rounded-full w-3/4"></div>
-          <div class="h-1.5 bg-white/15 rounded-full w-1/2"></div>
-        </div>
-      </div>
+<div class="portfolio-card group" data-animate data-cursor="project">
+  <!-- Image placeholder — aspect ratio 3/2 -->
+  <div class="relative aspect-[3/2] bg-[var(--color-text)] overflow-hidden mb-6" style="border-radius: 2px;">
+    <div class="parallax-img absolute inset-0 flex items-center justify-center">
+      <span class="text-[var(--color-bg)]/20 text-6xl font-light tracking-tight">{title.charAt(0)}</span>
     </div>
     <!-- Performance badge -->
-    <div class="absolute top-3 right-3 bg-[#0f172a]/80 backdrop-blur-sm text-[#25d366] text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
+    <div class="absolute top-4 right-4 text-[var(--text-xs)] font-medium text-[var(--color-bg)]/60 bg-[var(--color-text)]/60 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1.5">
       <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
       100/100
     </div>
   </div>
-  <div class="p-6 flex flex-col flex-1">
-    <span class="text-[#f97316] text-xs font-bold uppercase tracking-wider mb-2">{tag}</span>
-    <h3 class="font-bold text-[#0f172a] text-lg mb-3" style="font-family:'Sora Variable','Sora',sans-serif;">{title}</h3>
-    <div class="space-y-2.5 text-sm text-slate-500 flex-1">
-      <p><span class="font-semibold text-slate-700">Problema:</span> {problem}</p>
-      <p><span class="font-semibold text-slate-700">Solução:</span> {solution}</p>
-      <p class="text-[#0f172a]"><span class="font-semibold">Resultado:</span> <span class="text-[#25d366] font-semibold">{result}</span></p>
+
+  <!-- Info -->
+  <div class="flex items-start justify-between gap-4">
+    <div>
+      <p class="text-[var(--text-xs)] font-medium uppercase tracking-[0.1em] text-[var(--color-text-subtle)] mb-2">{tag}</p>
+      <h3 class="text-xl font-light tracking-tight text-[var(--color-text)] mb-3">{title}</h3>
+      <p class="text-[var(--text-small)] text-[var(--color-text-muted)] font-light leading-relaxed mb-2">{description}</p>
+      <p class="text-[var(--text-small)] text-[var(--color-text)] font-light">{result}</p>
     </div>
     {link && (
-      <a href={link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[#f97316] text-sm font-semibold mt-4 hover:underline group/link">
-        {linkText || "Ver projeto"}
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="link-pill text-[var(--text-xs)] flex-shrink-0 mt-1"
+        data-cursor="expand"
+      >
+        {linkText || "Ver"}
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
       </a>
     )}
   </div>
 </div>
-
-<script>
-  // 3D tilt effect on portfolio cards (desktop only)
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('.portfolio-card').forEach((card) => {
-      const el = card as HTMLElement;
-
-      el.addEventListener('mousemove', (e: MouseEvent) => {
-        const rect = el.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / centerY) * -4;
-        const rotateY = ((x - centerX) / centerX) * 4;
-
-        el.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-      });
-
-      el.addEventListener('mouseleave', () => {
-        el.style.transform = 'rotateX(0) rotateY(0) translateY(0)';
-        el.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
-        setTimeout(() => { el.style.transition = ''; }, 400);
-      });
-
-      el.addEventListener('mouseenter', () => {
-        el.style.transition = 'none';
-      });
-    });
-  }
-</script>
