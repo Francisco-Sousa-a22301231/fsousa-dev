@@ -226,36 +226,51 @@ const faqData = [
     </footer>
 
     <!-- ===== LOADING SCREEN ===== -->
-    <div id="loading-screen" class="fixed inset-0 z-[200] flex items-center justify-center bg-[#0f172a] overflow-hidden">
-      <!-- Scan line effect -->
-      <div class="loader-scan"></div>
+    <div id="loading-screen" class="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-[#0f172a] overflow-hidden select-none" aria-hidden="true">
 
-      <!-- Orbit rings with particles -->
-      <div class="orbit-ring-1 flex items-start justify-center" style="margin-top:-80px;margin-left:-80px;top:50%;left:50%;">
-        <div class="loader-orbit" style="margin-top:-3px;margin-left:-3px;"></div>
-      </div>
-      <div class="orbit-ring-2 flex items-end justify-end" style="margin-top:-100px;margin-left:-100px;top:50%;left:50%;">
-        <div class="loader-orbit loader-orbit-2" style="margin-bottom:-3px;margin-right:-3px;"></div>
-      </div>
-      <div class="orbit-ring-1 flex items-end justify-start" style="margin-top:-80px;margin-left:-80px;top:50%;left:50%;animation-delay:1s;animation-duration:4s;">
-        <div class="loader-orbit loader-orbit-3" style="margin-bottom:-2px;margin-left:-2px;"></div>
+      <!-- Ambient glow — very subtle, like the hero section -->
+      <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 55% 45% at 50% 50%, rgba(249,115,22,0.06) 0%, transparent 70%);"></div>
+
+      <!-- ── Phrase cycling area ────────────────────────────── -->
+      <!-- Fixed height so layout doesn't shift between phrases -->
+      <div class="relative w-full px-6 sm:px-12" style="height: 4.5rem;">
+
+        <!-- Phrase 1 -->
+        <p class="loader-phrase loader-phrase-1 text-center" style="font-family:'Sora Variable','Sora',sans-serif; font-size: clamp(1.1rem, 3.5vw, 1.75rem); font-weight: 700; color: #fff; line-height: 1.2;">
+          A tua presença online,&nbsp;<span style="background: linear-gradient(90deg, #f97316, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">reinventada.</span>
+        </p>
+
+        <!-- Phrase 2 -->
+        <p class="loader-phrase loader-phrase-2 text-center" style="font-family:'Sora Variable','Sora',sans-serif; font-size: clamp(1.1rem, 3.5vw, 1.75rem); font-weight: 700; color: #fff; line-height: 1.2;">
+          Plataformas que&nbsp;<span style="background: linear-gradient(90deg, #f97316, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">convertem.</span>
+        </p>
+
+        <!-- Phrase 3 -->
+        <p class="loader-phrase loader-phrase-3 text-center" style="font-family:'Sora Variable','Sora',sans-serif; font-size: clamp(1.1rem, 3.5vw, 1.75rem); font-weight: 700; color: #fff; line-height: 1.2;">
+          Do conceito ao&nbsp;<span style="background: linear-gradient(90deg, #f97316, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">lançamento.</span>
+        </p>
+
+        <!-- Phrase 4 -->
+        <p class="loader-phrase loader-phrase-4 text-center" style="font-family:'Sora Variable','Sora',sans-serif; font-size: clamp(1.1rem, 3.5vw, 1.75rem); font-weight: 700; color: #fff; line-height: 1.2;">
+          Feito em Portugal.&nbsp;<span style="background: linear-gradient(90deg, #f97316, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Visto no mundo.</span>
+        </p>
       </div>
 
-      <!-- Center content -->
-      <div class="relative z-10 flex flex-col items-center gap-5">
-        <!-- SVG ring + logo -->
-        <div class="relative flex items-center justify-center">
-          <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle class="loader-ring" cx="60" cy="60" r="45" stroke="#f97316" stroke-width="1.5" stroke-linecap="round"/>
-            <circle cx="60" cy="60" r="45" stroke="white" stroke-width="1" opacity="0.06"/>
-          </svg>
-          <div class="loader-fs absolute inset-0 flex items-center justify-center">
-            <span class="text-3xl font-extrabold" style="font-family:'Sora',sans-serif;background:linear-gradient(135deg,#f97316,#fb923c,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">FS</span>
-          </div>
-        </div>
+      <!-- ── Thin divider ──────────────────────────────────── -->
+      <div class="w-6 h-px bg-white/10 mt-8 mb-8"></div>
 
-        <!-- Tagline -->
-        <p class="loader-tagline text-white text-xs uppercase tracking-[0.4em]">Francisco Sousa</p>
+      <!-- ── Logo reveal ───────────────────────────────────── -->
+      <div class="loader-logo-mark flex flex-col items-center gap-2.5">
+        <span
+          style="font-family:'Sora Variable','Sora',sans-serif; font-size: 2.25rem; font-weight: 800; background: linear-gradient(135deg, #f97316, #fb923c, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"
+        >FS</span>
+        <p class="loader-logo-name text-white text-xs uppercase tracking-[0.35em]">Francisco Sousa</p>
+      </div>
+
+      <!-- ── Progress bar ──────────────────────────────────── -->
+      <!-- Thin orange line at bottom — fills over the full sequence duration -->
+      <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-white/[0.05]">
+        <div class="loader-bar-fill h-full" style="background: linear-gradient(90deg, #f97316, #fb923c, #f59e0b);"></div>
       </div>
     </div>
 
@@ -277,11 +292,14 @@ const faqData = [
       // ===== LOADING SCREEN DISMISS =====
       const loadingScreen = document.getElementById('loading-screen');
       if (loadingScreen) {
-        // Dismiss after 2.2s (animation finishes at ~1.7s)
+        // Sequence: 4 phrases × ~0.95s + logo reveal = ~4.3s content
+        // Add class at 4.3s → CSS exit animation runs for 0.85s → remove at 5.15s
+        const DISMISS_AFTER = 4300;
+        const EXIT_DURATION = 850;
         setTimeout(() => {
           loadingScreen.classList.add('loading-done');
-          setTimeout(() => { loadingScreen.remove(); }, 750);
-        }, 1900);
+          setTimeout(() => { loadingScreen.remove(); }, EXIT_DURATION);
+        }, DISMISS_AFTER);
       }
     </script>
 
