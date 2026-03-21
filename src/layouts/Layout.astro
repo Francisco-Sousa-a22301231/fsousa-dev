@@ -535,6 +535,9 @@ const faqData = [
 
           el.addEventListener('mouseleave', () => {
             el.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+            el.addEventListener('transitionend', () => {
+              el.style.transform = '';
+            }, { once: true });
           });
         });
       }

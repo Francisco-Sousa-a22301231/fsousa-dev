@@ -750,6 +750,11 @@ details .faq-content > div {
   transform: translateY(0) scale(1);
 }
 
+/* Fix: tilt-card hover must use fast transition, not stagger-popup's slow 0.8s */
+.tilt-card.stagger-popup.is-visible {
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.15s ease-out;
+}
+
 /* ===== ANIMATED GRADIENT TEXT ===== */
 .gradient-text {
   background: linear-gradient(90deg, var(--color-accent), #ff8a5c, var(--color-accent-blue), var(--color-accent));
