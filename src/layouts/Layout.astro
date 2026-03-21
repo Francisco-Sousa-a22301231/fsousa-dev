@@ -213,7 +213,7 @@ const faqData = [
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
                 </svg>
-                100% Remoto
+                From Portugal 🇵🇹
               </li>
             </ul>
           </div>
@@ -224,6 +224,40 @@ const faqData = [
         </div>
       </div>
     </footer>
+
+    <!-- ===== LOADING SCREEN ===== -->
+    <div id="loading-screen" class="fixed inset-0 z-[200] flex items-center justify-center bg-[#0f172a] overflow-hidden">
+      <!-- Scan line effect -->
+      <div class="loader-scan"></div>
+
+      <!-- Orbit rings with particles -->
+      <div class="orbit-ring-1 flex items-start justify-center" style="margin-top:-80px;margin-left:-80px;top:50%;left:50%;">
+        <div class="loader-orbit" style="margin-top:-3px;margin-left:-3px;"></div>
+      </div>
+      <div class="orbit-ring-2 flex items-end justify-end" style="margin-top:-100px;margin-left:-100px;top:50%;left:50%;">
+        <div class="loader-orbit loader-orbit-2" style="margin-bottom:-3px;margin-right:-3px;"></div>
+      </div>
+      <div class="orbit-ring-1 flex items-end justify-start" style="margin-top:-80px;margin-left:-80px;top:50%;left:50%;animation-delay:1s;animation-duration:4s;">
+        <div class="loader-orbit loader-orbit-3" style="margin-bottom:-2px;margin-left:-2px;"></div>
+      </div>
+
+      <!-- Center content -->
+      <div class="relative z-10 flex flex-col items-center gap-5">
+        <!-- SVG ring + logo -->
+        <div class="relative flex items-center justify-center">
+          <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle class="loader-ring" cx="60" cy="60" r="45" stroke="#f97316" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="60" cy="60" r="45" stroke="white" stroke-width="1" opacity="0.06"/>
+          </svg>
+          <div class="loader-fs absolute inset-0 flex items-center justify-center">
+            <span class="text-3xl font-extrabold" style="font-family:'Sora',sans-serif;background:linear-gradient(135deg,#f97316,#fb923c,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">FS</span>
+          </div>
+        </div>
+
+        <!-- Tagline -->
+        <p class="loader-tagline text-white text-xs uppercase tracking-[0.4em]">Francisco Sousa</p>
+      </div>
+    </div>
 
     <!-- Floating WhatsApp Button (desktop only) -->
     <a
@@ -238,6 +272,18 @@ const faqData = [
       </svg>
     </a>
 
+
+    <script>
+      // ===== LOADING SCREEN DISMISS =====
+      const loadingScreen = document.getElementById('loading-screen');
+      if (loadingScreen) {
+        // Dismiss after 2.2s (animation finishes at ~1.7s)
+        setTimeout(() => {
+          loadingScreen.classList.add('loading-done');
+          setTimeout(() => { loadingScreen.remove(); }, 750);
+        }, 1900);
+      }
+    </script>
 
     <script>
       import { gsap } from 'gsap';

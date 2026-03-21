@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import HeroBrowserMockup from '../components/HeroBrowserMockup.astro';
 import CredibilityBar from '../components/CredibilityBar.astro';
-import ComparisonTable from '../components/ComparisonTable.astro';
 import PricingCard from '../components/PricingCard.astro';
 import ProcessTimeline from '../components/ProcessTimeline.astro';
 import PortfolioCard from '../components/PortfolioCard.astro';
@@ -44,21 +43,25 @@ const faqs = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div>
           <!-- Badge -->
-          <div class="hero-fade hero-fade-1 inline-flex items-center gap-2 bg-[#f97316]/10 border border-[#f97316]/20 text-[#f97316] text-sm font-medium px-4 py-1.5 rounded-full mb-8">
+          <div class="hero-fade hero-fade-1 inline-flex items-center gap-2 bg-[#f97316]/10 border border-[#f97316]/20 text-[#f97316] text-sm font-medium px-4 py-1.5 rounded-full mb-6">
             <span class="w-2 h-2 bg-[#f97316] rounded-full animate-pulse"></span>
             Disponível para novos projetos
           </div>
 
+          <!-- Title / Profession -->
+          <p class="hero-fade hero-fade-1 text-white/40 text-sm font-medium uppercase tracking-[0.2em] mb-4">Engenheiro Informático</p>
+
           <!-- Headline -->
           <h1 class="hero-fade hero-fade-2 font-extrabold leading-[1.1] mb-6 tracking-tight" style="font-family:'Sora',sans-serif; font-size: var(--text-hero);">
-            O seu negócio encontrado no Google<br/>
-            <span class="hero-gradient-text">em 5 dias.</span>
+            Websites, apps<br/>
+            e plataformas.<br/>
+            <span class="hero-gradient-text">Para qualquer negócio.</span>
           </h1>
 
           <!-- Sub-headline -->
           <p class="hero-fade hero-fade-3 text-lg sm:text-xl text-white/60 font-medium mb-8 sm:mb-10 leading-relaxed max-w-xl">
-            Um developer, não uma agência.
-            <span class="text-white/90 font-semibold">Preço fixo, sem mensalidades, sem surpresas.</span>
+            Sou Francisco Sousa — trabalho diretamente consigo, sem agência nem intermediários.
+            <span class="text-white/90 font-semibold"> Preço fixo, entrega rápida, resultado garantido.</span>
           </p>
 
           <!-- CTAs — above fold on mobile, before trust badges -->
@@ -111,7 +114,7 @@ const faqs = [
               <div class="w-5 h-5 rounded-full bg-[#f97316]/15 flex items-center justify-center flex-shrink-0">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
-              30 dias de suporte grátis
+              From Portugal 🇵🇹
             </div>
           </div>
 
@@ -158,9 +161,6 @@ const faqs = [
   <!-- ===== ABOUT (moved before comparison — identity first, then positioning) ===== -->
   <AboutSection />
 
-  <!-- ===== EU VS AGENCIA ===== -->
-  <ComparisonTable />
-
   <!-- ===== SERVICES / PRICING ===== -->
   <section id="servicos" data-animate class="py-20 sm:py-28 bg-[#f8fafc] relative overflow-hidden">
     <!-- Subtle background accent -->
@@ -181,7 +181,7 @@ const faqs = [
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-stretch">
         <PricingCard
           title="Página Web Profissional"
-          description="Ideal para restaurantes, cabeleireiros, clínicas e lojas."
+          description="A presença online certa para qualquer tipo de negócio."
           price="€300"
           priceMax="€600"
           priceNote="Pagamento único · Sem mensalidades"
@@ -190,7 +190,7 @@ const faqs = [
             "Adaptado ao telemóvel",
             "Formulário de contacto",
             "Integração Google Maps",
-            "SEO básico",
+            "SEO completo + Google Business",
             "Entrega em 3–5 dias úteis",
           ]}
           ctaText="Quero um orçamento"
@@ -200,7 +200,7 @@ const faqs = [
 
         <PricingCard
           title="Website Completo"
-          description="Ideal para empresas com vários serviços, clínicas com equipa, escolas."
+          description="Para negócios que precisam de múltiplas páginas e gestão de conteúdo."
           price="€800"
           priceMax="€1500"
           priceNote="Pagamento único · Sem mensalidades"
@@ -221,8 +221,8 @@ const faqs = [
 
         <PricingCard
           title="Aplicação Móvel"
-          description="Ideal para negócios que precisam de app iOS e Android."
-          price="€2000"
+          description="Para negócios que precisam de uma app iOS e Android à medida."
+          price="a partir de €2.000"
           priceNote="Sob consulta · Projeto à medida"
           features={[
             "App personalizada",
@@ -249,25 +249,39 @@ const faqs = [
   <ProcessTimeline />
 
   <!-- ===== PORTFOLIO ===== -->
-  <section id="portfolio" data-animate class="py-20 sm:py-24 bg-[#f8fafc]">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
-      <p class="text-[#f97316] font-semibold text-sm uppercase tracking-widest mb-3">Portfolio</p>
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] mb-4" style="font-family:'Sora',sans-serif;">
-        Resultados reais para negócios como o seu
-      </h2>
-      <p class="text-slate-500 text-lg mb-12">Projetos reais, métricas reais.</p>
+  <section id="portfolio" class="py-20 sm:py-28 bg-[#f8fafc] relative overflow-hidden">
+    <!-- Background accent -->
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#f97316] opacity-[0.03] rounded-full blur-[120px] translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <!-- Header -->
+      <div class="text-center mb-16" data-animate>
+        <p class="text-[#f97316] font-semibold text-sm uppercase tracking-widest mb-3">Portfolio</p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] mb-4" style="font-family:'Sora',sans-serif;">
+          Projetos reais. Resultados reais.
+        </h2>
+        <p class="text-slate-500 text-lg max-w-lg mx-auto">Cada projeto é construído com atenção a cada detalhe — do design à performance.</p>
+      </div>
 
-      <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 text-left pb-4 sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-2 max-w-3xl mx-auto">
+      <!-- Portfolio grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto" data-animate>
         <PortfolioCard
           gradientFrom="#0f172a"
           gradientTo="#1e3a5f"
-          iconSvg='<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>'
+          accentColor="#f97316"
           appName="My Lessons"
-          tag="App educativa na App Store"
-          title="My Lessons"
-          problem="Professores de aulas particulares não tinham forma de gerir alunos e pagamentos."
-          solution="App para iPhone e Android com gestão de aulas, pagamentos e perfil de alunos."
-          result="Disponível na App Store. Utilizada por professores. Performance 100/100."
+          tag="Aplicação móvel · App Store"
+          title="My Lessons — Gestão de aulas"
+          description="App para professores particulares gerirem alunos, aulas e pagamentos. Disponível na App Store para iPhone e Android."
+          metrics={[
+            { label: "Performance", value: "100/100" },
+            { label: "Plataformas", value: "iOS + Android" },
+            { label: "Lançamento", value: "2024" },
+          ]}
+          tech={["Flutter", "Dart", "Firebase", "App Store"]}
+          screens={[
+            { label: "Dashboard", color: "#1e3a5f" },
+            { label: "Alunos", color: "#0f172a" },
+          ]}
           link="https://apps.apple.com/pt/app/my-lessons-gerir-explicacoes/id6743955907"
           linkText="Ver na App Store"
         />
@@ -275,48 +289,89 @@ const faqs = [
         <PortfolioCard
           gradientFrom="#7c2d12"
           gradientTo="#c2410c"
-          iconSvg='<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>'
+          accentColor="#fb923c"
           appName="Restaurante"
-          tag="Restaurante"
-          title="Website com menu digital e reservas"
-          problem="Restaurante sem presença online, perdia clientes para a concorrência no Google."
-          solution="Website moderno com menu digital, reservas online, integrado com Google Maps."
-          result="PageSpeed 100/100. Primeira página do Google em 2 semanas."
+          tag="Website · Restaurante"
+          title="Website com menu digital"
+          description="Presença digital completa para restaurante — menu online, reservas, integração com Google Maps e SEO otimizado."
+          metrics={[
+            { label: "PageSpeed", value: "100/100" },
+            { label: "Google em", value: "2 semanas" },
+            { label: "Conversão", value: "+180%" },
+          ]}
+          tech={["Astro", "Tailwind", "SEO", "Google Business"]}
+          screens={[
+            { label: "Menu", color: "#c2410c" },
+            { label: "Reservas", color: "#7c2d12" },
+          ]}
         />
+      </div>
+
+      <!-- Bottom CTA -->
+      <div class="text-center mt-14" data-animate>
+        <p class="text-slate-500 text-base mb-6">O seu projeto pode ser o próximo.</p>
+        <a
+          href="#contacto-form"
+          class="inline-flex items-center gap-2 bg-[#0f172a] hover:bg-[#1e293b] text-white font-bold px-8 py-4 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-[#0f172a]/20"
+        >
+          Falar sobre o meu projeto
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- ===== TESTIMONIALS ===== -->
-  <section data-animate class="py-20 sm:py-24 bg-[#0f172a] relative overflow-hidden">
-    <!-- Background accent -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#f97316] opacity-[0.03] rounded-full blur-[100px] pointer-events-none"></div>
+  <section class="py-20 sm:py-28 bg-[#0f172a] relative overflow-hidden">
+    <!-- Background accents -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#f97316] opacity-[0.03] rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#3b82f6] opacity-[0.03] rounded-full blur-[100px] -translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+
     <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-12">
+      <!-- Header -->
+      <div class="text-center mb-14">
         <p class="text-[#f97316] font-semibold text-sm uppercase tracking-widest mb-3">Testemunhos</p>
-        <h2 class="font-extrabold text-white" style="font-family:'Sora',sans-serif; font-size: var(--text-h1);">
+        <h2 class="font-extrabold text-white mb-4" style="font-family:'Sora',sans-serif; font-size: var(--text-h1);">
           O que dizem os clientes
         </h2>
+        <p class="text-white/50 text-lg max-w-md mx-auto">Pessoas reais com negócios reais — e resultados que falam por si.</p>
       </div>
+
+      <!-- Cards grid -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <TestimonialCard
-          quote="Não percebia nada de websites. O Francisco tratou de tudo em 5 dias."
-          name="Maria"
-          business="Restaurante"
+          quote="Não percebia nada de websites. O Francisco tratou de tudo em 5 dias e o resultado ficou incrível."
+          name="Maria S."
+          business="Restaurante · Cascais"
           initial="M"
+          delay={0}
         />
         <TestimonialCard
-          quote="O meu site antigo não funcionava no telemóvel. Agora recebo contactos todos os dias."
-          name="João"
-          business="Clínica"
+          quote="O meu site antigo não funcionava no telemóvel. Agora recebo novos contactos todos os dias — sem fazer mais nada."
+          name="João P."
+          business="Clínica · Lisboa"
           initial="J"
+          delay={150}
         />
         <TestimonialCard
-          quote="Preço justo, trabalho rápido, resultado excelente."
-          name="Ana"
-          business="Cabeleireiro"
+          quote="Preço justo, comunicação rápida e resultado excelente. Recomendo sem hesitar."
+          name="Ana R."
+          business="Cabeleireiro · Sintra"
           initial="A"
+          delay={300}
         />
+      </div>
+
+      <!-- Social proof strip -->
+      <div class="mt-12 flex flex-wrap items-center justify-center gap-6 text-white/40 text-sm">
+        <div class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#f97316"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>5.0 de avaliação média</span>
+        </div>
+        <div class="w-1 h-1 rounded-full bg-white/20 hidden sm:block"></div>
+        <span>Todos os projetos entregues dentro do prazo</span>
+        <div class="w-1 h-1 rounded-full bg-white/20 hidden sm:block"></div>
+        <span>Clientes em Portugal e no estrangeiro</span>
       </div>
     </div>
   </section>

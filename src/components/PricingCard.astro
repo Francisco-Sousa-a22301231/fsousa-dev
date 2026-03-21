@@ -41,9 +41,10 @@ const { title, description, price, priceMax, priceNote, features, highlighted = 
   </div>
 
   <div class="mb-6">
-    <div class="flex items-baseline gap-1">
+    <div class="flex items-baseline gap-1 flex-wrap">
       <span class:list={[
-        "text-4xl font-extrabold",
+        "font-extrabold",
+        price.length > 6 ? "text-2xl" : "text-4xl",
         highlighted ? "text-white" : "text-[#0f172a]"
       ]} style="font-family:'Sora',sans-serif;">{price}</span>
       {priceMax && <span class:list={["text-base font-medium", highlighted ? "text-white/40" : "text-slate-400"]}>– {priceMax}</span>}
@@ -71,7 +72,7 @@ const { title, description, price, priceMax, priceNote, features, highlighted = 
       {ctaText}
     </a>
   ) : (
-    <a href={ctaLink} target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 border border-slate-300 text-[#0f172a] hover:bg-[#0f172a] hover:border-[#0f172a] hover:text-white font-semibold py-3.5 rounded-xl transition-all duration-200 hover:-translate-y-0.5">
+    <a href={ctaLink} target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 bg-slate-100 hover:bg-[#f97316] text-[#0f172a] hover:text-white font-semibold py-3.5 rounded-xl transition-colors duration-200 border border-transparent">
       {ctaText}
     </a>
   )}

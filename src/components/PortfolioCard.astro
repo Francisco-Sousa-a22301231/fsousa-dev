@@ -2,53 +2,128 @@
 interface Props {
   gradientFrom: string;
   gradientTo: string;
-  iconSvg: string;
+  accentColor?: string;
   appName: string;
   tag: string;
   title: string;
-  problem: string;
-  solution: string;
-  result: string;
+  description: string;
+  metrics: { label: string; value: string }[];
+  tech: string[];
+  screens: { label: string; color: string }[];
   link?: string;
   linkText?: string;
 }
 
-const { gradientFrom, gradientTo, iconSvg, appName, tag, title, problem, solution, result, link, linkText } = Astro.props;
+const {
+  gradientFrom,
+  gradientTo,
+  accentColor = '#f97316',
+  appName,
+  tag,
+  title,
+  description,
+  metrics,
+  tech,
+  screens,
+  link,
+  linkText,
+} = Astro.props;
 ---
 
-<div class="portfolio-card group bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col min-w-[85vw] sm:min-w-0 snap-start" style="transform-style: preserve-3d; perspective: 800px;">
-  <div class="h-56 flex items-center justify-center p-6 overflow-hidden relative" style={`background: linear-gradient(to bottom right, ${gradientFrom}, ${gradientTo})`}>
-    <!-- Phone mockup -->
-    <div class="relative w-[120px] h-[210px] bg-[#1a1a2e] rounded-[20px] border-2 border-white/20 shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-3 bg-[#1a1a2e] rounded-b-lg z-10"></div>
-      <div class="w-full h-full flex flex-col items-center justify-center gap-2 p-3 transition-transform duration-700 group-hover:-translate-y-2" style={`background: linear-gradient(to bottom, ${gradientTo}40, ${gradientFrom})`}>
-        <div class="w-10 h-10 bg-white/15 rounded-xl flex items-center justify-center">
-          <Fragment set:html={iconSvg} />
+<div class="portfolio-card group relative bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500" style="transform-style: preserve-3d; perspective: 1000px;">
+  <!-- Gradient header with simulated screens -->
+  <div class="relative h-72 overflow-hidden" style={`background: linear-gradient(135deg, ${gradientFrom}, ${gradientTo})`}>
+    <!-- Grid pattern overlay -->
+    <div class="absolute inset-0 opacity-[0.06]" style="background-image: url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\");"></div>
+
+    <!-- App name badge top-left -->
+    <div class="absolute top-4 left-4 z-20">
+      <span class="text-white/60 text-xs font-bold uppercase tracking-wider">{tag}</span>
+    </div>
+
+    <!-- Performance badge top-right -->
+    <div class="absolute top-4 right-4 z-20 flex items-center gap-1.5 bg-black/30 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full">
+      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      100/100
+    </div>
+
+    <!-- Simulated browser/app screens -->
+    <div class="absolute inset-0 flex items-end justify-center pb-0 gap-3 pt-12 px-6">
+      <!-- Main screen (browser window) -->
+      <div class="portfolio-screen-main relative w-full max-w-[280px] bg-white/10 backdrop-blur-sm rounded-t-xl border border-white/20 shadow-2xl overflow-hidden group-hover:-translate-y-2 transition-transform duration-500">
+        <!-- Browser chrome -->
+        <div class="flex items-center gap-1.5 px-3 py-2 bg-black/20">
+          <div class="w-2 h-2 rounded-full bg-white/30"></div>
+          <div class="w-2 h-2 rounded-full bg-white/30"></div>
+          <div class="w-2 h-2 rounded-full bg-white/30"></div>
+          <div class="flex-1 bg-white/10 rounded h-3 mx-2 flex items-center px-2">
+            <span class="text-white/40 text-[7px] truncate">{appName.toLowerCase().replace(/\s+/g, '')}.pt</span>
+          </div>
         </div>
-        <span class="text-white/80 text-[9px] font-semibold">{appName}</span>
-        <div class="w-full space-y-1">
-          <div class="h-1.5 bg-white/10 rounded-full w-full"></div>
-          <div class="h-1.5 bg-white/10 rounded-full w-3/4"></div>
-          <div class="h-1.5 bg-white/15 rounded-full w-1/2"></div>
+        <!-- Screen content rows -->
+        <div class="p-3 space-y-2">
+          <div class="h-3 bg-white/20 rounded-full w-3/4"></div>
+          <div class="h-2 bg-white/10 rounded-full w-full"></div>
+          <div class="h-2 bg-white/10 rounded-full w-5/6"></div>
+          <div class="flex gap-2 mt-3">
+            <div class="h-8 bg-white/20 rounded-lg flex-1"></div>
+            <div class="h-8 rounded-lg flex-none w-16" style={`background: ${accentColor}50`}></div>
+          </div>
+          <div class="grid grid-cols-3 gap-1 mt-2">
+            <div class="h-12 bg-white/10 rounded-lg"></div>
+            <div class="h-12 bg-white/10 rounded-lg"></div>
+            <div class="h-12 bg-white/10 rounded-lg"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phone mockup -->
+      <div class="portfolio-screen-phone relative w-[80px] bg-[#1a1a2e] rounded-[14px] border border-white/20 shadow-2xl overflow-hidden flex-shrink-0 group-hover:-translate-y-4 transition-transform duration-500 delay-75">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-2 bg-[#1a1a2e] rounded-b-lg z-10"></div>
+        <div class="pt-4 pb-2 px-1.5 space-y-1.5" style={`background: linear-gradient(to bottom, ${gradientTo}60, ${gradientFrom}90)`}>
+          <div class="h-8 rounded-lg bg-white/10 flex items-center justify-center">
+            <div class="w-4 h-4 rounded bg-white/20"></div>
+          </div>
+          <div class="h-2 bg-white/10 rounded-full w-full"></div>
+          <div class="h-2 bg-white/10 rounded-full w-3/4"></div>
+          <div class="h-6 rounded bg-white/15 mt-2"></div>
+          <div class="h-6 rounded bg-white/10 mt-1"></div>
         </div>
       </div>
     </div>
-    <!-- Performance badge -->
-    <div class="absolute top-3 right-3 bg-[#0f172a]/80 backdrop-blur-sm text-[#25d366] text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
-      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-      100/100
-    </div>
   </div>
-  <div class="p-6 flex flex-col flex-1">
-    <span class="text-[#f97316] text-xs font-bold uppercase tracking-wider mb-2">{tag}</span>
-    <h3 class="font-bold text-[#0f172a] text-lg mb-3" style="font-family:'Sora Variable','Sora',sans-serif;">{title}</h3>
-    <div class="space-y-2.5 text-sm text-slate-500 flex-1">
-      <p><span class="font-semibold text-slate-700">Problema:</span> {problem}</p>
-      <p><span class="font-semibold text-slate-700">Solução:</span> {solution}</p>
-      <p class="text-[#0f172a]"><span class="font-semibold">Resultado:</span> <span class="text-[#25d366] font-semibold">{result}</span></p>
+
+  <!-- Card content -->
+  <div class="p-7">
+    <!-- Title + description -->
+    <h3 class="font-extrabold text-[#0f172a] text-xl mb-2" style="font-family:'Sora Variable','Sora',sans-serif;">{title}</h3>
+    <p class="text-slate-500 text-sm leading-relaxed mb-5">{description}</p>
+
+    <!-- Metrics row -->
+    <div class="grid grid-cols-3 gap-3 mb-5">
+      {metrics.map(m => (
+        <div class="text-center p-2 bg-[#f8fafc] rounded-xl">
+          <p class="font-extrabold text-[#0f172a] text-sm" style="font-family:'Sora',sans-serif;">{m.value}</p>
+          <p class="text-slate-400 text-[10px] mt-0.5 leading-tight">{m.label}</p>
+        </div>
+      ))}
     </div>
+
+    <!-- Tech stack tags -->
+    <div class="flex flex-wrap gap-1.5 mb-5">
+      {tech.map(t => (
+        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-[#f97316]/8 text-[#f97316] border border-[#f97316]/15">{t}</span>
+      ))}
+    </div>
+
+    <!-- Link -->
     {link && (
-      <a href={link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[#f97316] text-sm font-semibold mt-4 hover:underline group/link">
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 text-[#0f172a] font-bold text-sm hover:text-[#f97316] transition-colors group/link"
+      >
         {linkText || "Ver projeto"}
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
       </a>
@@ -58,7 +133,7 @@ const { gradientFrom, gradientTo, iconSvg, appName, tag, title, problem, solutio
 
 <script>
   // 3D tilt effect on portfolio cards (desktop only)
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.matchMedia('(pointer: fine)').matches) {
     document.querySelectorAll('.portfolio-card').forEach((card) => {
       const el = card as HTMLElement;
 
@@ -68,16 +143,15 @@ const { gradientFrom, gradientTo, iconSvg, appName, tag, title, problem, solutio
         const y = e.clientY - rect.top;
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / centerY) * -4;
-        const rotateY = ((x - centerX) / centerX) * 4;
-
+        const rotateX = ((y - centerY) / centerY) * -3;
+        const rotateY = ((x - centerX) / centerX) * 3;
         el.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
       });
 
       el.addEventListener('mouseleave', () => {
+        el.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
         el.style.transform = 'rotateX(0) rotateY(0) translateY(0)';
-        el.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
-        setTimeout(() => { el.style.transition = ''; }, 400);
+        setTimeout(() => { el.style.transition = ''; }, 500);
       });
 
       el.addEventListener('mouseenter', () => {

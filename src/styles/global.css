@@ -4,6 +4,126 @@
 
 @import "tailwindcss";
 
+/* ===== LOADING SCREEN ===== */
+
+#loading-screen {
+  pointer-events: all;
+}
+
+#loading-screen.loading-done {
+  animation: loading-exit 0.7s cubic-bezier(0.55, 0, 1, 0.45) forwards;
+  pointer-events: none;
+}
+
+@keyframes loading-exit {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.04); }
+}
+
+/* SVG ring draw animation */
+.loader-ring {
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  animation: ring-draw 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
+@keyframes ring-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* FS text reveal */
+.loader-fs {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: loader-text-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
+}
+
+@keyframes loader-text-in {
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Tagline reveal */
+.loader-tagline {
+  opacity: 0;
+  letter-spacing: 0.4em;
+  animation: loader-tagline-in 0.6s ease 1.1s forwards;
+}
+
+@keyframes loader-tagline-in {
+  to { opacity: 0.5; }
+}
+
+/* Orbiting particles */
+.loader-orbit {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f97316;
+  opacity: 0;
+  animation: orbit-appear 0.4s ease 0.6s forwards;
+  transform-origin: 0 0;
+}
+.loader-orbit-2 {
+  background: #fb923c;
+  animation-delay: 0.7s;
+}
+.loader-orbit-3 {
+  background: #f59e0b;
+  width: 4px;
+  height: 4px;
+  animation-delay: 0.8s;
+}
+.loader-orbit-4 {
+  background: #f97316;
+  width: 3px;
+  height: 3px;
+  opacity: 0;
+  animation: orbit-appear 0.4s ease 0.9s forwards;
+}
+
+@keyframes orbit-appear {
+  to { opacity: 0.7; }
+}
+
+/* Orbit rotation containers */
+.orbit-ring-1 {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  animation: orbit-spin 3s linear 0.6s infinite;
+}
+.orbit-ring-2 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  animation: orbit-spin 4.5s linear 0.8s infinite reverse;
+}
+
+@keyframes orbit-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Loader scan line */
+.loader-scan {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #f97316, transparent);
+  opacity: 0;
+  animation: scan-line 1.2s ease 0.4s forwards;
+}
+
+@keyframes scan-line {
+  0% { opacity: 0; top: 0; }
+  30% { opacity: 0.6; }
+  70% { opacity: 0.3; }
+  100% { opacity: 0; top: 100%; }
+}
+
 /* ===== DESIGN SYSTEM TOKENS ===== */
 @layer base {
   :root {
