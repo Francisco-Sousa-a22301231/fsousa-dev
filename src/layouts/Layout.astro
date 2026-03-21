@@ -275,19 +275,42 @@ const faqData = [
     </a>
 
 
+    <style>
+      /* Loading screen exit — triggered by .dismissing class */
+      #loading-screen.dismissing {
+        animation: loading-exit 0.42s cubic-bezier(0.4, 0, 1, 1) forwards;
+        pointer-events: none;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #loading-screen.dismissing {
+          animation: none !important;
+          opacity: 0 !important;
+        }
+      }
+    </style>
+
     <script>
       // ===== LOADING SCREEN DISMISS =====
-      const loadingScreen = document.getElementById('loading-screen');
-      if (loadingScreen) {
+      document.addEventListener('DOMContentLoaded', () => {
+        const loadingScreen = document.getElementById('loading-screen');
+        if (!loadingScreen) return;
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (prefersReducedMotion) {
+          loadingScreen.style.display = 'none';
+          return;
+        }
+
         // 2 phrases × 0.58s + logo = ~1.55s content
         // Dismiss at 1.55s → exit animation 0.42s → screen gone at ~1.97s
         const DISMISS_AFTER = 1550;
         const EXIT_DURATION = 420;
         setTimeout(() => {
-          loadingScreen.classList.add('loading-done');
-          setTimeout(() => { loadingScreen.remove(); }, EXIT_DURATION);
+          loadingScreen.classList.add('dismissing');
+          setTimeout(() => { loadingScreen.style.display = 'none'; }, EXIT_DURATION);
         }, DISMISS_AFTER);
-      }
+      });
     </script>
 
     <script>
