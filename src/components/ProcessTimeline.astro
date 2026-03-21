@@ -1,9 +1,9 @@
 ---
 const steps = [
-  { number: "01", title: "Conversa", description: "Fale comigo no WhatsApp. Percebo o que precisa em 15 minutos." },
-  { number: "02", title: "Proposta", description: "Recebe uma proposta clara com preço fixo em 24 horas." },
-  { number: "03", title: "Construção", description: "Construo o seu site. Vê o progresso a cada etapa." },
-  { number: "04", title: "Lançamento", description: "Site online, domínio configurado, Google indexado." },
+  { number: "01", title: "Conversa", description: "Fale comigo no WhatsApp. Percebo o que precisa em 15 minutos.", icon: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" },
+  { number: "02", title: "Proposta", description: "Recebe uma proposta clara com preço fixo em 24 horas.", icon: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z M14 2v6h6" },
+  { number: "03", title: "Construção", description: "Construo o seu site. Vê o progresso a cada etapa.", icon: "M16 18l6-6-6-6 M8 6l-6 6 6 6" },
+  { number: "04", title: "Lançamento", description: "Site online, domínio configurado, Google indexado.", icon: "M22 11.08V12a10 10 0 1 1-5.93-9.14 M22 4L12 14.01l-3-3" },
 ];
 ---
 
@@ -24,19 +24,19 @@ const steps = [
       </div>
 
       <!-- Steps grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-[var(--color-border)]">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-[var(--color-border)]" data-stagger-parent>
         {steps.map((step, i) => (
-          <div class="bg-[var(--color-bg)] p-8 sm:p-10" data-animate data-delay={String(i + 1)}>
-            <span class="text-5xl sm:text-6xl font-light tracking-tight text-[var(--color-border)] leading-none mb-6 block" style="color: rgba(0,0,0,0.08);">{step.number}</span>
-            <h3 class="text-lg font-light tracking-tight text-[var(--color-text)] mb-3">{step.title}</h3>
-            <p class="text-[var(--text-small)] text-[var(--color-text-muted)] font-light leading-relaxed">{step.description}</p>
+          <div class="process-step stagger-popup bg-[var(--color-bg)] p-8 sm:p-10 group cursor-default">
+            <span class="process-number text-5xl sm:text-6xl font-light tracking-tight leading-none mb-6 block transition-colors duration-500" style="color: rgba(0,0,0,0.08);">{step.number}</span>
+            <h3 class="text-lg font-light tracking-tight text-[var(--color-text)] mb-3 relative z-1">{step.title}</h3>
+            <p class="text-[var(--text-small)] text-[var(--color-text-muted)] font-light leading-relaxed relative z-1">{step.description}</p>
           </div>
         ))}
       </div>
 
       <!-- Time badge -->
       <div class="mt-12 flex items-center gap-3" data-animate>
-        <span class="w-2 h-2 bg-[var(--color-accent)] rounded-full"></span>
+        <span class="w-2 h-2 bg-[var(--color-accent)] rounded-full animate-pulse"></span>
         <span class="text-[var(--text-small)] text-[var(--color-text-muted)]">Tempo total: 3–5 dias úteis</span>
       </div>
     </div>

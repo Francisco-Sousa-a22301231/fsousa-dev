@@ -510,6 +510,415 @@ details .faq-content > div {
   to { stroke-dashoffset: 0; }
 }
 
+/* ===== PRELOADER ===== */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s var(--ease-out-expo), visibility 0.6s;
+}
+
+.preloader.is-done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-counter {
+  font-family: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  font-size: clamp(4rem, 12vw, 10rem);
+  font-weight: 200;
+  color: var(--color-bg);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  opacity: 0.3;
+}
+
+.preloader-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: var(--color-accent);
+  width: 0%;
+  transition: width 0.15s linear;
+}
+
+.preloader-name {
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(248, 248, 248, 0.3);
+  margin-top: 2rem;
+}
+
+/* ===== SCROLL PROGRESS BAR ===== */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--color-accent);
+  z-index: 9998;
+  width: 0%;
+  transform-origin: left;
+  will-change: width;
+}
+
+/* ===== GRAIN TEXTURE OVERLAY ===== */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9990;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ===== INFINITE MARQUEE ===== */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 2rem;
+  white-space: nowrap;
+}
+
+.marquee-separator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+/* ===== 3D TILT CARD ===== */
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out;
+}
+
+.tilt-card .tilt-card-inner {
+  transform: translateZ(30px);
+}
+
+.tilt-card-shine {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.15), transparent 60%);
+}
+
+.tilt-card:hover .tilt-card-shine {
+  opacity: 1;
+}
+
+/* ===== CLIP-PATH IMAGE REVEAL ===== */
+.clip-reveal {
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path 1.2s var(--ease-out-expo);
+}
+
+.clip-reveal.is-revealed {
+  clip-path: inset(0 0 0 0);
+}
+
+/* ===== PORTFOLIO HOVER EFFECTS ===== */
+.portfolio-card .portfolio-img-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.portfolio-card .portfolio-img-inner {
+  transition: transform 0.8s var(--ease-out-expo);
+}
+
+.portfolio-card:hover .portfolio-img-inner {
+  transform: scale(1.08);
+}
+
+.portfolio-card .portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(34,34,34,0.8));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+/* ===== TEXT CHARACTER REVEAL ===== */
+.char-reveal .char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.char-reveal.is-revealed .char {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s var(--ease-out-expo), transform 0.5s var(--ease-out-expo);
+}
+
+/* ===== FLOATING DECORATIVE ELEMENTS ===== */
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.04;
+  will-change: transform;
+}
+
+.floating-shape-1 {
+  width: 500px;
+  height: 500px;
+  background: var(--color-accent);
+  top: 10%;
+  right: -10%;
+  animation: float-drift 20s ease-in-out infinite;
+}
+
+.floating-shape-2 {
+  width: 300px;
+  height: 300px;
+  background: var(--color-accent-blue);
+  bottom: 20%;
+  left: -5%;
+  animation: float-drift 25s ease-in-out infinite reverse;
+}
+
+@keyframes float-drift {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(30px, -30px) rotate(5deg); }
+  50% { transform: translate(-20px, 20px) rotate(-3deg); }
+  75% { transform: translate(15px, 10px) rotate(2deg); }
+}
+
+/* ===== SECTION DARK THEME (portfolio) ===== */
+.section-dark {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.section-dark .section-divider {
+  background: rgba(248, 248, 248, 0.1);
+}
+
+/* ===== STAGGER POPUP ANIMATION ===== */
+.stagger-popup {
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+
+.stagger-popup.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ===== ANIMATED GRADIENT TEXT ===== */
+.gradient-text {
+  background: linear-gradient(90deg, var(--color-accent), #ff8a5c, var(--color-accent-blue), var(--color-accent));
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 6s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ===== HORIZONTAL REVEAL LINE ===== */
+.reveal-line {
+  width: 0;
+  height: 1px;
+  background: var(--color-accent);
+  transition: width 1.5s var(--ease-out-expo);
+}
+
+.reveal-line.is-visible {
+  width: 100%;
+}
+
+/* ===== HOVER MAGNETIC LINK ENHANCED ===== */
+.magnetic-link {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.magnetic-link .link-text {
+  display: inline-block;
+  transition: transform 0.4s var(--ease-out-expo);
+}
+
+.magnetic-link .link-text-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  transform: translateY(100%);
+  transition: transform 0.4s var(--ease-out-expo);
+  color: var(--color-accent);
+}
+
+.magnetic-link:hover .link-text {
+  transform: translateY(-100%);
+}
+
+.magnetic-link:hover .link-text-hover {
+  transform: translateY(0);
+}
+
+/* ===== SMOOTH SECTION TRANSITIONS ===== */
+.section-transition-in {
+  opacity: 0;
+  transform: translateY(80px);
+}
+
+.section-transition-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s var(--ease-out-expo), transform 1s var(--ease-out-expo);
+}
+
+/* ===== SCALE-IN ANIMATION ===== */
+.scale-in {
+  opacity: 0;
+  transform: scale(0.92);
+}
+
+.scale-in.is-visible {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+
+/* ===== COUNTER FLIP EFFECT ===== */
+.counter-value {
+  display: inline-block;
+  transform: translateY(0);
+  transition: transform 0.3s var(--ease-out-expo);
+}
+
+/* ===== TESTIMONIAL CARD HOVER ===== */
+.testimonial-card {
+  transition: transform 0.5s var(--ease-out-expo), box-shadow 0.5s ease;
+  border: 1px solid transparent;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+  border-color: var(--color-border-light);
+}
+
+/* ===== FAQ ENHANCED ===== */
+details summary {
+  position: relative;
+}
+
+details summary::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-accent);
+  transition: width 0.4s var(--ease-out-expo);
+}
+
+details[open] summary::before {
+  width: 100%;
+}
+
+/* ===== PROCESS STEP HOVER ===== */
+.process-step {
+  position: relative;
+  transition: background-color 0.5s ease;
+}
+
+.process-step::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-accent);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+
+.process-step:hover::before {
+  opacity: 0.03;
+}
+
+.process-step:hover .process-number {
+  color: var(--color-accent) !important;
+  transition: color 0.5s ease;
+}
+
+/* ===== VIEW TRANSITION ANIMATIONS ===== */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: fade-out 0.3s ease;
+}
+
+::view-transition-new(root) {
+  animation: fade-in 0.3s ease;
+}
+
+@keyframes fade-out {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.98); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: scale(1.02); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 /* ===== ACCESSIBILITY ===== */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -564,5 +973,48 @@ details .faq-content > div {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+  }
+
+  .preloader {
+    display: none !important;
+  }
+
+  .grain-overlay {
+    display: none !important;
+  }
+
+  .marquee-track {
+    animation: none !important;
+  }
+
+  .stagger-popup {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .clip-reveal {
+    clip-path: none !important;
+  }
+
+  .gradient-text {
+    animation: none !important;
+  }
+
+  .floating-shape {
+    display: none !important;
+  }
+
+  .testimonial-card:hover {
+    transform: none !important;
+  }
+
+  .section-transition-in,
+  .scale-in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .scroll-progress {
+    display: none !important;
   }
 }

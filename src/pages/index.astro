@@ -35,15 +35,19 @@ const faqs = [
     <div class="max-w-[1400px] mx-auto px-6 sm:px-8 w-full">
       <!-- Small label -->
       <p class="hero-fade text-[var(--text-label)] font-medium uppercase tracking-[0.15em] text-[var(--color-text-subtle)] mb-8">
+        <span class="inline-block w-8 h-px bg-[var(--color-accent)] align-middle mr-3"></span>
         Freelance Web Developer
       </p>
 
-      <!-- Massive headline — LIGHT weight -->
+      <!-- Massive headline — LIGHT weight with gradient accent -->
       <h1 class="hero-fade font-light tracking-tight leading-[0.95] mb-10" style="font-size: var(--text-hero);">
         Ajudo negócios<br/>
         a crescer com<br/>
-        <span class="text-[var(--color-accent)]">websites que convertem</span>
+        <span class="gradient-text">websites que convertem</span>
       </h1>
+
+      <!-- Animated accent line -->
+      <div class="hero-fade reveal-line mb-10"></div>
 
       <!-- Description + CTA row -->
       <div class="hero-fade flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-16">
@@ -73,11 +77,16 @@ const faqs = [
         </div>
       </div>
 
-      <!-- Location tag -->
-      <div class="hero-fade mt-12 pt-8 border-t border-[var(--color-border)]">
+      <!-- Location tag with scroll indicator -->
+      <div class="hero-fade mt-12 pt-8 border-t border-[var(--color-border)] flex items-center justify-between">
         <p class="text-[var(--text-xs)] text-[var(--color-text-subtle)] uppercase tracking-[0.15em]">
           100% Remoto · Portugal
         </p>
+        <!-- Scroll indicator -->
+        <div class="hidden sm:flex items-center gap-2 text-[var(--text-xs)] text-[var(--color-text-subtle)] uppercase tracking-[0.15em]">
+          <span>Scroll</span>
+          <svg class="animate-bounce" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
       </div>
     </div>
   </section>
@@ -106,7 +115,7 @@ const faqs = [
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-[var(--color-border)] max-w-[1200px] mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-[var(--color-border)] max-w-[1200px] mx-auto" data-stagger-parent>
           <PricingCard
             title="Página Web"
             description="Ideal para restaurantes, cabeleireiros, clínicas e lojas."
@@ -190,7 +199,7 @@ const faqs = [
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-[1100px]">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-[1100px]" data-stagger-parent>
           <PortfolioCard
             tag="App educativa · App Store"
             title="My Lessons"
@@ -226,7 +235,7 @@ const faqs = [
           </h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12" data-stagger-parent>
           <TestimonialCard
             quote="Não percebia nada de websites. O Francisco tratou de tudo em 5 dias."
             name="Maria"

@@ -1,20 +1,20 @@
 ---
+const categories = ['Restaurantes', 'Clínicas', 'Educação', 'Cabeleireiros', 'Lojas', 'Fitness', 'Imobiliário', 'Escritórios'];
+// Duplicate for seamless loop
+const items = [...categories, ...categories];
 ---
 
-<section class="relative">
+<section class="relative overflow-hidden">
   <div class="section-divider"></div>
-  <div class="py-12 sm:py-16 px-6 sm:px-8">
-    <div class="max-w-[1400px] mx-auto">
-      <div class="flex items-center justify-between flex-wrap gap-y-4">
-        <p class="text-[var(--text-xs)] font-medium uppercase tracking-[0.15em] text-[var(--color-text-subtle)]">Projetos entregues para</p>
-        <div class="flex items-center gap-8 sm:gap-12 flex-wrap">
-          <span class="text-[var(--text-small)] text-[var(--color-text-muted)] font-light" data-animate>Restaurantes</span>
-          <span class="text-[var(--text-small)] text-[var(--color-text-muted)] font-light" data-animate data-delay="1">Clínicas</span>
-          <span class="text-[var(--text-small)] text-[var(--color-text-muted)] font-light" data-animate data-delay="2">Educação</span>
-          <span class="text-[var(--text-small)] text-[var(--color-text-muted)] font-light" data-animate data-delay="3">Cabeleireiros</span>
-          <span class="text-[var(--text-small)] text-[var(--color-text-muted)] font-light" data-animate data-delay="4">Lojas</span>
+  <div class="py-6 sm:py-8">
+    <div class="marquee-track">
+      {items.map((cat) => (
+        <div class="marquee-item">
+          <span class="text-sm sm:text-base font-light text-[var(--color-text-muted)] tracking-wide uppercase">{cat}</span>
+          <span class="marquee-separator"></span>
         </div>
-      </div>
+      ))}
     </div>
   </div>
+  <div class="section-divider"></div>
 </section>

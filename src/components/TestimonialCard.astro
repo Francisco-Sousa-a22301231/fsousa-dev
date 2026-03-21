@@ -8,15 +8,17 @@ interface Props {
 const { quote, name, business } = Astro.props;
 ---
 
-<div class="testimonial-card" data-animate>
-  <!-- Large quote mark -->
-  <span class="block text-6xl font-light leading-none text-[var(--color-border)] select-none mb-6" aria-hidden="true">"</span>
+<div class="testimonial-card tilt-card stagger-popup p-8 sm:p-10 bg-[var(--color-bg)] rounded-sm">
+  <div class="tilt-card-shine rounded-sm"></div>
 
-  <p class="text-xl sm:text-2xl font-light leading-relaxed text-[var(--color-text)] mb-8 tracking-tight">
+  <!-- Large quote mark with accent color -->
+  <span class="block text-6xl font-light leading-none text-[var(--color-accent)]/15 select-none mb-6 relative z-1" aria-hidden="true">"</span>
+
+  <p class="text-xl sm:text-2xl font-light leading-relaxed text-[var(--color-text)] mb-8 tracking-tight relative z-1">
     {quote}
   </p>
 
-  <div class="pt-6 border-t border-[var(--color-border)]">
+  <div class="pt-6 border-t border-[var(--color-border)] relative z-1">
     <p class="text-[var(--text-small)] font-medium text-[var(--color-text)]">{name}</p>
     <p class="text-[var(--text-xs)] text-[var(--color-text-subtle)]">{business}</p>
   </div>
