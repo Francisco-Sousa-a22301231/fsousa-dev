@@ -17,7 +17,7 @@ const { waLink } = Astro.props;
       <h2 class="font-extrabold mb-4" style="font-family:'Sora',sans-serif; font-size: var(--text-h1);">
         Vamos trabalhar juntos.
       </h2>
-      <p class="text-white/50 text-lg">Preencha o formulário e respondo em menos de 2 horas.</p>
+      <p class="text-white/50 text-lg">Conta-me o teu projeto.</p>
     </div>
 
     <!-- Contact form card -->
@@ -46,50 +46,16 @@ const { waLink } = Astro.props;
           </div>
 
           <div>
-            <label for="telefone" class="block text-sm font-semibold text-slate-700 mb-1.5">Telemóvel</label>
-            <input
-              id="telefone"
-              type="tel"
-              name="telefone"
-              required
-              placeholder="+351 9XX XXX XXX"
-              class="w-full border border-slate-200 rounded-xl px-4 py-3 text-[#0f172a] text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#f97316] focus:border-transparent transition"
-            />
-          </div>
-
-          <div>
-            <label for="email" class="block text-sm font-semibold text-slate-700 mb-1.5">Email <span class="text-slate-400 font-normal">(opcional)</span></label>
+            <label for="email" class="block text-sm font-semibold text-slate-700 mb-1.5">Email</label>
             <input
               id="email"
               type="email"
               name="email"
+              required
               placeholder="o-seu@email.com"
               class="w-full border border-slate-200 rounded-xl px-4 py-3 text-[#0f172a] text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#f97316] focus:border-transparent transition"
             />
           </div>
-
-          <!-- Pre-qualifier -->
-          <fieldset>
-            <legend class="block text-sm font-semibold text-slate-700 mb-2">O que procura?</legend>
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-              <label class="flex items-center gap-2 border border-slate-200 rounded-xl px-3 py-2.5 cursor-pointer hover:border-[#f97316]/50 transition has-[:checked]:border-[#f97316] has-[:checked]:bg-[#f97316]/5">
-                <input type="radio" name="servico" value="Página Web (€300-600)" class="accent-[#f97316]" />
-                <span class="text-xs text-slate-600 font-medium">Página Web</span>
-              </label>
-              <label class="flex items-center gap-2 border border-slate-200 rounded-xl px-3 py-2.5 cursor-pointer hover:border-[#f97316]/50 transition has-[:checked]:border-[#f97316] has-[:checked]:bg-[#f97316]/5">
-                <input type="radio" name="servico" value="Website Completo (€800-1500)" class="accent-[#f97316]" />
-                <span class="text-xs text-slate-600 font-medium">Website Completo</span>
-              </label>
-              <label class="flex items-center gap-2 border border-slate-200 rounded-xl px-3 py-2.5 cursor-pointer hover:border-[#f97316]/50 transition has-[:checked]:border-[#f97316] has-[:checked]:bg-[#f97316]/5">
-                <input type="radio" name="servico" value="App Móvel (a partir de €2000)" class="accent-[#f97316]" />
-                <span class="text-xs text-slate-600 font-medium">App Móvel</span>
-              </label>
-              <label class="flex items-center gap-2 border border-slate-200 rounded-xl px-3 py-2.5 cursor-pointer hover:border-[#f97316]/50 transition has-[:checked]:border-[#f97316] has-[:checked]:bg-[#f97316]/5">
-                <input type="radio" name="servico" value="Ainda não sei" class="accent-[#f97316]" checked />
-                <span class="text-xs text-slate-600 font-medium">Ainda não sei</span>
-              </label>
-            </div>
-          </fieldset>
 
           <div>
             <label for="mensagem" class="block text-sm font-semibold text-slate-700 mb-1.5">Mensagem</label>

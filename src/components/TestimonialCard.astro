@@ -19,8 +19,8 @@ const { quote, name, business, initial, delay = 0 } = Astro.props;
   <div class="absolute inset-0 bg-white/[0.04] backdrop-blur-sm"></div>
   <div class="absolute inset-0 border border-white/10 rounded-2xl pointer-events-none"></div>
 
-  <!-- Animated accent line on left -->
-  <div class="testimonial-accent absolute top-0 left-0 w-0.5 h-0 bg-gradient-to-b from-[#f97316] to-[#f59e0b] rounded-full"></div>
+  <!-- Accent line on left (opacity slide-in on hover) -->
+  <div class="testimonial-accent absolute top-0 left-0 w-[3px] h-full bg-gradient-to-b from-[#f97316] to-[#f59e0b] rounded-full"></div>
 
   <!-- Large decorative quote -->
   <div class="absolute top-3 right-5 text-[#f97316]/8 text-8xl font-serif leading-none select-none pointer-events-none" aria-hidden="true" style="font-family:Georgia,serif;">"</div>
@@ -52,9 +52,8 @@ const { quote, name, business, initial, delay = 0 } = Astro.props;
       <p class="text-white/40 text-xs mt-0.5">{business}</p>
     </div>
     <!-- Verified badge -->
-    <div class="ml-auto flex items-center gap-1 text-[#25d366] text-[10px] font-semibold">
-      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-      Verificado
+    <div class="ml-auto flex items-center gap-1 bg-[#22c55e] text-white text-[10px] font-semibold px-2 py-0.5 rounded-full">
+      Verificado ✓
     </div>
   </div>
 </div>
@@ -78,13 +77,12 @@ const { quote, name, business, initial, delay = 0 } = Astro.props;
   }
 
   .testimonial-card:hover .testimonial-accent {
-    height: 100%;
-    transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 1;
   }
 
   .testimonial-accent {
-    height: 0;
-    transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -94,6 +92,7 @@ const { quote, name, business, initial, delay = 0 } = Astro.props;
       transition: none !important;
     }
     .testimonial-accent {
+      opacity: 1 !important;
       transition: none !important;
     }
   }
