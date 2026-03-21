@@ -86,6 +86,9 @@ const faqData = [
   </head>
   <body class="bg-[#0f172a] text-[#0f172a]">
 
+    <!-- SCROLL PROGRESS BAR -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-[#f97316] to-[#fb923c] z-[60] w-0 transition-none" aria-hidden="true"></div>
+
     <!-- NAVBAR -->
     <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-transparent border-b border-transparent transition-all duration-500">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
@@ -225,12 +228,13 @@ const faqData = [
       </div>
     </footer>
 
-    <!-- Floating WhatsApp Button (desktop only) -->
+    <!-- Floating WhatsApp Button (all devices, hidden initially on mobile until scroll past hero) -->
     <a
+      id="wa-float"
       href="https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20o%20seu%20site%20e%20estou%20interessado%20num%20or%C3%A7amento%20para%20o%20meu%20neg%C3%B3cio."
       target="_blank"
       rel="noopener noreferrer"
-      class="fixed bottom-6 right-6 z-50 bg-[#25d366] hover:bg-[#1fbe5a] text-white w-14 h-14 rounded-full hidden md:flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300"
+      class="fixed bottom-6 right-6 z-50 bg-[#25d366] hover:bg-[#1fbe5a] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 opacity-0 translate-y-4 pointer-events-none"
       aria-label="Contactar via WhatsApp"
     >
       <svg class="relative z-10" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
@@ -482,6 +486,38 @@ const faqData = [
       document.querySelectorAll('[data-count]').forEach((el) => {
         counterObserver.observe(el);
       });
+
+      // ===== SCROLL PROGRESS BAR =====
+      const scrollProgressBar = document.getElementById('scroll-progress');
+      if (scrollProgressBar) {
+        const updateProgress = () => {
+          const scrollTop = window.scrollY;
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+          scrollProgressBar.style.width = progress + '%';
+        };
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+      }
+
+      // ===== FLOATING WHATSAPP BUTTON (show after scrolling past hero) =====
+      const waFloat = document.getElementById('wa-float');
+      const heroEl = document.getElementById('hero');
+      if (waFloat && heroEl) {
+        const waObserver = new IntersectionObserver(
+          ([entry]) => {
+            if (!entry.isIntersecting) {
+              waFloat.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+              waFloat.classList.add('opacity-100', 'translate-y-0');
+            } else {
+              waFloat.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+              waFloat.classList.remove('opacity-100', 'translate-y-0');
+            }
+          },
+          { threshold: 0 }
+        );
+        waObserver.observe(heroEl);
+      }
     </script>
   </body>
 </html>

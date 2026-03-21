@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import HeroBrowserMockup from '../components/HeroBrowserMockup.astro';
-import CredibilityBar from '../components/CredibilityBar.astro';
+import ClientLogoBar from '../components/ClientLogoBar.astro';
 import ComparisonTable from '../components/ComparisonTable.astro';
 import PricingCard from '../components/PricingCard.astro';
 import ProcessTimeline from '../components/ProcessTimeline.astro';
@@ -11,6 +11,7 @@ import FaqItem from '../components/FaqItem.astro';
 import GuaranteeSection from '../components/GuaranteeSection.astro';
 import AboutSection from '../components/AboutSection.astro';
 import ContactForm from '../components/ContactForm.astro';
+import FinalCTA from '../components/FinalCTA.astro';
 
 const WA_LINK = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20vi%20o%20seu%20site%20e%20estou%20interessado%20num%20or%C3%A7amento%20para%20o%20meu%20neg%C3%B3cio.";
 const WA_LINK_PAGINA = "https://wa.me/351939021876?text=Ol%C3%A1%20Francisco%2C%20estou%20interessado%20numa%20P%C3%A1gina%20Web%20Profissional%20para%20o%20meu%20neg%C3%B3cio.";
@@ -42,27 +43,27 @@ const faqs = [
 
     <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-28 w-full">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <div class="text-center lg:text-left">
+        <div>
           <!-- Badge -->
-          <div class="hero-fade hero-fade-1 inline-flex items-center gap-2 bg-[#f97316]/10 border border-[#f97316]/20 text-[#f97316] text-sm font-medium px-4 py-1.5 rounded-full mb-8 mx-auto lg:mx-0">
+          <div class="hero-fade hero-fade-1 inline-flex items-center gap-2 bg-[#f97316]/10 border border-[#f97316]/20 text-[#f97316] text-sm font-medium px-4 py-1.5 rounded-full mb-8">
             <span class="w-2 h-2 bg-[#f97316] rounded-full animate-pulse"></span>
             Disponível para novos projetos
           </div>
 
-          <!-- Headline -->
+          <!-- Headline — outcome-focused -->
           <h1 class="hero-fade hero-fade-2 font-extrabold leading-[1.1] mb-6 tracking-tight" style="font-family:'Sora',sans-serif; font-size: var(--text-hero);">
-            O seu negócio encontrado no Google<br/>
-            <span class="hero-gradient-text">em 5 dias.</span>
+            Mais clientes para o seu negócio.<br/>
+            <span class="hero-gradient-text">Em 5 dias.</span>
           </h1>
 
-          <!-- Sub-headline -->
-          <p class="hero-fade hero-fade-3 text-lg sm:text-xl text-white/60 font-medium mb-8 sm:mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
-            Um developer, não uma agência.
-            <span class="text-white/90 font-semibold">Preço fixo, sem mensalidades, sem surpresas.</span>
+          <!-- Sub-headline — value proposition -->
+          <p class="hero-fade hero-fade-3 text-lg sm:text-xl text-white/60 font-medium mb-8 sm:mb-10 leading-relaxed max-w-xl">
+            Websites profissionais a preço fixo.
+            <span class="text-white/90 font-semibold">Sem agência, sem mensalidades, sem surpresas.</span>
           </p>
 
           <!-- CTAs — above fold on mobile, before trust badges -->
-          <div class="hero-fade hero-fade-5 flex flex-col items-center sm:flex-row gap-4 mb-6 sm:hidden">
+          <div class="hero-fade hero-fade-5 flex flex-col sm:flex-row gap-4 mb-6 sm:hidden">
             <a
               href={WA_LINK}
               target="_blank"
@@ -82,13 +83,13 @@ const faqs = [
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
             </a>
           </div>
-          <p class="hero-fade hero-fade-6 mt-0 mb-6 text-sm text-white/40 flex items-center justify-center gap-2 sm:hidden">
+          <p class="hero-fade hero-fade-6 mt-0 mb-6 text-sm text-white/40 flex items-center gap-2 sm:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             Sem compromisso · Resposta em menos de 2h
           </p>
 
           <!-- Trust proof row -->
-          <div class="hero-fade hero-fade-4 grid grid-cols-2 gap-x-4 gap-y-3 sm:flex sm:flex-wrap sm:gap-x-6 sm:gap-y-3 text-sm text-white/70 mb-10 justify-items-center lg:justify-items-start">
+          <div class="hero-fade hero-fade-4 grid grid-cols-2 gap-x-4 gap-y-3 sm:flex sm:flex-wrap sm:gap-x-6 sm:gap-y-3 text-sm text-white/70 mb-10">
             <div class="flex items-center gap-2">
               <div class="w-5 h-5 rounded-full bg-[#f97316]/15 flex items-center justify-center flex-shrink-0">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
@@ -152,14 +153,11 @@ const faqs = [
     </div>
   </section>
 
-  <!-- ===== CREDIBILITY BAR ===== -->
-  <CredibilityBar />
+  <!-- ===== CLIENT LOGO BAR ===== -->
+  <ClientLogoBar />
 
-  <!-- ===== ABOUT (moved before comparison — identity first, then positioning) ===== -->
+  <!-- ===== ABOUT (identity first, then positioning) ===== -->
   <AboutSection />
-
-  <!-- ===== EU VS AGENCIA ===== -->
-  <ComparisonTable />
 
   <!-- ===== SERVICES / PRICING ===== -->
   <section id="servicos" data-animate class="py-20 sm:py-28 bg-[#f8fafc] relative overflow-hidden">
@@ -168,13 +166,13 @@ const faqs = [
     <div class="relative max-w-5xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-14">
         <div class="inline-flex items-center gap-2 bg-[#f97316]/10 border border-[#f97316]/20 text-[#f97316] text-sm font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider">
-          Método Rápido
+          Preços transparentes
         </div>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] mb-4" style="font-family:'Sora',sans-serif;">
           Escolha o que o seu negócio precisa
         </h2>
         <p class="text-slate-500 text-lg max-w-xl mx-auto">
-          Preços transparentes. Sem surpresas. 50% para começar, 50% na entrega.
+          Preço fixo. Sem surpresas. 50% para começar, 50% na entrega.
         </p>
       </div>
 
@@ -287,6 +285,9 @@ const faqs = [
     </div>
   </section>
 
+  <!-- ===== EU VS AGENCIA (after portfolio — visitors see proof before comparison) ===== -->
+  <ComparisonTable />
+
   <!-- ===== TESTIMONIALS ===== -->
   <section data-animate class="py-20 sm:py-24 bg-[#0f172a] relative overflow-hidden">
     <!-- Background accent -->
@@ -322,7 +323,6 @@ const faqs = [
   </section>
 
   <!-- ===== GUARANTEE ===== -->
-
   <GuaranteeSection />
 
   <!-- ===== FAQ ===== -->
@@ -342,6 +342,9 @@ const faqs = [
 
     </div>
   </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <FinalCTA waLink={WA_LINK} />
 
   <!-- ===== CONTACT ===== -->
   <ContactForm waLink={WA_LINK} />
