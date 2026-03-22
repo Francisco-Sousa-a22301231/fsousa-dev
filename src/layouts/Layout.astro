@@ -334,9 +334,10 @@ const faqData = [
             cursor.style.top = cursorY + 'px';
           });
 
-          // Hover expansion on interactive elements
+          // Hover expansion on interactive elements (skip data-cursor="none")
           const interactiveElements = document.querySelectorAll('a, button, [role="button"], [data-cursor="expand"]');
           interactiveElements.forEach(el => {
+            if (el.dataset.cursor === 'none' || el.closest('[data-cursor="none"]')) return;
             el.addEventListener('mouseenter', () => cursor.classList.add('is-hovering'));
             el.addEventListener('mouseleave', () => {
               cursor.classList.remove('is-hovering');
