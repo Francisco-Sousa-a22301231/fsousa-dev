@@ -8,18 +8,60 @@ interface Props {
 const { quote, name, business } = Astro.props;
 ---
 
-<div class="testimonial-card tilt-card stagger-popup p-8 sm:p-10 bg-[var(--color-bg)] rounded-sm">
+<div class="testimonial-card-v2 tilt-card stagger-popup p-8 sm:p-10 bg-[var(--color-bg)] rounded-sm relative">
   <div class="tilt-card-shine rounded-sm"></div>
 
+  <!-- Accent line (left border, visible on hover) -->
+  <div class="absolute left-0 top-0 bottom-0 w-[3px] bg-[var(--color-accent)] opacity-0 transition-opacity duration-300 rounded-l-sm testimonial-accent"></div>
+
+  <!-- Star rating -->
+  <div class="flex gap-0.5 mb-4 relative z-1">
+    {Array.from({ length: 5 }).map(() => (
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="var(--color-accent)" stroke="none">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+      </svg>
+    ))}
+  </div>
+
   <!-- Large quote mark with accent color -->
-  <span class="block text-6xl font-light leading-none text-[var(--color-accent)]/15 select-none mb-6 relative z-1" aria-hidden="true">"</span>
+  <span class="block text-6xl font-light leading-none text-[var(--color-accent)]/15 select-none mb-6 relative z-1" aria-hidden="true">&ldquo;</span>
 
   <p class="text-xl sm:text-2xl font-light leading-relaxed text-[var(--color-text)] mb-8 tracking-tight relative z-1">
     {quote}
   </p>
 
-  <div class="pt-6 border-t border-[var(--color-border)] relative z-1">
-    <p class="text-[var(--text-small)] font-medium text-[var(--color-text)]">{name}</p>
-    <p class="text-[var(--text-xs)] text-[var(--color-text-subtle)]">{business}</p>
+  <div class="pt-6 border-t border-[var(--color-border)] relative z-1 flex items-center justify-between">
+    <div>
+      <p class="text-[var(--text-small)] font-medium text-[var(--color-text)]">{name}</p>
+      <p class="text-[var(--text-xs)] text-[var(--color-text-subtle)]">{business}</p>
+    </div>
+    <!-- Verified badge -->
+    <span class="inline-flex items-center gap-1 text-[var(--text-xs)] font-medium px-2 py-1 rounded-full" style="background: rgba(34, 197, 94, 0.1); color: #22c55e;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      Verificado
+    </span>
   </div>
 </div>
+
+<style>
+  .testimonial-card-v2:hover .testimonial-accent {
+    opacity: 1;
+  }
+
+  .testimonial-card-v2 {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+    border: 1px solid transparent;
+  }
+
+  .testimonial-card-v2:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.06);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .testimonial-card-v2:hover {
+      transform: none;
+    }
+  }
+</style>

@@ -10,33 +10,50 @@
         <div class="md:col-span-4">
           <p class="text-[var(--text-label)] font-medium uppercase tracking-[0.15em] text-[var(--color-text-subtle)] mb-8" data-animate>Sobre mim</p>
 
-          <!-- Avatar placeholder -->
+          <!-- Photo with rotating gradient ring -->
           <div class="relative w-48 h-48 sm:w-56 sm:h-56" data-animate>
-            <div class="w-full h-full bg-[var(--color-text)] flex items-center justify-center overflow-hidden" style="border-radius: 2px;">
-              <!-- Replace with: <img src="/photo.jpg" alt="Francisco Sousa" class="w-full h-full object-cover" /> -->
-              <span class="text-4xl sm:text-5xl font-light text-[var(--color-bg)] tracking-tight">FS</span>
+            <!-- Rotating gradient ring -->
+            <div class="about-photo-ring absolute inset-[-4px] rounded-full" style="background: conic-gradient(#FA5D29, #f97316, #fbbf24, #FA5D29);"></div>
+            <div class="w-full h-full rounded-full bg-[var(--color-bg)] relative overflow-hidden" style="padding: 3px;">
+              <div class="w-full h-full rounded-full bg-[var(--color-text)] flex items-center justify-center overflow-hidden">
+                <!-- Replace with: <img src="/francisco.png" alt="Francisco Sousa" class="w-full h-full object-cover" /> when photo is available -->
+                <span class="text-4xl sm:text-5xl font-light text-[var(--color-bg)] tracking-tight">FS</span>
+              </div>
+            </div>
+
+            <!-- Floating badge: top-right -->
+            <div class="about-badge absolute -top-2 -right-4 bg-[var(--color-accent)] text-white text-[var(--text-xs)] font-medium px-3 py-1.5 rounded-full shadow-lg">
+              Full-Stack Dev
+            </div>
+
+            <!-- Floating badge: bottom-left -->
+            <div class="about-badge about-badge-alt absolute -bottom-2 -left-4 bg-[var(--color-text)] text-[var(--color-bg)] text-[var(--text-xs)] font-medium px-3 py-1.5 rounded-full shadow-lg" style="animation-delay: 1.5s;">
+              Flutter &middot; Astro
             </div>
           </div>
 
           <!-- Availability -->
           <div class="mt-6 flex items-center gap-2" data-animate>
             <span class="w-2 h-2 bg-[var(--color-whatsapp)] rounded-full"></span>
-            <span class="text-[var(--text-xs)] text-[var(--color-text-subtle)]">Disponível para novos projetos</span>
+            <span class="text-[var(--text-xs)] text-[var(--color-text-subtle)]">Dispon&iacute;vel para novos projetos</span>
           </div>
         </div>
 
         <!-- Right column: bio -->
         <div class="md:col-span-8 md:pt-12">
           <h2 class="font-light tracking-tight leading-[0.95] mb-10" style="font-size: var(--text-h1);" data-animate>
-            Olá, sou o Francisco.
+            Ol&aacute;, eu sou o Francisco.
           </h2>
 
           <div class="space-y-6 text-[var(--color-text-muted)] text-lg font-light leading-relaxed max-w-2xl">
             <p data-animate>
-              Sou developer full-stack e crio websites e aplicações móveis para negócios que querem crescer online.
+              Cresci em Cascais, entre o mar e o skatepark. Antes de escrever c&oacute;digo, dava aulas de skate &mdash; e foi a&iacute; que aprendi que ensinar &eacute; a melhor forma de comunicar. Hoje aplico a mesma clareza a cada projeto que construo.
             </p>
             <p data-animate>
-              Trabalho sozinho, sem intermediários — o que significa comunicação direta, decisões rápidas e zero burocracia. Quando fala comigo, fala com quem vai construir o seu projeto do início ao fim.
+              Sou developer full-stack e crio websites, aplica&ccedil;&otilde;es m&oacute;veis e plataformas digitais para neg&oacute;cios que querem crescer online. Trabalho diretamente consigo &mdash; sem ag&ecirc;ncia, sem intermedi&aacute;rios, sem burocracia.
+            </p>
+            <p data-animate>
+              Quando fala comigo, fala com quem vai desenhar, construir e entregar o seu projeto do in&iacute;cio ao fim. &Eacute; assim que garanto que tudo fica exatamente como precisa.
             </p>
           </div>
 
@@ -44,15 +61,15 @@
           <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8" data-animate>
             <div>
               <p class="text-[var(--color-text)] font-light text-2xl tracking-tight mb-2">50/50</p>
-              <p class="text-[var(--text-small)] text-[var(--color-text-subtle)]">Só paga quando estiver satisfeito</p>
+              <p class="text-[var(--text-small)] text-[var(--color-text-subtle)]">S&oacute; paga quando estiver satisfeito</p>
             </div>
             <div>
               <p class="text-[var(--color-text)] font-light text-2xl tracking-tight mb-2">WhatsApp</p>
-              <p class="text-[var(--text-small)] text-[var(--color-text-subtle)]">Contacto direto, sem intermediários</p>
+              <p class="text-[var(--text-small)] text-[var(--color-text-subtle)]">Contacto direto, sem intermedi&aacute;rios</p>
             </div>
             <div>
               <p class="text-[var(--color-text)] font-light text-2xl tracking-tight mb-2">30 dias</p>
-              <p class="text-[var(--text-small)] text-[var(--color-text-subtle)]">Suporte grátis após entrega</p>
+              <p class="text-[var(--text-small)] text-[var(--color-text-subtle)]">Suporte gr&aacute;tis ap&oacute;s entrega</p>
             </div>
           </div>
         </div>
@@ -60,3 +77,38 @@
     </div>
   </div>
 </section>
+
+<style>
+  @keyframes spin-ring {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .about-photo-ring {
+    animation: spin-ring 4s linear infinite;
+  }
+
+  @keyframes float-badge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .about-badge {
+    animation: float-badge 3s ease-in-out infinite;
+  }
+
+  .about-badge-alt {
+    animation: float-badge 3s ease-in-out infinite;
+    animation-delay: 1.5s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .about-photo-ring {
+      animation: none;
+    }
+    .about-badge,
+    .about-badge-alt {
+      animation: none;
+    }
+  }
+</style>

@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ClientLogoBar from '../components/ClientLogoBar.astro';
-import ComparisonTable from '../components/ComparisonTable.astro';
+// ComparisonTable removed per redesign plan
 import PricingCard from '../components/PricingCard.astro';
 import ProcessTimeline from '../components/ProcessTimeline.astro';
 import PortfolioCard from '../components/PortfolioCard.astro';
@@ -36,14 +36,14 @@ const faqs = [
       <!-- Small label -->
       <p class="hero-fade text-[var(--text-label)] font-medium uppercase tracking-[0.15em] text-[var(--color-text-subtle)] mb-8">
         <span class="inline-block w-8 h-px bg-[var(--color-accent)] align-middle mr-3"></span>
-        Freelance Web Developer
+        Engenheiro Inform&aacute;tico
       </p>
 
       <!-- Massive headline — LIGHT weight with gradient accent -->
       <h1 class="hero-fade font-light tracking-tight leading-[0.95] mb-10" style="font-size: var(--text-hero);">
-        Ajudo negócios<br/>
-        a crescer com<br/>
-        <span class="gradient-text">websites que convertem</span>
+        Websites, apps e<br/>
+        plataformas. Para<br/>
+        <span class="gradient-text">qualquer neg&oacute;cio.</span>
       </h1>
 
       <!-- Animated accent line -->
@@ -53,26 +53,26 @@ const faqs = [
       <div class="hero-fade flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-16">
         <!-- Body paragraph -->
         <p class="text-[var(--color-text-muted)] text-lg md:text-xl font-light leading-relaxed max-w-lg">
-          Websites profissionais a preço fixo para restaurantes, clínicas, lojas e escolas. Sem agência, sem mensalidades. Entrega em 5 dias.
+          Trabalho diretamente consigo &mdash; sem ag&ecirc;ncia, sem intermedi&aacute;rios. Pre&ccedil;o fixo, entrega r&aacute;pida, e resultado &agrave; medida do seu neg&oacute;cio.
         </p>
 
         <!-- CTAs -->
         <div class="flex flex-col sm:flex-row items-start gap-4 flex-shrink-0">
           <a
-            href="#portfolio"
-            class="link-pill magnetic-btn group text-[var(--color-text)]"
+            href="#contacto-form"
+            class="link-pill magnetic-btn group bg-[var(--color-accent)] text-white border-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] hover:border-[var(--color-accent-hover)]"
             data-cursor="expand"
           >
-            Ver projetos
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="transition-transform group-hover:translate-y-0.5"><path d="m6 9 6 6 6-6"/></svg>
+            Pedir or&ccedil;amento gr&aacute;tis
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="transition-transform group-hover:translate-x-0.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <a
-            href="#contacto-form"
+            href="#servicos"
             class="link-pill magnetic-btn group text-[var(--color-text)]"
             data-cursor="expand"
           >
-            Contactar
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="transition-transform group-hover:translate-x-0.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            Ver servi&ccedil;os
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="transition-transform group-hover:translate-y-0.5"><path d="m6 9 6 6 6-6"/></svg>
           </a>
         </div>
       </div>
@@ -80,7 +80,7 @@ const faqs = [
       <!-- Location tag with scroll indicator -->
       <div class="hero-fade mt-12 pt-8 border-t border-[var(--color-border)] flex items-center justify-between">
         <p class="text-[var(--text-xs)] text-[var(--color-text-subtle)] uppercase tracking-[0.15em]">
-          100% Remoto · Portugal
+          From Portugal 🇵🇹
         </p>
         <!-- Scroll indicator -->
         <div class="hidden sm:flex items-center gap-2 text-[var(--text-xs)] text-[var(--color-text-subtle)] uppercase tracking-[0.15em]">
@@ -117,55 +117,55 @@ const faqs = [
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-[var(--color-border)] max-w-[1200px] mx-auto rounded-2xl overflow-hidden" data-stagger-parent>
           <PricingCard
-            title="Página Web"
-            description="Ideal para restaurantes, cabeleireiros, clínicas e lojas."
-            price="€300"
-            priceMax="€600"
-            priceNote="Pagamento único · Sem mensalidades"
+            title="P&aacute;gina Web"
+            description="Para qualquer neg&oacute;cio que precisa de presen&ccedil;a online profissional."
+            price="&euro;300"
+            priceMax="&euro;600"
+            priceNote="Pagamento &uacute;nico &middot; Sem mensalidades"
             features={[
               "Design moderno e personalizado",
-              "Adaptado ao telemóvel",
-              "Formulário de contacto",
-              "Integração Google Maps",
-              "SEO básico",
-              "Entrega em 3–5 dias úteis",
+              "Adaptado ao telem\u00f3vel",
+              "Formul\u00e1rio de contacto",
+              "Integra\u00e7\u00e3o Google Maps",
+              "SEO completo + Google Business",
+              "Entrega em 3\u20135 dias \u00fateis",
             ]}
-            ctaText="Pedir orçamento"
+            ctaText="Pedir or&ccedil;amento"
             ctaLink={WA_LINK_PAGINA}
           />
 
           <PricingCard
             title="Website Completo"
-            description="Ideal para empresas com vários serviços, clínicas com equipa, escolas."
-            price="€800"
-            priceMax="€1500"
-            priceNote="Pagamento único · Sem mensalidades"
+            description="Para neg&oacute;cios que precisam de m&uacute;ltiplas p&aacute;ginas e funcionalidades avan&ccedil;adas."
+            price="&euro;800"
+            priceMax="&euro;1500"
+            priceNote="Pagamento &uacute;nico &middot; Sem mensalidades"
             highlighted={true}
             features={[
               "Tudo do plano anterior",
-              "3–5 páginas (Home, Sobre, Serviços…)",
-              "Editar conteúdo sem programar",
-              "Integração redes sociais",
-              "Google Analytics incluído",
+              "3\u20135 p\u00e1ginas (Home, Sobre, Servi\u00e7os\u2026)",
+              "Editar conte\u00fado sem programar",
+              "Integra\u00e7\u00e3o redes sociais",
+              "Google Analytics inclu\u00eddo",
               "SEO completo + Google Business",
-              "Entrega em 1–2 semanas",
+              "Entrega em 1\u20132 semanas",
             ]}
-            ctaText="Pedir orçamento"
+            ctaText="Pedir or&ccedil;amento"
             ctaLink={WA_LINK_SITE}
           />
 
           <PricingCard
-            title="Aplicação Móvel"
-            description="Ideal para negócios que precisam de app iOS e Android."
-            price="€2000"
-            priceNote="Sob consulta · Projeto à medida"
+            title="Aplica&ccedil;&atilde;o M&oacute;vel"
+            description="Para neg&oacute;cios que precisam de uma app para iOS e Android."
+            price="a partir de &euro;2.000"
+            priceNote="Sob consulta &middot; Projeto &agrave; medida"
             features={[
               "App personalizada",
               "Funciona em iPhone e Android",
-              "Painel de administração",
+              "Painel de administra\u00e7\u00e3o",
               "Design exclusivo",
-              "Publicação nas lojas",
-              "Timeline e preço sob consulta",
+              "Publica\u00e7\u00e3o nas lojas",
+              "Timeline e pre\u00e7o sob consulta",
             ]}
             ctaText="Falar sobre o projeto"
             ctaLink={WA_LINK_APP}
@@ -201,27 +201,40 @@ const faqs = [
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-[1100px]" data-stagger-parent>
           <PortfolioCard
-            tag="App educativa · App Store"
+            tag="App educativa &middot; App Store"
             title="My Lessons"
-            description="App para iPhone e Android com gestão de aulas, pagamentos e perfil de alunos."
-            result="Disponível na App Store. Performance 100/100."
+            description="App para iPhone e Android com gest&atilde;o de aulas, pagamentos e perfil de alunos."
+            result="Dispon&iacute;vel na App Store. Performance 100/100."
             link="https://apps.apple.com/pt/app/my-lessons-gerir-explicacoes/id6743955907"
             linkText="Ver na App Store"
+            metrics={[
+              { label: "PageSpeed", value: "100/100" },
+              { label: "Plataforma", value: "iOS + Android" },
+              { label: "Tempo de build", value: "3 semanas" },
+              { label: "Estado", value: "Publicada" },
+            ]}
+            techStack={["Flutter", "Dart", "Firebase", "App Store"]}
           />
 
           <PortfolioCard
-            tag="Restaurante"
+            tag="Website profissional"
             title="Website com menu digital e reservas"
-            description="Website moderno com menu digital, reservas online, integrado com Google Maps."
-            result="PageSpeed 100/100. Primeira página do Google em 2 semanas."
+            description="Website moderno com menu digital, reservas online, integrado com Google Maps e SEO otimizado."
+            result="PageSpeed 100/100. Primeira p&aacute;gina do Google em 2 semanas."
+            metrics={[
+              { label: "PageSpeed", value: "100/100" },
+              { label: "Plataforma", value: "Web" },
+              { label: "Tempo de build", value: "5 dias" },
+              { label: "Estado", value: "Online" },
+            ]}
+            techStack={["Astro", "Tailwind", "Cloudflare"]}
           />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== COMPARISON ===== -->
-  <ComparisonTable />
+  <!-- ComparisonTable removed per redesign plan -->
 
   <!-- ===== TESTIMONIALS ===== -->
   <section class="relative">
@@ -237,19 +250,19 @@ const faqs = [
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12" data-stagger-parent>
           <TestimonialCard
-            quote="Não percebia nada de websites. O Francisco tratou de tudo em 5 dias."
+            quote="Precisava de um website para o meu neg&oacute;cio e o Francisco entregou tudo em 5 dias. Come&ccedil;aram a aparecer contactos na primeira semana."
             name="Maria"
-            business="Restaurante"
+            business="Gest&atilde;o de neg&oacute;cio local"
           />
           <TestimonialCard
-            quote="O meu site antigo não funcionava no telemóvel. Agora recebo contactos todos os dias."
-            name="João"
-            business="Clínica"
+            quote="O meu site antigo n&atilde;o funcionava no telem&oacute;vel. O Francisco reconstruiu tudo &mdash; agora recebo pedidos de or&ccedil;amento todos os dias pelo formul&aacute;rio."
+            name="Jo&atilde;o"
+            business="Servi&ccedil;os profissionais"
           />
           <TestimonialCard
-            quote="Preço justo, trabalho rápido, resultado excelente."
+            quote="Pre&ccedil;o fixo desde o in&iacute;cio, sem surpresas. A app ficou exatamente como pedi e j&aacute; est&aacute; na App Store."
             name="Ana"
-            business="Cabeleireiro"
+            business="App m&oacute;vel &middot; iOS + Android"
           />
         </div>
       </div>

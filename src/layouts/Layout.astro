@@ -87,8 +87,10 @@ const faqData = [
 
     <!-- PRELOADER -->
     <div class="preloader" id="preloader" aria-hidden="true">
-      <div class="preloader-name">Francisco Sousa</div>
-      <div class="preloader-counter" id="preloader-counter">0</div>
+      <div class="preloader-phrase" id="preloader-phrase-1">Plataformas que <span class="preloader-gradient">convertem.</span></div>
+      <div class="preloader-phrase" id="preloader-phrase-2">Feito em <span class="preloader-gradient">Portugal.</span> Visto no mundo.</div>
+      <div class="preloader-logo" id="preloader-logo">FS</div>
+      <div class="preloader-name" id="preloader-name">Francisco Sousa</div>
       <div class="preloader-bar" id="preloader-bar"></div>
     </div>
 
@@ -199,7 +201,7 @@ const faqData = [
           &copy; {new Date().getFullYear()} Francisco Sousa
         </p>
         <div class="flex items-center gap-6 text-[var(--text-xs)] text-[var(--color-text-subtle)]">
-          <span>100% Remoto · Portugal</span>
+          <span>From Portugal 🇵🇹</span>
           <span id="local-time"></span>
         </div>
       </div>
@@ -231,35 +233,49 @@ const faqData = [
       // ===== PRELOADER =====
       if (!prefersReducedMotion) {
         const preloader = document.getElementById('preloader');
-        const preloaderCounter = document.getElementById('preloader-counter');
+        const phrase1 = document.getElementById('preloader-phrase-1');
+        const phrase2 = document.getElementById('preloader-phrase-2');
+        const logo = document.getElementById('preloader-logo');
+        const preloaderName = document.getElementById('preloader-name');
         const preloaderBar = document.getElementById('preloader-bar');
 
-        if (preloader && preloaderCounter && preloaderBar) {
+        if (preloader && phrase1 && phrase2 && logo && preloaderName && preloaderBar) {
           document.body.style.overflow = 'hidden';
-          let count = 0;
-          const duration = 1800;
-          const start = performance.now();
 
-          function animatePreloader(now: number) {
-            const elapsed = now - start;
-            const progress = Math.min(elapsed / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 4);
-            count = Math.round(eased * 100);
-            preloaderCounter.textContent = String(count);
-            preloaderBar.style.width = count + '%';
+          // Timeline: 0ms→phrase1, 80ms show, 580ms exit+show phrase2, 1200ms exit+show logo, 1420ms show name, 1970ms dismiss
+          const totalDuration = 1970;
+          const barStart = performance.now();
 
-            if (progress < 1) {
-              requestAnimationFrame(animatePreloader);
-            } else {
-              setTimeout(() => {
-                preloader.classList.add('is-done');
-                document.body.style.overflow = '';
-                // Trigger hero entrance after preloader
-                document.dispatchEvent(new CustomEvent('preloader-done'));
-              }, 300);
-            }
+          function animateBar(now: number) {
+            const elapsed = now - barStart;
+            const progress = Math.min(elapsed / totalDuration, 1);
+            preloaderBar.style.width = (progress * 100) + '%';
+            if (progress < 1) requestAnimationFrame(animateBar);
           }
-          requestAnimationFrame(animatePreloader);
+          requestAnimationFrame(animateBar);
+
+          // 80ms — show phrase 1
+          setTimeout(() => { phrase1.classList.add('is-active'); }, 80);
+          // 580ms — exit phrase 1, show phrase 2
+          setTimeout(() => {
+            phrase1.classList.remove('is-active');
+            phrase1.classList.add('is-exiting');
+          }, 580);
+          setTimeout(() => { phrase2.classList.add('is-active'); }, 660);
+          // 1200ms — exit phrase 2, show logo
+          setTimeout(() => {
+            phrase2.classList.remove('is-active');
+            phrase2.classList.add('is-exiting');
+          }, 1200);
+          setTimeout(() => { logo.classList.add('is-active'); }, 1280);
+          // 1420ms — show name
+          setTimeout(() => { preloaderName.classList.add('is-active'); }, 1420);
+          // 1970ms — dismiss
+          setTimeout(() => {
+            preloader.classList.add('is-done');
+            document.body.style.overflow = '';
+            document.dispatchEvent(new CustomEvent('preloader-done'));
+          }, 1970);
         }
       } else {
         const preloader = document.getElementById('preloader');
@@ -517,8 +533,21 @@ const faqData = [
         document.querySelectorAll('.tilt-card').forEach((card) => {
           const el = card as HTMLElement;
           const shine = el.querySelector('.tilt-card-shine') as HTMLElement;
+          let tiltPaused = false;
+
+          // Pause tilt when hovering interactive children (buttons/links inside the card)
+          el.querySelectorAll('a, button, [role="button"]').forEach((child) => {
+            child.addEventListener('mouseenter', () => {
+              tiltPaused = true;
+              el.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+            });
+            child.addEventListener('mouseleave', () => {
+              tiltPaused = false;
+            });
+          });
 
           el.addEventListener('mousemove', (e: MouseEvent) => {
+            if (tiltPaused) return;
             const rect = el.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
@@ -534,6 +563,7 @@ const faqData = [
           });
 
           el.addEventListener('mouseleave', () => {
+            tiltPaused = false;
             el.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
           });
         });
@@ -647,9 +677,11 @@ const faqData = [
       if (!prefersReducedMotion && window.matchMedia('(pointer: fine)').matches) {
         document.querySelectorAll('.magnetic-btn').forEach((btn) => {
           const el = btn as HTMLElement;
-          const strength = 0.3;
+          const strength = 0.15;
 
           el.addEventListener('mousemove', (e: MouseEvent) => {
+            // Stop bubbling so parent tilt-card doesn't also react
+            e.stopPropagation();
             const rect = el.getBoundingClientRect();
             const x = e.clientX - rect.left - rect.width / 2;
             const y = e.clientY - rect.top - rect.height / 2;

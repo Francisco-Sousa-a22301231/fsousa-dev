@@ -1,44 +1,125 @@
 ---
 const steps = [
-  { number: "01", title: "Conversa", description: "Fale comigo no WhatsApp. Percebo o que precisa em 15 minutos.", icon: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" },
-  { number: "02", title: "Proposta", description: "Recebe uma proposta clara com preço fixo em 24 horas.", icon: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z M14 2v6h6" },
-  { number: "03", title: "Construção", description: "Construo o seu site. Vê o progresso a cada etapa.", icon: "M16 18l6-6-6-6 M8 6l-6 6 6 6" },
-  { number: "04", title: "Lançamento", description: "Site online, domínio configurado, Google indexado.", icon: "M22 11.08V12a10 10 0 1 1-5.93-9.14 M22 4L12 14.01l-3-3" },
+  {
+    number: "01",
+    title: "Descoberta",
+    description: "Primeiro, ouvimos. Uma conversa de 15 minutos para perceber o teu neg\u00f3cio, os teus objetivos e o que precisas mesmo.",
+    icon: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+  },
+  {
+    number: "02",
+    title: "Proposta",
+    description: "Em 24 horas tens uma proposta clara: o que vamos construir, quanto custa, e quando est\u00e1 pronto.",
+    icon: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z M14 2v6h6"
+  },
+  {
+    number: "03",
+    title: "Constru\u00e7\u00e3o",
+    description: "Desenvolvemos o teu projeto com atualiza\u00e7\u00f5es regulares. Tu v\u00eas o progresso, n\u00f3s fazemos o trabalho.",
+    icon: "M16 18l6-6-6-6 M8 6l-6 6 6 6"
+  },
+  {
+    number: "04",
+    title: "Lan\u00e7amento",
+    description: "Entrega, testes, e online. Ficamos dispon\u00edveis para suporte ap\u00f3s o lan\u00e7amento.",
+    icon: "M22 11.08V12a10 10 0 1 1-5.93-9.14 M22 4L12 14.01l-3-3"
+  },
+];
+
+const stats = [
+  { value: "15 min", label: "Primeira conversa" },
+  { value: "24h", label: "Proposta enviada" },
+  { value: "3\u20135 dias", label: "Primeiros resultados" },
 ];
 ---
 
 <section id="processo" class="relative">
-  <div class="section-divider"></div>
-  <div class="py-[var(--section-py)] px-6 sm:px-8">
+  <div class="py-[var(--section-py)] px-6 sm:px-8" style="background: #111;">
     <div class="max-w-[1400px] mx-auto">
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 md:mb-24">
         <div>
-          <p class="text-[var(--text-label)] font-medium uppercase tracking-[0.15em] text-[var(--color-text-subtle)] mb-4" data-animate>Processo</p>
-          <h2 class="font-light tracking-tight leading-[0.95]" style="font-size: var(--text-h1);" data-animate>
+          <p class="text-[var(--text-label)] font-medium uppercase tracking-[0.15em] text-[rgba(255,255,255,0.4)] mb-4" data-animate>Processo</p>
+          <h2 class="font-light tracking-tight leading-[0.95] text-white" style="font-size: var(--text-h1);" data-animate>
             Do zero ao online<br/>em 4 passos
           </h2>
         </div>
-        <p class="text-[var(--color-text-muted)] text-lg font-light" data-animate>
-          Sem complicações. Sem jargão técnico.
+        <p class="text-[rgba(255,255,255,0.5)] text-lg font-light" data-animate>
+          Sem complica&ccedil;&otilde;es. Sem jarg&atilde;o t&eacute;cnico.
         </p>
       </div>
 
       <!-- Steps grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-[var(--color-border)] rounded-2xl overflow-hidden" data-stagger-parent>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-[rgba(255,255,255,0.08)] rounded-2xl overflow-hidden" id="process-grid">
         {steps.map((step, i) => (
-          <div class="process-step stagger-popup bg-[var(--color-bg)] p-8 sm:p-10 group cursor-default">
-            <span class="process-number text-5xl sm:text-6xl font-light tracking-tight leading-none mb-6 block transition-colors duration-500" style="color: rgba(0,0,0,0.08);">{step.number}</span>
-            <h3 class="text-lg font-light tracking-tight text-[var(--color-text)] mb-3 relative z-1">{step.title}</h3>
-            <p class="text-[var(--text-small)] text-[var(--color-text-muted)] font-light leading-relaxed relative z-1">{step.description}</p>
+          <div class="process-step-dark bg-[#111] p-8 sm:p-10 group cursor-default opacity-0 translate-y-6" style={`transition-delay: ${i * 100}ms;`}>
+            <!-- Icon -->
+            <div class="w-12 h-12 rounded-full border border-[rgba(255,255,255,0.1)] flex items-center justify-center mb-6 group-hover:border-[var(--color-accent)] transition-colors duration-500">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d={step.icon} />
+              </svg>
+            </div>
+            <span class="text-5xl sm:text-6xl font-light tracking-tight leading-none mb-6 block transition-colors duration-500" style="color: rgba(255,255,255,0.06);">{step.number}</span>
+            <h3 class="text-lg font-light tracking-tight text-white mb-3">{step.title}</h3>
+            <p class="text-[var(--text-small)] text-[rgba(255,255,255,0.5)] font-light leading-relaxed">{step.description}</p>
           </div>
         ))}
       </div>
 
-      <!-- Time badge -->
-      <div class="mt-12 flex items-center gap-3" data-animate>
-        <span class="w-2 h-2 bg-[var(--color-accent)] rounded-full animate-pulse"></span>
-        <span class="text-[var(--text-small)] text-[var(--color-text-muted)]">Tempo total: 3–5 dias úteis</span>
+      <!-- Stats row -->
+      <div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12" data-animate>
+        {stats.map((stat) => (
+          <div class="flex items-center gap-4">
+            <span class="text-2xl font-light tracking-tight text-white">{stat.value}</span>
+            <span class="text-[var(--text-small)] text-[rgba(255,255,255,0.4)]">{stat.label}</span>
+          </div>
+        ))}
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .process-step-dark {
+    position: relative;
+    transition: background-color 0.5s ease, opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .process-step-dark.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .process-step-dark:hover {
+    background-color: #1a1a1a;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .process-step-dark {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+  const processGrid = document.getElementById('process-grid');
+  if (processGrid) {
+    const cards = processGrid.querySelectorAll('.process-step-dark');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+      cards.forEach((card) => card.classList.add('is-visible'));
+    } else {
+      const obs = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          cards.forEach((card, i) => {
+            setTimeout(() => card.classList.add('is-visible'), i * 100);
+          });
+          obs.unobserve(entry.target);
+        }
+      }, { threshold: 0.15 });
+      obs.observe(processGrid);
+    }
+  }
+</script>

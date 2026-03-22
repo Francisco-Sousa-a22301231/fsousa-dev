@@ -6,47 +6,94 @@ interface Props {
   result: string;
   link?: string;
   linkText?: string;
+  metrics?: { label: string; value: string }[];
+  techStack?: string[];
 }
 
-const { tag, title, description, result, link, linkText } = Astro.props;
+const { tag, title, description, result, link, linkText, metrics = [], techStack = [] } = Astro.props;
 ---
 
-<div class="portfolio-card stagger-popup group" data-cursor="project">
-  <!-- Image with clip-path reveal + hover zoom -->
-  <div class="portfolio-img-container relative aspect-[3/2] bg-[var(--color-text)] mb-6 clip-reveal" style="border-radius: 2px;">
-    <div class="portfolio-img-inner absolute inset-0 flex items-center justify-center">
-      <span class="text-[var(--color-bg)]/20 text-8xl font-light tracking-tight select-none">{title.charAt(0)}</span>
+<div class="portfolio-card-v2 stagger-popup group" data-cursor="project">
+  <!-- Browser + Phone mockup area -->
+  <div class="relative mb-8" data-animate>
+    <!-- Browser window mockup -->
+    <div class="portfolio-browser tilt-card bg-[var(--color-text)] rounded-xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-1.5">
+      <div class="tilt-card-shine rounded-xl"></div>
+      <!-- Browser chrome -->
+      <div class="flex items-center gap-2 px-4 py-3 bg-[#1a1a1a] border-b border-[rgba(255,255,255,0.06)]">
+        <span class="w-3 h-3 rounded-full" style="background: #ff5f57;"></span>
+        <span class="w-3 h-3 rounded-full" style="background: #febc2e;"></span>
+        <span class="w-3 h-3 rounded-full" style="background: #28c840;"></span>
+        <div class="ml-3 flex-1 bg-[rgba(255,255,255,0.08)] rounded-md px-3 py-1">
+          <span class="text-[10px] text-[rgba(255,255,255,0.3)] font-mono">{link ? new URL(link).hostname : 'www.exemplo.pt'}</span>
+        </div>
+      </div>
+      <!-- Screen content -->
+      <div class="aspect-[16/10] flex items-center justify-center relative overflow-hidden">
+        <span class="text-[var(--color-bg)]/10 text-8xl font-light tracking-tight select-none">{title.charAt(0)}</span>
+        <!-- Hover overlay -->
+        <div class="portfolio-overlay z-10">
+          <span class="text-white text-sm font-medium uppercase tracking-widest">Ver projeto</span>
+        </div>
+      </div>
     </div>
-    <!-- Performance badge -->
-    <div class="absolute top-4 right-4 text-[var(--text-xs)] font-medium text-[var(--color-bg)]/60 bg-[var(--color-text)]/60 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1.5 z-10 badge-shimmer">
-      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-      100/100
-    </div>
-    <!-- Hover overlay -->
-    <div class="portfolio-overlay z-10">
-      <span class="text-[var(--color-bg)] text-sm font-medium uppercase tracking-widest">Ver projeto</span>
+
+    <!-- Phone mockup (overlapping) -->
+    <div class="absolute -bottom-4 -right-4 sm:right-4 w-20 sm:w-24 transition-transform duration-500 group-hover:rotate-[10deg]" style="transform: rotate(6deg);">
+      <div class="bg-[var(--color-text)] rounded-2xl overflow-hidden shadow-2xl border-2 border-[#333]">
+        <!-- Dynamic island -->
+        <div class="flex justify-center pt-2 pb-1 bg-[#1a1a1a]">
+          <div class="w-12 h-[5px] bg-[#333] rounded-full"></div>
+        </div>
+        <!-- Phone screen -->
+        <div class="aspect-[9/16] flex items-center justify-center bg-[#1a1a1a]">
+          <span class="text-[var(--color-bg)]/10 text-3xl font-light tracking-tight select-none">{title.charAt(0)}</span>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Info -->
-  <div class="flex items-start justify-between gap-4">
-    <div>
-      <p class="text-[var(--text-xs)] font-medium uppercase tracking-[0.1em] text-[var(--color-text-subtle)] mb-2">{tag}</p>
-      <h3 class="text-xl font-light tracking-tight text-[var(--color-text)] mb-3 group-hover:text-[var(--color-accent)] transition-colors duration-300">{title}</h3>
-      <p class="text-[var(--text-small)] text-[var(--color-text-muted)] font-light leading-relaxed mb-2">{description}</p>
-      <p class="text-[var(--text-small)] text-[var(--color-text)] font-light">{result}</p>
-    </div>
-    {link && (
-      <a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="link-pill text-[var(--text-xs)] flex-shrink-0 mt-1 group-hover:border-[var(--color-accent)] group-hover:text-[var(--color-accent)] transition-colors"
-        data-cursor="expand"
-      >
-        {linkText || "Ver"}
-        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-      </a>
+  <!-- Info section -->
+  <div>
+    <p class="text-[var(--text-xs)] font-medium uppercase tracking-[0.1em] text-[var(--color-text-subtle)] mb-2">{tag}</p>
+    <h3 class="text-xl font-light tracking-tight text-[var(--color-text)] mb-3 group-hover:text-[var(--color-accent)] transition-colors duration-300">{title}</h3>
+    <p class="text-[var(--text-small)] text-[var(--color-text-muted)] font-light leading-relaxed mb-4">{description}</p>
+
+    <!-- Metrics grid -->
+    {metrics.length > 0 && (
+      <div class="grid grid-cols-2 gap-3 mb-4">
+        {metrics.map((m) => (
+          <div class="bg-[rgba(0,0,0,0.03)] rounded-lg px-3 py-2">
+            <p class="text-[var(--text-xs)] text-[var(--color-text-subtle)]">{m.label}</p>
+            <p class="text-[var(--text-small)] font-medium text-[var(--color-text)]">{m.value}</p>
+          </div>
+        ))}
+      </div>
     )}
+
+    <!-- Tech stack pills -->
+    {techStack.length > 0 && (
+      <div class="flex flex-wrap gap-2 mb-4">
+        {techStack.map((tech) => (
+          <span class="text-[var(--text-xs)] text-[var(--color-text-muted)] border border-[var(--color-border)] px-2.5 py-1 rounded-full">{tech}</span>
+        ))}
+      </div>
+    )}
+
+    <!-- Result + CTA -->
+    <div class="flex items-center justify-between gap-4 mt-4">
+      <p class="text-[var(--text-small)] text-[var(--color-text)] font-light">{result}</p>
+      {link && (
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="link-pill text-[var(--text-xs)] flex-shrink-0 group-hover:border-[var(--color-accent)] group-hover:text-[var(--color-accent)] transition-colors"
+          data-cursor="expand"
+        >
+          {linkText || "Ver projecto"} &rarr;
+        </a>
+      )}
+    </div>
   </div>
 </div>
