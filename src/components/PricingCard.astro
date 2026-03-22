@@ -57,8 +57,8 @@ const { title, description, price, priceMax, priceNote, features, highlighted = 
     rel="noopener noreferrer"
     data-cursor="none"
     class:list={[
-      "link-pill justify-center magnetic-btn text-center relative z-1",
-      highlighted ? "bg-[var(--color-accent)] text-white border-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] hover:border-[var(--color-accent-hover)]" : "text-[var(--color-text)] border-[var(--color-border)] hover:border-[var(--color-text)]"
+      "link-pill justify-center text-center relative z-1 transition-colors duration-200",
+      highlighted ? "bg-[var(--color-accent)] text-white border-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] hover:border-[var(--color-accent-hover)]" : "text-[var(--color-text)] border-[var(--color-border)] hover:border-[var(--color-text)] hover:bg-[var(--color-text)] hover:text-[var(--color-bg)]"
     ]}
   >
     {ctaText}
