@@ -534,21 +534,8 @@ const faqData = [
         document.querySelectorAll('.tilt-card').forEach((card) => {
           const el = card as HTMLElement;
           const shine = el.querySelector('.tilt-card-shine') as HTMLElement;
-          let tiltPaused = false;
-
-          // Pause tilt when hovering interactive children (buttons/links inside the card)
-          el.querySelectorAll('a, button, [role="button"]').forEach((child) => {
-            child.addEventListener('mouseenter', () => {
-              tiltPaused = true;
-              el.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
-            });
-            child.addEventListener('mouseleave', () => {
-              tiltPaused = false;
-            });
-          });
 
           el.addEventListener('mousemove', (e: MouseEvent) => {
-            if (tiltPaused) return;
             const rect = el.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
@@ -564,7 +551,6 @@ const faqData = [
           });
 
           el.addEventListener('mouseleave', () => {
-            tiltPaused = false;
             el.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
           });
         });
