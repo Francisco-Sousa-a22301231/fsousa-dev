@@ -3,74 +3,67 @@ const steps = [
   {
     number: "01",
     title: "Descoberta",
-    description: "Primeiro, ouvimos. Uma conversa de 15 minutos para perceber o teu neg\u00f3cio, os teus objetivos e o que precisas mesmo.",
-    icon: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+    description: "Uma conversa de 15 minutos para perceber o teu negócio, os teus objetivos e o que precisas mesmo.",
+    detail: "15 min",
   },
   {
     number: "02",
     title: "Proposta",
-    description: "Em 24 horas tens uma proposta clara: o que vamos construir, quanto custa, e quando est\u00e1 pronto.",
-    icon: "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z M14 2v6h6"
+    description: "Em 24 horas tens uma proposta clara: o que vamos construir, quanto custa, e quando está pronto.",
+    detail: "24 horas",
   },
   {
     number: "03",
-    title: "Constru\u00e7\u00e3o",
-    description: "Desenvolvemos o teu projeto com atualiza\u00e7\u00f5es regulares. Tu v\u00eas o progresso, n\u00f3s fazemos o trabalho.",
-    icon: "M16 18l6-6-6-6 M8 6l-6 6 6 6"
+    title: "Construção",
+    description: "Desenvolvemos o teu projeto com atualizações regulares. Tu vês o progresso, nós fazemos o trabalho.",
+    detail: "3–5 dias",
   },
   {
     number: "04",
-    title: "Lan\u00e7amento",
-    description: "Entrega, testes, e online. Ficamos dispon\u00edveis para suporte ap\u00f3s o lan\u00e7amento.",
-    icon: "M22 11.08V12a10 10 0 1 1-5.93-9.14 M22 4L12 14.01l-3-3"
+    title: "Lançamento",
+    description: "Entrega, testes, e online. Ficamos disponíveis para suporte após o lançamento.",
+    detail: "30 dias suporte",
   },
-];
-
-const stats = [
-  { value: "15 min", label: "Primeira conversa" },
-  { value: "24h", label: "Proposta enviada" },
-  { value: "3\u20135 dias", label: "Primeiros resultados" },
 ];
 ---
 
 <section id="processo" class="relative">
-  <div class="py-[var(--section-py)] px-6 sm:px-8" style="background: #111;">
+  <div class="section-divider"></div>
+  <div class="py-[var(--section-py)] px-6 sm:px-8">
     <div class="max-w-[1400px] mx-auto">
+      <!-- Section header — matches other sections -->
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 md:mb-24">
         <div>
-          <p class="text-[var(--text-label)] font-medium uppercase tracking-[0.15em] text-[rgba(255,255,255,0.4)] mb-4" data-animate>Processo</p>
-          <h2 class="font-light tracking-tight leading-[0.95] text-white" style="font-size: var(--text-h1);" data-animate>
+          <p class="text-[var(--text-label)] font-medium uppercase tracking-[0.15em] text-[var(--color-text-subtle)] mb-4" data-animate>Processo</p>
+          <h2 class="font-light tracking-tight leading-[0.95]" style="font-size: var(--text-h1);" data-animate>
             Do zero ao online<br/>em 4 passos
           </h2>
         </div>
-        <p class="text-[rgba(255,255,255,0.5)] text-lg font-light" data-animate>
-          Sem complica&ccedil;&otilde;es. Sem jarg&atilde;o t&eacute;cnico.
+        <p class="text-[var(--color-text-muted)] text-lg font-light max-w-md" data-animate>
+          Sem complicações. Sem jargão técnico.
         </p>
       </div>
 
-      <!-- Steps grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-[rgba(255,255,255,0.08)] rounded-2xl overflow-hidden" id="process-grid">
+      <!-- Steps — 4-column grid on desktop, vertical timeline on mobile -->
+      <div class="process-grid" id="process-timeline">
         {steps.map((step, i) => (
-          <div class="process-step-dark bg-[#111] p-8 sm:p-10 group cursor-default opacity-0 translate-y-6" style={`transition-delay: ${i * 100}ms;`}>
-            <!-- Icon -->
-            <div class="w-12 h-12 rounded-full border border-[rgba(255,255,255,0.1)] flex items-center justify-center mb-6 group-hover:border-[var(--color-accent)] transition-colors duration-500">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d={step.icon} />
-              </svg>
+          <div class="process-step" data-step={i}>
+            <!-- Number row with connecting line -->
+            <div class="process-step-top">
+              <div class="process-step-number">
+                <span>{step.number}</span>
+              </div>
+              {i < steps.length - 1 && <div class="process-step-line" />}
             </div>
-            <span class="text-5xl sm:text-6xl font-light tracking-tight leading-none mb-6 block transition-colors duration-500" style="color: rgba(255,255,255,0.06);">{step.number}</span>
-            <h3 class="text-lg font-light tracking-tight text-white mb-3">{step.title}</h3>
-            <p class="text-[var(--text-small)] text-[rgba(255,255,255,0.5)] font-light leading-relaxed">{step.description}</p>
-          </div>
-        ))}
-      </div>
 
-      <!-- Stats row -->
-      <div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12" data-animate>
-        {stats.map((stat) => (
-          <div class="flex items-center gap-4">
-            <span class="text-2xl font-light tracking-tight text-white">{stat.value}</span>
-            <span class="text-[var(--text-small)] text-[rgba(255,255,255,0.4)]">{stat.label}</span>
+            <!-- Content -->
+            <div class="process-step-content">
+              <div class="process-step-header">
+                <h3 class="text-xl sm:text-2xl font-light tracking-tight text-[var(--color-text)]">{step.title}</h3>
+                <span class="process-step-detail">{step.detail}</span>
+              </div>
+              <p class="text-[var(--color-text-muted)] font-light leading-relaxed text-[var(--text-small)] sm:text-base">{step.description}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -79,22 +72,146 @@ const stats = [
 </section>
 
 <style>
-  .process-step-dark {
-    position: relative;
-    transition: background-color 0.5s ease, opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  /* ===== MOBILE: vertical timeline ===== */
+  .process-grid {
+    display: flex;
+    flex-direction: column;
   }
 
-  .process-step-dark.is-visible {
+  .process-step {
+    display: flex;
+    gap: 1.5rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .process-step.is-visible {
     opacity: 1;
     transform: translateY(0);
   }
 
-  .process-step-dark:hover {
-    background-color: #1a1a1a;
+  /* Mobile: indicator column with vertical line */
+  .process-step-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .process-step-number {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: border-color 0.5s ease, background-color 0.5s ease;
+  }
+
+  .process-step-number span {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--color-text-subtle);
+    transition: color 0.5s ease;
+  }
+
+  .process-step:hover .process-step-number {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent);
+  }
+
+  .process-step:hover .process-step-number span {
+    color: white;
+  }
+
+  .process-step-line {
+    width: 1px;
+    flex: 1;
+    min-height: 100%;
+    background: var(--color-border);
+  }
+
+  .process-step-content {
+    padding-bottom: 3rem;
+    padding-top: 0.75rem;
+  }
+
+  .process-step:last-child .process-step-content {
+    padding-bottom: 0;
+  }
+
+  .process-step-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .process-step-detail {
+    font-size: var(--text-xs);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    white-space: nowrap;
+  }
+
+  /* ===== DESKTOP: horizontal 4-column grid ===== */
+  @media (min-width: 1024px) {
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .process-step {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    /* Horizontal: number row with connecting line */
+    .process-step-top {
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .process-step-line {
+      width: auto;
+      height: 1px;
+      min-height: unset;
+      flex: 1;
+    }
+
+    .process-step-content {
+      padding-bottom: 0;
+      padding-top: 0;
+      padding-right: 2rem;
+    }
+
+    .process-step:last-child .process-step-content {
+      padding-right: 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .process-step-content {
+      padding-right: 3rem;
+    }
+
+    .process-step:last-child .process-step-content {
+      padding-right: 0;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .process-step-dark {
+    .process-step {
       opacity: 1 !important;
       transform: none !important;
       transition: none !important;
@@ -103,23 +220,23 @@ const stats = [
 </style>
 
 <script>
-  const processGrid = document.getElementById('process-grid');
-  if (processGrid) {
-    const cards = processGrid.querySelectorAll('.process-step-dark');
+  const timeline = document.getElementById('process-timeline');
+  if (timeline) {
+    const steps = timeline.querySelectorAll('.process-step');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (prefersReducedMotion) {
-      cards.forEach((card) => card.classList.add('is-visible'));
+      steps.forEach((step) => step.classList.add('is-visible'));
     } else {
       const obs = new IntersectionObserver(([entry]) => {
         if (entry.isIntersecting) {
-          cards.forEach((card, i) => {
-            setTimeout(() => card.classList.add('is-visible'), i * 100);
+          steps.forEach((step, i) => {
+            setTimeout(() => step.classList.add('is-visible'), i * 150);
           });
           obs.unobserve(entry.target);
         }
-      }, { threshold: 0.15 });
-      obs.observe(processGrid);
+      }, { threshold: 0.1 });
+      obs.observe(timeline);
     }
   }
 </script>
