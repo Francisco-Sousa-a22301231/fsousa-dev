@@ -15,35 +15,45 @@ const { title, description, price, priceMax, priceNote, features, highlighted = 
 ---
 
 <div class:list={[
-  "pricing-card tilt-card stagger-popup flex flex-col p-8 sm:p-10 bg-[var(--color-bg)] border border-[var(--color-border)] rounded-2xl",
-  highlighted && "relative"
+  "pricing-card flex flex-col p-8 sm:p-10 relative",
+  highlighted ? "pricing-card--highlighted bg-white" : "bg-[var(--color-bg)]"
 ]}>
-  <div class="tilt-card-shine"></div>
-
+  {/* Gradient border glow for highlighted card */}
   {highlighted && (
-    <span class="absolute -top-px left-0 right-0 h-px bg-[var(--color-accent)]"></span>
+    <div class="pricing-card-glow" aria-hidden="true"></div>
   )}
 
-  <div class="mb-8 relative z-1">
+  {/* Header */}
+  <div class="mb-8">
     {highlighted && (
-      <span class="inline-block text-[var(--text-xs)] font-medium uppercase tracking-[0.1em] text-[var(--color-accent)] mb-4 badge-shimmer px-2 py-1 border border-[var(--color-accent)]/20 rounded-full">Mais popular</span>
+      <span class="inline-block text-[var(--text-xs)] font-medium uppercase tracking-[0.1em] text-[var(--color-accent)] mb-4 badge-shimmer px-2 py-1 border border-[var(--color-accent)]/20 rounded-full">
+        Mais popular
+      </span>
     )}
     <h3 class="text-xl font-light tracking-tight text-[var(--color-text)] mb-2">{title}</h3>
     <p class="text-[var(--text-small)] text-[var(--color-text-subtle)]">{description}</p>
   </div>
 
-  <div class="mb-8 relative z-1">
+  {/* Price */}
+  <div class="mb-8">
     <div class="flex items-baseline gap-2">
-      <span class="text-4xl font-light tracking-tight text-[var(--color-text)]">{price}</span>
+      <span class:list={[
+        "text-4xl font-light tracking-tight",
+        highlighted ? "pricing-price-gradient" : "text-[var(--color-text)]"
+      ]}>{price}</span>
       {priceMax && <span class="text-lg font-light text-[var(--color-text-subtle)]">– {priceMax}</span>}
     </div>
     <p class="text-[var(--text-xs)] text-[var(--color-text-subtle)] mt-2">{priceNote}</p>
   </div>
 
-  <ul class="space-y-3 mb-10 flex-1 relative z-1">
-    {features.map((feature, i) => (
-      <li class="flex items-start gap-3 text-[var(--text-small)] text-[var(--color-text-muted)]" style={`transition-delay: ${i * 50}ms`}>
-        <span class="text-[var(--color-accent)] mt-0.5 flex-shrink-0">
+  {/* Features */}
+  <ul class="space-y-3 mb-10 flex-1">
+    {features.map((feature) => (
+      <li class="flex items-start gap-3 text-[var(--text-small)] text-[var(--color-text-muted)]">
+        <span class:list={[
+          "mt-0.5 flex-shrink-0",
+          highlighted ? "text-[var(--color-accent)]" : "text-[var(--color-text-subtle)]"
+        ]}>
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
         </span>
         {feature}
@@ -51,14 +61,16 @@ const { title, description, price, priceMax, priceNote, features, highlighted = 
     ))}
   </ul>
 
+  {/* CTA */}
   <a
     href={ctaLink}
     target="_blank"
     rel="noopener noreferrer"
-    data-cursor="none"
     class:list={[
-      "link-pill justify-center text-center relative z-1 transition-colors duration-200",
-      highlighted ? "bg-[var(--color-accent)] text-white border-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] hover:border-[var(--color-accent-hover)]" : "text-[var(--color-text)] border-[var(--color-border)] hover:border-[var(--color-text)] hover:bg-[var(--color-text)] hover:text-[var(--color-bg)]"
+      "link-pill justify-center text-center transition-all duration-300",
+      highlighted
+        ? "bg-[var(--color-accent)] text-white border-[var(--color-accent)] hover:bg-[var(--color-accent-hover)] hover:border-[var(--color-accent-hover)] hover:shadow-lg hover:shadow-[#FA5D29]/20"
+        : "text-[var(--color-text)] border-[var(--color-border)] hover:border-[var(--color-text)] hover:bg-[var(--color-text)] hover:text-[var(--color-bg)]"
     ]}
   >
     {ctaText}
