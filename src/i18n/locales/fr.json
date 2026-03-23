@@ -11,20 +11,17 @@
     "open_menu": "Ouvrir le menu"
   },
   "preloader": {
-    "phrase1_prefix": "Des plateformes qui ",
-    "phrase1_highlight": "convertissent.",
-    "phrase2_prefix": "Fait au ",
-    "phrase2_highlight": "Portugal.",
-    "phrase2_suffix": " Visible dans le monde entier."
+    "phrase1_prefix": "Votre prochain client est à ",
+    "phrase1_highlight": "un site web près."
   },
   "cursor": {
     "view": "Voir"
   },
   "hero": {
     "label": "Ingénieur informatique",
-    "title_line1": "Sites web, apps et",
-    "title_line2": "plateformes. Pour",
-    "title_highlight": "toute entreprise.",
+    "title_line1": "Des sites qui",
+    "title_line2": "vous apportent",
+    "title_highlight": "plus de clients.",
     "subtitle": "Je travaille directement avec vous — sans agence, sans intermédiaire. Prix fixe, livraison rapide, et un résultat adapté à votre activité.",
     "cta_primary": "Demander un devis gratuit",
     "cta_secondary": "Voir les services",

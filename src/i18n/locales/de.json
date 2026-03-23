@@ -11,20 +11,17 @@
     "open_menu": "Menü öffnen"
   },
   "preloader": {
-    "phrase1_prefix": "Plattformen, die ",
-    "phrase1_highlight": "verkaufen.",
-    "phrase2_prefix": "Made in ",
-    "phrase2_highlight": "Portugal.",
-    "phrase2_suffix": " Weltweit sichtbar."
+    "phrase1_prefix": "Dein nächster Kunde ist nur ",
+    "phrase1_highlight": "eine Website entfernt."
   },
   "cursor": {
     "view": "Ansehen"
   },
   "hero": {
     "label": "Software-Entwickler",
-    "title_line1": "Websites, Apps und",
-    "title_line2": "Plattformen. Für",
-    "title_highlight": "jedes Unternehmen.",
+    "title_line1": "Websites, die",
+    "title_line2": "Ihnen mehr",
+    "title_highlight": "Kunden bringen.",
     "subtitle": "Ich arbeite direkt mit Ihnen — ohne Agentur, ohne Zwischenhändler. Festpreis, schnelle Lieferung und ein Ergebnis, das zu Ihrem Unternehmen passt.",
     "cta_primary": "Kostenloses Angebot anfordern",
     "cta_secondary": "Leistungen ansehen",

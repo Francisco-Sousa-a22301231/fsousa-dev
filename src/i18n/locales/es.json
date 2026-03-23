@@ -11,20 +11,17 @@
     "open_menu": "Abrir menú"
   },
   "preloader": {
-    "phrase1_prefix": "Plataformas que ",
-    "phrase1_highlight": "convierten.",
-    "phrase2_prefix": "Hecho en ",
-    "phrase2_highlight": "Portugal.",
-    "phrase2_suffix": " Visible en todo el mundo."
+    "phrase1_prefix": "Tu próximo cliente está a ",
+    "phrase1_highlight": "un sitio web de distancia."
   },
   "cursor": {
     "view": "Ver"
   },
   "hero": {
     "label": "Ingeniero Informático",
-    "title_line1": "Webs, apps y",
-    "title_line2": "plataformas. Para",
-    "title_highlight": "cualquier negocio.",
+    "title_line1": "Webs que te",
+    "title_line2": "traen",
+    "title_highlight": "más clientes.",
     "subtitle": "Trabajo directamente contigo — sin agencia, sin intermediarios. Precio cerrado, entrega rápida y resultado a medida de tu negocio.",
     "cta_primary": "Pedir presupuesto gratis",
     "cta_secondary": "Ver servicios",

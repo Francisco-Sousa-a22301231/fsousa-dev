@@ -11,20 +11,17 @@
     "open_menu": "Open menu"
   },
   "preloader": {
-    "phrase1_prefix": "Platforms that ",
-    "phrase1_highlight": "convert.",
-    "phrase2_prefix": "Made in ",
-    "phrase2_highlight": "Portugal.",
-    "phrase2_suffix": " Seen worldwide."
+    "phrase1_prefix": "Your next client is ",
+    "phrase1_highlight": "one website away."
   },
   "cursor": {
     "view": "View"
   },
   "hero": {
     "label": "Software Engineer",
-    "title_line1": "Websites, apps &",
-    "title_line2": "platforms. For",
-    "title_highlight": "any business.",
+    "title_line1": "Websites that",
+    "title_line2": "bring you",
+    "title_highlight": "more clients.",
     "subtitle": "You work directly with me — no agency, no middlemen. Fixed pricing, fast delivery, and a result tailored to your business.",
     "cta_primary": "Get a free quote",
     "cta_secondary": "View services",

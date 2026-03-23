@@ -95,7 +95,6 @@ const faqData = tArray(locale, 'faq.items');
     <!-- PRELOADER -->
     <div class="preloader" id="preloader" aria-hidden="true">
       <div class="preloader-phrase" id="preloader-phrase-1">{t(locale, 'preloader.phrase1_prefix')}<span class="preloader-gradient">{t(locale, 'preloader.phrase1_highlight')}</span></div>
-      <div class="preloader-phrase" id="preloader-phrase-2">{t(locale, 'preloader.phrase2_prefix')}<span class="preloader-gradient">{t(locale, 'preloader.phrase2_highlight')}</span>{t(locale, 'preloader.phrase2_suffix')}</div>
       <div class="preloader-logo" id="preloader-logo">FS</div>
       <div class="preloader-name" id="preloader-name">Francisco Sousa</div>
       <div class="preloader-bar" id="preloader-bar"></div>
@@ -243,12 +242,11 @@ const faqData = tArray(locale, 'faq.items');
       if (!prefersReducedMotion) {
         const preloader = document.getElementById('preloader');
         const phrase1 = document.getElementById('preloader-phrase-1');
-        const phrase2 = document.getElementById('preloader-phrase-2');
         const logo = document.getElementById('preloader-logo');
         const preloaderName = document.getElementById('preloader-name');
         const preloaderBar = document.getElementById('preloader-bar');
 
-        if (preloader && phrase1 && phrase2 && logo && preloaderName && preloaderBar) {
+        if (preloader && phrase1 && logo && preloaderName && preloaderBar) {
           document.body.style.overflow = 'hidden';
 
           const totalDuration = 1970;
@@ -266,14 +264,9 @@ const faqData = tArray(locale, 'faq.items');
           setTimeout(() => {
             phrase1.classList.remove('is-active');
             phrase1.classList.add('is-exiting');
-          }, 580);
-          setTimeout(() => { phrase2.classList.add('is-active'); }, 660);
-          setTimeout(() => {
-            phrase2.classList.remove('is-active');
-            phrase2.classList.add('is-exiting');
-          }, 1200);
-          setTimeout(() => { logo.classList.add('is-active'); }, 1280);
-          setTimeout(() => { preloaderName.classList.add('is-active'); }, 1420);
+          }, 1100);
+          setTimeout(() => { logo.classList.add('is-active'); }, 1200);
+          setTimeout(() => { preloaderName.classList.add('is-active'); }, 1400);
           setTimeout(() => {
             preloader.classList.add('is-done');
             document.body.style.overflow = '';
