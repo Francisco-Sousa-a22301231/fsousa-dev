@@ -11,11 +11,8 @@
     "open_menu": "Abrir menu"
   },
   "preloader": {
-    "phrase1_prefix": "Plataformas que ",
-    "phrase1_highlight": "convertem.",
-    "phrase2_prefix": "Feito em ",
-    "phrase2_highlight": "Portugal.",
-    "phrase2_suffix": " Visto no mundo."
+    "phrase1_prefix": "O seu próximo cliente está a ",
+    "phrase1_highlight": "um website de distância."
   },
   "cursor": {
     "view": "Ver"

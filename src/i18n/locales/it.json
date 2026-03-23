@@ -11,11 +11,8 @@
     "open_menu": "Apri menu"
   },
   "preloader": {
-    "phrase1_prefix": "Piattaforme che ",
-    "phrase1_highlight": "convertono.",
-    "phrase2_prefix": "Made in ",
-    "phrase2_highlight": "Portogallo.",
-    "phrase2_suffix": " Visibili nel mondo."
+    "phrase1_prefix": "Il tuo prossimo cliente è a ",
+    "phrase1_highlight": "un sito web di distanza."
   },
   "cursor": {
     "view": "Vedi"

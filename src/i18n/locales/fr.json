@@ -11,11 +11,8 @@
     "open_menu": "Ouvrir le menu"
   },
   "preloader": {
-    "phrase1_prefix": "Des plateformes qui ",
-    "phrase1_highlight": "convertissent.",
-    "phrase2_prefix": "Fait au ",
-    "phrase2_highlight": "Portugal.",
-    "phrase2_suffix": " Visible dans le monde entier."
+    "phrase1_prefix": "Votre prochain client est à ",
+    "phrase1_highlight": "un site web près."
   },
   "cursor": {
     "view": "Voir"

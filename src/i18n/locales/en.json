@@ -11,11 +11,8 @@
     "open_menu": "Open menu"
   },
   "preloader": {
-    "phrase1_prefix": "Platforms that ",
-    "phrase1_highlight": "convert.",
-    "phrase2_prefix": "Made in ",
-    "phrase2_highlight": "Portugal.",
-    "phrase2_suffix": " Seen worldwide."
+    "phrase1_prefix": "Your next client is ",
+    "phrase1_highlight": "one website away."
   },
   "cursor": {
     "view": "View"
