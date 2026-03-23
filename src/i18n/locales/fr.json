@@ -25,7 +25,7 @@
     "subtitle": "Je travaille directement avec vous — sans agence, sans intermédiaire. Prix fixe, livraison rapide, et un résultat adapté à votre activité.",
     "cta_primary": "Demander un devis gratuit",
     "cta_secondary": "Voir les services",
-    "location": "From Portugal 🇵🇹",
+    "location": "From Portugal",
     "scroll": "Scroll"
   },
   "client_categories": [
@@ -250,7 +250,7 @@
     "cta_label": "Vous avez un projet en tête ?",
     "cta_title_line1": "Travaillons",
     "cta_title_highlight": "ensemble",
-    "location": "From Portugal 🇵🇹"
+    "location": "From Portugal"
   },
   "contact": {
     "title": "Travaillons ensemble.",
