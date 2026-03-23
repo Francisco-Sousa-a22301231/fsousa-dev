@@ -94,10 +94,14 @@ const faqData = tArray(locale, 'faq.items');
 
     <!-- PRELOADER -->
     <div class="preloader" id="preloader" aria-hidden="true">
-      <div class="preloader-phrase" id="preloader-phrase-1">{t(locale, 'preloader.phrase1_prefix')}<span class="preloader-gradient">{t(locale, 'preloader.phrase1_highlight')}</span></div>
-      <div class="preloader-logo" id="preloader-logo">FS</div>
-      <div class="preloader-name" id="preloader-name">Francisco Sousa</div>
-      <div class="preloader-bar" id="preloader-bar"></div>
+      <div class="preloader-content">
+        <div class="preloader-phrase" id="preloader-phrase">
+          <span class="preloader-word">{t(locale, 'preloader.phrase1_prefix')}</span><span class="preloader-word preloader-gradient">{t(locale, 'preloader.phrase1_highlight')}</span>
+        </div>
+        <div class="preloader-accent-line" id="preloader-accent-line"></div>
+      </div>
+      <div class="preloader-curtain preloader-curtain-left" id="preloader-curtain-left"></div>
+      <div class="preloader-curtain preloader-curtain-right" id="preloader-curtain-right"></div>
     </div>
 
     <!-- SCROLL PROGRESS BAR -->
@@ -241,37 +245,54 @@ const faqData = tArray(locale, 'faq.items');
       // ===== PRELOADER =====
       if (!prefersReducedMotion) {
         const preloader = document.getElementById('preloader');
-        const phrase1 = document.getElementById('preloader-phrase-1');
-        const logo = document.getElementById('preloader-logo');
-        const preloaderName = document.getElementById('preloader-name');
-        const preloaderBar = document.getElementById('preloader-bar');
+        const phrase = document.getElementById('preloader-phrase');
+        const accentLine = document.getElementById('preloader-accent-line');
+        const curtainLeft = document.getElementById('preloader-curtain-left');
+        const curtainRight = document.getElementById('preloader-curtain-right');
+        const words = phrase?.querySelectorAll('.preloader-word');
 
-        if (preloader && phrase1 && logo && preloaderName && preloaderBar) {
+        if (preloader && phrase && accentLine && curtainLeft && curtainRight && words && words.length > 0) {
           document.body.style.overflow = 'hidden';
 
-          const totalDuration = 1970;
-          const barStart = performance.now();
+          // Phase 1: Words reveal with stagger (blur + slide up)
+          words.forEach((word, i) => {
+            setTimeout(() => {
+              word.classList.add('is-visible');
+            }, 200 + i * 180);
+          });
 
-          function animateBar(now: number) {
-            const elapsed = now - barStart;
-            const progress = Math.min(elapsed / totalDuration, 1);
-            preloaderBar.style.width = (progress * 100) + '%';
-            if (progress < 1) requestAnimationFrame(animateBar);
-          }
-          requestAnimationFrame(animateBar);
+          // Phase 2: Accent line appears
+          setTimeout(() => { accentLine.classList.add('is-visible'); }, 200 + words.length * 180 + 100);
 
-          setTimeout(() => { phrase1.classList.add('is-active'); }, 80);
+          // Phase 3: Words exit (slide up + blur out)
           setTimeout(() => {
-            phrase1.classList.remove('is-active');
-            phrase1.classList.add('is-exiting');
-          }, 1100);
-          setTimeout(() => { logo.classList.add('is-active'); }, 1200);
-          setTimeout(() => { preloaderName.classList.add('is-active'); }, 1400);
+            words.forEach((word, i) => {
+              setTimeout(() => {
+                word.classList.remove('is-visible');
+                word.classList.add('is-exiting');
+              }, i * 80);
+            });
+            accentLine.classList.remove('is-visible');
+          }, 1500);
+
+          // Phase 4: Curtains split open to reveal site
           setTimeout(() => {
-            preloader.classList.add('is-done');
-            document.body.style.overflow = '';
-            document.dispatchEvent(new CustomEvent('preloader-done'));
-          }, 1970);
+            gsap.to(curtainLeft, {
+              xPercent: -100,
+              duration: 0.9,
+              ease: 'expo.inOut',
+            });
+            gsap.to(curtainRight, {
+              xPercent: 100,
+              duration: 0.9,
+              ease: 'expo.inOut',
+              onComplete: () => {
+                preloader.classList.add('is-done');
+                document.body.style.overflow = '';
+                document.dispatchEvent(new CustomEvent('preloader-done'));
+              },
+            });
+          }, 2100);
         }
       } else {
         const preloader = document.getElementById('preloader');
