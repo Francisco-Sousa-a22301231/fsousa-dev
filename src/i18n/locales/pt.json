@@ -1,0 +1,333 @@
+{
+  "meta": {
+    "title": "Francisco Sousa — Criação de Websites",
+    "description": "Websites rápidos e modernos para negócios. Páginas web a partir de €300. Entrega em 5 dias. Peça orçamento grátis."
+  },
+  "nav": {
+    "services": "Serviços",
+    "process": "Processo",
+    "portfolio": "Portfolio",
+    "contact": "Contacto",
+    "open_menu": "Abrir menu"
+  },
+  "preloader": {
+    "phrase1_prefix": "Plataformas que ",
+    "phrase1_highlight": "convertem.",
+    "phrase2_prefix": "Feito em ",
+    "phrase2_highlight": "Portugal.",
+    "phrase2_suffix": " Visto no mundo."
+  },
+  "cursor": {
+    "view": "Ver"
+  },
+  "hero": {
+    "label": "Engenheiro Informático",
+    "title_line1": "Websites, apps e",
+    "title_line2": "plataformas. Para",
+    "title_highlight": "qualquer negócio.",
+    "subtitle": "Trabalho diretamente consigo — sem agência, sem intermediários. Preço fixo, entrega rápida, e resultado à medida do seu negócio.",
+    "cta_primary": "Pedir orçamento grátis",
+    "cta_secondary": "Ver serviços",
+    "location": "From Portugal 🇵🇹",
+    "scroll": "Scroll"
+  },
+  "client_categories": [
+    "Restaurantes",
+    "Clínicas",
+    "Educação",
+    "Cabeleireiros",
+    "Lojas",
+    "Fitness",
+    "Imobiliário",
+    "Escritórios"
+  ],
+  "about": {
+    "label": "Sobre mim",
+    "available": "Disponível para novos projetos",
+    "greeting": "Olá, eu sou o Francisco.",
+    "bio1": "Cresci em Cascais, entre o mar e o skatepark. Antes de escrever código, dava aulas de skate — e foi aí que aprendi que ensinar é a melhor forma de comunicar. Hoje aplico a mesma clareza a cada projeto que construo.",
+    "bio2": "Sou developer full-stack e crio websites, aplicações móveis e plataformas digitais para negócios que querem crescer online. Trabalho diretamente consigo — sem agência, sem intermediários, sem burocracia.",
+    "bio3": "Quando fala comigo, fala com quem vai desenhar, construir e entregar o seu projeto do início ao fim. É assim que garanto que tudo fica exatamente como precisa.",
+    "value_payment_title": "50/50",
+    "value_payment_desc": "Só paga quando estiver satisfeito",
+    "value_whatsapp_title": "WhatsApp",
+    "value_whatsapp_desc": "Contacto direto, sem intermediários",
+    "value_support_title": "30 dias",
+    "value_support_desc": "Suporte grátis após entrega"
+  },
+  "services": {
+    "label": "Serviços",
+    "title_line1": "Escolha o que o seu",
+    "title_line2": "negócio precisa",
+    "subtitle": "Preço fixo. Sem surpresas. 50% para começar, 50% na entrega.",
+    "note": "Precisa de e-commerce ou algo diferente?",
+    "note_link": "Envie uma mensagem",
+    "note_suffix": " — é gratuito e sem compromisso.",
+    "popular": "Mais popular",
+    "page": {
+      "title": "Página Web",
+      "description": "Para qualquer negócio que precisa de presença online profissional.",
+      "price": "€300",
+      "price_max": "€600",
+      "price_note": "Pagamento único · Sem mensalidades",
+      "cta": "Pedir orçamento",
+      "features": [
+        "Design moderno e personalizado",
+        "Adaptado ao telemóvel",
+        "Formulário de contacto",
+        "Integração Google Maps",
+        "SEO completo + Google Business",
+        "Entrega em 3–5 dias úteis"
+      ]
+    },
+    "website": {
+      "title": "Website Completo",
+      "description": "Para negócios que precisam de múltiplas páginas e funcionalidades avançadas.",
+      "price": "€800",
+      "price_max": "€1500",
+      "price_note": "Pagamento único · Sem mensalidades",
+      "cta": "Pedir orçamento",
+      "features": [
+        "Tudo do plano anterior",
+        "3–5 páginas (Home, Sobre, Serviços…)",
+        "Editar conteúdo sem programar",
+        "Integração redes sociais",
+        "Google Analytics incluído",
+        "SEO completo + Google Business",
+        "Entrega em 1–2 semanas"
+      ]
+    },
+    "app": {
+      "title": "Aplicação Móvel",
+      "description": "Para negócios que precisam de uma app para iOS e Android.",
+      "price": "a partir de €2.000",
+      "price_note": "Sob consulta · Projeto à medida",
+      "cta": "Falar sobre o projeto",
+      "features": [
+        "App personalizada",
+        "Funciona em iPhone e Android",
+        "Painel de administração",
+        "Design exclusivo",
+        "Publicação nas lojas",
+        "Timeline e preço sob consulta"
+      ]
+    }
+  },
+  "process": {
+    "label": "Processo",
+    "title_line1": "Do zero ao online",
+    "title_line2": "em 4 passos",
+    "subtitle": "Sem complicações.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Descoberta",
+        "description": "Uma conversa de 15 minutos para perceber o teu negócio, os teus objetivos e o que precisas mesmo.",
+        "detail": "15 min"
+      },
+      {
+        "number": "02",
+        "title": "Proposta",
+        "description": "Em 24 horas tens uma proposta clara: o que vamos construir, quanto custa, e quando está pronto.",
+        "detail": "24 horas"
+      },
+      {
+        "number": "03",
+        "title": "Construção",
+        "description": "Desenvolvemos o teu projeto com atualizações regulares. Tu vês o progresso, nós fazemos o trabalho.",
+        "detail": "3–5 dias"
+      },
+      {
+        "number": "04",
+        "title": "Lançamento",
+        "description": "Entrega, testes, e online. Ficamos disponíveis para suporte após o lançamento.",
+        "detail": "30 dias suporte"
+      }
+    ]
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "title_line1": "Resultados reais para",
+    "title_line2": "negócios como o seu",
+    "subtitle": "Projetos reais, métricas reais.",
+    "view_project": "Ver projeto",
+    "items": [
+      {
+        "tag": "App educativa · App Store",
+        "title": "My Lessons",
+        "description": "App para iPhone e Android com gestão de aulas, pagamentos e perfil de alunos.",
+        "result": "Disponível na App Store. Performance 100/100.",
+        "link_text": "Ver na App Store",
+        "metrics_labels": ["PageSpeed", "Plataforma", "Tempo de build", "Estado"],
+        "metrics_values": ["100/100", "iOS + Android", "3 semanas", "Publicada"]
+      },
+      {
+        "tag": "Website profissional",
+        "title": "Website com menu digital e reservas",
+        "description": "Website moderno com menu digital, reservas online, integrado com Google Maps e SEO otimizado.",
+        "result": "PageSpeed 100/100. Primeira página do Google em 2 semanas.",
+        "metrics_labels": ["PageSpeed", "Plataforma", "Tempo de build", "Estado"],
+        "metrics_values": ["100/100", "Web", "5 dias", "Online"]
+      }
+    ]
+  },
+  "testimonials": {
+    "label": "Testemunhos",
+    "title_line1": "O que dizem",
+    "title_line2": "os clientes",
+    "verified": "Verificado",
+    "items": [
+      {
+        "quote": "Precisava de um website para o meu negócio e o Francisco entregou tudo em 5 dias. Começaram a aparecer contactos na primeira semana.",
+        "name": "Maria",
+        "business": "Gestão de negócio local"
+      },
+      {
+        "quote": "O meu site antigo não funcionava no telemóvel. O Francisco reconstruiu tudo — agora recebo pedidos de orçamento todos os dias pelo formulário.",
+        "name": "João",
+        "business": "Serviços profissionais"
+      },
+      {
+        "quote": "Preço fixo desde o início, sem surpresas. A app ficou exatamente como pedi e já está na App Store.",
+        "name": "Ana",
+        "business": "App móvel · iOS + Android"
+      }
+    ]
+  },
+  "guarantee": {
+    "label": "Garantia",
+    "title": "Sem risco para si",
+    "subtitle1": "Paga 50% para começar, 50% na entrega. Vê o progresso a cada etapa.",
+    "subtitle2": "Só paga o segundo pagamento quando estiver",
+    "subtitle2_highlight": "100% satisfeito",
+    "items": [
+      "Sem contratos longos",
+      "Sem mensalidades",
+      "30 dias de suporte grátis"
+    ]
+  },
+  "faq": {
+    "label": "FAQ",
+    "title_line1": "Perguntas",
+    "title_line2": "frequentes",
+    "items": [
+      {
+        "question": "Quanto custa por mês depois?",
+        "answer": "Zero. O alojamento do primeiro ano está incluído. Depois disso, o custo de alojamento é menos de €10/mês — e eu ajudo a configurar tudo. Não há mensalidades pelo meu trabalho, nunca."
+      },
+      {
+        "question": "Quanto tempo demora?",
+        "answer": "Uma página simples fica pronta em 3–5 dias úteis. Um website completo em 1–2 semanas. Uso o Método Rápido — um processo testado para entregar rápido sem sacrificar qualidade."
+      },
+      {
+        "question": "Já tenho Instagram, para quê um site?",
+        "answer": "O Instagram não aparece no Google. Quando alguém pesquisa o seu tipo de negócio, encontra quem tem site — não quem tem Instagram. Um website é o seu cartão de visita 24 horas por dia, 7 dias por semana."
+      },
+      {
+        "question": "Preciso de domínio e alojamento?",
+        "answer": "Eu trato de tudo. O custo de alojamento está incluído no primeiro ano."
+      },
+      {
+        "question": "Posso alterar o conteúdo sozinho?",
+        "answer": "Sim. Incluo um sistema simples para editar textos e imagens sem precisar de programar."
+      },
+      {
+        "question": "Posso ver exemplos antes de começar?",
+        "answer": "Sim. Antes de começar a construir, mostro-lhe um esboço do design para aprovação. Só avanço quando estiver satisfeito."
+      },
+      {
+        "question": "Trabalha remotamente?",
+        "answer": "Sim. Trabalho remotamente para qualquer parte do mundo. Reuniões por WhatsApp ou videochamada — funciona perfeitamente."
+      },
+      {
+        "question": "E se não gostar do resultado?",
+        "answer": "Mostro-lhe o progresso a cada etapa. Só paga o segundo pagamento quando estiver 100% satisfeito. Sem risco."
+      },
+      {
+        "question": "O que acontece após os 30 dias de suporte?",
+        "answer": "O seu site continua online normalmente. O alojamento custa menos de €10/mês após o primeiro ano. Se precisar de alterações ou atualizações futuras, estou disponível — basta enviar mensagem no WhatsApp."
+      }
+    ]
+  },
+  "footer": {
+    "cta_label": "Tem um projeto em mente?",
+    "cta_title_line1": "Vamos trabalhar",
+    "cta_title_highlight": "juntos",
+    "location": "From Portugal 🇵🇹"
+  },
+  "contact": {
+    "title": "Vamos trabalhar juntos.",
+    "subtitle": "Conta-me o teu projeto.",
+    "name_placeholder": "Nome",
+    "email_placeholder": "Email",
+    "message_placeholder": "Conte-me sobre o seu projeto...",
+    "submit": "Enviar mensagem",
+    "submitting": "A enviar…",
+    "whatsapp_alt": "Ou fale diretamente no WhatsApp",
+    "success_title": "Obrigado!",
+    "success_subtitle": "Respondo em menos de 2 horas.",
+    "success_wa": "Resposta mais rápida no WhatsApp",
+    "error_title": "Algo correu mal",
+    "error_subtitle": "Tente por WhatsApp — respondo em minutos.",
+    "error_wa": "Falar no WhatsApp"
+  },
+  "cta": {
+    "badge": "Disponível agora",
+    "title_prefix": "Pronto para ter ",
+    "title_highlight": "mais clientes?",
+    "subtitle": "Peça um orçamento gratuito. Sem compromisso. Resposta em menos de 2 horas.",
+    "primary": "Pedir orçamento grátis",
+    "secondary": "Enviar mensagem",
+    "guarantee": "50% só quando estiver satisfeito · Sem contratos longos"
+  },
+  "four04": {
+    "meta_title": "Página não encontrada | Francisco Sousa",
+    "meta_description": "Esta página não existe. Volte à página inicial ou contacte-me por WhatsApp.",
+    "title": "Página não encontrada",
+    "subtitle": "Esta página não existe ou foi movida.",
+    "back": "Voltar ao início",
+    "whatsapp": "Falar no WhatsApp"
+  },
+  "thanks": {
+    "meta_title": "Obrigado! | Francisco Sousa",
+    "meta_description": "A sua mensagem foi enviada com sucesso. Respondo dentro de 24 horas.",
+    "title": "Mensagem enviada!",
+    "subtitle_prefix": "Obrigado pelo contacto. Respondo em menos de ",
+    "subtitle_highlight": "2 horas",
+    "subtitle_suffix": ".",
+    "wa": "Resposta mais rápida no WhatsApp",
+    "back": "Voltar ao início"
+  },
+  "whatsapp": {
+    "default_message": "Olá Francisco, vi o seu site e estou interessado num orçamento para o meu negócio.",
+    "page_message": "Olá Francisco, estou interessado numa Página Web Profissional para o meu negócio.",
+    "site_message": "Olá Francisco, estou interessado num Website Completo para o meu negócio.",
+    "app_message": "Olá Francisco, estou interessado numa Aplicação Móvel para o meu negócio.",
+    "aria_label": "Contactar via WhatsApp"
+  },
+  "credibility": {
+    "projects": "Projetos entregues",
+    "speed": "Carrega em <1 segundo",
+    "response": "Tempo de resposta",
+    "subscriptions": "Mensalidades"
+  },
+  "hero_visual": {
+    "restaurant_name": "Restaurante Silva",
+    "restaurant_tagline": "Cozinha tradicional portuguesa desde 1998",
+    "restaurant_cta": "Reservar mesa",
+    "clinic_name": "Clínica Saúde+",
+    "clinic_tagline": "Medicina dentária de confiança",
+    "clinic_cta": "Marcar consulta",
+    "clinic_patients": "Pacientes",
+    "clinic_experience": "Experiência",
+    "shop_name": "Loja Verde",
+    "shop_tagline": "Produtos naturais e biológicos",
+    "shop_cta": "Ver produtos"
+  },
+  "hero_mockup": {
+    "stars": "5 estrelas"
+  },
+  "structured_data": {
+    "description": "Criação de websites rápidos e modernos para negócios."
+  }
+}

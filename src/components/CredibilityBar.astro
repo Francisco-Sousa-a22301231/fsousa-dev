@@ -1,4 +1,11 @@
 ---
+import { t } from '../i18n/utils';
+
+interface Props {
+  locale?: string;
+}
+
+const { locale = 'pt' } = Astro.props;
 ---
 
 <section class="relative bg-[#0f172a] border-y border-white/[0.06] py-12 sm:py-14">
@@ -13,7 +20,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
         </div>
         <p class="text-3xl sm:text-4xl font-extrabold text-white mb-1" style="font-family:'Sora',sans-serif;" data-count="6" data-suffix="+">0</p>
-        <p class="text-white/50 text-sm font-medium">Projetos entregues</p>
+        <p class="text-white/50 text-sm font-medium">{t(locale, 'credibility.projects')}</p>
       </div>
       <!-- Stat 2 -->
       <div class="text-center md:border-r md:border-white/[0.06]" data-animate data-delay="1">
@@ -21,7 +28,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25d366" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         </div>
         <p class="text-3xl sm:text-4xl font-extrabold text-white mb-1" style="font-family:'Sora',sans-serif;" data-count="100" data-suffix="/100">0</p>
-        <p class="text-white/50 text-sm font-medium">Carrega em &lt;1 segundo</p>
+        <p class="text-white/50 text-sm font-medium">{t(locale, 'credibility.speed')}</p>
       </div>
       <!-- Stat 3 -->
       <div class="text-center md:border-r md:border-white/[0.06]" data-animate data-delay="2">
@@ -29,7 +36,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
         <p class="text-3xl sm:text-4xl font-extrabold text-white mb-1" style="font-family:'Sora',sans-serif;" data-count="2" data-prefix="<" data-suffix="h">0</p>
-        <p class="text-white/50 text-sm font-medium">Tempo de resposta</p>
+        <p class="text-white/50 text-sm font-medium">{t(locale, 'credibility.response')}</p>
       </div>
       <!-- Stat 4 -->
       <div class="text-center" data-animate data-delay="3">
@@ -37,7 +44,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         </div>
         <p class="text-3xl sm:text-4xl font-extrabold text-white mb-1" style="font-family:'Sora',sans-serif;" data-count="0" data-suffix="€">0</p>
-        <p class="text-white/50 text-sm font-medium">Mensalidades</p>
+        <p class="text-white/50 text-sm font-medium">{t(locale, 'credibility.subscriptions')}</p>
       </div>
     </div>
   </div>

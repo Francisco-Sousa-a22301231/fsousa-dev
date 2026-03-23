@@ -1,30 +1,12 @@
 ---
-const steps = [
-  {
-    number: "01",
-    title: "Descoberta",
-    description: "Uma conversa de 15 minutos para perceber o teu negócio, os teus objetivos e o que precisas mesmo.",
-    detail: "15 min",
-  },
-  {
-    number: "02",
-    title: "Proposta",
-    description: "Em 24 horas tens uma proposta clara: o que vamos construir, quanto custa, e quando está pronto.",
-    detail: "24 horas",
-  },
-  {
-    number: "03",
-    title: "Construção",
-    description: "Desenvolvemos o teu projeto com atualizações regulares. Tu vês o progresso, nós fazemos o trabalho.",
-    detail: "3–5 dias",
-  },
-  {
-    number: "04",
-    title: "Lançamento",
-    description: "Entrega, testes, e online. Ficamos disponíveis para suporte após o lançamento.",
-    detail: "30 dias suporte",
-  },
-];
+import { t, tArray } from '../i18n/utils';
+
+interface Props {
+  locale?: string;
+}
+
+const { locale = 'pt' } = Astro.props;
+const steps = tArray(locale, 'process.steps');
 ---
 
 <section id="processo" class="relative">
@@ -34,13 +16,13 @@ const steps = [
       <!-- Section header — matches other sections -->
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 md:mb-24">
         <div>
-          <p class="text-[var(--text-label)] font-medium uppercase tracking-[0.15em] text-[var(--color-text-subtle)] mb-4" data-animate>Processo</p>
+          <p class="text-[var(--text-label)] font-medium uppercase tracking-[0.15em] text-[var(--color-text-subtle)] mb-4" data-animate>{t(locale, 'process.label')}</p>
           <h2 class="font-light tracking-tight leading-[0.95]" style="font-size: var(--text-h1);" data-animate>
-            Do zero ao online<br/>em 4 passos
+            {t(locale, 'process.title_line1')}<br/>{t(locale, 'process.title_line2')}
           </h2>
         </div>
         <p class="text-[var(--color-text-muted)] text-lg font-light max-w-md" data-animate>
-          Sem complicações.
+          {t(locale, 'process.subtitle')}
         </p>
       </div>
 

@@ -1,0 +1,333 @@
+{
+  "meta": {
+    "title": "Francisco Sousa — Web Development",
+    "description": "Fast, modern websites for businesses. Starting at €300. Delivered in 5 days. Get a free quote today."
+  },
+  "nav": {
+    "services": "Services",
+    "process": "Process",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "open_menu": "Open menu"
+  },
+  "preloader": {
+    "phrase1_prefix": "Platforms that ",
+    "phrase1_highlight": "convert.",
+    "phrase2_prefix": "Made in ",
+    "phrase2_highlight": "Portugal.",
+    "phrase2_suffix": " Seen worldwide."
+  },
+  "cursor": {
+    "view": "View"
+  },
+  "hero": {
+    "label": "Software Engineer",
+    "title_line1": "Websites, apps &",
+    "title_line2": "platforms. For",
+    "title_highlight": "any business.",
+    "subtitle": "You work directly with me — no agency, no middlemen. Fixed pricing, fast delivery, and a result tailored to your business.",
+    "cta_primary": "Get a free quote",
+    "cta_secondary": "View services",
+    "location": "From Portugal 🇵🇹",
+    "scroll": "Scroll"
+  },
+  "client_categories": [
+    "Restaurants",
+    "Clinics",
+    "Education",
+    "Hair Salons",
+    "Shops",
+    "Fitness",
+    "Real Estate",
+    "Offices"
+  ],
+  "about": {
+    "label": "About me",
+    "available": "Available for new projects",
+    "greeting": "Hi, I'm Francisco.",
+    "bio1": "I grew up in Cascais, between the ocean and the skatepark. Before writing code, I taught skateboarding — and that's where I learned that teaching is the best way to communicate. Today I bring that same clarity to every project I build.",
+    "bio2": "I'm a full-stack developer and I build websites, mobile apps, and digital platforms for businesses that want to grow online. You work directly with me — no agency, no middlemen, no red tape.",
+    "bio3": "When you talk to me, you're talking to the person who will design, build, and deliver your project from start to finish. That's how I make sure everything turns out exactly the way you need it.",
+    "value_payment_title": "50/50",
+    "value_payment_desc": "You only pay when you're happy",
+    "value_whatsapp_title": "WhatsApp",
+    "value_whatsapp_desc": "Direct contact, no middlemen",
+    "value_support_title": "30 days",
+    "value_support_desc": "Free support after delivery"
+  },
+  "services": {
+    "label": "Services",
+    "title_line1": "Pick what your",
+    "title_line2": "business needs",
+    "subtitle": "Fixed pricing. No surprises. 50% to start, 50% on delivery.",
+    "note": "Need e-commerce or something custom?",
+    "note_link": "Send a message",
+    "note_suffix": " — it's free, no strings attached.",
+    "popular": "Most popular",
+    "page": {
+      "title": "Landing Page",
+      "description": "For any business that needs a professional online presence.",
+      "price": "€300",
+      "price_max": "€600",
+      "price_note": "One-time payment · No monthly fees",
+      "cta": "Get a quote",
+      "features": [
+        "Custom, modern design",
+        "Fully mobile-responsive",
+        "Contact form included",
+        "Google Maps integration",
+        "Full SEO + Google Business setup",
+        "Delivered in 3–5 business days"
+      ]
+    },
+    "website": {
+      "title": "Full Website",
+      "description": "For businesses that need multiple pages and advanced features.",
+      "price": "€800",
+      "price_max": "€1500",
+      "price_note": "One-time payment · No monthly fees",
+      "cta": "Get a quote",
+      "features": [
+        "Everything in the previous plan",
+        "3–5 pages (Home, About, Services…)",
+        "Edit content without coding",
+        "Social media integration",
+        "Google Analytics included",
+        "Full SEO + Google Business setup",
+        "Delivered in 1–2 weeks"
+      ]
+    },
+    "app": {
+      "title": "Mobile App",
+      "description": "For businesses that need an app for iOS and Android.",
+      "price": "starting at €2,000",
+      "price_note": "Custom quote · Tailored project",
+      "cta": "Let's talk about your project",
+      "features": [
+        "Custom-built app",
+        "Works on iPhone and Android",
+        "Admin dashboard",
+        "Unique design",
+        "Published to app stores",
+        "Timeline and pricing on request"
+      ]
+    }
+  },
+  "process": {
+    "label": "Process",
+    "title_line1": "From zero to online",
+    "title_line2": "in 4 steps",
+    "subtitle": "No hassle.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Discovery",
+        "description": "A 15-minute chat to understand your business, your goals, and what you actually need.",
+        "detail": "15 min"
+      },
+      {
+        "number": "02",
+        "title": "Proposal",
+        "description": "Within 24 hours you get a clear proposal: what we'll build, how much it costs, and when it'll be ready.",
+        "detail": "24 hours"
+      },
+      {
+        "number": "03",
+        "title": "Build",
+        "description": "I develop your project with regular updates. You see the progress, I do the work.",
+        "detail": "3–5 days"
+      },
+      {
+        "number": "04",
+        "title": "Launch",
+        "description": "Delivery, testing, and live. I stay available for support after launch.",
+        "detail": "30 days support"
+      }
+    ]
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "title_line1": "Real results for",
+    "title_line2": "businesses like yours",
+    "subtitle": "Real projects, real metrics.",
+    "view_project": "View project",
+    "items": [
+      {
+        "tag": "Educational app · App Store",
+        "title": "My Lessons",
+        "description": "iPhone and Android app with lesson management, payments, and student profiles.",
+        "result": "Live on the App Store. Performance score 100/100.",
+        "link_text": "View on the App Store",
+        "metrics_labels": ["PageSpeed", "Platform", "Build time", "Status"],
+        "metrics_values": ["100/100", "iOS + Android", "3 weeks", "Published"]
+      },
+      {
+        "tag": "Professional website",
+        "title": "Website with digital menu & reservations",
+        "description": "Modern website with a digital menu, online reservations, Google Maps integration, and optimized SEO.",
+        "result": "PageSpeed 100/100. First page of Google in 2 weeks.",
+        "metrics_labels": ["PageSpeed", "Platform", "Build time", "Status"],
+        "metrics_values": ["100/100", "Web", "5 days", "Live"]
+      }
+    ]
+  },
+  "testimonials": {
+    "label": "Testimonials",
+    "title_line1": "What clients",
+    "title_line2": "are saying",
+    "verified": "Verified",
+    "items": [
+      {
+        "quote": "I needed a website for my business and Francisco delivered everything in 5 days. I started getting inquiries in the first week.",
+        "name": "Maria",
+        "business": "Local business owner"
+      },
+      {
+        "quote": "My old site didn't work on mobile. Francisco rebuilt everything — now I get quote requests every day through the contact form.",
+        "name": "João",
+        "business": "Professional services"
+      },
+      {
+        "quote": "Fixed price from the start, no surprises. The app turned out exactly how I wanted and it's already on the App Store.",
+        "name": "Ana",
+        "business": "Mobile app · iOS + Android"
+      }
+    ]
+  },
+  "guarantee": {
+    "label": "Guarantee",
+    "title": "Zero risk for you",
+    "subtitle1": "Pay 50% to start, 50% on delivery. See the progress at every stage.",
+    "subtitle2": "You only pay the second half when you're",
+    "subtitle2_highlight": "100% satisfied",
+    "items": [
+      "No long-term contracts",
+      "No monthly fees",
+      "30 days of free support"
+    ]
+  },
+  "faq": {
+    "label": "FAQ",
+    "title_line1": "Frequently asked",
+    "title_line2": "questions",
+    "items": [
+      {
+        "question": "How much does it cost per month after?",
+        "answer": "Nothing. First-year hosting is included. After that, hosting costs less than €10/month — and I'll help you set everything up. There are never any monthly fees for my work."
+      },
+      {
+        "question": "How long does it take?",
+        "answer": "A simple landing page is ready in 3–5 business days. A full website takes 1–2 weeks. I use a proven rapid-delivery process to ship fast without cutting corners."
+      },
+      {
+        "question": "I already have Instagram — why do I need a website?",
+        "answer": "Instagram doesn't show up on Google. When someone searches for your type of business, they find whoever has a website — not whoever has an Instagram page. A website is your 24/7 storefront."
+      },
+      {
+        "question": "Do I need a domain and hosting?",
+        "answer": "I take care of everything. First-year hosting is included in the price."
+      },
+      {
+        "question": "Can I update the content myself?",
+        "answer": "Yes. I include a simple system for editing text and images — no coding required."
+      },
+      {
+        "question": "Can I see examples before we start?",
+        "answer": "Absolutely. Before building anything, I'll show you a design mockup for approval. I only move forward once you're happy with it."
+      },
+      {
+        "question": "Do you work remotely?",
+        "answer": "Yes. I work remotely with clients anywhere in the world. We meet via WhatsApp or video call — it works perfectly."
+      },
+      {
+        "question": "What if I don't like the result?",
+        "answer": "I show you the progress at every stage. You only pay the second installment when you're 100% satisfied. Zero risk."
+      },
+      {
+        "question": "What happens after the 30 days of support?",
+        "answer": "Your site stays online as normal. Hosting costs less than €10/month after the first year. If you need changes or updates down the road, I'm just a WhatsApp message away."
+      }
+    ]
+  },
+  "footer": {
+    "cta_label": "Have a project in mind?",
+    "cta_title_line1": "Let's work",
+    "cta_title_highlight": "together",
+    "location": "From Portugal 🇵🇹"
+  },
+  "contact": {
+    "title": "Let's work together.",
+    "subtitle": "Tell me about your project.",
+    "name_placeholder": "Name",
+    "email_placeholder": "Email",
+    "message_placeholder": "Tell me about your project...",
+    "submit": "Send message",
+    "submitting": "Sending…",
+    "whatsapp_alt": "Or message me directly on WhatsApp",
+    "success_title": "Thank you!",
+    "success_subtitle": "I'll get back to you within 2 hours.",
+    "success_wa": "Faster response on WhatsApp",
+    "error_title": "Something went wrong",
+    "error_subtitle": "Try WhatsApp instead — I reply in minutes.",
+    "error_wa": "Message on WhatsApp"
+  },
+  "cta": {
+    "badge": "Available now",
+    "title_prefix": "Ready to get ",
+    "title_highlight": "more clients?",
+    "subtitle": "Get a free quote. No commitment. Response within 2 hours.",
+    "primary": "Get a free quote",
+    "secondary": "Send a message",
+    "guarantee": "50% only when you're satisfied · No long-term contracts"
+  },
+  "four04": {
+    "meta_title": "Page not found | Francisco Sousa",
+    "meta_description": "This page doesn't exist. Go back to the homepage or contact me on WhatsApp.",
+    "title": "Page not found",
+    "subtitle": "This page doesn't exist or has been moved.",
+    "back": "Back to homepage",
+    "whatsapp": "Message on WhatsApp"
+  },
+  "thanks": {
+    "meta_title": "Thank you! | Francisco Sousa",
+    "meta_description": "Your message has been sent successfully. I'll reply within 24 hours.",
+    "title": "Message sent!",
+    "subtitle_prefix": "Thanks for reaching out. I'll reply within ",
+    "subtitle_highlight": "2 hours",
+    "subtitle_suffix": ".",
+    "wa": "Faster response on WhatsApp",
+    "back": "Back to homepage"
+  },
+  "whatsapp": {
+    "default_message": "Hi Francisco, I saw your website and I'm interested in getting a quote for my business.",
+    "page_message": "Hi Francisco, I'm interested in a Professional Landing Page for my business.",
+    "site_message": "Hi Francisco, I'm interested in a Full Website for my business.",
+    "app_message": "Hi Francisco, I'm interested in a Mobile App for my business.",
+    "aria_label": "Contact via WhatsApp"
+  },
+  "credibility": {
+    "projects": "Projects delivered",
+    "speed": "Loads in <1 second",
+    "response": "Response time",
+    "subscriptions": "Monthly fees"
+  },
+  "hero_visual": {
+    "restaurant_name": "Restaurante Silva",
+    "restaurant_tagline": "Traditional Portuguese cuisine since 1998",
+    "restaurant_cta": "Book a table",
+    "clinic_name": "Clínica Saúde+",
+    "clinic_tagline": "Trusted dental care",
+    "clinic_cta": "Book appointment",
+    "clinic_patients": "Patients",
+    "clinic_experience": "Experience",
+    "shop_name": "Loja Verde",
+    "shop_tagline": "Natural & organic products",
+    "shop_cta": "Browse products"
+  },
+  "hero_mockup": {
+    "stars": "5 stars"
+  },
+  "structured_data": {
+    "description": "Fast, modern website development for businesses."
+  }
+}

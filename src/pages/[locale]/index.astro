@@ -1,20 +1,31 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ClientLogoBar from '../components/ClientLogoBar.astro';
-import PricingCard from '../components/PricingCard.astro';
-import ProcessTimeline from '../components/ProcessTimeline.astro';
-import PortfolioCard from '../components/PortfolioCard.astro';
-import TestimonialCard from '../components/TestimonialCard.astro';
-import FaqItem from '../components/FaqItem.astro';
-import GuaranteeSection from '../components/GuaranteeSection.astro';
-import AboutSection from '../components/AboutSection.astro';
-import ContactForm from '../components/ContactForm.astro';
-import CredibilityBar from '../components/CredibilityBar.astro';
-import FinalCTA from '../components/FinalCTA.astro';
-import HeroVisual from '../components/HeroVisual.astro';
-import { t, tArray, tStringArray, getWhatsAppLink } from '../i18n/utils';
+import Layout from '../../layouts/Layout.astro';
+import ClientLogoBar from '../../components/ClientLogoBar.astro';
+import PricingCard from '../../components/PricingCard.astro';
+import ProcessTimeline from '../../components/ProcessTimeline.astro';
+import PortfolioCard from '../../components/PortfolioCard.astro';
+import TestimonialCard from '../../components/TestimonialCard.astro';
+import FaqItem from '../../components/FaqItem.astro';
+import GuaranteeSection from '../../components/GuaranteeSection.astro';
+import AboutSection from '../../components/AboutSection.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import CredibilityBar from '../../components/CredibilityBar.astro';
+import FinalCTA from '../../components/FinalCTA.astro';
+import HeroVisual from '../../components/HeroVisual.astro';
+import { t, tArray, tStringArray, getWhatsAppLink } from '../../i18n/utils';
+import type { Locale } from '../../i18n/utils';
 
-const locale = 'pt';
+export function getStaticPaths() {
+  return [
+    { params: { locale: 'en' } },
+    { params: { locale: 'es' } },
+    { params: { locale: 'fr' } },
+    { params: { locale: 'de' } },
+    { params: { locale: 'it' } },
+  ];
+}
+
+const { locale } = Astro.params as { locale: Locale };
 
 const WA_LINK = getWhatsAppLink(locale, 'whatsapp.default_message');
 const WA_LINK_PAGINA = getWhatsAppLink(locale, 'whatsapp.page_message');
@@ -30,29 +41,24 @@ const testimonialItems = tArray(locale, 'testimonials.items');
   <!-- ===== HERO ===== -->
   <section id="hero" class="relative min-h-[100vh] flex items-end pb-16 sm:pb-24 pt-32 sm:pt-40">
     <div class="max-w-[1400px] mx-auto px-6 sm:px-8 w-full">
-      <!-- Small label -->
       <p class="hero-fade text-[var(--text-label)] font-medium uppercase tracking-[0.15em] text-[var(--color-text-subtle)] mb-8">
         <span class="inline-block w-8 h-px bg-[var(--color-accent)] align-middle mr-3"></span>
         {t(locale, 'hero.label')}
       </p>
 
-      <!-- Massive headline -->
       <h1 class="hero-fade font-light tracking-tight leading-[0.95] mb-10" style="font-size: var(--text-hero);">
         {t(locale, 'hero.title_line1')}<br/>
         {t(locale, 'hero.title_line2')}<br/>
         <span class="gradient-text">{t(locale, 'hero.title_highlight')}</span>
       </h1>
 
-      <!-- Animated accent line -->
       <div class="hero-fade reveal-line mb-10"></div>
 
-      <!-- Description + CTA row -->
       <div class="hero-fade flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-16">
         <p class="text-[var(--color-text-muted)] text-lg md:text-xl font-light leading-relaxed max-w-lg">
           {t(locale, 'hero.subtitle')}
         </p>
 
-        <!-- CTAs -->
         <div class="flex flex-col sm:flex-row items-start gap-4 flex-shrink-0">
           <a
             href="#contacto"
@@ -73,7 +79,6 @@ const testimonialItems = tArray(locale, 'testimonials.items');
         </div>
       </div>
 
-      <!-- Location tag with scroll indicator -->
       <div class="hero-fade mt-12 pt-8 border-t border-[var(--color-border)] flex items-center justify-between">
         <p class="text-[var(--text-xs)] text-[var(--color-text-subtle)] uppercase tracking-[0.15em]">
           {t(locale, 'hero.location')}
@@ -86,10 +91,7 @@ const testimonialItems = tArray(locale, 'testimonials.items');
     </div>
   </section>
 
-  <!-- ===== CLIENT CATEGORIES ===== -->
   <ClientLogoBar locale={locale} />
-
-  <!-- ===== ABOUT ===== -->
   <AboutSection locale={locale} />
 
   <!-- ===== SERVICES / PRICING ===== -->
@@ -97,7 +99,6 @@ const testimonialItems = tArray(locale, 'testimonials.items');
     <div class="section-divider"></div>
     <div class="py-[var(--section-py)] px-6 sm:px-8">
       <div class="max-w-[1400px] mx-auto">
-        <!-- Section header -->
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 md:mb-24">
           <div>
             <p class="text-[var(--text-label)] font-medium uppercase tracking-[0.15em] text-[var(--color-text-subtle)] mb-4" data-animate>{t(locale, 'services.label')}</p>
@@ -122,7 +123,6 @@ const testimonialItems = tArray(locale, 'testimonials.items');
             ctaLink={WA_LINK_PAGINA}
             locale={locale}
           />
-
           <PricingCard
             title={t(locale, 'services.website.title')}
             description={t(locale, 'services.website.description')}
@@ -135,7 +135,6 @@ const testimonialItems = tArray(locale, 'testimonials.items');
             ctaLink={WA_LINK_SITE}
             locale={locale}
           />
-
           <PricingCard
             title={t(locale, 'services.app.title')}
             description={t(locale, 'services.app.description')}
@@ -155,7 +154,6 @@ const testimonialItems = tArray(locale, 'testimonials.items');
     </div>
   </section>
 
-  <!-- ===== PROCESS ===== -->
   <ProcessTimeline locale={locale} />
 
   <!-- ===== PORTFOLIO ===== -->
@@ -185,14 +183,13 @@ const testimonialItems = tArray(locale, 'testimonials.items');
             linkText={portfolioItems[0]?.link_text || ''}
             metrics={[
               { label: (portfolioItems[0] as any)?.metrics_labels?.[0] || 'PageSpeed', value: (portfolioItems[0] as any)?.metrics_values?.[0] || '100/100' },
-              { label: (portfolioItems[0] as any)?.metrics_labels?.[1] || 'Plataforma', value: (portfolioItems[0] as any)?.metrics_values?.[1] || 'iOS + Android' },
-              { label: (portfolioItems[0] as any)?.metrics_labels?.[2] || 'Build time', value: (portfolioItems[0] as any)?.metrics_values?.[2] || '3 semanas' },
-              { label: (portfolioItems[0] as any)?.metrics_labels?.[3] || 'Estado', value: (portfolioItems[0] as any)?.metrics_values?.[3] || 'Publicada' },
+              { label: (portfolioItems[0] as any)?.metrics_labels?.[1] || 'Platform', value: (portfolioItems[0] as any)?.metrics_values?.[1] || 'iOS + Android' },
+              { label: (portfolioItems[0] as any)?.metrics_labels?.[2] || 'Build time', value: (portfolioItems[0] as any)?.metrics_values?.[2] || '3 weeks' },
+              { label: (portfolioItems[0] as any)?.metrics_labels?.[3] || 'Status', value: (portfolioItems[0] as any)?.metrics_values?.[3] || 'Published' },
             ]}
             techStack={["Flutter", "Dart", "Firebase", "App Store"]}
             locale={locale}
           />
-
           <PortfolioCard
             tag={portfolioItems[1]?.tag || ''}
             title={portfolioItems[1]?.title || ''}
@@ -200,9 +197,9 @@ const testimonialItems = tArray(locale, 'testimonials.items');
             result={portfolioItems[1]?.result || ''}
             metrics={[
               { label: (portfolioItems[1] as any)?.metrics_labels?.[0] || 'PageSpeed', value: (portfolioItems[1] as any)?.metrics_values?.[0] || '100/100' },
-              { label: (portfolioItems[1] as any)?.metrics_labels?.[1] || 'Plataforma', value: (portfolioItems[1] as any)?.metrics_values?.[1] || 'Web' },
-              { label: (portfolioItems[1] as any)?.metrics_labels?.[2] || 'Build time', value: (portfolioItems[1] as any)?.metrics_values?.[2] || '5 dias' },
-              { label: (portfolioItems[1] as any)?.metrics_labels?.[3] || 'Estado', value: (portfolioItems[1] as any)?.metrics_values?.[3] || 'Online' },
+              { label: (portfolioItems[1] as any)?.metrics_labels?.[1] || 'Platform', value: (portfolioItems[1] as any)?.metrics_values?.[1] || 'Web' },
+              { label: (portfolioItems[1] as any)?.metrics_labels?.[2] || 'Build time', value: (portfolioItems[1] as any)?.metrics_values?.[2] || '5 days' },
+              { label: (portfolioItems[1] as any)?.metrics_labels?.[3] || 'Status', value: (portfolioItems[1] as any)?.metrics_values?.[3] || 'Online' },
             ]}
             techStack={["Astro", "Tailwind", "Cloudflare"]}
             locale={locale}
@@ -238,7 +235,6 @@ const testimonialItems = tArray(locale, 'testimonials.items');
     </div>
   </section>
 
-  <!-- ===== GUARANTEE ===== -->
   <GuaranteeSection locale={locale} />
 
   <!-- ===== FAQ ===== -->
@@ -247,15 +243,12 @@ const testimonialItems = tArray(locale, 'testimonials.items');
     <div class="py-[var(--section-py)] px-6 sm:px-8">
       <div class="max-w-[1400px] mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
-          <!-- Left: heading -->
           <div>
             <p class="text-[var(--text-label)] font-medium uppercase tracking-[0.15em] text-[var(--color-text-subtle)] mb-4" data-animate>{t(locale, 'faq.label')}</p>
             <h2 class="font-light tracking-tight leading-[0.95]" style="font-size: var(--text-h1);" data-animate>
               {t(locale, 'faq.title_line1')}<br/>{t(locale, 'faq.title_line2')}
             </h2>
           </div>
-
-          <!-- Right: accordion -->
           <div class="space-y-0">
             {faqs.map((faq, i) => (
               <FaqItem question={faq.question} answer={faq.answer} number={i + 1} />

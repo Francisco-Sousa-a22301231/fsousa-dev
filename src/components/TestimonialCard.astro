@@ -1,11 +1,14 @@
 ---
+import { t } from '../i18n/utils';
+
 interface Props {
   quote: string;
   name: string;
   business: string;
+  locale?: string;
 }
 
-const { quote, name, business } = Astro.props;
+const { quote, name, business, locale = 'pt' } = Astro.props;
 ---
 
 <div class="testimonial-card-v2 tilt-card stagger-popup p-8 sm:p-10 bg-[var(--color-bg)] rounded-sm relative">
@@ -38,7 +41,7 @@ const { quote, name, business } = Astro.props;
     <!-- Verified badge -->
     <span class="inline-flex items-center gap-1 text-[var(--text-xs)] font-medium px-2 py-1 rounded-full" style="background: rgba(34, 197, 94, 0.1); color: #22c55e;">
       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-      Verificado
+      {t(locale, 'testimonials.verified')}
     </span>
   </div>
 </div>

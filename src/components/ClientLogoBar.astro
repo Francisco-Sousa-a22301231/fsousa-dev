@@ -1,5 +1,12 @@
 ---
-const categories = ['Restaurantes', 'Clínicas', 'Educação', 'Cabeleireiros', 'Lojas', 'Fitness', 'Imobiliário', 'Escritórios'];
+import { tStringArray } from '../i18n/utils';
+
+interface Props {
+  locale?: string;
+}
+
+const { locale = 'pt' } = Astro.props;
+const categories = tStringArray(locale, 'client_categories');
 // Duplicate for seamless loop
 const items = [...categories, ...categories];
 ---

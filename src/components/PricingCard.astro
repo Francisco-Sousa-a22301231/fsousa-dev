@@ -1,4 +1,6 @@
 ---
+import { t } from '../i18n/utils';
+
 interface Props {
   title: string;
   description: string;
@@ -9,9 +11,10 @@ interface Props {
   highlighted?: boolean;
   ctaText: string;
   ctaLink: string;
+  locale?: string;
 }
 
-const { title, description, price, priceMax, priceNote, features, highlighted = false, ctaText, ctaLink } = Astro.props;
+const { title, description, price, priceMax, priceNote, features, highlighted = false, ctaText, ctaLink, locale = 'pt' } = Astro.props;
 ---
 
 <div class:list={[
@@ -27,7 +30,7 @@ const { title, description, price, priceMax, priceNote, features, highlighted = 
   <div class="mb-8">
     {highlighted && (
       <span class="inline-block text-[var(--text-xs)] font-medium uppercase tracking-[0.1em] text-[var(--color-accent)] mb-4 badge-shimmer px-2 py-1 border border-[var(--color-accent)]/20 rounded-full">
-        Mais popular
+        {t(locale, 'services.popular')}
       </span>
     )}
     <h3 class="text-xl font-light tracking-tight text-[var(--color-text)] mb-2">{title}</h3>

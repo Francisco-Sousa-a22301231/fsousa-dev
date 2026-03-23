@@ -1,0 +1,108 @@
+---
+import { t } from '../i18n/utils';
+
+interface Props {
+  locale?: string;
+}
+
+const { locale = 'pt' } = Astro.props;
+---
+
+<div class="relative mx-auto max-w-3xl" aria-hidden="true">
+  <div class="flex items-end justify-center relative">
+    <!-- Card 1 — Restaurant (back-left, hidden on mobile) -->
+    <div class="hero-card hidden sm:block -mr-6 lg:-mr-8" style="--card-delay: 1.15s;">
+      <div class="-rotate-[5deg] translate-y-3">
+        <div class="bg-[#1e293b] rounded-lg lg:rounded-xl border border-white/10 shadow-2xl overflow-hidden w-[200px] lg:w-[260px] opacity-80 hover:opacity-100 transition-opacity duration-300">
+          <!-- Browser chrome -->
+          <div class="flex items-center gap-1 px-2.5 py-1.5 bg-[#0f172a]/80 border-b border-white/[0.06]">
+            <span class="w-1.5 h-1.5 rounded-full bg-red-400/50"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-yellow-400/50"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-green-400/50"></span>
+            <span class="text-[8px] text-white/20 ml-1.5 font-mono">restaurante-silva.pt</span>
+          </div>
+          <!-- Hero area -->
+          <div class="bg-gradient-to-br from-amber-600/25 to-orange-700/10 p-3 lg:p-4">
+            <div class="text-white/80 font-bold text-[10px] lg:text-xs mb-0.5" style="font-family:'Sora Variable','Sora',sans-serif;">{t(locale, 'hero_visual.restaurant_name')}</div>
+            <div class="text-white/35 text-[8px] lg:text-[9px] mb-2.5">{t(locale, 'hero_visual.restaurant_tagline')}</div>
+            <div class="inline-block bg-[#f97316]/60 text-white text-[8px] font-semibold px-2.5 py-1 rounded">{t(locale, 'hero_visual.restaurant_cta')}</div>
+          </div>
+          <!-- Content hint -->
+          <div class="p-2.5 lg:p-3 space-y-1.5">
+            <div class="h-1.5 bg-white/[0.06] rounded w-4/5"></div>
+            <div class="h-1.5 bg-white/[0.04] rounded w-3/5"></div>
+            <div class="h-1.5 bg-white/[0.04] rounded w-2/3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 — Clinic (center, always visible) -->
+    <div class="hero-card relative z-10" style="--card-delay: 1.0s;">
+      <div class="-translate-y-2">
+        <div class="bg-[#1e293b] rounded-xl border border-white/[0.12] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden w-[250px] sm:w-[250px] lg:w-[300px]">
+          <!-- Browser chrome -->
+          <div class="flex items-center gap-1 px-2.5 py-1.5 bg-[#0f172a]/80 border-b border-white/[0.06]">
+            <span class="w-1.5 h-1.5 rounded-full bg-red-400/50"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-yellow-400/50"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-green-400/50"></span>
+            <span class="text-[8px] text-white/20 ml-1.5 font-mono">clinica-saude.pt</span>
+          </div>
+          <!-- Hero area -->
+          <div class="bg-gradient-to-br from-sky-600/25 to-cyan-600/10 p-3 lg:p-4">
+            <div class="text-white/85 font-bold text-[10px] lg:text-xs mb-0.5" style="font-family:'Sora Variable','Sora',sans-serif;">{t(locale, 'hero_visual.clinic_name')}</div>
+            <div class="text-white/35 text-[8px] lg:text-[9px] mb-2.5">{t(locale, 'hero_visual.clinic_tagline')}</div>
+            <div class="inline-block bg-sky-500/60 text-white text-[8px] font-semibold px-2.5 py-1 rounded">{t(locale, 'hero_visual.clinic_cta')}</div>
+          </div>
+          <!-- Stats row -->
+          <div class="p-2.5 lg:p-3">
+            <div class="grid grid-cols-3 gap-1">
+              <div class="bg-sky-500/[0.08] rounded p-1.5 text-center">
+                <div class="text-sky-300/70 text-[9px] font-bold">+500</div>
+                <div class="text-white/20 text-[7px]">{t(locale, 'hero_visual.clinic_patients')}</div>
+              </div>
+              <div class="bg-sky-500/[0.08] rounded p-1.5 text-center">
+                <div class="text-sky-300/70 text-[9px] font-bold">15a</div>
+                <div class="text-white/20 text-[7px]">{t(locale, 'hero_visual.clinic_experience')}</div>
+              </div>
+              <div class="bg-sky-500/[0.08] rounded p-1.5 text-center">
+                <div class="text-sky-300/70 text-[9px] font-bold">4.9★</div>
+                <div class="text-white/20 text-[7px]">Google</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 — Shop (back-right, hidden on mobile) -->
+    <div class="hero-card hidden sm:block -ml-6 lg:-ml-8" style="--card-delay: 1.3s;">
+      <div class="rotate-[5deg] translate-y-3">
+        <div class="bg-[#1e293b] rounded-lg lg:rounded-xl border border-white/10 shadow-2xl overflow-hidden w-[200px] lg:w-[260px] opacity-80 hover:opacity-100 transition-opacity duration-300">
+          <!-- Browser chrome -->
+          <div class="flex items-center gap-1 px-2.5 py-1.5 bg-[#0f172a]/80 border-b border-white/[0.06]">
+            <span class="w-1.5 h-1.5 rounded-full bg-red-400/50"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-yellow-400/50"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-green-400/50"></span>
+            <span class="text-[8px] text-white/20 ml-1.5 font-mono">loja-verde.pt</span>
+          </div>
+          <!-- Hero area -->
+          <div class="bg-gradient-to-br from-emerald-600/25 to-green-700/10 p-3 lg:p-4">
+            <div class="text-white/80 font-bold text-[10px] lg:text-xs mb-0.5" style="font-family:'Sora Variable','Sora',sans-serif;">{t(locale, 'hero_visual.shop_name')}</div>
+            <div class="text-white/35 text-[8px] lg:text-[9px] mb-2.5">{t(locale, 'hero_visual.shop_tagline')}</div>
+            <div class="inline-block bg-emerald-500/60 text-white text-[8px] font-semibold px-2.5 py-1 rounded">{t(locale, 'hero_visual.shop_cta')}</div>
+          </div>
+          <!-- Content hint -->
+          <div class="p-2.5 lg:p-3 space-y-1.5">
+            <div class="h-1.5 bg-white/[0.06] rounded w-4/5"></div>
+            <div class="h-1.5 bg-white/[0.04] rounded w-3/5"></div>
+            <div class="h-1.5 bg-white/[0.04] rounded w-2/3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Glow behind cards -->
+  <div class="absolute inset-0 -z-10 bg-[#f97316]/[0.04] blur-[80px] rounded-full scale-75 pointer-events-none"></div>
+</div>

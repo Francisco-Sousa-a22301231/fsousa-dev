@@ -1,4 +1,6 @@
 ---
+import { t } from '../i18n/utils';
+
 interface Props {
   tag: string;
   title: string;
@@ -8,9 +10,10 @@ interface Props {
   linkText?: string;
   metrics?: { label: string; value: string }[];
   techStack?: string[];
+  locale?: string;
 }
 
-const { tag, title, description, result, link, linkText, metrics = [], techStack = [] } = Astro.props;
+const { tag, title, description, result, link, linkText, metrics = [], techStack = [] , locale = 'pt' } = Astro.props;
 ---
 
 <div class="portfolio-card-v2 stagger-popup group" data-cursor="project">
@@ -33,7 +36,7 @@ const { tag, title, description, result, link, linkText, metrics = [], techStack
         <span class="text-[var(--color-bg)]/10 text-8xl font-light tracking-tight select-none">{title.charAt(0)}</span>
         <!-- Hover overlay -->
         <div class="portfolio-overlay z-10">
-          <span class="text-white text-sm font-medium uppercase tracking-widest">Ver projeto</span>
+          <span class="text-white text-sm font-medium uppercase tracking-widest">{t(locale, 'portfolio.view_project')}</span>
         </div>
       </div>
     </div>
@@ -91,7 +94,7 @@ const { tag, title, description, result, link, linkText, metrics = [], techStack
           class="link-pill text-[var(--text-xs)] flex-shrink-0 group-hover:border-[var(--color-accent)] group-hover:text-[var(--color-accent)] transition-colors"
           data-cursor="expand"
         >
-          {linkText || "Ver projecto"} &rarr;
+          {linkText || t(locale, 'portfolio.view_project')} &rarr;
         </a>
       )}
     </div>

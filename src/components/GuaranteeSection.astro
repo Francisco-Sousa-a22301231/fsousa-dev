@@ -1,4 +1,12 @@
 ---
+import { t, tStringArray } from '../i18n/utils';
+
+interface Props {
+  locale?: string;
+}
+
+const { locale = 'pt' } = Astro.props;
+const guaranteeItems = tStringArray(locale, 'guarantee.items');
 ---
 
 <section class="guarantee-section relative">
@@ -6,32 +14,26 @@
   <div class="py-[var(--section-py)] px-6 sm:px-8">
     <div class="max-w-[1400px] mx-auto">
       <div class="max-w-3xl">
-        <p class="text-[var(--text-label)] font-medium uppercase tracking-[0.15em] text-[var(--color-text-subtle)] mb-6" data-animate>Garantia</p>
+        <p class="text-[var(--text-label)] font-medium uppercase tracking-[0.15em] text-[var(--color-text-subtle)] mb-6" data-animate>{t(locale, 'guarantee.label')}</p>
 
         <h2 class="font-light tracking-tight leading-[0.95] mb-8" style="font-size: var(--text-h1);" data-animate>
-          Sem risco para si
+          {t(locale, 'guarantee.title')}
         </h2>
 
         <p class="text-xl font-light text-[var(--color-text-muted)] leading-relaxed mb-4" data-animate>
-          Paga 50% para começar, 50% na entrega. Vê o progresso a cada etapa.
+          {t(locale, 'guarantee.subtitle1')}
         </p>
         <p class="text-xl font-light text-[var(--color-text)] leading-relaxed mb-12" data-animate>
-          Só paga o segundo pagamento quando estiver <span class="text-[var(--color-accent)]">100% satisfeito</span>.
+          {t(locale, 'guarantee.subtitle2')} <span class="text-[var(--color-accent)]">{t(locale, 'guarantee.subtitle2_highlight')}</span>.
         </p>
 
         <div class="flex flex-wrap items-center gap-8 sm:gap-12" data-animate>
-          <div class="guarantee-item flex items-center gap-2">
-            <svg class="guarantee-check" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-text)" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span class="text-[var(--text-small)] text-[var(--color-text-muted)]">Sem contratos longos</span>
-          </div>
-          <div class="guarantee-item flex items-center gap-2">
-            <svg class="guarantee-check" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-text)" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span class="text-[var(--text-small)] text-[var(--color-text-muted)]">Sem mensalidades</span>
-          </div>
-          <div class="guarantee-item flex items-center gap-2">
-            <svg class="guarantee-check" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-text)" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span class="text-[var(--text-small)] text-[var(--color-text-muted)]">30 dias de suporte grátis</span>
-          </div>
+          {guaranteeItems.map((item) => (
+            <div class="guarantee-item flex items-center gap-2">
+              <svg class="guarantee-check" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-text)" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span class="text-[var(--text-small)] text-[var(--color-text-muted)]">{item}</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>
