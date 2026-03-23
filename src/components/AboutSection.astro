@@ -17,24 +17,34 @@ const { locale = 'pt' } = Astro.props;
         <div class="md:col-span-4">
           <p class="text-[var(--text-label)] font-medium uppercase tracking-[0.15em] text-[var(--color-text-subtle)] mb-8" data-animate>{t(locale, 'about.label')}</p>
 
-          <!-- Photo with rotating gradient ring -->
-          <div class="relative w-48 h-48 sm:w-56 sm:h-56" data-animate>
-            <!-- Rotating gradient ring -->
-            <div class="about-photo-ring absolute inset-[-4px] rounded-full" style="background: conic-gradient(#FA5D29, #f97316, #fbbf24, #FA5D29);"></div>
-            <div class="w-full h-full rounded-full bg-[var(--color-bg)] relative overflow-hidden" style="padding: 3px;">
-              <div class="w-full h-full rounded-full bg-[var(--color-text)] flex items-center justify-center overflow-hidden">
-                <span class="text-4xl sm:text-5xl font-light text-[var(--color-bg)] tracking-tight">FS</span>
+          <!-- Profile photo with creative frame -->
+          <div class="about-photo-wrapper relative w-56 h-64 sm:w-64 sm:h-72" data-animate>
+            <!-- Accent shape behind photo -->
+            <div class="about-accent-shape absolute -inset-3 rounded-[2rem] opacity-20" style="background: linear-gradient(135deg, #FA5D29, #f97316, #fbbf24); filter: blur(20px);"></div>
+            <div class="about-accent-border absolute -inset-[2px] rounded-[1.5rem]" style="background: linear-gradient(135deg, #FA5D29, transparent 60%);"></div>
+
+            <!-- Photo container -->
+            <div class="relative w-full h-full rounded-[1.5rem] overflow-hidden bg-[var(--color-bg)]" style="padding: 2px;">
+              <div class="w-full h-full rounded-[calc(1.5rem-2px)] overflow-hidden">
+                <img src="/profile.webp" alt="Francisco Sousa" class="about-photo w-full h-full object-cover object-top" loading="lazy" />
               </div>
             </div>
 
             <!-- Floating badge: top-right -->
-            <div class="about-badge absolute -top-2 -right-4 bg-[var(--color-accent)] text-white text-[var(--text-xs)] font-medium px-3 py-1.5 rounded-full shadow-lg">
+            <div class="about-badge absolute -top-3 -right-3 bg-[var(--color-accent)] text-white text-[var(--text-xs)] font-medium px-3 py-1.5 rounded-full shadow-lg backdrop-blur-sm">
               Full-Stack Dev
             </div>
 
             <!-- Floating badge: bottom-left -->
-            <div class="about-badge about-badge-alt absolute -bottom-2 -left-4 bg-[var(--color-text)] text-[var(--color-bg)] text-[var(--text-xs)] font-medium px-3 py-1.5 rounded-full shadow-lg" style="animation-delay: 1.5s;">
+            <div class="about-badge about-badge-alt absolute -bottom-3 -left-3 bg-[var(--color-text)] text-[var(--color-bg)] text-[var(--text-xs)] font-medium px-3 py-1.5 rounded-full shadow-lg" style="animation-delay: 1.5s;">
               Flutter &middot; Astro
+            </div>
+
+            <!-- Decorative corner dots -->
+            <div class="absolute -bottom-6 -right-6 grid grid-cols-3 gap-1.5 opacity-20">
+              {Array.from({ length: 9 }).map(() => (
+                <div class="w-1 h-1 rounded-full bg-[var(--color-accent)]"></div>
+              ))}
             </div>
           </div>
 
@@ -79,13 +89,21 @@ const { locale = 'pt' } = Astro.props;
 </section>
 
 <style>
-  @keyframes spin-ring {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+  .about-photo-wrapper:hover .about-photo {
+    transform: scale(1.05);
   }
 
-  .about-photo-ring {
-    animation: spin-ring 4s linear infinite;
+  .about-photo {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .about-accent-shape {
+    animation: pulse-glow 4s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.15; transform: scale(1); }
+    50% { opacity: 0.25; transform: scale(1.03); }
   }
 
   @keyframes float-badge {
@@ -103,12 +121,15 @@ const { locale = 'pt' } = Astro.props;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .about-photo-ring {
+    .about-accent-shape {
       animation: none;
     }
     .about-badge,
     .about-badge-alt {
       animation: none;
+    }
+    .about-photo {
+      transition: none;
     }
   }
 </style>
