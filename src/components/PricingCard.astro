@@ -4,9 +4,6 @@ import { t } from '../i18n/utils';
 interface Props {
   title: string;
   description: string;
-  price: string;
-  priceMax?: string;
-  priceNote: string;
   features: string[];
   highlighted?: boolean;
   ctaText: string;
@@ -14,7 +11,7 @@ interface Props {
   locale?: string;
 }
 
-const { title, description, price, priceMax, priceNote, features, highlighted = false, ctaText, ctaLink, locale = 'pt' } = Astro.props;
+const { title, description, features, highlighted = false, ctaText, ctaLink, locale = 'pt' } = Astro.props;
 ---
 
 <div class:list={[
@@ -35,18 +32,6 @@ const { title, description, price, priceMax, priceNote, features, highlighted = 
     )}
     <h3 class="text-xl font-light tracking-tight text-[var(--color-text)] mb-2">{title}</h3>
     <p class="text-[var(--text-small)] text-[var(--color-text-subtle)]">{description}</p>
-  </div>
-
-  {/* Price */}
-  <div class="mb-8">
-    <div class="flex items-baseline gap-2">
-      <span class:list={[
-        "text-4xl font-light tracking-tight",
-        highlighted ? "pricing-price-gradient" : "text-[var(--color-text)]"
-      ]}>{price}</span>
-      {priceMax && <span class="text-lg font-light text-[var(--color-text-subtle)]">– {priceMax}</span>}
-    </div>
-    <p class="text-[var(--text-xs)] text-[var(--color-text-subtle)] mt-2">{priceNote}</p>
   </div>
 
   {/* Features */}

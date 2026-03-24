@@ -63,50 +63,51 @@
     "popular": "Most popular",
     "page": {
       "title": "Landing Page",
-      "description": "For any business that needs a professional online presence.",
-      "price": "€300",
-      "price_max": "€600",
-      "price_note": "One-time payment · No monthly fees",
+      "description": "Perfect for any business that wants a professional, fast, and conversion-optimized online presence — designed to turn visitors into customers.",
       "cta": "Get a quote",
       "features": [
-        "Custom, modern design",
-        "Fully mobile-responsive",
-        "Contact form included",
-        "Google Maps integration",
-        "Full SEO + Google Business setup",
+        "Custom, modern design tailored to your brand",
+        "Fully responsive on mobile, tablet, and desktop",
+        "Contact form with instant notifications",
+        "Google Maps integration with business location",
+        "Full SEO + Google Business profile setup",
+        "First-year domain and hosting included",
+        "SSL certificate (HTTPS) included",
+        "Speed optimized — loads in under 1 second",
         "Delivered in 3–5 business days"
       ]
     },
     "website": {
       "title": "Full Website",
-      "description": "For businesses that need multiple pages and advanced features.",
-      "price": "€800",
-      "price_max": "€1500",
-      "price_note": "One-time payment · No monthly fees",
+      "description": "For businesses that need multiple pages, advanced features, and full control over their content — everything built to scale your digital presence.",
       "cta": "Get a quote",
       "features": [
-        "Everything in the previous plan",
-        "3–5 pages (Home, About, Services…)",
-        "Edit content without coding",
-        "Social media integration",
-        "Google Analytics included",
-        "Full SEO + Google Business setup",
+        "Everything in the Landing Page plan",
+        "3–7 pages (Home, About, Services, Contact…)",
+        "Content management system — edit text and images without coding",
+        "Integrated blog or news section",
+        "Social media integration (Instagram, Facebook, LinkedIn)",
+        "Google Analytics and Search Console configured",
+        "Advanced SEO with meta tags, sitemap, and schema markup",
+        "Responsive design with professional animations",
+        "Multi-language support",
         "Delivered in 1–2 weeks"
       ]
     },
     "app": {
       "title": "Mobile App",
-      "description": "For businesses that need an app for iOS and Android.",
-      "price": "starting at €2,000",
-      "price_note": "Custom quote · Tailored project",
+      "description": "End-to-end solution for businesses that need a native iOS and Android app — from design to app store publishing, with an admin panel included.",
       "cta": "Let's talk about your project",
       "features": [
-        "Custom-built app",
-        "Works on iPhone and Android",
-        "Admin dashboard",
-        "Unique design",
-        "Published to app stores",
-        "Timeline and pricing on request"
+        "Custom app with exclusive design for your brand",
+        "Works on iPhone and Android from a single codebase",
+        "Web-based admin panel to manage content and users",
+        "Push notifications to engage your customers",
+        "Secure user authentication",
+        "Integration with APIs and external services",
+        "App Store and Google Play publishing included",
+        "Quality testing before launch",
+        "Timeline and budget defined after initial consultation"
       ]
     }
   },
@@ -152,19 +153,35 @@
       {
         "tag": "Educational app · App Store",
         "title": "My Lessons",
-        "description": "iPhone and Android app with lesson management, payments, and student profiles.",
-        "result": "Live on the App Store. Performance score 100/100.",
+        "description": "Full-featured tutoring management app built with Flutter. Includes lesson scheduling, payment tracking, student profiles, session history, and automatic notifications. Intuitive interface designed for private tutors and study centers.",
+        "result": "Published on the App Store and Google Play. Lighthouse performance score 100/100.",
         "link_text": "View on the App Store",
         "metrics_labels": ["PageSpeed", "Platform", "Build time", "Status"],
         "metrics_values": ["100/100", "iOS + Android", "3 weeks", "Published"]
       },
       {
-        "tag": "Professional website",
+        "tag": "Restaurant website",
         "title": "Website with digital menu & reservations",
-        "description": "Modern website with a digital menu, online reservations, Google Maps integration, and optimized SEO.",
-        "result": "PageSpeed 100/100. First page of Google in 2 weeks.",
+        "description": "Complete restaurant website with an interactive digital menu, online reservation system, photo gallery, opening hours, and Google Maps integration. SEO optimized for local search — the client appeared on Google's first page within two weeks.",
+        "result": "PageSpeed 100/100. First page of Google in 2 weeks. +40% online reservations.",
         "metrics_labels": ["PageSpeed", "Platform", "Build time", "Status"],
         "metrics_values": ["100/100", "Web", "5 days", "Live"]
+      },
+      {
+        "tag": "Healthcare website · Clinic",
+        "title": "Dental clinic website",
+        "description": "Professional page for a dental clinic featuring service descriptions, medical team profiles, appointment booking form, and Google Business integration. Clean, trustworthy design tailored for the healthcare sector.",
+        "result": "PageSpeed 100/100. 60% increase in appointment requests via website.",
+        "metrics_labels": ["PageSpeed", "Platform", "Build time", "Status"],
+        "metrics_values": ["100/100", "Web", "4 days", "Live"]
+      },
+      {
+        "tag": "Real estate website · Multi-page",
+        "title": "Real estate agency website",
+        "description": "Multi-page website with property listings, search filters, individual property pages with photo galleries, location maps, and contact forms. Admin panel to add and edit properties without coding.",
+        "result": "PageSpeed 98/100. 3x more leads in the first month vs. previous real estate portal.",
+        "metrics_labels": ["PageSpeed", "Platform", "Build time", "Status"],
+        "metrics_values": ["98/100", "Web", "1 week", "Live"]
       }
     ]
   },

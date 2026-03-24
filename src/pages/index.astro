@@ -114,9 +114,6 @@ const testimonialItems = tArray(locale, 'testimonials.items');
           <PricingCard
             title={t(locale, 'services.page.title')}
             description={t(locale, 'services.page.description')}
-            price={t(locale, 'services.page.price')}
-            priceMax={t(locale, 'services.page.price_max')}
-            priceNote={t(locale, 'services.page.price_note')}
             features={tStringArray(locale, 'services.page.features')}
             ctaText={t(locale, 'services.page.cta')}
             ctaLink={WA_LINK_PAGINA}
@@ -126,9 +123,6 @@ const testimonialItems = tArray(locale, 'testimonials.items');
           <PricingCard
             title={t(locale, 'services.website.title')}
             description={t(locale, 'services.website.description')}
-            price={t(locale, 'services.website.price')}
-            priceMax={t(locale, 'services.website.price_max')}
-            priceNote={t(locale, 'services.website.price_note')}
             highlighted={true}
             features={tStringArray(locale, 'services.website.features')}
             ctaText={t(locale, 'services.website.cta')}
@@ -139,8 +133,6 @@ const testimonialItems = tArray(locale, 'testimonials.items');
           <PricingCard
             title={t(locale, 'services.app.title')}
             description={t(locale, 'services.app.description')}
-            price={t(locale, 'services.app.price')}
-            priceNote={t(locale, 'services.app.price_note')}
             features={tStringArray(locale, 'services.app.features')}
             ctaText={t(locale, 'services.app.cta')}
             ctaLink={WA_LINK_APP}
@@ -205,6 +197,36 @@ const testimonialItems = tArray(locale, 'testimonials.items');
               { label: (portfolioItems[1] as any)?.metrics_labels?.[3] || 'Estado', value: (portfolioItems[1] as any)?.metrics_values?.[3] || 'Online' },
             ]}
             techStack={["Astro", "Tailwind", "Cloudflare"]}
+            locale={locale}
+          />
+
+          <PortfolioCard
+            tag={portfolioItems[2]?.tag || ''}
+            title={portfolioItems[2]?.title || ''}
+            description={portfolioItems[2]?.description || ''}
+            result={portfolioItems[2]?.result || ''}
+            metrics={[
+              { label: (portfolioItems[2] as any)?.metrics_labels?.[0] || 'PageSpeed', value: (portfolioItems[2] as any)?.metrics_values?.[0] || '100/100' },
+              { label: (portfolioItems[2] as any)?.metrics_labels?.[1] || 'Plataforma', value: (portfolioItems[2] as any)?.metrics_values?.[1] || 'Web' },
+              { label: (portfolioItems[2] as any)?.metrics_labels?.[2] || 'Build time', value: (portfolioItems[2] as any)?.metrics_values?.[2] || '4 dias' },
+              { label: (portfolioItems[2] as any)?.metrics_labels?.[3] || 'Estado', value: (portfolioItems[2] as any)?.metrics_values?.[3] || 'Online' },
+            ]}
+            techStack={["Astro", "Tailwind", "Google Business"]}
+            locale={locale}
+          />
+
+          <PortfolioCard
+            tag={portfolioItems[3]?.tag || ''}
+            title={portfolioItems[3]?.title || ''}
+            description={portfolioItems[3]?.description || ''}
+            result={portfolioItems[3]?.result || ''}
+            metrics={[
+              { label: (portfolioItems[3] as any)?.metrics_labels?.[0] || 'PageSpeed', value: (portfolioItems[3] as any)?.metrics_values?.[0] || '100/100' },
+              { label: (portfolioItems[3] as any)?.metrics_labels?.[1] || 'Plataforma', value: (portfolioItems[3] as any)?.metrics_values?.[1] || 'Web' },
+              { label: (portfolioItems[3] as any)?.metrics_labels?.[2] || 'Build time', value: (portfolioItems[3] as any)?.metrics_values?.[2] || '1 semana' },
+              { label: (portfolioItems[3] as any)?.metrics_labels?.[3] || 'Estado', value: (portfolioItems[3] as any)?.metrics_values?.[3] || 'Online' },
+            ]}
+            techStack={["Astro", "Tailwind", "Cloudflare", "CMS"]}
             locale={locale}
           />
         </div>
