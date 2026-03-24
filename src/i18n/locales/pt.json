@@ -149,6 +149,13 @@
     "title_line2": "negócios como o seu",
     "subtitle": "Projetos reais, métricas reais.",
     "view_project": "Ver projeto",
+    "detail_close": "Fechar",
+    "detail_challenge": "Desafio",
+    "detail_solution": "Solução",
+    "detail_features": "Funcionalidades principais",
+    "detail_gallery": "Galeria do projeto",
+    "detail_back": "Voltar ao portfolio",
+    "detail_visit": "Visitar projeto",
     "items": [
       {
         "tag": "App educativa · App Store",
@@ -157,7 +164,10 @@
         "result": "Publicada na App Store e Google Play. Performance 100/100 no Lighthouse.",
         "link_text": "Ver na App Store",
         "metrics_labels": ["PageSpeed", "Plataforma", "Tempo de build", "Estado"],
-        "metrics_values": ["100/100", "iOS + Android", "3 semanas", "Publicada"]
+        "metrics_values": ["100/100", "iOS + Android", "3 semanas", "Publicada"],
+        "challenge": "Professores particulares geriam aulas, pagamentos e alunos em folhas de cálculo e notas — sem forma centralizada de acompanhar sessões ou cobranças.",
+        "solution": "App mobile nativa com Flutter que centraliza toda a gestão de explicações num único lugar, com notificações automáticas e sincronização em tempo real via Firebase.",
+        "features": ["Agendamento de aulas com calendário interativo", "Gestão de pagamentos e faturação", "Perfis detalhados de alunos", "Histórico completo de sessões", "Notificações push automáticas", "Sincronização em tempo real"]
       },
       {
         "tag": "Website de restauração",
@@ -165,7 +175,10 @@
         "description": "Website completo para restaurante com menu digital interativo, sistema de reservas online, galeria de fotos, horário de funcionamento e integração com Google Maps. SEO otimizado para pesquisa local — o cliente apareceu na primeira página do Google em duas semanas.",
         "result": "PageSpeed 100/100. Primeira página do Google em 2 semanas. +40% de reservas online.",
         "metrics_labels": ["PageSpeed", "Plataforma", "Tempo de build", "Estado"],
-        "metrics_values": ["100/100", "Web", "5 dias", "Online"]
+        "metrics_values": ["100/100", "Web", "5 dias", "Online"],
+        "challenge": "O restaurante dependia apenas de chamadas telefónicas para reservas e não tinha presença digital — perdia clientes que pesquisavam online.",
+        "solution": "Website rápido e otimizado para SEO local com menu digital interativo e sistema de reservas online integrado, eliminando a dependência do telefone.",
+        "features": ["Menu digital interativo com categorias", "Sistema de reservas online", "Galeria de fotos profissional", "Integração com Google Maps", "SEO otimizado para pesquisa local", "Design responsivo mobile-first"]
       },
       {
         "tag": "Website clínica · Saúde",
@@ -173,7 +186,10 @@
         "description": "Página profissional para clínica dentária com apresentação de serviços, equipa médica, formulário de marcação de consultas e integração com Google Business. Design limpo e de confiança, adaptado ao setor da saúde.",
         "result": "PageSpeed 100/100. Aumento de 60% nos pedidos de consulta via website.",
         "metrics_labels": ["PageSpeed", "Plataforma", "Tempo de build", "Estado"],
-        "metrics_values": ["100/100", "Web", "4 dias", "Online"]
+        "metrics_values": ["100/100", "Web", "4 dias", "Online"],
+        "challenge": "A clínica não tinha website e dependia apenas de referências boca-a-boca — novos pacientes não conseguiam encontrar informações ou marcar consultas online.",
+        "solution": "Website profissional e de confiança com formulário de marcação integrado e Google Business, posicionando a clínica como referência digital na zona.",
+        "features": ["Apresentação detalhada de serviços", "Perfis da equipa médica", "Formulário de marcação de consultas", "Integração com Google Business", "Design adaptado ao setor da saúde", "Carregamento ultra-rápido"]
       },
       {
         "tag": "Website imobiliário · Multi-página",
@@ -181,7 +197,10 @@
         "description": "Website multi-página com listagem de imóveis, filtros de pesquisa, páginas individuais para cada propriedade com galeria de fotos, mapa de localização e formulário de contacto. Painel de gestão para adicionar e editar imóveis sem necessidade de programação.",
         "result": "PageSpeed 98/100. 3x mais contactos no primeiro mês vs. portal imobiliário anterior.",
         "metrics_labels": ["PageSpeed", "Plataforma", "Tempo de build", "Estado"],
-        "metrics_values": ["98/100", "Web", "1 semana", "Online"]
+        "metrics_values": ["98/100", "Web", "1 semana", "Online"],
+        "challenge": "A agência usava um portal imobiliário genérico com design desatualizado e sem controlo sobre a marca — os imóveis perdiam-se entre centenas de anúncios.",
+        "solution": "Website próprio com marca personalizada, painel de gestão intuitivo e páginas individuais por imóvel, dando controlo total sobre a experiência do cliente.",
+        "features": ["Listagem de imóveis com filtros avançados", "Páginas individuais por propriedade", "Galeria de fotos por imóvel", "Mapa de localização integrado", "Painel de gestão sem código", "Formulário de contacto por imóvel"]
       }
     ]
   },

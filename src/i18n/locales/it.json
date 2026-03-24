@@ -149,6 +149,13 @@
     "title_line2": "attività come la tua",
     "subtitle": "Progetti reali, risultati reali.",
     "view_project": "Vedi progetto",
+    "detail_close": "Chiudi",
+    "detail_challenge": "Sfida",
+    "detail_solution": "Soluzione",
+    "detail_features": "Funzionalità principali",
+    "detail_gallery": "Galleria del progetto",
+    "detail_back": "Torna al portfolio",
+    "detail_visit": "Visita progetto",
     "items": [
       {
         "tag": "App educativa · App Store",
@@ -157,7 +164,10 @@
         "result": "Pubblicata su App Store e Google Play. Punteggio Lighthouse 100/100.",
         "link_text": "Vedi sull'App Store",
         "metrics_labels": ["PageSpeed", "Piattaforma", "Tempo di sviluppo", "Stato"],
-        "metrics_values": ["100/100", "iOS + Android", "3 settimane", "Pubblicata"]
+        "metrics_values": ["100/100", "iOS + Android", "3 settimane", "Pubblicata"],
+        "challenge": "Insegnanti privati gestivano lezioni, pagamenti e studenti su fogli di calcolo e note — senza un modo centralizzato per seguire sessioni o fatturazione.",
+        "solution": "App mobile nativa con Flutter che centralizza tutta la gestione delle lezioni in un unico posto, con notifiche automatiche e sincronizzazione in tempo reale via Firebase.",
+        "features": ["Pianificazione interattiva con calendario", "Gestione pagamenti e fatturazione", "Profili dettagliati degli studenti", "Storico completo delle sessioni", "Notifiche push automatiche", "Sincronizzazione dati in tempo reale"]
       },
       {
         "tag": "Sito ristorante",
@@ -165,7 +175,10 @@
         "description": "Sito web completo per ristorante con menù digitale interattivo, sistema di prenotazione online, galleria fotografica, orari di apertura e integrazione Google Maps. SEO ottimizzato per ricerca locale — il cliente è apparso in prima pagina su Google in due settimane.",
         "result": "PageSpeed 100/100. Prima pagina di Google in 2 settimane. +40% prenotazioni online.",
         "metrics_labels": ["PageSpeed", "Piattaforma", "Tempo di sviluppo", "Stato"],
-        "metrics_values": ["100/100", "Web", "5 giorni", "Online"]
+        "metrics_values": ["100/100", "Web", "5 giorni", "Online"],
+        "challenge": "Il ristorante dipendeva solo dalle chiamate telefoniche per le prenotazioni e non aveva presenza digitale — perdeva clienti che cercavano online.",
+        "solution": "Sito veloce e ottimizzato per il SEO locale con menù digitale interattivo e sistema di prenotazione online integrato, eliminando la dipendenza dal telefono.",
+        "features": ["Menù digitale interattivo con categorie", "Sistema di prenotazione online", "Galleria fotografica professionale", "Integrazione Google Maps", "SEO ottimizzato per ricerca locale", "Design responsive mobile-first"]
       },
       {
         "tag": "Sito clinica · Salute",
@@ -173,7 +186,10 @@
         "description": "Pagina professionale per studio dentistico con presentazione servizi, team medico, modulo prenotazione appuntamenti e integrazione Google Business. Design pulito e affidabile, pensato per il settore sanitario.",
         "result": "PageSpeed 100/100. Aumento del 60% nelle richieste di appuntamento tramite il sito.",
         "metrics_labels": ["PageSpeed", "Piattaforma", "Tempo di sviluppo", "Stato"],
-        "metrics_values": ["100/100", "Web", "4 giorni", "Online"]
+        "metrics_values": ["100/100", "Web", "4 giorni", "Online"],
+        "challenge": "Lo studio non aveva un sito web e dipendeva solo dal passaparola — i nuovi pazienti non riuscivano a trovare informazioni o prenotare appuntamenti online.",
+        "solution": "Sito web professionale e affidabile con modulo di prenotazione integrato e Google Business, posizionando lo studio come riferimento digitale nella zona.",
+        "features": ["Presentazione dettagliata dei servizi", "Profili del team medico", "Modulo prenotazione appuntamenti", "Integrazione Google Business", "Design pensato per il settore sanitario", "Caricamento ultra-veloce"]
       },
       {
         "tag": "Sito immobiliare · Multi-pagina",
@@ -181,7 +197,10 @@
         "description": "Sito multi-pagina con annunci immobiliari, filtri di ricerca, pagine individuali per ogni proprietà con galleria foto, mappa e modulo di contatto. Pannello di gestione per aggiungere e modificare immobili senza programmare.",
         "result": "PageSpeed 98/100. 3x più contatti nel primo mese rispetto al portale immobiliare precedente.",
         "metrics_labels": ["PageSpeed", "Piattaforma", "Tempo di sviluppo", "Stato"],
-        "metrics_values": ["98/100", "Web", "1 settimana", "Online"]
+        "metrics_values": ["98/100", "Web", "1 settimana", "Online"],
+        "challenge": "L'agenzia usava un portale immobiliare generico con design obsoleto e senza controllo del brand — i suoi immobili si perdevano tra centinaia di annunci.",
+        "solution": "Sito web personalizzato con pannello di gestione intuitivo e pagine individuali per immobile, per un controllo totale sull'esperienza del cliente.",
+        "features": ["Annunci con filtri avanzati", "Pagine individuali per proprietà", "Galleria foto per immobile", "Mappa di localizzazione integrata", "Pannello di gestione senza codice", "Modulo di contatto per immobile"]
       }
     ]
   },

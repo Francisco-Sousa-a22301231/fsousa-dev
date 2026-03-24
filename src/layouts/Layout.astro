@@ -273,7 +273,7 @@ const faqData = tArray(locale, 'faq.items');
               }, i * 80);
             });
             accentLine.classList.remove('is-visible');
-          }, 1500);
+          }, 3000);
 
           // Phase 4: Curtains split open to reveal site
           setTimeout(() => {
@@ -292,7 +292,7 @@ const faqData = tArray(locale, 'faq.items');
                 document.dispatchEvent(new CustomEvent('preloader-done'));
               },
             });
-          }, 2100);
+          }, 3600);
         }
       } else {
         const preloader = document.getElementById('preloader');
@@ -318,6 +318,7 @@ const faqData = tArray(locale, 'faq.items');
           easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
           touchMultiplier: 2,
         });
+        (window as any).__lenis = lenis;
 
         lenis.on('scroll', ScrollTrigger.update);
         gsap.ticker.add((time: number) => {
@@ -755,6 +756,150 @@ const faqData = tArray(locale, 'faq.items');
       document.querySelectorAll('[data-count]').forEach((el) => {
         counterObserver.observe(el);
       });
+
+      // ===== PORTFOLIO DETAIL MODAL =====
+      const portfolioModal = document.getElementById('portfolio-modal');
+      const modalBackdrop = document.getElementById('portfolio-modal-backdrop');
+      const modalContent = document.getElementById('portfolio-modal-content');
+      const modalCloseBtn = document.getElementById('portfolio-modal-close');
+      const modalBackBtn = document.getElementById('portfolio-modal-back');
+
+      if (portfolioModal && modalContent) {
+        const openModal = (index: number) => {
+          const data = (window as any).__portfolioData;
+          if (!data) return;
+
+          const item = data.items[index];
+          if (!item) return;
+
+          // Populate modal
+          const setTxt = (id: string, val: string) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = val;
+          };
+
+          setTxt('modal-tag', item.tag || '');
+          setTxt('modal-title', item.title || '');
+          setTxt('modal-challenge', item.challenge || '');
+          setTxt('modal-solution', item.solution || '');
+          setTxt('modal-result', item.result || '');
+
+          // Features
+          const featuresEl = document.getElementById('modal-features');
+          if (featuresEl && item.features) {
+            featuresEl.innerHTML = '';
+            item.features.forEach((f: string) => {
+              const li = document.createElement('li');
+              li.textContent = f;
+              featuresEl.appendChild(li);
+            });
+          }
+
+          // Metrics
+          const metricsEl = document.getElementById('modal-metrics');
+          if (metricsEl && item.metrics_labels) {
+            metricsEl.innerHTML = '';
+            item.metrics_labels.forEach((label: string, i: number) => {
+              const div = document.createElement('div');
+              div.className = 'portfolio-modal-metric';
+              div.innerHTML = `<p class="portfolio-modal-metric-label">${label}</p><p class="portfolio-modal-metric-value">${item.metrics_values?.[i] || ''}</p>`;
+              metricsEl.appendChild(div);
+            });
+          }
+
+          // Tech stack
+          const techEl = document.getElementById('modal-tech');
+          const techStack = data.techStacks[index] || [];
+          if (techEl) {
+            techEl.innerHTML = '';
+            techStack.forEach((tech: string) => {
+              const span = document.createElement('span');
+              span.className = 'portfolio-modal-tech-pill';
+              span.textContent = tech;
+              techEl.appendChild(span);
+            });
+          }
+
+          // Link
+          const linkEl = document.getElementById('modal-link') as HTMLAnchorElement;
+          const linkTextEl = document.getElementById('modal-link-text');
+          const projectLink = data.links[index];
+          if (linkEl) {
+            if (projectLink) {
+              linkEl.href = projectLink;
+              linkEl.style.display = 'inline-flex';
+              if (linkTextEl && item.link_text) linkTextEl.textContent = item.link_text;
+            } else {
+              linkEl.style.display = 'none';
+            }
+          }
+
+          // Open with animation
+          portfolioModal.classList.add('is-open');
+          portfolioModal.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+
+          // Pause Lenis if available
+          if ((window as any).__lenis) (window as any).__lenis.stop();
+
+          // Scroll modal content to top
+          modalContent.scrollTop = 0;
+
+          if (!prefersReducedMotion) {
+            gsap.fromTo(modalBackdrop, { opacity: 0 }, { opacity: 1, duration: 0.4, ease: 'power2.out' });
+            gsap.fromTo(modalContent, { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: 'expo.out', delay: 0.1 });
+          }
+        };
+
+        const closeModal = () => {
+          if (!prefersReducedMotion) {
+            gsap.to(modalContent, { y: 40, opacity: 0, duration: 0.35, ease: 'expo.in' });
+            gsap.to(modalBackdrop, {
+              opacity: 0,
+              duration: 0.3,
+              delay: 0.1,
+              onComplete: () => {
+                portfolioModal.classList.remove('is-open');
+                portfolioModal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+                if ((window as any).__lenis) (window as any).__lenis.start();
+              },
+            });
+          } else {
+            portfolioModal.classList.remove('is-open');
+            portfolioModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            if ((window as any).__lenis) (window as any).__lenis.start();
+          }
+        };
+
+        // Card click handlers
+        document.querySelectorAll('[data-portfolio-detail]').forEach((card) => {
+          card.addEventListener('click', (e) => {
+            // Don't open modal if clicking the external link
+            if ((e.target as HTMLElement).closest('a')) return;
+            const idx = parseInt((card as HTMLElement).dataset.projectIndex || '0', 10);
+            openModal(idx);
+          });
+          card.addEventListener('keydown', (e) => {
+            if ((e as KeyboardEvent).key === 'Enter' || (e as KeyboardEvent).key === ' ') {
+              e.preventDefault();
+              const idx = parseInt((card as HTMLElement).dataset.projectIndex || '0', 10);
+              openModal(idx);
+            }
+          });
+        });
+
+        // Close handlers
+        modalCloseBtn?.addEventListener('click', closeModal);
+        modalBackBtn?.addEventListener('click', closeModal);
+        modalBackdrop?.addEventListener('click', closeModal);
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && portfolioModal.classList.contains('is-open')) {
+            closeModal();
+          }
+        });
+      }
     </script>
   </body>
 </html>

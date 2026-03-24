@@ -11,12 +11,13 @@ interface Props {
   metrics?: { label: string; value: string }[];
   techStack?: string[];
   locale?: string;
+  projectIndex?: number;
 }
 
-const { tag, title, description, result, link, linkText, metrics = [], techStack = [] , locale = 'pt' } = Astro.props;
+const { tag, title, description, result, link, linkText, metrics = [], techStack = [] , locale = 'pt', projectIndex = 0 } = Astro.props;
 ---
 
-<div class="portfolio-card-v2 stagger-popup group" data-cursor="project">
+<div class="portfolio-card-v2 stagger-popup group" data-cursor="project" data-portfolio-detail data-project-index={projectIndex} role="button" tabindex="0">
   <!-- Browser + Phone mockup area -->
   <div class="relative mb-8" data-animate>
     <!-- Browser window mockup -->
