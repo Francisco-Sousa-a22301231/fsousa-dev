@@ -423,97 +423,44 @@ details .faq-content > div {
 /* ===== PREMIUM PRICING CARDS ===== */
 
 /* Base card */
-.pricing-card {
+/* ===== SERVICE CARDS ===== */
+.service-card {
+  background: var(--color-bg);
   border: 1px solid var(--color-border);
+  border-top: none;
+  border-radius: 16px;
   opacity: 0; /* GSAP animates to 1 */
   transition: transform 0.5s var(--ease-out-expo),
               box-shadow 0.5s var(--ease-out-expo),
               border-color 0.4s ease;
+  overflow: hidden;
 }
 
-/* Desktop: flush edges, shared borders */
-@media (min-width: 768px) {
-  .pricing-grid .pricing-card {
-    border-radius: 0;
-  }
-  .pricing-grid .pricing-card:first-child {
-    border-radius: 1rem 0 0 1rem;
-  }
-  .pricing-grid .pricing-card:last-child {
-    border-radius: 0 1rem 1rem 0;
-  }
-  .pricing-grid .pricing-card:not(:first-child) {
-    border-left: none;
-  }
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
-/* Mobile: full radius per card */
-@media (max-width: 767px) {
-  .pricing-card {
-    border-radius: 1rem;
-  }
+.service-card--highlighted {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.06);
 }
 
-/* Hover: lift + shadow */
-.pricing-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
-}
-
-/* === Highlighted (center) card === */
-.pricing-card--highlighted {
-  z-index: 1;
-  border-color: transparent;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
-}
-
-@media (min-width: 768px) {
-  .pricing-card--highlighted {
-    transform: translateY(-8px);
-    border-radius: 1rem !important;
-    border: 1px solid transparent !important;
-    margin: -12px -1px;
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
-  }
-  .pricing-card--highlighted:hover {
-    transform: translateY(-14px);
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08);
-  }
-}
-
-/* Gradient border glow */
-.pricing-card-glow {
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  background: linear-gradient(135deg, var(--color-accent), #ff8a5c, var(--color-accent-blue));
-  z-index: -1;
-  opacity: 0.3;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-}
-
-.pricing-card--highlighted:hover .pricing-card-glow {
-  opacity: 0.55;
-}
-
-/* Gradient price text */
-.pricing-price-gradient {
-  background: linear-gradient(90deg, var(--color-accent), #ff8a5c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.service-card--highlighted:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.08);
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .pricing-card,
-  .pricing-card--highlighted {
+  .service-card,
+  .service-card--highlighted {
     transition: none !important;
   }
-  .pricing-card:hover,
-  .pricing-card--highlighted:hover {
+  .service-card:hover,
+  .service-card--highlighted:hover {
     transform: none !important;
   }
 }

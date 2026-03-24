@@ -111,7 +111,7 @@ const testimonialItems = tArray(locale, 'testimonials.items');
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0 max-w-[1200px] mx-auto pricing-grid">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-[1200px] mx-auto" data-stagger-parent>
           <PricingCard
             title={t(locale, 'services.page.title')}
             description={t(locale, 'services.page.description')}
@@ -119,6 +119,7 @@ const testimonialItems = tArray(locale, 'testimonials.items');
             ctaText={t(locale, 'services.page.cta')}
             ctaLink={WA_LINK_PAGINA}
             locale={locale}
+            index={1}
           />
 
           <PricingCard
@@ -129,6 +130,7 @@ const testimonialItems = tArray(locale, 'testimonials.items');
             ctaText={t(locale, 'services.website.cta')}
             ctaLink={WA_LINK_SITE}
             locale={locale}
+            index={2}
           />
 
           <PricingCard
@@ -138,6 +140,7 @@ const testimonialItems = tArray(locale, 'testimonials.items');
             ctaText={t(locale, 'services.app.cta')}
             ctaLink={WA_LINK_APP}
             locale={locale}
+            index={3}
           />
         </div>
 
