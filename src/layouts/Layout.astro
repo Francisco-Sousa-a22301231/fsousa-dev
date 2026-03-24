@@ -515,13 +515,13 @@ const faqData = tArray(locale, 'faq.items');
           });
         });
 
-        const pricingCards = document.querySelectorAll('.pricing-card');
-        if (pricingCards.length > 0) {
-          gsap.fromTo(pricingCards,
+        const serviceCards = document.querySelectorAll('.service-card');
+        if (serviceCards.length > 0) {
+          gsap.fromTo(serviceCards,
             { opacity: 0, y: 40 },
             {
               opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: 'expo.out',
-              scrollTrigger: { trigger: pricingCards[0], start: 'top 85%', once: true },
+              scrollTrigger: { trigger: serviceCards[0], start: 'top 85%', once: true },
             }
           );
         }
