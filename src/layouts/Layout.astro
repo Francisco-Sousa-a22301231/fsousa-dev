@@ -273,7 +273,7 @@ const faqData = tArray(locale, 'faq.items');
               }, i * 80);
             });
             accentLine.classList.remove('is-visible');
-          }, 3000);
+          }, 1500);
 
           // Phase 4: Curtains split open to reveal site
           setTimeout(() => {
@@ -292,7 +292,7 @@ const faqData = tArray(locale, 'faq.items');
                 document.dispatchEvent(new CustomEvent('preloader-done'));
               },
             });
-          }, 3600);
+          }, 2100);
         }
       } else {
         const preloader = document.getElementById('preloader');
