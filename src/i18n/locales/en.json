@@ -149,6 +149,13 @@
     "title_line2": "businesses like yours",
     "subtitle": "Real projects, real metrics.",
     "view_project": "View project",
+    "detail_close": "Close",
+    "detail_challenge": "Challenge",
+    "detail_solution": "Solution",
+    "detail_features": "Key features",
+    "detail_gallery": "Project gallery",
+    "detail_back": "Back to portfolio",
+    "detail_visit": "Visit project",
     "items": [
       {
         "tag": "Educational app · App Store",
@@ -157,7 +164,10 @@
         "result": "Published on the App Store and Google Play. Lighthouse performance score 100/100.",
         "link_text": "View on the App Store",
         "metrics_labels": ["PageSpeed", "Platform", "Build time", "Status"],
-        "metrics_values": ["100/100", "iOS + Android", "3 weeks", "Published"]
+        "metrics_values": ["100/100", "iOS + Android", "3 weeks", "Published"],
+        "challenge": "Private tutors were managing lessons, payments, and students across spreadsheets and notes — with no centralized way to track sessions or billing.",
+        "solution": "A native mobile app built with Flutter that centralizes all tutoring management in one place, with automatic notifications and real-time sync via Firebase.",
+        "features": ["Interactive calendar scheduling", "Payment and invoice management", "Detailed student profiles", "Complete session history", "Automatic push notifications", "Real-time data sync"]
       },
       {
         "tag": "Restaurant website",
@@ -165,7 +175,10 @@
         "description": "Complete restaurant website with an interactive digital menu, online reservation system, photo gallery, opening hours, and Google Maps integration. SEO optimized for local search — the client appeared on Google's first page within two weeks.",
         "result": "PageSpeed 100/100. First page of Google in 2 weeks. +40% online reservations.",
         "metrics_labels": ["PageSpeed", "Platform", "Build time", "Status"],
-        "metrics_values": ["100/100", "Web", "5 days", "Live"]
+        "metrics_values": ["100/100", "Web", "5 days", "Live"],
+        "challenge": "The restaurant relied solely on phone calls for reservations and had no digital presence — losing customers who searched online.",
+        "solution": "A fast, locally SEO-optimized website with an interactive digital menu and integrated online reservation system, eliminating phone dependency.",
+        "features": ["Interactive digital menu with categories", "Online reservation system", "Professional photo gallery", "Google Maps integration", "Local SEO optimization", "Mobile-first responsive design"]
       },
       {
         "tag": "Healthcare website · Clinic",
@@ -173,7 +186,10 @@
         "description": "Professional page for a dental clinic featuring service descriptions, medical team profiles, appointment booking form, and Google Business integration. Clean, trustworthy design tailored for the healthcare sector.",
         "result": "PageSpeed 100/100. 60% increase in appointment requests via website.",
         "metrics_labels": ["PageSpeed", "Platform", "Build time", "Status"],
-        "metrics_values": ["100/100", "Web", "4 days", "Live"]
+        "metrics_values": ["100/100", "Web", "4 days", "Live"],
+        "challenge": "The clinic had no website and relied entirely on word-of-mouth — new patients couldn't find information or book appointments online.",
+        "solution": "A professional, trustworthy website with an integrated booking form and Google Business, positioning the clinic as the go-to digital reference in the area.",
+        "features": ["Detailed service descriptions", "Medical team profiles", "Appointment booking form", "Google Business integration", "Healthcare-tailored design", "Ultra-fast page loading"]
       },
       {
         "tag": "Real estate website · Multi-page",
@@ -181,7 +197,10 @@
         "description": "Multi-page website with property listings, search filters, individual property pages with photo galleries, location maps, and contact forms. Admin panel to add and edit properties without coding.",
         "result": "PageSpeed 98/100. 3x more leads in the first month vs. previous real estate portal.",
         "metrics_labels": ["PageSpeed", "Platform", "Build time", "Status"],
-        "metrics_values": ["98/100", "Web", "1 week", "Live"]
+        "metrics_values": ["98/100", "Web", "1 week", "Live"],
+        "challenge": "The agency used a generic real estate portal with an outdated design and no brand control — their properties were lost among hundreds of listings.",
+        "solution": "A custom-branded website with an intuitive admin panel and individual property pages, giving full control over the client experience.",
+        "features": ["Property listings with advanced filters", "Individual property pages", "Photo gallery per property", "Integrated location maps", "No-code admin panel", "Per-property contact forms"]
       }
     ]
   },

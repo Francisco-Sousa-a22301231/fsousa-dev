@@ -12,6 +12,7 @@ import ContactForm from '../components/ContactForm.astro';
 import CredibilityBar from '../components/CredibilityBar.astro';
 import FinalCTA from '../components/FinalCTA.astro';
 import HeroVisual from '../components/HeroVisual.astro';
+import PortfolioDetailModal from '../components/PortfolioDetailModal.astro';
 import { t, tArray, tStringArray, getWhatsAppLink } from '../i18n/utils';
 
 const locale = 'pt';
@@ -183,6 +184,7 @@ const testimonialItems = tArray(locale, 'testimonials.items');
             ]}
             techStack={["Flutter", "Dart", "Firebase", "App Store"]}
             locale={locale}
+            projectIndex={0}
           />
 
           <PortfolioCard
@@ -198,6 +200,7 @@ const testimonialItems = tArray(locale, 'testimonials.items');
             ]}
             techStack={["Astro", "Tailwind", "Cloudflare"]}
             locale={locale}
+            projectIndex={1}
           />
 
           <PortfolioCard
@@ -213,6 +216,7 @@ const testimonialItems = tArray(locale, 'testimonials.items');
             ]}
             techStack={["Astro", "Tailwind", "Google Business"]}
             locale={locale}
+            projectIndex={2}
           />
 
           <PortfolioCard
@@ -228,11 +232,18 @@ const testimonialItems = tArray(locale, 'testimonials.items');
             ]}
             techStack={["Astro", "Tailwind", "Cloudflare", "CMS"]}
             locale={locale}
+            projectIndex={3}
           />
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Portfolio Detail Modal -->
+  <PortfolioDetailModal locale={locale} />
+  <script is:inline define:vars={{ portfolioItems, portfolioLinks: ["https://apps.apple.com/pt/app/my-lessons-gerir-explicacoes/id6743955907", "", "", ""], portfolioTechStacks: [["Flutter", "Dart", "Firebase", "App Store"], ["Astro", "Tailwind", "Cloudflare"], ["Astro", "Tailwind", "Google Business"], ["Astro", "Tailwind", "Cloudflare", "CMS"]] }}>
+    window.__portfolioData = { items: portfolioItems, links: portfolioLinks, techStacks: portfolioTechStacks };
+  </script>
 
   <!-- ===== TESTIMONIALS ===== -->
   <section class="relative">
