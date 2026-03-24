@@ -63,50 +63,51 @@
     "popular": "Più richiesto",
     "page": {
       "title": "Pagina Web",
-      "description": "Per qualsiasi attività che ha bisogno di una presenza online professionale.",
-      "price": "€300",
-      "price_max": "€600",
-      "price_note": "Pagamento unico · Senza abbonamenti",
+      "description": "Ideale per qualsiasi attività che vuole una presenza online professionale, veloce e ottimizzata per convertire i visitatori in clienti.",
       "cta": "Richiedi preventivo",
       "features": [
-        "Design moderno e personalizzato",
-        "Ottimizzato per smartphone",
-        "Modulo di contatto",
-        "Integrazione Google Maps",
-        "SEO completo + Google Business",
+        "Design moderno e 100% personalizzato per la tua attività",
+        "Completamente responsive su smartphone, tablet e desktop",
+        "Modulo di contatto integrato con notifiche",
+        "Integrazione Google Maps con posizione dell'attività",
+        "SEO completo + configurazione Google Business",
+        "Dominio e hosting del primo anno inclusi",
+        "Certificato SSL (HTTPS) incluso",
+        "Velocità ottimizzata — caricamento in meno di 1 secondo",
         "Consegna in 3–5 giorni lavorativi"
       ]
     },
     "website": {
       "title": "Sito Web Completo",
-      "description": "Per attività che necessitano di più pagine e funzionalità avanzate.",
-      "price": "€800",
-      "price_max": "€1500",
-      "price_note": "Pagamento unico · Senza abbonamenti",
+      "description": "Per attività che necessitano di più pagine, funzionalità avanzate e controllo totale sui contenuti — tutto pensato per far crescere la tua presenza digitale.",
       "cta": "Richiedi preventivo",
       "features": [
-        "Tutto del piano precedente",
-        "3–5 pagine (Home, Chi siamo, Servizi…)",
-        "Modifica i contenuti senza programmare",
-        "Integrazione social media",
-        "Google Analytics incluso",
-        "SEO completo + Google Business",
+        "Tutto incluso nel piano Pagina Web",
+        "3–7 pagine (Home, Chi siamo, Servizi, Contatti…)",
+        "Sistema di gestione contenuti — modifica testi e immagini senza programmare",
+        "Blog o sezione news integrata",
+        "Integrazione social media (Instagram, Facebook, LinkedIn)",
+        "Google Analytics e Search Console configurati",
+        "SEO avanzato con meta tag, sitemap e schema markup",
+        "Design responsive con animazioni professionali",
+        "Supporto multilingua",
         "Consegna in 1–2 settimane"
       ]
     },
     "app": {
       "title": "Applicazione Mobile",
-      "description": "Per attività che hanno bisogno di un'app per iOS e Android.",
-      "price": "a partire da €2.000",
-      "price_note": "Su preventivo · Progetto su misura",
+      "description": "Soluzione completa per attività che necessitano di un'app nativa iOS e Android — dal design alla pubblicazione sugli store, con pannello di gestione incluso.",
       "cta": "Parliamo del progetto",
       "features": [
-        "App personalizzata",
-        "Funziona su iPhone e Android",
-        "Pannello di amministrazione",
-        "Design esclusivo",
-        "Pubblicazione sugli store",
-        "Tempi e prezzo su preventivo"
+        "App personalizzata con design esclusivo per il tuo brand",
+        "Funziona su iPhone e Android da un'unica base di codice",
+        "Pannello di amministrazione web per gestire contenuti e utenti",
+        "Notifiche push per comunicare con i tuoi clienti",
+        "Autenticazione utenti sicura",
+        "Integrazione con API e servizi esterni",
+        "Pubblicazione su App Store e Google Play inclusa",
+        "Test di qualità prima del lancio",
+        "Tempistiche e budget definiti dopo consulenza iniziale"
       ]
     }
   },
@@ -152,19 +153,35 @@
       {
         "tag": "App educativa · App Store",
         "title": "My Lessons",
-        "description": "App per iPhone e Android con gestione lezioni, pagamenti e profilo studenti.",
-        "result": "Disponibile sull'App Store. Performance 100/100.",
+        "description": "Applicazione completa per la gestione di lezioni private, sviluppata con Flutter. Programmazione lezioni, gestione pagamenti, profili studenti, storico sessioni e notifiche automatiche. Interfaccia intuitiva pensata per insegnanti privati e centri studio.",
+        "result": "Pubblicata su App Store e Google Play. Punteggio Lighthouse 100/100.",
         "link_text": "Vedi sull'App Store",
         "metrics_labels": ["PageSpeed", "Piattaforma", "Tempo di sviluppo", "Stato"],
         "metrics_values": ["100/100", "iOS + Android", "3 settimane", "Pubblicata"]
       },
       {
-        "tag": "Sito web professionale",
+        "tag": "Sito ristorante",
         "title": "Sito con menù digitale e prenotazioni",
-        "description": "Sito web moderno con menù digitale, prenotazioni online, integrazione Google Maps e SEO ottimizzato.",
-        "result": "PageSpeed 100/100. Prima pagina di Google in 2 settimane.",
+        "description": "Sito web completo per ristorante con menù digitale interattivo, sistema di prenotazione online, galleria fotografica, orari di apertura e integrazione Google Maps. SEO ottimizzato per ricerca locale — il cliente è apparso in prima pagina su Google in due settimane.",
+        "result": "PageSpeed 100/100. Prima pagina di Google in 2 settimane. +40% prenotazioni online.",
         "metrics_labels": ["PageSpeed", "Piattaforma", "Tempo di sviluppo", "Stato"],
         "metrics_values": ["100/100", "Web", "5 giorni", "Online"]
+      },
+      {
+        "tag": "Sito clinica · Salute",
+        "title": "Sito per studio dentistico",
+        "description": "Pagina professionale per studio dentistico con presentazione servizi, team medico, modulo prenotazione appuntamenti e integrazione Google Business. Design pulito e affidabile, pensato per il settore sanitario.",
+        "result": "PageSpeed 100/100. Aumento del 60% nelle richieste di appuntamento tramite il sito.",
+        "metrics_labels": ["PageSpeed", "Piattaforma", "Tempo di sviluppo", "Stato"],
+        "metrics_values": ["100/100", "Web", "4 giorni", "Online"]
+      },
+      {
+        "tag": "Sito immobiliare · Multi-pagina",
+        "title": "Sito per agenzia immobiliare",
+        "description": "Sito multi-pagina con annunci immobiliari, filtri di ricerca, pagine individuali per ogni proprietà con galleria foto, mappa e modulo di contatto. Pannello di gestione per aggiungere e modificare immobili senza programmare.",
+        "result": "PageSpeed 98/100. 3x più contatti nel primo mese rispetto al portale immobiliare precedente.",
+        "metrics_labels": ["PageSpeed", "Piattaforma", "Tempo di sviluppo", "Stato"],
+        "metrics_values": ["98/100", "Web", "1 settimana", "Online"]
       }
     ]
   },

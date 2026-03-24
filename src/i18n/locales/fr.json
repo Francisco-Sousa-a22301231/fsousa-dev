@@ -63,50 +63,51 @@
     "popular": "Le plus populaire",
     "page": {
       "title": "Page Web",
-      "description": "Pour toute entreprise qui a besoin d'une présence en ligne professionnelle.",
-      "price": "€300",
-      "price_max": "€600",
-      "price_note": "Paiement unique · Sans abonnement",
+      "description": "Idéale pour toute entreprise souhaitant une présence en ligne professionnelle, rapide et optimisée pour convertir les visiteurs en clients.",
       "cta": "Demander un devis",
       "features": [
-        "Design moderne et personnalisé",
-        "Adapté au mobile",
-        "Formulaire de contact",
-        "Intégration Google Maps",
-        "SEO complet + Google Business",
+        "Design moderne et 100 % personnalisé pour votre activité",
+        "Entièrement adapté au mobile, tablette et ordinateur",
+        "Formulaire de contact intégré avec notifications",
+        "Intégration Google Maps avec localisation de l'entreprise",
+        "SEO complet + configuration Google Business",
+        "Domaine et hébergement de la première année inclus",
+        "Certificat SSL (HTTPS) inclus",
+        "Vitesse optimisée — chargement en moins d'1 seconde",
         "Livraison en 3–5 jours ouvrés"
       ]
     },
     "website": {
       "title": "Site Web Complet",
-      "description": "Pour les entreprises qui ont besoin de plusieurs pages et de fonctionnalités avancées.",
-      "price": "€800",
-      "price_max": "€1500",
-      "price_note": "Paiement unique · Sans abonnement",
+      "description": "Pour les entreprises ayant besoin de plusieurs pages, de fonctionnalités avancées et d'un contrôle total sur leur contenu — conçu pour développer votre présence digitale.",
       "cta": "Demander un devis",
       "features": [
-        "Tout du forfait précédent",
-        "3–5 pages (Accueil, À propos, Services…)",
-        "Modifier le contenu sans programmer",
-        "Intégration réseaux sociaux",
-        "Google Analytics inclus",
-        "SEO complet + Google Business",
+        "Tout inclus dans le forfait Page Web",
+        "3–7 pages (Accueil, À propos, Services, Contact…)",
+        "Système de gestion de contenu — modifiez textes et images sans programmer",
+        "Blog ou section actualités intégrée",
+        "Intégration réseaux sociaux (Instagram, Facebook, LinkedIn)",
+        "Google Analytics et Search Console configurés",
+        "SEO avancé avec meta tags, sitemap et schema markup",
+        "Design responsive avec animations professionnelles",
+        "Support multilingue",
         "Livraison en 1–2 semaines"
       ]
     },
     "app": {
       "title": "Application Mobile",
-      "description": "Pour les entreprises qui ont besoin d'une app pour iOS et Android.",
-      "price": "à partir de €2 000",
-      "price_note": "Sur devis · Projet sur mesure",
+      "description": "Solution complète pour les entreprises nécessitant une app native iOS et Android — du design à la publication sur les stores, avec panneau de gestion inclus.",
       "cta": "Discuter du projet",
       "features": [
-        "App personnalisée",
-        "Fonctionne sur iPhone et Android",
-        "Panneau d'administration",
-        "Design exclusif",
-        "Publication sur les stores",
-        "Délai et prix sur devis"
+        "App personnalisée avec design exclusif pour votre marque",
+        "Fonctionne sur iPhone et Android avec une seule base de code",
+        "Panneau d'administration web pour gérer contenu et utilisateurs",
+        "Notifications push pour communiquer avec vos clients",
+        "Authentification sécurisée des utilisateurs",
+        "Intégration avec des APIs et services externes",
+        "Publication sur l'App Store et Google Play incluse",
+        "Tests de qualité avant le lancement",
+        "Délai et budget définis après consultation initiale"
       ]
     }
   },
@@ -152,19 +153,35 @@
       {
         "tag": "App éducative · App Store",
         "title": "My Lessons",
-        "description": "App pour iPhone et Android avec gestion de cours, paiements et profils d'élèves.",
-        "result": "Disponible sur l'App Store. Performance 100/100.",
+        "description": "Application complète de gestion de cours particuliers, développée avec Flutter. Planification de cours, suivi des paiements, profils d'élèves, historique des sessions et notifications automatiques. Interface intuitive conçue pour les professeurs particuliers et les centres d'études.",
+        "result": "Publiée sur l'App Store et Google Play. Score Lighthouse 100/100.",
         "link_text": "Voir sur l'App Store",
         "metrics_labels": ["PageSpeed", "Plateforme", "Temps de développement", "Statut"],
         "metrics_values": ["100/100", "iOS + Android", "3 semaines", "Publiée"]
       },
       {
-        "tag": "Site web professionnel",
+        "tag": "Site de restauration",
         "title": "Site avec menu digital et réservations",
-        "description": "Site moderne avec menu digital, réservations en ligne, intégration Google Maps et SEO optimisé.",
-        "result": "PageSpeed 100/100. Première page de Google en 2 semaines.",
+        "description": "Site web complet pour restaurant avec menu digital interactif, système de réservation en ligne, galerie photos, horaires d'ouverture et intégration Google Maps. SEO optimisé pour la recherche locale — le client est apparu en première page de Google en deux semaines.",
+        "result": "PageSpeed 100/100. Première page de Google en 2 semaines. +40 % de réservations en ligne.",
         "metrics_labels": ["PageSpeed", "Plateforme", "Temps de développement", "Statut"],
         "metrics_values": ["100/100", "Web", "5 jours", "En ligne"]
+      },
+      {
+        "tag": "Site clinique · Santé",
+        "title": "Site pour cabinet dentaire",
+        "description": "Page professionnelle pour cabinet dentaire avec présentation des services, équipe médicale, formulaire de prise de rendez-vous et intégration Google Business. Design épuré et rassurant, adapté au secteur de la santé.",
+        "result": "PageSpeed 100/100. Augmentation de 60 % des demandes de rendez-vous via le site.",
+        "metrics_labels": ["PageSpeed", "Plateforme", "Temps de développement", "Statut"],
+        "metrics_values": ["100/100", "Web", "4 jours", "En ligne"]
+      },
+      {
+        "tag": "Site immobilier · Multi-pages",
+        "title": "Site pour agence immobilière",
+        "description": "Site multi-pages avec annonces immobilières, filtres de recherche, pages individuelles par bien avec galerie photos, carte de localisation et formulaire de contact. Panneau de gestion pour ajouter et modifier les biens sans programmer.",
+        "result": "PageSpeed 98/100. 3x plus de contacts le premier mois vs. portail immobilier précédent.",
+        "metrics_labels": ["PageSpeed", "Plateforme", "Temps de développement", "Statut"],
+        "metrics_values": ["98/100", "Web", "1 semaine", "En ligne"]
       }
     ]
   },

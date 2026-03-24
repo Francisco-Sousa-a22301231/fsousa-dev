@@ -63,50 +63,51 @@
     "popular": "Am beliebtesten",
     "page": {
       "title": "Einzelne Webseite",
-      "description": "Für jedes Unternehmen, das eine professionelle Online-Präsenz braucht.",
-      "price": "€300",
-      "price_max": "€600",
-      "price_note": "Einmalzahlung · Keine monatlichen Gebühren",
+      "description": "Ideal für jedes Unternehmen, das eine professionelle, schnelle und auf Conversion optimierte Online-Präsenz möchte — entwickelt, um Besucher in Kunden zu verwandeln.",
       "cta": "Angebot anfordern",
       "features": [
-        "Modernes, individuelles Design",
-        "Mobilfreundlich (Responsive)",
-        "Kontaktformular",
-        "Google-Maps-Integration",
-        "Vollständiges SEO + Google Business",
+        "Modernes, 100 % individuelles Design für Ihr Unternehmen",
+        "Vollständig responsive auf Smartphone, Tablet und Desktop",
+        "Kontaktformular mit sofortiger Benachrichtigung",
+        "Google-Maps-Integration mit Standort des Unternehmens",
+        "Vollständiges SEO + Google-Business-Profil eingerichtet",
+        "Domain und Hosting für das erste Jahr inklusive",
+        "SSL-Zertifikat (HTTPS) inklusive",
+        "Geschwindigkeitsoptimiert — Ladezeit unter 1 Sekunde",
         "Lieferung in 3–5 Werktagen"
       ]
     },
     "website": {
       "title": "Komplette Website",
-      "description": "Für Unternehmen, die mehrere Seiten und erweiterte Funktionen benötigen.",
-      "price": "€800",
-      "price_max": "€1500",
-      "price_note": "Einmalzahlung · Keine monatlichen Gebühren",
+      "description": "Für Unternehmen, die mehrere Seiten, erweiterte Funktionen und volle Kontrolle über ihre Inhalte benötigen — alles darauf ausgelegt, Ihre digitale Präsenz auszubauen.",
       "cta": "Angebot anfordern",
       "features": [
-        "Alles aus dem vorherigen Paket",
-        "3–5 Seiten (Start, Über uns, Leistungen…)",
-        "Inhalte ohne Programmierkenntnisse bearbeiten",
-        "Social-Media-Integration",
-        "Google Analytics inklusive",
-        "Vollständiges SEO + Google Business",
+        "Alles aus dem Paket Einzelne Webseite",
+        "3–7 Seiten (Start, Über uns, Leistungen, Kontakt…)",
+        "Content-Management-System — Texte und Bilder ohne Programmierung bearbeiten",
+        "Integrierter Blog oder News-Bereich",
+        "Social-Media-Integration (Instagram, Facebook, LinkedIn)",
+        "Google Analytics und Search Console eingerichtet",
+        "Erweitertes SEO mit Meta-Tags, Sitemap und Schema-Markup",
+        "Responsives Design mit professionellen Animationen",
+        "Mehrsprachige Unterstützung",
         "Lieferung in 1–2 Wochen"
       ]
     },
     "app": {
       "title": "Mobile App",
-      "description": "Für Unternehmen, die eine App für iOS und Android brauchen.",
-      "price": "ab €2.000",
-      "price_note": "Auf Anfrage · Individuelles Projekt",
+      "description": "Komplettlösung für Unternehmen, die eine native iOS- und Android-App benötigen — vom Design bis zur Veröffentlichung in den App Stores, inklusive Admin-Panel.",
       "cta": "Projekt besprechen",
       "features": [
-        "Individuell entwickelte App",
-        "Läuft auf iPhone und Android",
-        "Administrations-Dashboard",
-        "Exklusives Design",
-        "Veröffentlichung in den App Stores",
-        "Zeitplan und Preis auf Anfrage"
+        "Maßgeschneiderte App mit exklusivem Design für Ihre Marke",
+        "Läuft auf iPhone und Android aus einer einzigen Codebasis",
+        "Web-basiertes Admin-Panel zur Verwaltung von Inhalten und Nutzern",
+        "Push-Benachrichtigungen zur Kundenkommunikation",
+        "Sichere Benutzer-Authentifizierung",
+        "Integration mit APIs und externen Diensten",
+        "Veröffentlichung im App Store und bei Google Play inklusive",
+        "Qualitätstests vor dem Launch",
+        "Zeitplan und Budget nach Erstgespräch festgelegt"
       ]
     }
   },
@@ -152,19 +153,35 @@
       {
         "tag": "Bildungs-App · App Store",
         "title": "My Lessons",
-        "description": "App für iPhone und Android mit Unterrichtsverwaltung, Zahlungen und Schülerprofilen.",
-        "result": "Im App Store verfügbar. Performance 100/100.",
+        "description": "Umfassende App zur Verwaltung von Nachhilfeunterricht, entwickelt mit Flutter. Unterrichtsplanung, Zahlungsverwaltung, Schülerprofile, Sitzungshistorie und automatische Benachrichtigungen. Intuitive Benutzeroberfläche für Privatlehrer und Nachhilfezentren.",
+        "result": "Veröffentlicht im App Store und bei Google Play. Lighthouse-Score 100/100.",
         "link_text": "Im App Store ansehen",
         "metrics_labels": ["PageSpeed", "Plattform", "Entwicklungszeit", "Status"],
         "metrics_values": ["100/100", "iOS + Android", "3 Wochen", "Veröffentlicht"]
       },
       {
-        "tag": "Professionelle Website",
+        "tag": "Restaurant-Website",
         "title": "Website mit digitaler Speisekarte und Reservierungen",
-        "description": "Moderne Website mit digitaler Speisekarte, Online-Reservierungen, Google-Maps-Integration und SEO-Optimierung.",
-        "result": "PageSpeed 100/100. Erste Seite bei Google in 2 Wochen.",
+        "description": "Komplette Restaurant-Website mit interaktiver digitaler Speisekarte, Online-Reservierungssystem, Fotogalerie, Öffnungszeiten und Google-Maps-Integration. SEO-optimiert für lokale Suche — der Kunde erschien innerhalb von zwei Wochen auf Googles erster Seite.",
+        "result": "PageSpeed 100/100. Erste Seite bei Google in 2 Wochen. +40 % Online-Reservierungen.",
         "metrics_labels": ["PageSpeed", "Plattform", "Entwicklungszeit", "Status"],
         "metrics_values": ["100/100", "Web", "5 Tage", "Online"]
+      },
+      {
+        "tag": "Klinik-Website · Gesundheit",
+        "title": "Website für Zahnarztpraxis",
+        "description": "Professionelle Seite für eine Zahnarztpraxis mit Leistungsübersicht, Teamvorstellung, Terminbuchungsformular und Google-Business-Integration. Sauberes, vertrauenswürdiges Design, zugeschnitten auf den Gesundheitssektor.",
+        "result": "PageSpeed 100/100. 60 % mehr Terminanfragen über die Website.",
+        "metrics_labels": ["PageSpeed", "Plattform", "Entwicklungszeit", "Status"],
+        "metrics_values": ["100/100", "Web", "4 Tage", "Online"]
+      },
+      {
+        "tag": "Immobilien-Website · Mehrere Seiten",
+        "title": "Website für Immobilienagentur",
+        "description": "Mehrseitige Website mit Immobilienangeboten, Suchfiltern, Einzelseiten pro Objekt mit Fotogalerie, Standortkarte und Kontaktformular. Admin-Panel zum Hinzufügen und Bearbeiten von Objekten ohne Programmierkenntnisse.",
+        "result": "PageSpeed 98/100. 3x mehr Anfragen im ersten Monat vs. vorheriges Immobilienportal.",
+        "metrics_labels": ["PageSpeed", "Plattform", "Entwicklungszeit", "Status"],
+        "metrics_values": ["98/100", "Web", "1 Woche", "Online"]
       }
     ]
   },
