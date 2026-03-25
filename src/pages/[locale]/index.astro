@@ -32,6 +32,7 @@ const WA_LINK = getWhatsAppLink(locale, 'whatsapp.default_message');
 const WA_LINK_PAGINA = getWhatsAppLink(locale, 'whatsapp.page_message');
 const WA_LINK_SITE = getWhatsAppLink(locale, 'whatsapp.site_message');
 const WA_LINK_APP = getWhatsAppLink(locale, 'whatsapp.app_message');
+const WA_LINK_WEBAPP = getWhatsAppLink(locale, 'whatsapp.webapp_message');
 
 const faqs = tArray(locale, 'faq.items');
 const portfolioItems = tArray(locale, 'portfolio.items');
@@ -112,7 +113,7 @@ const testimonialItems = tArray(locale, 'testimonials.items');
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-[1200px] mx-auto" data-stagger-parent>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-[1200px] mx-auto" data-stagger-parent>
           <PricingCard
             title={t(locale, 'services.page.title')}
             description={t(locale, 'services.page.description')}
@@ -133,13 +134,22 @@ const testimonialItems = tArray(locale, 'testimonials.items');
             index={2}
           />
           <PricingCard
+            title={t(locale, 'services.webapp.title')}
+            description={t(locale, 'services.webapp.description')}
+            features={tStringArray(locale, 'services.webapp.features')}
+            ctaText={t(locale, 'services.webapp.cta')}
+            ctaLink={WA_LINK_WEBAPP}
+            locale={locale}
+            index={3}
+          />
+          <PricingCard
             title={t(locale, 'services.app.title')}
             description={t(locale, 'services.app.description')}
             features={tStringArray(locale, 'services.app.features')}
             ctaText={t(locale, 'services.app.cta')}
             ctaLink={WA_LINK_APP}
             locale={locale}
-            index={3}
+            index={4}
           />
         </div>
 

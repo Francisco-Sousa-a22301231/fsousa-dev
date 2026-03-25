@@ -109,6 +109,22 @@
         "Qualitätstests vor dem Launch",
         "Zeitplan und Budget nach Erstgespräch festgelegt"
       ]
+    },
+    "webapp": {
+      "title": "Web App",
+      "description": "Maßgeschneiderte Webanwendungen mit Echtzeit-Funktionen, Benutzer-Dashboards und komplexer Geschäftslogik — zugänglich über jeden Browser, ohne App Store.",
+      "cta": "Sprechen wir über Ihr Projekt",
+      "features": [
+        "Maßgeschneiderte Webanwendung für Ihren Workflow",
+        "Benutzerauthentifizierung und rollenbasierte Zugriffskontrolle",
+        "Echtzeit-Dashboards und Datenvisualisierung",
+        "Datenbankdesign und API-Entwicklung",
+        "Responsive — funktioniert auf Desktop, Tablet und Smartphone",
+        "Cloud-Hosting mit automatischer Skalierung",
+        "Drittanbieter-Integrationen (Zahlungen, E-Mail, Analytics)",
+        "Admin-Panel zur Verwaltung von Benutzern und Inhalten",
+        "Zeitrahmen und Budget nach Erstberatung festgelegt"
+      ]
     }
   },
   "process": {
@@ -336,6 +352,7 @@
     "page_message": "Hallo Francisco, ich interessiere mich für eine professionelle Webseite für mein Unternehmen.",
     "site_message": "Hallo Francisco, ich interessiere mich für eine komplette Website für mein Unternehmen.",
     "app_message": "Hallo Francisco, ich interessiere mich für eine mobile App für mein Unternehmen.",
+    "webapp_message": "Hallo Francisco, ich interessiere mich für eine Web App für mein Unternehmen.",
     "aria_label": "Über WhatsApp kontaktieren"
   },
   "credibility": {

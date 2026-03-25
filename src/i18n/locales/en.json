@@ -109,6 +109,22 @@
         "Quality testing before launch",
         "Timeline and budget defined after initial consultation"
       ]
+    },
+    "webapp": {
+      "title": "Web App",
+      "description": "Custom web applications with real-time features, user dashboards, and complex business logic — accessible from any browser, no app store needed.",
+      "cta": "Let's talk about your project",
+      "features": [
+        "Custom web application tailored to your workflow",
+        "User authentication and role-based access",
+        "Real-time dashboards and data visualization",
+        "Database design and API development",
+        "Responsive — works on desktop, tablet, and mobile",
+        "Cloud hosting with automatic scaling",
+        "Third-party integrations (payments, email, analytics)",
+        "Admin panel to manage users and content",
+        "Timeline and budget defined after initial consultation"
+      ]
     }
   },
   "process": {
@@ -336,6 +352,7 @@
     "page_message": "Hi Francisco, I'm interested in a Professional Landing Page for my business.",
     "site_message": "Hi Francisco, I'm interested in a Full Website for my business.",
     "app_message": "Hi Francisco, I'm interested in a Mobile App for my business.",
+    "webapp_message": "Hi Francisco, I'm interested in a Web App for my business.",
     "aria_label": "Contact via WhatsApp"
   },
   "credibility": {
