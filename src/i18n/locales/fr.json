@@ -109,6 +109,22 @@
         "Tests de qualité avant le lancement",
         "Délai et budget définis après consultation initiale"
       ]
+    },
+    "webapp": {
+      "title": "Web App",
+      "description": "Applications web sur mesure avec fonctionnalités en temps réel, tableaux de bord utilisateur et logique métier complexe — accessibles depuis n'importe quel navigateur, sans app store.",
+      "cta": "Parlons de votre projet",
+      "features": [
+        "Application web personnalisée à votre flux de travail",
+        "Authentification utilisateur et contrôle d'accès",
+        "Tableaux de bord en temps réel et visualisation de données",
+        "Conception de base de données et développement d'API",
+        "Responsive — fonctionne sur ordinateur, tablette et mobile",
+        "Hébergement cloud avec mise à l'échelle automatique",
+        "Intégrations tierces (paiements, email, analytics)",
+        "Panneau d'administration pour gérer utilisateurs et contenu",
+        "Délai et budget définis après consultation initiale"
+      ]
     }
   },
   "process": {
@@ -336,6 +352,7 @@
     "page_message": "Bonjour Francisco, je suis intéressé par une Page Web Professionnelle pour mon activité.",
     "site_message": "Bonjour Francisco, je suis intéressé par un Site Web Complet pour mon activité.",
     "app_message": "Bonjour Francisco, je suis intéressé par une Application Mobile pour mon activité.",
+    "webapp_message": "Bonjour Francisco, je suis intéressé par une Web App pour mon entreprise.",
     "aria_label": "Contacter via WhatsApp"
   },
   "credibility": {

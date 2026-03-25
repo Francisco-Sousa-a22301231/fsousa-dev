@@ -109,6 +109,22 @@
         "Testes de qualidade antes do lançamento",
         "Timeline e orçamento definidos após consulta inicial"
       ]
+    },
+    "webapp": {
+      "title": "Web App",
+      "description": "Aplicações web personalizadas com funcionalidades em tempo real, dashboards de utilizador e lógica de negócio complexa — acessíveis a partir de qualquer browser, sem necessidade de app store.",
+      "cta": "Vamos falar sobre o seu projeto",
+      "features": [
+        "Aplicação web personalizada ao seu fluxo de trabalho",
+        "Autenticação de utilizadores e controlo de acessos",
+        "Dashboards em tempo real e visualização de dados",
+        "Design de base de dados e desenvolvimento de API",
+        "Responsiva — funciona em desktop, tablet e telemóvel",
+        "Alojamento cloud com escalabilidade automática",
+        "Integrações com terceiros (pagamentos, email, analytics)",
+        "Painel de administração para gerir utilizadores e conteúdo",
+        "Prazo e orçamento definidos após consulta inicial"
+      ]
     }
   },
   "process": {
@@ -336,6 +352,7 @@
     "page_message": "Olá Francisco, estou interessado numa Página Web Profissional para o meu negócio.",
     "site_message": "Olá Francisco, estou interessado num Website Completo para o meu negócio.",
     "app_message": "Olá Francisco, estou interessado numa Aplicação Móvel para o meu negócio.",
+    "webapp_message": "Olá Francisco, estou interessado numa Web App para o meu negócio.",
     "aria_label": "Contactar via WhatsApp"
   },
   "credibility": {
