@@ -95,12 +95,12 @@
       ]
     },
     "app": {
-      "title": "Applicazione Mobile",
-      "description": "Soluzione completa per attività che necessitano di un'app nativa iOS e Android — dal design alla pubblicazione sugli store, con pannello di gestione incluso.",
+      "title": "App Mobile & Web",
+      "description": "Soluzione completa per attività che necessitano di un'app nativa per iOS, Android e web — dal design alla pubblicazione, con pannello di amministrazione incluso.",
       "cta": "Parliamo del progetto",
       "features": [
         "App personalizzata con design esclusivo per il tuo brand",
-        "Funziona su iPhone e Android da un'unica base di codice",
+        "Funziona su iPhone, Android e Web da un unico codice",
         "Pannello di amministrazione web per gestire contenuti e utenti",
         "Notifiche push per comunicare con i tuoi clienti",
         "Autenticazione utenti sicura",

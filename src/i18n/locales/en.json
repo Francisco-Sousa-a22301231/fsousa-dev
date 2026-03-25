@@ -95,12 +95,12 @@
       ]
     },
     "app": {
-      "title": "Mobile App",
-      "description": "End-to-end solution for businesses that need a native iOS and Android app — from design to app store publishing, with an admin panel included.",
+      "title": "Mobile & Web App",
+      "description": "End-to-end solution for businesses that need a native iOS, Android, and web app — from design to publishing, with an admin panel included.",
       "cta": "Let's talk about your project",
       "features": [
         "Custom app with exclusive design for your brand",
-        "Works on iPhone and Android from a single codebase",
+        "Works on iPhone, Android, and Web from a single codebase",
         "Web-based admin panel to manage content and users",
         "Push notifications to engage your customers",
         "Secure user authentication",
