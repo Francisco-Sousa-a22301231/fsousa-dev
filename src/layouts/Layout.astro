@@ -116,7 +116,7 @@ const faqData = tArray(locale, 'faq.items');
     </div>
 
     <!-- NAVBAR -->
-    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-transparent border-b border-transparent transition-all duration-500">
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 border-b border-transparent transition-all duration-500" style="background-color: transparent;">
       <div class="max-w-[1400px] mx-auto px-6 sm:px-8 flex items-center justify-between h-20">
         <!-- Logo -->
         <a href={getLocalizedPath('/', locale)} class="link-underline text-[var(--color-text)] font-light text-lg tracking-tight">
@@ -414,7 +414,18 @@ const faqData = tArray(locale, 'faq.items');
       const header = document.getElementById('main-header');
       if (header) {
         const updateNavGlass = () => {
-          header.classList.toggle('nav-glass', window.scrollY > 10);
+          const scrolled = window.scrollY > 10;
+          if (scrolled) {
+            header.style.backgroundColor = 'rgba(248, 248, 248, 0.95)';
+            header.style.backdropFilter = 'blur(20px)';
+            header.style.webkitBackdropFilter = 'blur(20px)';
+            header.style.borderBottomColor = 'rgba(0,0,0,0.1)';
+          } else {
+            header.style.backgroundColor = 'transparent';
+            header.style.backdropFilter = 'none';
+            header.style.webkitBackdropFilter = 'none';
+            header.style.borderBottomColor = 'transparent';
+          }
         };
         updateNavGlass();
         if ((window as any).__lenis) {
