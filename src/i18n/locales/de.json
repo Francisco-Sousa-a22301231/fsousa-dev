@@ -95,12 +95,12 @@
       ]
     },
     "app": {
-      "title": "Mobile App",
-      "description": "Komplettlösung für Unternehmen, die eine native iOS- und Android-App benötigen — vom Design bis zur Veröffentlichung in den App Stores, inklusive Admin-Panel.",
+      "title": "Mobile & Web App",
+      "description": "Komplettlösung für Unternehmen, die eine native iOS-, Android- und Web-App benötigen — von Design bis Veröffentlichung, mit Admin-Panel inklusive.",
       "cta": "Projekt besprechen",
       "features": [
         "Maßgeschneiderte App mit exklusivem Design für Ihre Marke",
-        "Läuft auf iPhone und Android aus einer einzigen Codebasis",
+        "Funktioniert auf iPhone, Android und Web aus einer einzigen Codebasis",
         "Web-basiertes Admin-Panel zur Verwaltung von Inhalten und Nutzern",
         "Push-Benachrichtigungen zur Kundenkommunikation",
         "Sichere Benutzer-Authentifizierung",
