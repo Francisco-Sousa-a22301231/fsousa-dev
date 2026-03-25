@@ -412,15 +412,16 @@ const faqData = tArray(locale, 'faq.items');
 
       // ===== NAV: GLASS ON SCROLL =====
       const header = document.getElementById('main-header');
-      const heroSection = document.getElementById('hero');
-      if (header && heroSection) {
-        const headerObserver = new IntersectionObserver(
-          ([entry]) => {
-            header.classList.toggle('nav-glass', !entry.isIntersecting);
-          },
-          { threshold: 0, rootMargin: '-80px 0px 0px 0px' }
-        );
-        headerObserver.observe(heroSection);
+      if (header) {
+        const updateNavGlass = () => {
+          header.classList.toggle('nav-glass', window.scrollY > 10);
+        };
+        updateNavGlass();
+        if ((window as any).__lenis) {
+          (window as any).__lenis.on('scroll', updateNavGlass);
+        } else {
+          window.addEventListener('scroll', updateNavGlass, { passive: true });
+        }
       }
 
       // ===== NAV: ACTIVE SECTION =====
